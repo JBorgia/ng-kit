@@ -1,0 +1,15 @@
+<form>
+  <div>
+    <div class="input-group">
+      <input class="form-control" autocomplete="off" placeholder="yyyy-mm-dd"
+        name="dp" [(ngModel)]="model" xmDatepicker #d="xmDatepicker">
+      <div class="input-group-append">
+        <button class="input-group-append-button" (click)="d.toggle()">
+          <em class="icon-calendar-blank"></em>
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<pre>Model: {{ model | json }}</pre>

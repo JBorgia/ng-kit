@@ -1,0 +1,10 @@
+<p>Default pagination:</p>
+<ng-kit-pagination [collectionSize]="70" [(page)]="page" aria-label="Default pagination"></ng-kit-pagination>
+
+<p>No direction links:</p>
+<ng-kit-pagination [collectionSize]="70" [(page)]="page" [directionLinks]="false"></ng-kit-pagination>
+
+<p>With boundary links:</p>
+<ng-kit-pagination [collectionSize]="70" [(page)]="page" [boundaryLinks]="true"></ng-kit-pagination>
+
+<pre>Current page: {{page}}</pre>

@@ -1,0 +1,32 @@
+.instructions {
+  margin-bottom: 1em;
+}
+
+// Example SCSS stying:
+div {
+  border: 2px solid var(--theme-danger);
+  height: 100%;
+  width: 300px;
+
+  span {
+    margin-left: 8px;
+    color: var(--theme-danger);
+  }
+
+  header {
+    margin: 16px;
+    font-size: 1.3rem;
+  }
+}
+
+
+ng-kit-card {
+  header {
+    margin: 16px;
+    font-size: 1.3rem;
+  }
+
+  article {
+    margin: 16px;
+  }
+}

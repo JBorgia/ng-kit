@@ -1,0 +1,130 @@
+@import 'mixins';
+
+:host {
+  list-style: none;
+  border-bottom: 1px solid var(--border-color-primary);
+
+  &.active {
+    a {
+      background-color: var(--sidebar-background-active-color);
+      color: var(--theme-color-primary-light);
+
+      i {
+        color: var(--theme-color-primary-light);
+      }
+    }
+  }
+
+  &.collapsed-item {
+    border-bottom: 0;
+
+    @include respond-above(sm) {
+      position: relative;
+    }
+
+    &:hover:not(.active)>a {
+      @include respond-above(sm) {
+        width: 290px;
+      }
+
+      .hide-menu {
+        @include respond-above(sm) {
+          display: inline;
+        }
+      }
+    }
+
+    &:hover:not(.active)>ul {
+      @include respond-above(sm) {
+        height: auto !important;
+        overflow: auto;
+        display: block;
+      }
+    }
+
+    a {
+      padding: 12px 14px;
+      border-top: 1px solid var(--border-color-primary);
+      border-right: 1px solid var(--border-color-primary);
+
+      @include respond-above(sm) {
+        padding: 12px 14px;
+        width: 70px;
+      }
+
+      &.has-arrow:after {
+        @include respond-above(sm) {
+          display: none;
+        }
+      }
+    }
+
+    ul {
+      max-height: 212px;
+      border-bottom: 1px solid var(--border-color-primary);
+
+      @include respond-above(sm) {
+        position: absolute;
+        left: 70px;
+        width: 220px;
+        z-index: 1001;
+        display: none;
+      }
+    }
+  }
+}
+
+a {
+  background-color: var(--sidebar-background-color);
+  color: var(--text-color-primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 8px 35px 8px 15px;
+  font-size: 14px;
+  font-weight: 400;
+  width: 100%;
+  min-height: 52px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background-color 0.4s ease,
+    color 0.4s ease;
+
+  &:focus,
+  &:active,
+  &:hover,
+  &.router-link-active {
+    background-color: var(--sidebar-background-active-color);
+    color: var(--theme-color-primary-light);
+  }
+
+  i {
+    margin: 6px 8px;
+    width: 31px;
+    font-size: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    color: var(--text-color-primary);
+  }
+}
+
+ul {
+  li {
+    display: flex;
+    max-height: 52px;
+    overflow: hidden;
+  }
+}
+
+i {
+  width: 31px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 6px 8px;
+  font-size: 24px;
+}
+
+.label {
+  float: right;
+  margin-top: 6px;
+}

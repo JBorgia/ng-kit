@@ -1,0 +1,25 @@
+.instructions {
+  margin-bottom: 1em;
+}
+
+.custom-day {
+  text-align: center;
+  padding: 0.185rem 0.25rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+  width: 4rem;
+}
+
+.weekend {
+  background-color: #f0ad4e;
+  border-radius: 4rem;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+.input-group {
+  width: 300px;
+}

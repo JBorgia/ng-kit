@@ -1,0 +1,16 @@
+@import 'mixins';
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+
+  >div {
+    margin-right: 0.8em;
+    margin-bottom: 0.8em;
+
+    @include respond-below(xs) {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+}

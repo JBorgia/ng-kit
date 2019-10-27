@@ -1,0 +1,156 @@
+<p class="instructions">
+  The table column widths can be set using the <code>colWidths</code> input on the <i>&#60;table xm&#62;</i> tag, which accepts an array of type XmColWidth objects. 
+  Type XmColWidth objects are flex-based and have 'grow', 'shrink', and 'basis' fields.
+</p>
+<p class="instructions">If setting widths using the <code>colWidths</code> input, column visibility should be controlled using the <code>colVisibility</code> input. See the next demo for details.</p>
+<p class="instructions">
+  <b>WARNING:</b> If using <code>colWidths</code> on the <i>&#60;table xm&#62;</i> tag, table columns cannot be hidden/removed using *ngIf on the <i>&#60;th&#62;</i> and <i>&#60;td&#62;</i> tags. 
+  For *ngIf dom control of columns, set widths using the <code>colWidth</code> input on the <i>&#60;th xm&#62;</i> tags.
+</p>
+<p class="instructions">'Username' column set to grow: 1, while the others are set to 0. It is allotted any additional available width.</p>
+<p class="instructions">All the columns are shrink: 0</p>
+<p class="instructions">The 'basis' for the columns are 120px, 140px, 160px, 180px, and 200px respectively.</p>
+<p class="instructions">Some additional styling has been applied to affect the background and padding. </p>
+
+<!-- Example Code: Begin -->
+<table
+  xm
+  [colVisibility]="[
+    true,
+    true,
+    true,
+    true,
+    true
+  ]"
+  [colWidths]="[
+    { grow: 0, shrink: 0, basis: '120px'},
+    { grow: 0, shrink: 0, basis: '140px'},
+    { grow: 0, shrink: 0, basis: '160px'},
+    { grow: 1, shrink: 0, basis: '180px'},
+    { grow: 0, shrink: 0, basis: '200px' }
+  ]">
+  <thead>
+    <tr>
+      <th>First</th>
+      <th>Last</th>
+      <th>Title</th>
+      <th>Username</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>Contractor</td>
+      <td>motto271</td>
+      <td>
+        <button
+          xm
+          class="ng-kit-sm ng-kit-primary"
+          icon="icon-account">
+          Profile
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>Manager</td>
+      <td>jthornton110</td>
+      <td>
+        <button
+          xm
+          class="ng-kit-sm ng-kit-primary"
+          icon="icon-account">
+          Profile
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>Larry</td>
+      <td>Bird</td>
+      <td>Technician</td>
+      <td>lbird33</td>
+      <td>
+        <button
+          xm
+          class="ng-kit-sm ng-kit-primary"
+          icon="icon-account">
+          Profile
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>Richard</td>
+      <td>Kimble</td>
+      <td>Technician</td>
+      <td>rkimble50</td>
+      <td>
+        <button
+          xm
+          class="ng-kit-sm ng-kit-primary"
+          icon="icon-account">
+          Profile
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>Ted</td>
+      <td>Logan</td>
+      <td>Contractor</td>
+      <td>tlogan69</td>
+      <td>
+        <button
+          xm
+          class="ng-kit-sm ng-kit-primary"
+          icon="icon-account">
+          Profile
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>Bill</td>
+      <td>Preston</td>
+      <td>Technician</td>
+      <td>bpreston69</td>
+      <td>
+        <button
+          xm
+          class="ng-kit-sm ng-kit-primary"
+          icon="icon-account">
+          Profile
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>Luke</td>
+      <td>Perry</td>
+      <td>Technician</td>
+      <td>lperry06</td>
+      <td>
+        <button
+          xm
+          class="ng-kit-sm ng-kit-primary"
+          icon="icon-account">
+          Profile
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>David</td>
+      <td>Blaine</td>
+      <td>Contractor</td>
+      <td>dblaine666</td>
+      <td>
+        <button
+          xm
+          class="ng-kit-sm ng-kit-primary"
+          icon="icon-account">
+          Profile
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- Example Code: End -->

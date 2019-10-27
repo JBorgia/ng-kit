@@ -1,0 +1,37 @@
+<p class="instructions">You can optionally pass in a context when manually triggering a popover.</p>
+
+<ng-template #popContent let-greeting="greeting">{{greeting}}, {{name}}!</ng-template>
+<ng-template #popTitle let-language="language">Greeting in {{language}}</ng-template>
+
+<div class="button-container">
+  <button
+    xm
+    class="ng-kit-lg ng-kit-primary"
+    [xmPopover]="popContent"
+    [popoverTitle]="popTitle"
+    triggers="manual"
+    #p1="xmPopover"
+    (click)="toggleWithGreeting(p1, 'Bonjour', 'French')">
+    French
+  </button>
+  <button
+    xm
+    class="ng-kit-lg ng-kit-primary"
+    [xmPopover]="popContent"
+    [popoverTitle]="popTitle"
+    triggers="manual"
+    #p2="xmPopover"
+    (click)="toggleWithGreeting(p2, 'Gutentag', 'German')">
+    German
+  </button>
+  <button
+    xm
+    class="ng-kit-lg ng-kit-primary"
+    [xmPopover]="popContent"
+    [popoverTitle]="popTitle"
+    triggers="manual"
+    #p3="xmPopover"
+    (click)="toggleWithGreeting(p3, 'Hello', 'English')">
+    English
+  </button>
+</div>

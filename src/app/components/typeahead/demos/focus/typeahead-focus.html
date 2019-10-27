@@ -1,0 +1,21 @@
+<p class="instructions">It is possible to get the focus events with the current input value to emit results on focus with a great flexibility.</p>
+
+<p class="instructions">In this simple example, a search is done no matter the content of the input:</p>
+
+<ul>
+  <li>on empty input all options will be taken</li>
+  <li>otherwise options will be filtered against the search term</li>
+  <li>it will limit the display to 10 results in all cases</li>
+</ul>
+
+<label for="typeahead-focus">Search for a state:</label>
+<input
+  id="typeahead-focus"
+  type="text"
+  class="form-control"
+  [(ngModel)]="model"
+  [xmTypeahead]="search"
+  (focus)="focus$.next($event.target.value)"
+  (click)="click$.next($event.target.value)"
+  #instance="xmTypeahead"/>
+<pre>Model: {{ model | json }}</pre>

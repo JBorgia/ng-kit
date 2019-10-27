@@ -1,0 +1,29 @@
+<header>
+  <div>
+    <h1>{{ component | titlecase }}</h1>
+  </div>
+  <nav>
+    <ul>
+      <li *ngFor="let childRoute of route.routeConfig.children">
+        <a routerLink="./{{childRoute.path}}" [class.active]="activeTab === childRoute.path">
+          {{ childRoute.path | titlecase }}
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<section>
+  <div class="content-column">
+    <router-outlet (activate)="updateNavigation($event)"></router-outlet>
+  </div>
+  <div class="nav-column">
+    <nav>
+      <ul>
+        <li *ngFor="let topic of tableOfContent">
+          <a *ngIf="topic.title" [routerLink]="['.', this.activeTab]" [fragment]="topic.fragment" (click)="navClick(topic.fragment)">{{topic.title}}</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</section>

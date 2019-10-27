@@ -1,0 +1,35 @@
+<p class="instructions">You can easily override open and close triggers by specifying event 
+names (separated by :) in the <code>triggers</code> property.</p>
+
+<div class="button-container first-container">
+  <button
+    xm
+    class="ng-kit-lg ng-kit-primary"
+    xmPopover="You see, I show up on hover!"
+    triggers="mouseenter:mouseleave"
+    popoverTitle="Pop title">
+    Hover over me!
+  </button>
+</div>
+
+<p class="instructions">Alternatively you can take full manual control over popover opening / closing events.</p>
+
+<div class="button-container second-container">
+  <button
+    xm
+    class="ng-kit-lg ng-kit-primary"
+    xmPopover="What a great tip!"
+    [autoClose]="false"
+    triggers="manual"
+    #p="xmPopover"
+    (click)="p.open()"
+    popoverTitle="Pop title">
+    Click me to open a popover
+  </button>
+  <button
+    xm
+    class="ng-kit-lg ng-kit-primary"
+    (click)="p.close()">
+    Click me to close a popover
+  </button>
+</div>

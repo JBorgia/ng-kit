@@ -1,0 +1,30 @@
+.picsum-img-wrapper {
+  position: relative;
+  height: 0;
+  padding-top: 55%;
+}
+
+.picsum-img-wrapper>img {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.carousel-caption {
+  position: absolute;
+  right: 15%;
+  bottom: 20px;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+
+  h3,
+  p {
+    color: #ffffff;
+  }
+}

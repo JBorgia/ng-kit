@@ -1,0 +1,67 @@
+.notificationToast__buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  border-right: 1px solid var(--border-color-primary);
+  border-top: 1px solid var(--border-color-primary);
+
+  .dark-theme & {
+    border-bottom: 1px solid #000000;
+  }
+
+  button {
+    position: relative;
+    width: 100%;
+    font-family: var(--typeface-primary), sans-serif;
+    font-size: 1.5rem;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 0;
+    padding: 8px;
+    text-transform: capitalize;
+    transition: 0.3s background-color ease;
+    cursor: pointer;
+    background-color: var(--card-background-primary);
+    border-left: 1px solid var(--border-color-primary);
+    color: var(--heading-color-primary);
+
+    .notification-simple & {
+      .dark-theme & {
+        border-left: 1px solid #000000;
+      }
+    }
+
+    @media (hover: hover) {
+
+      &:hover,
+      &:focus {
+        background-color: var(--card-header-background-primary);
+      }
+    }
+
+    &:active {
+      background-color: var(--card-header-background-primary);
+    }
+
+    .light-theme & {
+      border-right: 0;
+    }
+
+    @media (hover: hover) {
+
+      &:hover,
+      &:focus {
+        background: rgba(0, 0, 0, .1);
+        outline: none;
+      }
+    }
+
+    &:first-child {
+      border-left: none;
+    }
+  }
+
+  &--bold {
+    font-weight: 700;
+  }
+}

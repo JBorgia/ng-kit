@@ -1,0 +1,20 @@
+{
+  "name": "ng-kit",
+  "version": "0.1.8",
+  "peerDependencies": {
+    "@angular/common": "^8.0.3",
+    "@angular/core": "^8.0.3",
+    "esri-loader": "^2.11.0",
+    "css-element-queries": "^1.2.1"
+  },
+  "ngPackage": {
+    "lib": {
+      "styleIncludePaths": [
+        "./src/theme/scss"
+      ]
+    }
+  },
+  "publishConfig": {
+    "registry": "https://artifactory.comcast.net/artifactory/api/npm/ngan-npm/"
+  }
+}

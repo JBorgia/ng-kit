@@ -1,0 +1,41 @@
+<div class="datepicker-placeholder">
+  <input
+    value="{{placeholderString}}"
+    xmDatepicker
+    class="form-control form-control-sm"
+    #dp
+    (dateSelect)="onDateSelection($event)"
+    [displayMonths]="1"
+    [dayTemplate]="t"
+    [firstDayOfWeek]="startWeekOnSunday ? 7 : 1"
+    [outsideDays]="'collapsed'"
+    [markDisabled]="isDisabled"
+    [autoClose]="'outside'"
+    [maxDate]="convertToXMDate(maxDateSet)"
+    [placement]="['bottom']"
+    #d="xmDatepicker"
+    (click)="d.toggle()"
+    (click)="appendClass()"
+    readonly>
+  <div class="input-group-append">
+    <button      
+      class="input-group-append-button"
+      (click)="d.toggle(); appendClass()">
+      <em class="icon-calendar-blank"></em>
+    </button>
+  </div>
+</div>
+
+<ng-template
+  #t
+  let-date
+  let-focused="focused">
+  <div
+    class="custom-day"
+    [class.range]="isRange(date)"
+    [class.faded]="isHovered(date) || isInside(date)"
+    (mouseenter)="hoveredDate = date"
+    (mouseleave)="hoveredDate = null">
+    {{ date.day }}
+  </div>
+</ng-template>

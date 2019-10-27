@@ -1,0 +1,15 @@
+.instructions {
+  margin-bottom: 1em;
+}
+
+.my-custom-popover-class {
+  .popover-body {
+    background: orange !important;
+    font-size: 3em !important;
+    padding: 0.3em;
+  }
+}
+
+.my-custom-popover-class .arrow::after {
+  border-top-color: orange !important;
+}

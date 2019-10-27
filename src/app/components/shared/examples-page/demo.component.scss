@@ -1,0 +1,34 @@
+@import 'mixins';
+
+.component-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: flex-wrap;
+  justify-content: space-between;
+
+  @include respond-below(sm) {
+    flex-direction: column;
+    margin-bottom: 1em;
+  }
+
+  a {
+    position: absolute;
+    pointer-events: none;
+  }
+}
+
+.component-demo {
+  margin-bottom: 1em;
+}
+
+.component-demo-code {
+  border: 1px solid var(--border-color-primary);
+  margin-bottom: 1em;
+  border-radius: 0.25em;
+}
+
+.component-demo-live {
+  background-color: var(--theme-stage-color-active);
+  padding: 1em;
+  border-radius: 0.25em;
+}

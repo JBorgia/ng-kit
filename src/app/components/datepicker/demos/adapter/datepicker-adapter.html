@@ -1,0 +1,44 @@
+<p class="instructions">These datepickers use custom Date adapter that lets you use your own model implementation.
+In this example we are converting from and to a JS native Date object</p>
+
+<div>
+  <div>
+    <ng-kit-datepicker #d1 [(ngModel)]="model1" #c1="ngModel"></ng-kit-datepicker>
+
+    <button
+      xm
+      class="ng-kit-lg ng-kit-primary select-today"
+      (click)="model1 = today">
+      Select Today
+    </button>
+    <pre>Model: {{ model1 | json }}</pre>
+    <pre>State: {{ c1.status }}</pre>
+  </div>
+
+  <div>
+    <form>
+      <div>
+        <div class="input-group">
+          <input class="form-control" autocomplete="off" placeholder="yyyy-mm-dd"
+            name="d2" #c2="ngModel" [(ngModel)]="model2" xmDatepicker #d2="xmDatepicker">
+          <div class="input-group-append">
+            <button class="input-group-append-button" (click)="d2.toggle()" type="button">
+              <em class="icon-calendar-blank"></em>
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <button
+      xm
+      class="ng-kit-lg ng-kit-primary select-today"
+      (click)="model2 = today">
+      Select Today
+    </button>
+
+    <pre>Model: {{ model2 | json }}</pre>
+    <pre>State: {{ c2.status }}</pre>
+  </div>
+
+</div>

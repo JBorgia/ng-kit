@@ -1,0 +1,21 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Modal with default options</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <i class="icon-close"></i>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+  <div class="modal-footer"></div>
+</ng-template>
+
+<button 
+  xm
+  class="ng-kit-lg ng-kit-primary"
+  (click)="open(content)">
+  Launch demo modal
+</button>

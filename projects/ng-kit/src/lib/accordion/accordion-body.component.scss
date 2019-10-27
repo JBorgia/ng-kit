@@ -1,0 +1,17 @@
+:host {
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+
+  &.transition {
+    transition: 0.2s ease-out max-height;
+  }
+
+  &.collapsed {
+    max-height: 0vh !important;
+  }
+
+  .content-wrapper {
+    border-top: 1px solid var(--border-color-primary);
+  }
+}

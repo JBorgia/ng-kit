@@ -1,0 +1,134 @@
+@import 'mixins';
+
+ng-kit-datepicker {
+  display: inline-block;
+  border: 1px solid var(--border-color-primary);
+  background-color: var(--card-background-primary);
+
+  &.datepicker-dropdown {
+    z-index: 1000;
+  }
+
+  &.navigation-none {
+    .ng-kit-dp-months {
+      padding-top: 0.6rem;
+    }
+  }
+
+  &.navigation-arrows {
+    .ng-kit-dp-month-name {
+      display: flex;
+      align-items: center;
+      border-top: 0;
+    }
+  }
+
+  .ng-kit-dp-header {
+    background-color: var(--card-background-primary);
+  }
+
+  .ng-kit-dp-month-name {
+    span {
+      color: var(--text-color-primary);
+    }
+  }
+
+  &.multiple-months {
+
+    .ng-kit-dp-months {
+      @include respond-below(md) {
+        flex-wrap: wrap;
+      }
+    }
+
+    .ng-kit-dp-month {
+      margin-right: 0.6rem;
+      margin-bottom: 0.6rem;
+      margin-left: 0.6rem;
+
+      .ng-kit-dp-month-name,
+      ng-kit-datepicker-month-view {
+        border-right: 1px solid var(--border-color-primary);
+        border-left: 1px solid var(--border-color-primary);
+      }
+    }
+  }
+
+  &.datepicker-flex {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .ng-kit-dp-month {
+      width: 100%;
+
+      .ng-kit-dp-weekday {
+        width: 100%;
+        min-width: none;
+      }
+
+      .ng-kit-dp-day {
+        width: 100%;
+
+        >div {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .ng-kit-dp-month-name {
+    background-color: var(--card-header-background-primary);
+    border-top: 1px solid var(--border-color-primary);
+  }
+}
+
+.ng-kit-dp-month {
+  pointer-events: none;
+  margin-bottom: -1px;
+
+  @include respond-below(xs) {
+    width: 100%;
+  }
+}
+
+.ng-kit-dp-header {
+  position: relative;
+  display: flex;
+  padding: 0;
+  border-bottom: 0;
+}
+
+ng-kit-datepicker-month-view {
+  pointer-events: auto;
+}
+
+.ng-kit-dp-month-name {
+  text-align: center;
+  line-height: 2rem;
+
+  span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}
+
+.ng-kit-dp-month {
+
+  &:last-child .ng-kit-dp-week {
+    padding-right: 0;
+  }
+
+  &:first-child .ng-kit-dp-week {
+    padding-left: 0;
+  }
+
+  &>ng-kit-datepicker-month-view>.ng-kit-dp-week:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.ng-kit-dp-months {
+  display: flex;
+}

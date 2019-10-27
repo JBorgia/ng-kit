@@ -1,0 +1,55 @@
+<div class="component-demo-container">
+  <div class="component-header">
+    <a [id]="id"></a>
+    <h2>{{ demoTitle }}</h2>
+    <div>
+      <button
+        xm
+        class="ng-kit-md ng-kit-secondary"
+        [class.active]="showCode"
+        icon="icon-code"
+        (click)="showCode = !showCode">      
+        Code
+      </button>
+    </div>
+  </div>
+
+  <div class="component-demo">
+    <div class="component-demo-code" *ngIf="showCode">
+      <ng-kit-tabset>
+        
+        <ng-kit-tab id="{{component}}-{{id}}-html">
+          <ng-template xmTabTitle>
+            <span>{{component}}-{{id}}.html</span>
+          </ng-template>
+          <ng-template xmTabContent>
+            <app-code [snippet]="markupSnippet"></app-code>
+          </ng-template>
+        </ng-kit-tab>
+        <ng-kit-tab id="{{component}}-{{id}}-typescript">
+          <ng-template xmTabTitle>
+            <span>{{component}}-{{id}}.ts</span>
+          </ng-template>
+          <ng-template xmTabContent>
+            <app-code [snippet]="codeSnippet"></app-code>
+          </ng-template>
+        </ng-kit-tab>
+
+        <ng-template [ngIf]="stylesheet">
+          <ng-kit-tab id="{{component}}-{{id}}-scss">
+            <ng-template xmTabTitle>
+              <span>{{component}}-{{id}}.scss</span>
+            </ng-template>
+            <ng-template xmTabContent>
+              <app-code [snippet]="stylesheetSnippet"></app-code>
+            </ng-template>
+          </ng-kit-tab>
+        </ng-template>
+        
+      </ng-kit-tabset>
+    </div>
+    <div class="component-demo-live">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

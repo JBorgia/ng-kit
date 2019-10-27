@@ -1,0 +1,7 @@
+@import 'mixins';
+
+:host {
+  border-radius: 0 0 2px 2px;
+  color: var(--text-color-primary);
+  overflow: hidden;
+}

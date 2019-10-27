@@ -1,0 +1,48 @@
+.instructions {
+  margin-bottom: 1em;
+}
+
+.button-container {
+  display: flex;
+  margin: 8px -8px;
+
+  button {
+    margin: 8px;
+  }
+}
+
+// Example SCSS stying:
+table {
+  width: 100%;
+  background-color: var(--card-background-primary);
+  border: 1px solid var(--border-color-primary);
+
+  thead {
+    width: 20%;
+  }
+
+  tbody {
+    width: 100%;
+
+    tr {
+      flex: 1 0 20%;
+    }
+  }
+
+  th {
+    height: 56px;
+    padding: 0 1.5rem;
+    font-weight: 600;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  td {
+    height: 56px;
+    padding: 0 1.5rem;
+    font-weight: 400;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+}

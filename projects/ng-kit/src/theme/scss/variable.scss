@@ -1,0 +1,182 @@
+[data-theme] {
+
+  /* font */
+  --typeface-primary: 'Montserrat';
+
+  /* status */
+  @include defineColorHSL(--theme-danger, 1, 40%, 49%);
+  @include defineColorHSL(--theme-success, 163, 55%, 34%);
+  @include defineColorHSL(--theme-warning, 38, 82%, 51%);
+
+  /* light colors */
+  @include defineColorHSL(--color-pale-sky, 222, 14%, 34%);
+  @include defineColorHSL(--color-gray-chateau, 221, 10%, 48%);
+  @include defineColorHSL(--color-alabaster, 0, 0%, 97%);
+  @include defineColorHSL(--color-aqua-haze, 216, 29%, 97%);
+  @include defineColorHSL(--color-heather, 218, 18%, 76%);
+  @include defineColorHSL(--color-chablis, 0, 100%, 98%);
+
+  /* dark colors */
+  @include defineColorHSL(--color-shark, 215, 13%, 18%);
+  @include defineColorHSL(--color-azure, 219, 16%, 28%);
+  @include defineColorHSL(--color-woodsmoke, 210, 14%, 15%);
+  @include defineColorHSL(--color-fog, 218, 8%, 73%);
+  @include defineColorHSL(--color-mischka, 220, 10%, 94%);
+  @include defineColorHSL(--color-dune, 0, 11%, 20%);
+
+}
+
+[data-theme="light-theme"] {
+
+  /* theme */
+  @include defineColorHSL(--theme-color-primary, 217, 55%, 51%);
+  @include defineColorHSL(--theme-color-primary-dark, 217, 54%, 43%);
+  @include defineColorHSL(--theme-color-primary-light, 217, 94%, 61%);
+
+  /* typography */
+  @include defineColorHSL(--heading-color-primary, 222, 14%, 34%);
+  @include defineColorHSL(--text-color-primary, 222, 14%, 34%);
+  @include defineColorHSL(--text-color-secondary, 221, 10%, 48%);
+  @include defineColorHSL(--text-color-muted, 218, 18%, 76%);
+  @include defineColorHSL(--text-color-theme, 217, 55%, 51%);
+  @include defineColorHSL(--text-chart-color, 222, 14%, 34%);
+
+  /* form */
+  @include defineColorHSL(--input-background-primary, 0, 0%, 100%);
+  @include defineColorHSL(--input-background-primary-active, 240, 33%, 99%);
+  @include defineColorHSL(--check-box-primary, 218, 18%, 76%);
+  @include defineColorHSL(--check-box-primary-active, 218, 18%, 61%);
+  @include defineColorHSL(--check-box-group-primary, 0, 0%, 100%);
+  @include defineColorHSL(--input-validation-background, 0, 100%, 98%);
+  @include defineColorHSL(--input-disabled-background, 0, 0%, 97%);
+  --select-arrow-primary: url("data:image/svg+xml;utf8,<svg version='1.1' viewBox='0 0 2 1' xmlns='http://www.w3.org/2000/svg'><g fill='none' fill-rule='evenodd'><g fill='%23687384' fill-rule='nonzero'><path d='m2 0.14261c0 0.014891-0.00668 0.028064-0.02004 0.039519l-0.93387 0.80069c-0.01336 0.011455-0.028724 0.017182-0.046092 0.017182-0.017368 0-0.032732-0.0057274-0.046092-0.017182l-0.93387-0.80069c-0.01336-0.011455-0.02004-0.024628-0.02004-0.039519s0.00668-0.028064 0.02004-0.039519l0.1002-0.085911c0.01336-0.011455 0.028724-0.017182 0.046092-0.017182 0.017368 0 0.032732 0.0057274 0.046092 0.017182l0.78758 0.67526 0.78758-0.67526c0.01336-0.011455 0.028724-0.017182 0.046092-0.017182 0.017368 0 0.032732 0.0057274 0.046092 0.017182l0.1002 0.085911c0.01336 0.011455 0.02004 0.024628 0.02004 0.039519z'/></g></g></svg>");
+
+  /* table */
+  @include defineColorHSL(--table-header-text-primary, 221, 10%, 48%);
+  @include defineColorHSL(--table-row-background-banded, 0, 0%, 97%);
+
+  /* background */
+  @include defineColorHSL(--theme-stage-color, 216, 29%, 97%);
+  @include defineColorHSL(--theme-stage-color-active, 218, 30%, 93%);
+  @include defineColorHSL(--sidebar-background-color, 0, 0%, 100%);
+  @include defineColorHSL(--sidebar-background-active-color, 0, 0%, 97%);
+
+  /* card */
+  @include defineColorHSL(--card-background-primary, 0, 0%, 100%);
+  @include defineColorHSL(--card-header-background-primary, 0, 0%, 97%);
+  @include defineColorHSL(--card-header-background-active, 0, 0%, 95%);
+  @include defineColorHSL(--card-header-text-primary, 222, 14%, 34%);
+  --card-pattern-primary: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23f4f6f9' fill-opacity='1'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+  /* button */
+  @include defineColorHSL(--button-color-primary, 217, 55%, 51%);
+  @include defineColorHSL(--button-color-secondary, 216, 29%, 97%);
+  @include defineColorHSL(--button-color-secondary-active, 214, 29%, 91%);
+  @include defineColorHSL(--button-text-color-primary, 0, 0%, 97%);
+  @include defineColorHSL(--button-text-color-secondary, 222, 14%, 34%);
+
+  /* border */
+  @include defineColorHSL(--border-color-primary, 218, 18%, 76%);
+  @include defineColorHSL(--border-btn-color-primary, 222, 14%, 34%);
+  @include defineColorHSL(--border-btn-color-secondary, 218, 18%, 76%);
+  @include defineColorHSL(--border-stage-primary, 218, 19%, 74%);
+  @include defineColorHSL(--table-mobile-border-primary, 218, 18%, 76%);
+  @include defineColorHSL(--border-color-primary-active, 217, 54%, 43%);
+
+  /* datepicker */
+  @include defineColorHSL(--date-picker-color-active, 32, 81%, 62%);
+
+  /* tooltip */
+  --tooltip-arrow: url("data:image/svg+xml;utf8,<svg version='1.1' viewBox='0 0 52 29' xmlns='http://www.w3.org/2000/svg'><g fill='none' fill-rule='evenodd'><polygon points='26 29 1 1 51 1' fill='%23f7f7f7' fill-rule='nonzero' stroke='%23000000'/></g></svg>");
+
+  /* highlight */
+  @include defineColorHSL(--highlight-background-primary, 217, 96%, 91%);
+
+  /* progressbar */
+  @include defineColorHSL(--progress-dark-background, 218, 18%, 76%);
+
+  /* notification */
+  --notification-async-icon: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="135" height="140" viewBox="0 0 135 140" fill="%233d72c6"><rect y="10" width="15" height="120" rx="6"><animate attributeName="height" begin="0.5s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"/><animate attributeName="y" begin="0.5s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"/></rect><rect x="30" y="10" width="15" height="120" rx="6"><animate attributeName="height" begin="0.25s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"/><animate attributeName="y" begin="0.25s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"/></rect><rect x="60" width="15" height="140" rx="6"><animate attributeName="height" begin="0s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"/><animate attributeName="y" begin="0s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"/></rect><rect x="90" y="10" width="15" height="120" rx="6"><animate attributeName="height" begin="0.25s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"/><animate attributeName="y" begin="0.25s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"/></rect><rect x="120" y="10" width="15" height="120" rx="6"><animate attributeName="height" begin="0.5s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"/><animate attributeName="y" begin="0.5s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"/></rect></svg>');
+
+  /* pagination */
+  @include defineColorHSL(--pagination-background, 0, 0%, 100%);
+  @include defineColorHSL(--pagination-border-active, 222, 14%, 34%);
+
+}
+
+[data-theme="dark-theme"] {
+
+  /* theme */
+  @include defineColorHSL(--theme-color-primary, 186, 61%, 33%);
+  @include defineColorHSL(--theme-color-primary-dark, 186, 62%, 25%);
+  @include defineColorHSL(--theme-color-primary-light, 185, 65%, 52%);
+
+  /* typography */
+  @include defineColorHSL(--heading-color-primary, 0, 0%, 100%);
+  @include defineColorHSL(--text-color-primary, 220, 10%, 94%);
+  @include defineColorHSL(--text-color-secondary, 218, 8%, 73%);
+  @include defineColorHSL(--text-color-muted, 218, 8%, 73%);
+  @include defineColorHSL(--text-color-theme, 185, 65%, 52%);
+  @include defineColorHSL(--text-chart-color, 218, 8%, 73%);
+
+  /* form */
+  @include defineColorHSL(--input-background-primary, 219, 16%, 28%);
+  @include defineColorHSL(--input-background-primary-active, 218, 16%, 24%);
+  @include defineColorHSL(--check-box-primary, 220, 10%, 94%);
+  @include defineColorHSL(--check-box-primary-active, 216, 9%, 79%);
+  @include defineColorHSL(--check-box-group-primary, 219, 16%, 28%);
+  @include defineColorHSL(--input-validation-background, 0, 11%, 20%);
+  @include defineColorHSL(--input-disabled-background, 219, 16%, 28%);
+  --select-arrow-primary: url("data:image/svg+xml;utf8,<svg version='1.1' viewBox='0 0 2 1' xmlns='http://www.w3.org/2000/svg'><g fill='none' fill-rule='evenodd'><g fill='%23dde0e5' fill-rule='nonzero'><path d='m2 0.14261c0 0.014891-0.00668 0.028064-0.02004 0.039519l-0.93387 0.80069c-0.01336 0.011455-0.028724 0.017182-0.046092 0.017182-0.017368 0-0.032732-0.0057274-0.046092-0.017182l-0.93387-0.80069c-0.01336-0.011455-0.02004-0.024628-0.02004-0.039519s0.00668-0.028064 0.02004-0.039519l0.1002-0.085911c0.01336-0.011455 0.028724-0.017182 0.046092-0.017182 0.017368 0 0.032732 0.0057274 0.046092 0.017182l0.78758 0.67526 0.78758-0.67526c0.01336-0.011455 0.028724-0.017182 0.046092-0.017182 0.017368 0 0.032732 0.0057274 0.046092 0.017182l0.1002 0.085911c0.01336 0.011455 0.02004 0.024628 0.02004 0.039519z'/></g></g></svg>");
+
+  /* table */
+  @include defineColorHSL(--table-header-text-primary, 218, 8%, 73%);
+
+  /* background */
+  @include defineColorHSL(--theme-stage-color, 219, 16%, 28%);
+  @include defineColorHSL(--theme-stage-color-active, 219, 16%, 24%);
+  @include defineColorHSL(--sidebar-background-color, 215, 13%, 18%);
+  @include defineColorHSL(--sidebar-background-active-color, 210, 14%, 15%);
+
+  /* card */
+  @include defineColorHSL(--card-background-primary, 215, 13%, 18%);
+  @include defineColorHSL(--card-header-background-primary, 210, 14%, 15%);
+  @include defineColorHSL(--card-header-background-active, 213, 13%, 14%);
+  @include defineColorHSL(--card-header-text-primary, 0, 0%, 100%);
+  --card-pattern-primary: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%233d4554' fill-opacity='1'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+  /* button */
+  @include defineColorHSL(--button-color-primary, 186, 61%, 33%);
+  @include defineColorHSL(--button-color-secondary, 219, 16%, 28%);
+  @include defineColorHSL(--button-color-secondary-active, 220, 16%, 22%);
+  @include defineColorHSL(--button-text-color-primary, 0, 0%, 100%);
+  @include defineColorHSL(--button-text-color-secondary, 0, 0%, 100%);
+
+  /* border */
+  @include defineColorHSL(--border-color-primary, 0, 0%, 0%);
+  @include defineColorHSL(--border-btn-color-primary, 0, 0%, 0%);
+  @include defineColorHSL(--border-btn-color-secondary, 0, 0%, 0%);
+  @include defineColorHSL(--border-stage-primary, 220, 25%, 14%);
+  @include defineColorHSL(--table-mobile-border-primary, 219, 16%, 28%);
+  @include defineColorHSL(--border-color-primary-active, 0, 0%, 0%);
+
+  /* datepicker */
+  @include defineColorHSL(--date-picker-color-active, 32, 77%, 37%);
+
+  /* tooltip */
+  --tooltip-arrow: url("data:image/svg+xml;utf8,<svg version='1.1' viewBox='0 0 52 29' xmlns='http://www.w3.org/2000/svg'><g fill='none' fill-rule='evenodd'><polygon points='26 29 1 1 51 1' fill='%2320252a' fill-rule='nonzero' stroke='%23000000'/></g></svg>");
+
+  /* highlight */
+  @include defineColorHSL(--highlight-background-primary, 186, 62%, 25%);
+
+  /* progressbar */
+  @include defineColorHSL(--progress-dark-background, 219, 16%, 21%);
+
+  /* notification */
+  --notification-async-icon: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="135" height="140" viewBox="0 0 135 140" fill="%23207d87"><rect y="10" width="15" height="120" rx="6"><animate attributeName="height" begin="0.5s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"/><animate attributeName="y" begin="0.5s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"/></rect><rect x="30" y="10" width="15" height="120" rx="6"><animate attributeName="height" begin="0.25s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"/><animate attributeName="y" begin="0.25s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"/></rect><rect x="60" width="15" height="140" rx="6"><animate attributeName="height" begin="0s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"/><animate attributeName="y" begin="0s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"/></rect><rect x="90" y="10" width="15" height="120" rx="6"><animate attributeName="height" begin="0.25s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"/><animate attributeName="y" begin="0.25s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"/></rect><rect x="120" y="10" width="15" height="120" rx="6"><animate attributeName="height" begin="0.5s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"/><animate attributeName="y" begin="0.5s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"/></rect></svg>');
+
+  /* pagination */
+  @include defineColorHSL(--pagination-background, 219, 16%, 24%);
+  @include defineColorHSL(--pagination-border-active, 0, 0%, 0%);
+
+}

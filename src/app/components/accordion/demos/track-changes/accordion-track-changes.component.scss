@@ -1,0 +1,34 @@
+.instructions {
+  margin-bottom: 1em;
+}
+
+.panel-states {
+  margin-bottom: 16px;
+  padding: 16px;
+  overflow: auto;
+  color: var(--text-color-primary);
+  background-color: var(--card-background-primary);
+}
+
+// Example SCSS stying: None/Default
+ng-kit-accordion {
+  border: 1px solid var(--border-color-primary);
+
+  ng-kit-accordion-panel {
+
+    .header,
+    .body {
+      padding: 16px;
+    }
+
+    .header {
+      font-weight: 600;
+      color: var(--heading-color-primary);
+      background-color: var(--card-header-background-primary);
+    }
+
+    .body {
+      background-color: var(--card-background-primary);
+    }
+  }
+}

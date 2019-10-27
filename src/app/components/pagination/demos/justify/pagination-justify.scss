@@ -1,0 +1,32 @@
+p {
+  margin-bottom: 1em;
+}
+
+ng-kit-pagination {
+  margin-bottom: 1em;
+  position: relative;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+pre {
+  color: var(--text-color-primary);
+  margin: 0;
+}
+
+.justify-content-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.justify-content-center {
+  display: flex;
+  justify-content: center;
+}
+
+.justify-content-end {
+  display: flex;
+  justify-content: flex-end;
+}

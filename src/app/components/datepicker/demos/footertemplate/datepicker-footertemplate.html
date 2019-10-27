@@ -1,0 +1,32 @@
+<p class="instructions">This datepicker uses a footer template which is presented inside datepicker. Today and close buttons used as an example.</p>
+
+<form>
+  <div>
+    <div class="input-group">
+      <input class="form-control" autocomplete="off" placeholder="yyyy-mm-dd"
+        name="dp" [(ngModel)]="model" xmDatepicker [footerTemplate]="footerTemplate" #d="xmDatepicker">
+      <div class="input-group-append">
+        <button class="input-group-append-button" (click)="d.toggle()" type="button">
+          <em class="icon-calendar-blank"></em>
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<ng-template #footerTemplate>
+  <section>
+    <button
+      xm
+      class="ng-kit-sm ng-kit-secondary"
+      (click)="model = today; d.close()">
+      Today
+    </button>
+    <button
+      xm
+      class="ng-kit-sm ng-kit-secondary"
+      (click)="d.close()">
+      Close
+    </button>
+  </section>
+</ng-template>

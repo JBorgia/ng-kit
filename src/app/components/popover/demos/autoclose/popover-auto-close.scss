@@ -1,0 +1,23 @@
+.instructions {
+  margin-bottom: 1em;
+}
+
+section {
+  display: flex;
+
+  >div {
+    margin-right: 0.8em;
+  }
+}
+
+.group-3 {
+  >div {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  button:first-of-type {
+    margin-right: 0.8em;
+    margin-bottom: 0.8em;
+  }
+}

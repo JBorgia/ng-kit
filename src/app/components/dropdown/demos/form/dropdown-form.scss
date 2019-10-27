@@ -1,0 +1,20 @@
+ng-kit-dropdown-menu {
+  background-color: var(--card-background-primary);
+  border: 1px solid var(--border-color-primary);
+
+  .dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 1.5rem;
+    clear: both;
+    font-weight: 400;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+  }
+}
+
+label {
+  font-size: 1.6rem;
+}

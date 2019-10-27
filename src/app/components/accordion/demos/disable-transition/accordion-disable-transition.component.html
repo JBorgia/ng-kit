@@ -1,0 +1,19 @@
+<p class="instructions">The XmAccordionComponent defaults to a CSS animated transition. To disable this set the <code>disableTransition</code> input on the XmAccordionComponent to true.</p>
+<p class="instructions">The typical styling, which follows that of XmCard has been applied to the header and body below.</p>
+
+<!-- Example Code: Begin -->
+<ng-kit-accordion [disableTransition]="true">
+  <ng-kit-accordion-panel *ngFor="let number of [0, 1, 2, 3]">
+    <div
+      class="header"
+      ng-kit-accordion-header>
+      <p>Header #{{number}}</p>
+    </div>
+    <div 
+      class="body"
+      ng-kit-accordion-body>
+      <p>{{bacon[number]}}</p>
+    </div>
+  </ng-kit-accordion-panel>
+</ng-kit-accordion>
+<!-- Example Code: End -->

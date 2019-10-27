@@ -1,0 +1,277 @@
+<!-- Example Default Inputs -->
+
+<div class="example-form-group">
+  <div>
+    <label>Text Input</label>
+    <input
+      class="form-control"
+      type="text"
+      autocomplete="off"
+      placeholder="Text Input"
+      value>
+  </div>
+  <div>
+    <label>Email Input</label>
+    <input
+      class="form-control"
+      type="email"
+      autocomplete="off"
+      placeholder="example@email.com"
+      value>
+  </div>
+  <div>
+    <label>Tel Input</label>
+    <input
+      class="form-control"
+      type="tel"
+      autocomplete="off"
+      placeholder="1-(555)-555-5555"
+      value>
+  </div>
+  <div>
+    <label>Search Input Group</label>
+    <div class="input-group">
+      <input
+        type="search"
+        class="form-control"
+        autocomplete="off"
+        placeholder="Enter Search Keywords">
+      <div class="input-group-append">
+        <button class="input-group-append-button">
+          <em class="icon-magnify"></em>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="field-group">
+      <label for="exampleFormControlTextarea1">Textarea</label>
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="3"></textarea>
+    </div>
+  </div>
+  <div>
+    <label>Select Input</label>
+    <select class="custom-select custom-select-lg">
+      <option
+        selected="true"
+        disabled="disabled">
+        Select Option
+      </option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+  </div>
+  <div>
+    <div class="custom-input-examples">
+      <div class="control-group">
+        <label class="control--label control--checkbox">
+          First checkbox
+          <input
+            type="checkbox"
+            checked="checked">
+          <div class="control__indicator"></div>
+        </label>
+        <label class="control--label control--checkbox">
+          Second checkbox
+          <input type="checkbox">
+          <div class="control__indicator"></div>
+        </label>
+        <label class="control--label control--checkbox">
+          Disabled
+          <input
+            type="checkbox"
+            disabled="disabled">
+          <div class="control__indicator"></div>
+        </label>
+        <label class="control--label control--checkbox">
+          Disabled & checked
+          <input
+            type="checkbox"
+            disabled="disabled"
+            checked="checked">
+          <div class="control__indicator"></div>
+        </label>
+      </div>
+      <div class="control-group">
+        <label class="control--label control--radio">
+          First radio
+          <input
+            type="radio"
+            name="radio"
+            checked="checked">
+          <div class="control__indicator"></div>
+        </label>
+        <label class="control--label control--radio">
+          Second radio
+          <input
+            type="radio"
+            name="radio">
+          <div class="control__indicator"></div>
+        </label>
+        <label class="control--label control--radio">
+          Disabled
+          <input
+            type="radio"
+            name="radio2"
+            disabled="disabled">
+          <div class="control__indicator"></div>
+        </label>
+        <label class="control--label control--radio">
+          Disabled & checked
+          <input
+            type="radio"
+            name="radio2"
+            disabled="disabled"
+            checked="checked">
+          <div class="control__indicator"></div>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Example Template Form Validation -->
+
+<form
+  name="form"
+  class="form-group form-validation"
+  (ngSubmit)="f.form.valid && onTemplateFormSubmit()"
+  #f="ngForm">
+  <div>
+    <label>Text Input Validation (Required)</label>
+    <div class="input-group">      
+      <input
+        class="form-control"
+        type="text"
+        value
+        autocomplete="off"
+        name="Text Input Validation"
+        placeholder="Text Input Validation"
+        [(ngModel)]="model.textInputValidation"
+        #textInputValidation="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && textInputValidation.invalid }"
+        required>
+      </div>
+  </div>
+  <div>
+    <label>Search Input Validation (Required)</label>
+    <div class="input-group">
+      <input
+        type="search"
+        class="form-control"
+        autocomplete="off"
+        placeholder="Enter Search Keywords"
+        value
+        name="Search Input Validation"
+        [(ngModel)]="model.searchInputValidation"
+        #searchInputValidation="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && searchInputValidation.invalid }"
+        required>
+      <div class="input-group-append">
+        <button class="input-group-append-button">
+          <em class="icon-magnify"></em>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <label for="Textarea Validation">Textarea Validation (Required)</label>
+      <textarea
+        class="form-control"
+        rows="3"
+        autocomplete="off"
+        name="Textarea Validation"
+        [(ngModel)]="model.textareaValidation"
+        #textareaValidation="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && textareaValidation.invalid }"
+        required></textarea>
+    </div>
+  </div>
+  <div>
+    <label>Select Input Validation (Required)</label>
+    <select
+      class="custom-select custom-select-lg"
+      name="Select Validation"
+      [(ngModel)]="model.selectValidation"
+      #selectValidation="ngModel"
+      [ngClass]="{ 'is-invalid': f.submitted && selectValidation.invalid }"
+      required>
+      <option
+        [ngValue]="undefined"
+        disabled
+        selected>
+        Select Option
+      </option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+  </div>
+  <div>
+    <button
+      xm
+      type="submit"
+      class="ng-kit-primary ng-kit-md"
+      [disabled]="!f.valid">
+      Submit
+    </button>
+  </div>
+</form>
+
+<!-- Example Reactive Form Validation -->
+
+<form
+  class="form-group form-validation"
+  [formGroup]="reactiveForm"
+  (ngSubmit)="onReactiveSubmit()"
+  novalidate>
+  <div>
+    <label>
+      First Name (Required) (Can Not Start With String: 'http://')
+    </label>
+    <div class="input-group">
+      <input
+        type="text"
+        formControlName="firstName"
+        class="form-control"
+        autocomplete="off"
+        placeholder="First Name"
+        [ngClass]="{ 'is-invalid': reactiveForm.controls['firstName'].errors && (reactiveForm.controls['firstName'].dirty || reactiveForm.controls['firstName'].touched) }">
+      <div class="input-group-append">
+        <button class="input-group-append-button">
+          <ng-container *ngIf="reactiveForm.untouched && reactiveForm.pristine">
+            <em class="icon-dots-horizontal"></em>
+          </ng-container>
+          <ng-container *ngIf="reactiveForm.controls['firstName'].invalid && (reactiveForm.controls['firstName'].dirty || reactiveForm.controls['firstName'].touched)">
+            <em class="icon-close"></em>
+          </ng-container>
+          <ng-container *ngIf="!reactiveForm.controls['firstName'].invalid && (reactiveForm.controls['firstName'].dirty || reactiveForm.controls['firstName'].touched)">
+            <em class="icon-check"></em>
+          </ng-container>
+        </button>
+      </div>
+    </div>
+    <div *ngIf="submitted && reactiveForm.controls['firstName'].invalid">
+      <div *ngIf="reactiveForm.controls['firstName'].errors.required">First Name is required</div>
+    </div>
+    <p>
+      <small>
+        Errors: {{ reactiveForm.controls['firstName'].errors | json}}
+      </small>
+    </p>
+  </div>
+  <div>
+    <button
+      xm
+      type="submit"
+      class="ng-kit-primary ng-kit-md"      
+      [disabled]="!reactiveForm.valid">
+      Submit
+    </button>
+  </div>
+</form>

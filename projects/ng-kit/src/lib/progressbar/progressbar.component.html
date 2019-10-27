@@ -1,0 +1,15 @@
+<div
+  class="progress"
+  [style.height]="height">
+  <div
+    class="progress-bar{{type ? ' bg-' + type : ''}}{{animated ? ' progress-bar-animated' : ''}}{{striped ?
+    ' progress-bar-striped' : ''}}"
+    role="progressbar"
+    [style.width.%]="percentValue"
+    [attr.aria-valuenow]="getValue()"
+    aria-valuemin="0"
+    [attr.aria-valuemax]="max">
+    <span *ngIf="showValue">{{percentValue | number: decimalPlaces}}%</span>
+    <ng-content></ng-content>
+  </div>
+</div>

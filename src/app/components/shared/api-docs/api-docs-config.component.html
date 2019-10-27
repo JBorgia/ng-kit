@@ -1,0 +1,28 @@
+<div class="documentation-content" [class.deprecated]="apiDocs.deprecated">
+  <h3>
+    <a
+      class="title-fragment"
+      [routerLink]=""
+      fragment="{{apiDocs.className}}"
+      fragment
+      title="Anchor link to: {{apiDocs.className}}"></a>
+    <span>
+      {{apiDocs.className}}<span class="text-muted font-weight-light" *ngIf="apiDocs.typeParameter">&lt;{{apiDocs.typeParameter}}&gt;</span>
+    </span>
+  </h3>
+  <app-api-docs-badge type="Configuration" [deprecated]="apiDocs.deprecated"></app-api-docs-badge>
+  <p *ngIf="apiDocs.deprecated">{{ apiDocs.deprecated.description }}</p>
+  <p class="lead" [innerHTML]="apiDocs.description"></p>
+
+  <ng-template [ngIf]="apiDocs.properties && apiDocs.properties.length">
+    <section>
+      <h4>Properties</h4>
+      <p class="description">
+        <ng-template ngFor let-property [ngForOf]="apiDocs.properties">
+          <code>{{ property.name }}</code>&ngsp;
+        </ng-template>
+      </p>
+    </section>
+  </ng-template>
+</div>
+

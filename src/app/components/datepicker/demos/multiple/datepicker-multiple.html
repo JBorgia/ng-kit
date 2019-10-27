@@ -1,0 +1,48 @@
+
+<ng-kit-datepicker
+  [displayMonths]="displayMonths"
+  [navigation]="navigation"
+  [showWeekNumbers]="showWeekNumbers"
+  [outsideDays]="outsideDays">
+</ng-kit-datepicker>
+
+<form>
+  <div>
+    <div class="input-group">
+      <input class="form-control" autocomplete="off" placeholder="yyyy-mm-dd"
+        name="dp" [displayMonths]="displayMonths" [navigation]="navigation" [outsideDays]="outsideDays"
+        [showWeekNumbers]="showWeekNumbers" xmDatepicker #d="xmDatepicker">
+      <div class="input-group-append">
+        <button class="input-group-append-button" (click)="d.toggle()" type="button">
+          <em class="icon-calendar-blank"></em>
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<section>
+  <select class="custom-select" [(ngModel)]="displayMonths">
+    <option [ngValue]="1">One month</option>
+    <option [ngValue]="2">Two months</option>
+    <option [ngValue]="3">Three months</option>
+  </select>
+
+  <select class="custom-select" [(ngModel)]="navigation">
+    <option value="none">Without navigation</option>
+    <option value="select">With select boxes</option>
+    <option value="arrows">Without select boxes</option>
+  </select>
+
+  <select class="custom-select" [(ngModel)]="showWeekNumbers">
+    <option [ngValue]="true">Week numbers</option>
+    <option [ngValue]="false">No week numbers</option>
+  </select>
+
+  <select class="custom-select" [(ngModel)]="outsideDays">
+    <option value="visible">Visible outside days</option>
+    <option value="hidden">Hidden outside days</option>
+    <option value="collapsed">Collapsed outside days</option>
+  </select>
+</section>
+

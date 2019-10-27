@@ -1,0 +1,42 @@
+@import 'mixins';
+
+.example-icon-block {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  height: 100%;
+  background-color: var(--card-background-primary);
+  border: 1px solid var(--border-color-primary);
+
+  >div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1.0;
+
+    &:first-of-type {
+      padding: 10px;
+      min-height: 80px;
+    }
+
+    &:last-of-type {
+      padding: 10px;
+      text-align: center;
+      border-top: 1px solid var(--border-color-primary);
+
+      span {
+        font-size: 1.4rem;
+        color: var(--text-color-primary);
+      }
+    }
+  }
+
+  em {
+    font-size: 50px;
+    color: var(--heading-color-primary);
+
+    @include respond-below(md) {
+      font-size: 35px;
+    }
+  }
+}

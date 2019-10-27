@@ -1,0 +1,22 @@
+.instructions {
+  margin-bottom: 1em;
+}
+
+// Example SCSS stying: None/Default
+ng-kit-card {
+  .button-group {
+    display: flex;
+    margin: 0 -8px;
+
+    >button {
+      margin: 4px 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  article {
+    margin: 16px;
+  }
+}

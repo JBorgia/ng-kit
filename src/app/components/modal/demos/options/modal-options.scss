@@ -1,0 +1,43 @@
+.instructions {
+  margin-bottom: 1em;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-wrap: wrap;
+
+  button {
+    margin: 0 0.8em 0.8em 0;
+  }
+}
+
+.modal-body {
+  padding: 1.2em;
+}
+
+.modal-footer {
+  padding: 0 1.2em 1.2em 1.2em;
+}
+
+.orange-modal .modal-content {
+  background-color: #db9451;
+  color: white;
+}
+
+.dark-modal .close {
+  color: white;
+}
+
+.orange-backdrop {
+  // Important flag necessary :(
+  background: #fdaa5d !important;
+}
+
+.long-content {
+  margin-bottom: 1em;
+}
+
+.modal-long-content-footer {
+  border-top: 1px solid var(--border-color-primary);
+  padding: 1.2em;
+}

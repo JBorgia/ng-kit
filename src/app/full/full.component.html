@@ -1,0 +1,32 @@
+<div
+  id="main-wrapper"
+  [class.full-screen]="isFullScreen">
+  
+  <nav class="navbar" [ngClass]="[showMinisidebar ? 'mini-sidebar' : '']">
+    <div class="navbar-logo">
+      <a [routerLink]="['/']">
+        <app-logo [ngClass]="showMinisidebar ? 'mini-sidebar' : ''"></app-logo>
+      </a>
+    </div>
+    <div class="navbar-collapse">
+      <app-navigation (toggleSidebar)="toggleSidebar()"></app-navigation>
+    </div>
+  </nav>
+
+  <app-nav-sidebar [ngClass]="[showMinisidebar ? 'mini-sidebar' : '']"></app-nav-sidebar>
+
+  <div
+    id="main-container"
+    class="main-container"
+    (scroll)="onWindowScroll($event)"
+    [ngClass]="[showMinisidebar ? 'mini-sidebar' : '']">
+    <router-outlet></router-outlet>
+  </div>
+
+  <ng-kit-notification></ng-kit-notification>
+
+  <div
+    *ngIf="!showMinisidebar"
+    class="sidebar-overlay"
+    (click)="toggleSidebar()"></div>
+</div>

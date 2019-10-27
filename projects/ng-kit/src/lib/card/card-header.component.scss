@@ -1,0 +1,13 @@
+@import "mixins";
+
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border-radius: 0.5rem 0.5rem 0 0;
+  min-height: 60px;
+  border-bottom: 1px solid;
+  border-bottom-color: var(--border-color-primary);
+  color: var(--heading-color-primary);
+  background-color: var(--card-header-background-primary);
+}

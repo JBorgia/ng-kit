@@ -1,0 +1,13 @@
+<ng-kit-accordion-header (click)="toggle(); clicked()">
+  <i
+    class="icon-chevron-left"
+    [ngClass]="{'collapsed': isCollapsed}"></i>
+  <ng-content select="[ng-kit-accordion-header], [xmAccordionHeader]"></ng-content>
+  <ng-content *ngIf="!accordionHeader" select="header"></ng-content>
+</ng-kit-accordion-header>
+<ng-kit-accordion-body
+  #xmAccordionBody
+  [ngClass]="{'collapsed': isCollapsed, 'transition': !transitionDisabled}">
+  <ng-content 
+    select="[ng-kit-accordion-body], [xmAccordionBody]"></ng-content>
+</ng-kit-accordion-body>

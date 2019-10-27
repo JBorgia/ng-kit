@@ -1,0 +1,4 @@
+<div class="badge-container">
+    <div *ngIf="badgeImage" class="badge-image" [style]="badgeImage ? badgeImage : null"></div>
+    <i *ngIf="icon && !badgeImage" [class]="icon"></i>
+</div>

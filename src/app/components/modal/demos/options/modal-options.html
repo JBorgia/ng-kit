@@ -1,0 +1,79 @@
+<p class="instructions">Various options for configuring modal type.</p>
+
+<ng-template #content let-modal>
+
+  <div class="modal-header">
+    <h4 class="modal-title">{{modalTitle}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <i class="icon-close"></i>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+  <div class="modal-footer">
+    <button xm class="ng-kit-md ng-kit-secondary" (click)="modal.close('Close click')">Close this modal</button>
+  </div>
+</ng-template>
+
+<ng-template #longContent let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Modal scrollable content</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <i class="icon-close"></i>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p class="long-content">Sed ut perspiciatis unde omnis iste natus error
+doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque
+porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
+dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
+nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex
+ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea
+voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem
+eum fugiat quo voluptas nulla pariatur?</p>
+    <p class="long-content">Sed ut perspiciatis unde omnis iste natus error
+doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque
+porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
+dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
+nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex
+ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea
+voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem
+eum fugiat quo voluptas nulla pariatur?</p>
+    <p class="long-content">Sed ut perspiciatis unde omnis iste natus error
+doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque
+porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
+dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
+nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex
+ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea
+voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem
+eum fugiat quo voluptas nulla pariatur?</p>
+  </div>
+  <div class="modal-long-content-footer">
+    <button xm class="ng-kit-md ng-kit-secondary" (click)="modal.close('Close click')">Close this modal</button>
+  </div>
+</ng-template>
+
+<div class="modal-buttons">
+  <button xm class="ng-kit-lg ng-kit-primary" (click)="openWindowCustomClass(content); updateModalTitle('Modal with window custom class')">Modal with window custom class</button>
+  <button xm class="ng-kit-lg ng-kit-primary" (click)="openBackDropCustomClass(content); updateModalTitle('Modal with backdrop custom class')">Modal with backdrop custom class</button>
+  <button xm class="ng-kit-lg ng-kit-primary" (click)="openSm(content); updateModalTitle('Small modal')">Small modal</button>
+  <button xm class="ng-kit-lg ng-kit-primary" (click)="openLg(content); updateModalTitle('Large modal')">Large modal</button>
+  <button xm class="ng-kit-lg ng-kit-primary" (click)="openXl(content); updateModalTitle('Extra large modal')">Extra large modal</button>
+  <button xm class="ng-kit-lg ng-kit-primary" (click)="openVerticallyCentered(content); updateModalTitle('Modal vertically centered')">Modal vertically centered</button>
+  <button xm class="ng-kit-lg ng-kit-primary" (click)="openScrollableContent(longContent)">Modal scrollable content</button>
+</div>

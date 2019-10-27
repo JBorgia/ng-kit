@@ -1,0 +1,64 @@
+:host {
+  display: block;
+  margin-bottom: 2em;
+}
+
+h2 {
+  display: inline-block;
+}
+
+.api-selectors {
+  display: inline-block;
+  margin-bottom: 1em;
+  background-color: var(--theme-stage-color-active);
+  padding: 1.2em 1.4em;
+
+  h4 {
+    margin: 0;
+
+    span {
+      font-weight: 500;
+      margin-right: 0.5em;
+    }
+  }
+}
+
+.api-inputs,
+.api-outputs,
+.api-methods {
+  display: block;
+  background-color: var(--theme-stage-color-active);
+  padding: 1.2em 1.4em;
+  margin-bottom: 2em;
+
+  h4 {
+    font-weight: 500;
+    margin-bottom: 0.8em;
+  }
+}
+
+table {
+  width: 100%;
+
+  tr {
+    td {
+      vertical-align: top;
+      border-top: 1px solid var(--border-stage-primary);
+      padding: 0.8em 0 1em 0;
+    }
+
+    &:last-of-type {
+      td {
+        padding: 0.8em 0 0 0;
+      }
+    }
+  }
+}
+
+.label-cell {
+  width: 25%;
+}
+
+.content-cell {
+  width: 75%;
+}

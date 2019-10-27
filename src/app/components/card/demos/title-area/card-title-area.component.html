@@ -1,0 +1,28 @@
+<p class="instructions">If you want to style the entire header area, content can be transcluded using the <code>ng-kit-card-title</code>, <code>xmCardTitle</code>, <code>ng-kit-card-title-area</code>, or <code>xmCardTitleArea</code> directive.</p>
+<p class="instructions">Notice how the blue area in the example takes up the whole height and extends 300px wide. The transcluded content is still verically aligned center and horizontally aligns left.</p>
+<p class="instructions">*NOTE: If an <code>xmCardTitleArea</code> tag is present the root level <i>&#60;header&#62;</i> tag is overridden and will not display. Also, some things like background and text color do still apply to the header area but can be overridden.</p>
+
+<!-- Example Code: Begin -->
+<ng-kit-card>
+  <div ng-kit-card-title-area>
+    <span>Card Title Area</span>
+    <header>Even though I am inside a <i>&#60;header&#62;</i> tag I display because I am nested inside the <i>&#60;div&#62;</i> with the <code>ng-kit-card-title-area</code> directive.</header>
+  </div>
+  <header>I don't show up because I am overridden by the 'div' with the 'ng-kit-card-title-area' directive!</header>
+  <article>
+    <header>...and I display because I sunk in inside the <i>&#60;article&#62;</i> tag that was transcluded into the body!</header>
+    <p>Bacon ipsum dolor amet drumstick short loin flank ham hock tongue bresaola, frankfurter chicken. 
+      Chuck tri-tip swine buffalo pork loin fatback jowl jerky biltong. Ball tip leberkas pastrami frankfurter, 
+      corned beef capicola prosciutto pork chop meatball biltong. Shank burgdoggen alcatra, turducken short 
+      loin bresaola cupim flank shankle t-bone meatball pig. Chicken drumstick swine, flank jerky pastrami 
+      corned beef cow hamburger.
+    </p>
+    <p>Cow turducken flank kielbasa short ribs beef ribs tri-tip capicola cupim. Tongue bacon beef ribs, 
+      frankfurter capicola pancetta ribeye chuck corned beef shoulder ham. Strip steak buffalo frankfurter 
+      alcatra. Buffalo pork loin fatback capicola ribeye. Kielbasa shoulder ground round tri-tip turkey chuck 
+      pancetta pork belly. Pork filet mignon ground round ham, short ribs kielbasa sirloin bresaola tri-tip 
+      fatback swine turkey.
+    </p>
+  </article>
+</ng-kit-card>
+<!-- Example Code: End -->

@@ -1,0 +1,46 @@
+@import "mixins";
+
+.datepicker-placeholder {
+  min-width: min-content;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+
+  input {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.custom-day {
+  text-align: center;
+  width: 4rem;
+  height: 4rem;
+  font-size: 1.6rem;
+  line-height: 4rem;
+  transition: 0.4s background-color ease;
+  color: var(--text-color-primary);
+
+  &.faded {
+    background-color: alpha(var(--theme-color-primary), 0.65) !important;
+  }
+
+  @include respond-below(xs) {
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+  }
+}
+
+.input-group-append-button {
+  em {
+    font-size: 1.6rem !important;
+  }
+}
+
+.custom-day.range,
+.custom-day:hover {
+  color: #ffffff;
+  background-color: var(--theme-color-primary);
+}

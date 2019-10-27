@@ -1,0 +1,32 @@
+<p class="instructions">You can optionally pass in a context when manually triggering a tooltip.</p>
+
+<ng-template #tipContent let-greeting="greeting">{{greeting}}, <b>{{name}}</b>!</ng-template>
+<section>
+  <button
+    xm
+    class="ng-kit-lg ng-kit-primary"
+    [xmTooltip]="tipContent"
+    triggers="manual"
+    #t1="xmTooltip"
+    (click)="toggleWithGreeting(t1, 'Bonjour')">
+    French
+  </button>
+  <button
+    xm
+    class="ng-kit-lg ng-kit-primary"
+    [xmTooltip]="tipContent"
+    triggers="manual"
+    #t2="xmTooltip"
+    (click)="toggleWithGreeting(t2, 'Gutentag')">
+    German
+  </button>
+  <button
+    xm
+    class="ng-kit-lg ng-kit-primary"
+    [xmTooltip]="tipContent"
+    triggers="manual"
+    #t3="xmTooltip"
+    (click)="toggleWithGreeting(t3, 'Hello')">
+    English
+  </button>
+</section>

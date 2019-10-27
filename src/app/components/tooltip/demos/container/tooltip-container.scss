@@ -1,0 +1,19 @@
+@import 'mixins';
+
+.instructions {
+  margin-bottom: 1em;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+
+  >button {
+    margin-right: 0.8em;
+
+    @include respond-below(xs) {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+}

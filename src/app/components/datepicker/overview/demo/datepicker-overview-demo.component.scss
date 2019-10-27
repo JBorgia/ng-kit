@@ -1,0 +1,59 @@
+@import 'mixins';
+
+.vacation-instructions {
+  margin-bottom: 1em;
+}
+
+.custom-day {
+  text-align: center;
+  display: inline-block;
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+}
+
+.disabled:hover {
+  background-color: transparent;
+}
+
+.holiday,
+.holiday.disabled,
+.holiday:hover {
+  color: white;
+  background-color: #dd7d5a;
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+}
+
+.custom-day {
+  text-align: center;
+  text-align: center;
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  transition: 0.4s background-color ease;
+  color: var(--text-color-primary);
+
+  &.faded {
+    background-color: alpha(var(--theme-color-primary), 0.65) !important;
+  }
+
+  @include respond-below(xs) {
+    width: 100%;
+    height: 3rem;
+    line-height: 3rem;
+  }
+}
+
+.custom-day.range {
+  color: #ffffff;
+  background-color: var(--theme-color-primary);
+}
+
+@media (hover: hover) {
+  .custom-day:hover {
+    color: #ffffff;
+    background-color: var(--theme-color-primary);
+  }
+}

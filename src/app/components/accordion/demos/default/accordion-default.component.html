@@ -1,0 +1,15 @@
+<p class="instructions">The XmAccordionComponent contains 1 or more XmAccordionPannelComponents, each consisting of an XmAccordionHeaderComponent and an XmAccordionBodyComponent</p>
+<p class="instructions">
+  The XmAccordionHeaderComponent and XmAccordionBodyComponent are private and not exported. To transclude content to these areas use XmAccordionHeaderDirective and 
+  XmAccordionBodyDirective instead. For more information on each, see their respective examples and API.
+</p>
+<p class="instructions">No styling has been applied to this example. As you can see the XmAccordionComponent is styled minimally to give the user flexibility and control during in implementation.</p>
+
+<!-- Example Code: Begin -->
+<ng-kit-accordion>
+  <ng-kit-accordion-panel *ngFor="let number of [0, 1, 2, 3]">
+    <div ng-kit-accordion-header><p>Header #{{number}}</p></div>
+    <div ng-kit-accordion-body><p>Body #{{number}}</p></div>
+  </ng-kit-accordion-panel>
+</ng-kit-accordion>
+<!-- Example Code: End -->

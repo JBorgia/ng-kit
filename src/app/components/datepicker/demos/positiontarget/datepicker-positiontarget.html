@@ -1,0 +1,28 @@
+<p class="instructions">This datepicker uses a custom position target and placement. 
+Popup is positioned according to the toggle button instead of input which is default.</p>
+
+<form>
+  <div>
+    <div class="input-group">
+      <input class="form-control" autocomplete="off" placeholder="yyyy-mm-dd"
+        name="dp" [(ngModel)]="model" xmDatepicker #d="xmDatepicker" [placement]="placement">
+      <div class="input-group-append">
+        <button class="input-group-append-button" (click)="d.toggle()" type="button">
+          <em class="icon-calendar-blank"></em>
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div>
+  <div>
+    <label for="placement">Placement</label>
+    <select id="placement" class="custom-select form-control" [(ngModel)]="placement">
+      <option value="top">Top</option>
+      <option value="bottom">Bottom</option>
+      <option value="left">Left</option>
+      <option value="right">Right</option>
+    </select>
+  </div>
+</div>

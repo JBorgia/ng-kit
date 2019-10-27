@@ -1,0 +1,13 @@
+.instructions {
+  margin-bottom: 1em;
+}
+
+// Example SCSS stying:
+ng-kit-card {
+  article {
+    margin: 16px;
+    border-radius: 50%;
+    overflow: hidden;
+    color: var(--theme-color-primary);
+  }
+}

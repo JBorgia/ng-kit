@@ -1,0 +1,37 @@
+<ng-kit-carousel #carousel interval="1000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
+  <ng-template xmSlide *ngFor="let img of images; index as i">
+    <div class="carousel-caption">
+      <h3>My slide {{i + 1}} title</h3>
+    </div>
+    <a href="https://www.google.fr/?q=Number+{{i+1}}" target="_blank" rel="nofollow noopener noreferrer">
+      <div class="picsum-img-wrapper">
+        <img [src]="img" alt="My image {{i + 1}} description">
+      </div>
+    </a>
+  </ng-template>
+</ng-kit-carousel>
+
+<div class="checkbox-group">
+  <label class="control--label control--checkbox" for="pauseOnHover">
+    Pause on hover
+    <input type="checkbox" id="pauseOnHover" [(ngModel)]="pauseOnHover">
+    <div class="control__indicator"></div>
+  </label>
+  <label class="control--label control--checkbox" for="unpauseOnArrow">
+    Unpause when clicking on arrows
+    <input type="checkbox" id="unpauseOnArrow" [(ngModel)]="unpauseOnArrow">
+    <div class="control__indicator"></div>
+  </label>
+  <label class="control--label control--checkbox" for="pauseOnIndicator">
+    Pause when clicking on navigation indicator
+    <input type="checkbox" id="pauseOnIndicator" [(ngModel)]="pauseOnIndicator">
+    <div class="control__indicator"></div>
+  </label>
+</div>
+
+<button
+  xm
+  class="ng-kit-lg ng-kit-primary"
+  (click)="togglePaused()">
+  {{paused ? 'Cycle' : 'Pause' }}
+</button>

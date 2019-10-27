@@ -1,0 +1,18 @@
+.input-group {
+  width: 300px;
+}
+
+form {
+  margin-top: 1em;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+
+  select {
+    width: 300px;
+    margin-top: 0.8em;
+    margin-right: 0.8em;
+  }
+}

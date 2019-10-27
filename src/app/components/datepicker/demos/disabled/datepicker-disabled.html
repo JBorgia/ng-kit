@@ -1,0 +1,12 @@
+<p class="instructions">Disabled datepicker</p>
+
+<section>
+  <ng-kit-datepicker [(ngModel)]="model" [disabled]="disabled"></ng-kit-datepicker>
+
+  <button
+    xm
+    class="ng-kit-lg ng-kit-{{disabled ? 'danger' : 'success'}}"
+    (click)="disabled = !disabled">
+    {{ disabled ? "disabled" : "enabled"}}
+  </button>
+</section>

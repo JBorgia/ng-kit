@@ -1,0 +1,7 @@
+<p class="instructions">Theme colors used through out the application.</p>
+<p class="instructions">The active theme is &nbsp;<code>{currentTheme, select, Light Theme {Light Theme} 
+Dark Theme {Dark Theme}}.</code></p>
+
+<div class="flex-row">
+  <app-swatch *ngFor="let swatch of colorSwatches | keyvalue" [swatch]="swatch"></app-swatch>
+</div>

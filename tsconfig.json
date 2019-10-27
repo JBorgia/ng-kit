@@ -1,0 +1,60 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2019",
+    "types": [
+      "node"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "xm": [
+        "dist/xm"
+      ],
+      "xm/*": [
+        "dist/xm/*"
+      ],
+      "ng-kit": [
+        "dist/ng-kit"
+      ],
+      "ng-kit/*": [
+        "dist/ng-kit/*"
+      ],
+      "ng-kit": [
+        "projects/ng-kit/src/public_api"
+      ],
+      "@models/*": [
+        "src/app/models/*"
+      ],
+      "@services/*": [
+        "src/app/services/*"
+      ],
+      "@shared/*": [
+        "src/app/shared/*"
+      ],
+      "@directives/*": [
+        "src/app/directives/*"
+      ],
+      "@visualizations/*": [
+        "src/app/visualizations/*"
+      ],
+      "@pipes/*": [
+        "src/app/pipes/*"
+      ],
+      "@assets/*": [
+        "assets/*"
+      ]
+    }
+  }
+}

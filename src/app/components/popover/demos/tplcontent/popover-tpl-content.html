@@ -1,0 +1,13 @@
+<p class="instructions">Popovers can contain any arbitrary HTML, Angular bindings and 
+even directives! Simply enclose desired content or title in a <code>&lt;ng-template&gt;
+</code> element.</p>
+
+<ng-template #popContent>Hello, {{name}}!</ng-template>
+<ng-template #popTitle>Fancy content!!</ng-template>
+<button
+  xm
+  class="ng-kit-lg ng-kit-primary"
+  [xmPopover]="popContent"
+  [popoverTitle]="popTitle">
+  I've got markup and bindings in my popover!
+</button>

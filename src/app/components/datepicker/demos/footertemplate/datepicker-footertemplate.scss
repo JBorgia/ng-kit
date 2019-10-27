@@ -1,0 +1,17 @@
+.instructions {
+  margin-bottom: 1em;
+}
+
+.input-group {
+  width: 300px;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.5em;
+
+  >button {
+    margin-right: 0.5em;
+  }
+}
