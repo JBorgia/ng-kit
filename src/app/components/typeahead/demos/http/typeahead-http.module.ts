@@ -2,7 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgKitTypeaheadModule } from 'ng-kit';
+import { NgkTypeaheadModule } from 'ng-kit';
 
 import { TypeaheadHttpComponent } from './typeahead-http';
 
@@ -11,7 +11,7 @@ import { TypeaheadHttpComponent } from './typeahead-http';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    NgKitTypeaheadModule
+    NgkTypeaheadModule
   ],
   declarations: [TypeaheadHttpComponent],
   exports: [TypeaheadHttpComponent],

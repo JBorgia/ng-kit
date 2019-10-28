@@ -14,8 +14,8 @@
   type="text"
   class="form-control"
   [(ngModel)]="model"
-  [xmTypeahead]="search"
+  [ngkTypeahead]="search"
   (focus)="focus$.next($event.target.value)"
   (click)="click$.next($event.target.value)"
-  #instance="xmTypeahead"/>
+  #instance="ngkTypeahead"/>
 <pre>Model: {{ model | json }}</pre>

@@ -1,12 +1,12 @@
 <p class="instructions">Example of the range selection</p>
 
-<ng-kit-datepicker 
+<ngk-datepicker 
   #dp
   (select)="onDateSelection($event)"
   [displayMonths]="2"
   [dayTemplate]="t"
   outsideDays="hidden">
-</ng-kit-datepicker>
+</ngk-datepicker>
 
 <ng-template #t let-date let-focused="focused">
   <span class="custom-day"

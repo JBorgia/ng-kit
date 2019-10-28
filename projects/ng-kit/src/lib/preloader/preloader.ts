@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'ng-kit-preloader',
+  selector: 'ngk-preloader',
   templateUrl: './preloader.component.html',
   styleUrls: ['./preloader.component.scss']
 })
-export class NgKitPreloaderComponent implements OnInit {
+export class NgkPreloaderComponent implements OnInit {
   @Input() isError: boolean;
   @Input() timeoutMillis: number | null = 115000;
   @Input() errorMessage: string = 'Something Went Wrong';

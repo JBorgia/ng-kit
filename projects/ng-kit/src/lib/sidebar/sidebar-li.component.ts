@@ -1,14 +1,14 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-import { NgKitMenuItem } from './sidebar';
+import { NgkMenuItem } from './sidebar';
 
 @Component({
-  selector: 'li[ng-kit-sidebar]',
+  selector: 'li[ngk-sidebar]',
   templateUrl: './sidebar-li.component.html',
   styleUrls: ['./sidebar-li.component.scss'],
 })
-export class NgKitLiComponent implements OnInit {
-  @Input() menuItem: NgKitMenuItem;
+export class NgkLiComponent implements OnInit {
+  @Input() menuItem: NgkMenuItem;
   @Input() selectedItem: string;
   @Input() itemIndex;
   @Output() itemSelected = new EventEmitter<any>();
@@ -23,11 +23,11 @@ export class NgKitLiComponent implements OnInit {
     this.setColor(this.menuItem.color);
   }
 
-  emitItemClicked(menuItem: NgKitMenuItem) {
+  emitItemClicked(menuItem: NgkMenuItem) {
     this.itemSelected.emit(menuItem);
   }
 
-  emitSubItemClicked(index, subMenuItem: NgKitMenuItem) {
+  emitSubItemClicked(index, subMenuItem: NgkMenuItem) {
     this.subItemSelected.emit({
       index,
       ...subMenuItem

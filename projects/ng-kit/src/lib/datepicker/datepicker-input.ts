@@ -26,25 +26,25 @@ import { Subject } from 'rxjs';
 import { autoClose } from '../util/autoclose';
 import { focusTrap } from '../util/focus-trap';
 import { PlacementArray, positionElements } from '../util/positioning';
-import { NgKitDateAdapter } from './adapters/date-adapter';
-import { NgKitCalendar } from './calendar';
-import { NgKitDate } from './date';
-import { NgKitDateParserFormatter } from './date-parser-formatter';
-import { NgKitDateStruct } from './date-struct';
-import { NgKitDatepickerComponent, NgKitDatepickerNavigateEvent } from './datepicker';
+import { NgkDateAdapter } from './adapters/date-adapter';
+import { NgkCalendar } from './calendar';
+import { NgkDate } from './date';
+import { NgkDateParserFormatter } from './date-parser-formatter';
+import { NgkDateStruct } from './date-struct';
+import { NgkDatepickerComponent, NgkDatepickerNavigateEvent } from './datepicker';
 import { DayTemplateContext } from './datepicker-day-template-context';
-import { NgKitDatepickerService } from './datepicker-service';
+import { NgkDatepickerService } from './datepicker-service';
 
 
 const XM_DATEPICKER_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => NgKitInputDatepickerDirective),
+  useExisting: forwardRef(() => NgkInputDatepickerDirective),
   multi: true
 };
 
 const XM_DATEPICKER_VALIDATOR = {
   provide: NG_VALIDATORS,
-  useExisting: forwardRef(() => NgKitInputDatepickerDirective),
+  useExisting: forwardRef(() => NgkInputDatepickerDirective),
   multi: true
 };
 
@@ -55,15 +55,15 @@ const XM_DATEPICKER_VALIDATOR = {
  * Manages interaction with the input field itself, does value formatting and provides forms integration.
  */
 @Directive({
-  selector: 'input[xmDatepicker]',
-  exportAs: 'xmDatepicker',
-  providers: [XM_DATEPICKER_VALUE_ACCESSOR, XM_DATEPICKER_VALIDATOR, NgKitDatepickerService]
+  selector: 'input[ngkDatepicker]',
+  exportAs: 'ngkDatepicker',
+  providers: [XM_DATEPICKER_VALUE_ACCESSOR, XM_DATEPICKER_VALIDATOR, NgkDatepickerService]
 })
-export class NgKitInputDatepickerDirective implements OnChanges,
+export class NgkInputDatepickerDirective implements OnChanges,
   OnDestroy, ControlValueAccessor, Validator {
   private _closed$ = new Subject();
-  private _cRef: ComponentRef<NgKitDatepickerComponent> = null;
-  private _model: NgKitDate;
+  private _cRef: ComponentRef<NgkDatepickerComponent> = null;
+  private _model: NgkDate;
   private _inputValue: string;
   private _zoneSubscription: any;
 
@@ -98,7 +98,7 @@ export class NgKitInputDatepickerDirective implements OnChanges,
    *
    * @since 3.3.0
    */
-  @Input() dayTemplateData: (date: NgKitDate, current: { year: number, month: number }) => any;
+  @Input() dayTemplateData: (date: NgkDate, current: { year: number, month: number }) => any;
 
   /**
    * The number of months to display.
@@ -126,21 +126,21 @@ export class NgKitInputDatepickerDirective implements OnChanges,
    *
    * `current` is the month that is currently displayed by the datepicker.
    */
-  @Input() markDisabled: (date: NgKitDate, current: { year: number, month: number }) => boolean;
+  @Input() markDisabled: (date: NgkDate, current: { year: number, month: number }) => boolean;
 
   /**
    * The earliest date that can be displayed or selected. Also used for form validation.
    *
    * If not provided, 'year' select box will display 10 years before the current month.
    */
-  @Input() minDate: NgKitDateStruct;
+  @Input() minDate: NgkDateStruct;
 
   /**
    * The latest date that can be displayed or selected. Also used for form validation.
    *
    * If not provided, 'year' select box will display 10 years after the current month.
    */
-  @Input() maxDate: NgKitDateStruct;
+  @Input() maxDate: NgkDateStruct;
 
   /**
    * Navigation type.
@@ -214,17 +214,17 @@ export class NgKitInputDatepickerDirective implements OnChanges,
   /**
    * An event emitted when user selects a date using keyboard or mouse.
    *
-   * The payload of the event is currently selected `NgKitDate`.
+   * The payload of the event is currently selected `NgkDate`.
    *
    * @since 1.1.1
    */
-  @Output() dateSelect = new EventEmitter<NgKitDate>();
+  @Output() dateSelect = new EventEmitter<NgkDate>();
 
   /**
    * Event emitted right after the navigation happens and displayed month changes.
    *
    */
-  @Output() navigate = new EventEmitter<NgKitDatepickerNavigateEvent>();
+  @Output() navigate = new EventEmitter<NgkDatepickerNavigateEvent>();
 
   @Input()
   get disabled() {
@@ -247,10 +247,10 @@ export class NgKitInputDatepickerDirective implements OnChanges,
   @HostListener('blur', ['$event']) blur(event) { this.onBlur(); }
 
   constructor(
-    private _parserFormatter: NgKitDateParserFormatter, private _elRef: ElementRef<HTMLInputElement>,
+    private _parserFormatter: NgkDateParserFormatter, private _elRef: ElementRef<HTMLInputElement>,
     private _vcRef: ViewContainerRef, private _renderer: Renderer2, private _cfr: ComponentFactoryResolver,
-    private _ngZone: NgZone, private _service: NgKitDatepickerService, private _calendar: NgKitCalendar,
-    private _dateAdapter: NgKitDateAdapter<any>, @Inject(DOCUMENT) private _document: any,
+    private _ngZone: NgZone, private _service: NgkDatepickerService, private _calendar: NgkCalendar,
+    private _dateAdapter: NgkDateAdapter<any>, @Inject(DOCUMENT) private _document: any,
     private _changeDetector: ChangeDetectorRef) {
     this._zoneSubscription = _ngZone.onStable.subscribe(() => this._updatePopupPosition());
   }
@@ -270,18 +270,18 @@ export class NgKitInputDatepickerDirective implements OnChanges,
       return null;
     }
 
-    const xmDate = this._fromDateStruct(this._dateAdapter.fromModel(value));
+    const ngkDate = this._fromDateStruct(this._dateAdapter.fromModel(value));
 
     if (!this._calendar.isValid(xmDate)) {
-      return { xmDate: { invalid: c.value } };
+      return { ngkDate: { invalid: c.value } };
     }
 
-    if (this.minDate && xmDate.before(NgKitDate.from(this.minDate))) {
-      return { xmDate: { requiredBefore: this.minDate } };
+    if (this.minDate && ngkDate.before(NgkDate.from(this.minDate))) {
+      return { ngkDate: { requiredBefore: this.minDate } };
     }
 
-    if (this.maxDate && xmDate.after(NgKitDate.from(this.maxDate))) {
-      return { xmDate: { requiredAfter: this.maxDate } };
+    if (this.maxDate && ngkDate.after(NgkDate.from(this.maxDate))) {
+      return { ngkDate: { requiredAfter: this.maxDate } };
     }
   }
 
@@ -313,7 +313,7 @@ export class NgKitInputDatepickerDirective implements OnChanges,
    */
   open() {
     if (!this.isOpen()) {
-      const cf = this._cfr.resolveComponentFactory(NgKitDatepickerComponent);
+      const cf = this._cfr.resolveComponentFactory(NgkDatepickerComponent);
       this._cRef = this._vcRef.createComponent(cf);
 
       this._applyPopupStyling(this._cRef.location.nativeElement);
@@ -397,7 +397,7 @@ export class NgKitInputDatepickerDirective implements OnChanges,
     this._zoneSubscription.unsubscribe();
   }
 
-  private _applyDatepickerInputs(datepickerInstance: NgKitDatepickerComponent): void {
+  private _applyDatepickerInputs(datepickerInstance: NgkDatepickerComponent): void {
     ['dayTemplate', 'dayTemplateData', 'displayMonths', 'firstDayOfWeek', 'footerTemplate', 'markDisabled', 'minDate',
       'maxDate', 'navigation', 'outsideDays', 'showNavigation', 'showWeekdays', 'showWeekNumbers']
       .forEach((optionName: string) => {
@@ -414,7 +414,7 @@ export class NgKitInputDatepickerDirective implements OnChanges,
     this._renderer.addClass(nativeElement, 'show');
   }
 
-  private _subscribeForDatepickerOutputs(datepickerInstance: NgKitDatepickerComponent) {
+  private _subscribeForDatepickerOutputs(datepickerInstance: NgkDatepickerComponent) {
     datepickerInstance.navigate.subscribe(navigateEvent => this.navigate.emit(navigateEvent));
     datepickerInstance.select.subscribe(date => {
       this.dateSelect.emit(date);
@@ -424,7 +424,7 @@ export class NgKitInputDatepickerDirective implements OnChanges,
     });
   }
 
-  private _writeModelValue(model: NgKitDate) {
+  private _writeModelValue(model: NgkDate) {
     const value = this._parserFormatter.format(model);
     this._inputValue = value;
     this._renderer.setProperty(this._elRef.nativeElement, 'value', value);
@@ -434,9 +434,9 @@ export class NgKitInputDatepickerDirective implements OnChanges,
     }
   }
 
-  private _fromDateStruct(date: NgKitDateStruct): NgKitDate {
-    const xmDate = date ? new NgKitDate(date.year, date.month, date.day) : null;
-    return this._calendar.isValid(xmDate) ? xmDate : null;
+  private _fromDateStruct(date: NgkDateStruct): NgkDate {
+    const ngkDate = date ? new NgkDate(date.year, date.month, date.day) : null;
+    return this._calendar.isValid(xmDate) ? ngkDate : null;
   }
 
   private _updatePopupPosition() {
@@ -454,7 +454,7 @@ export class NgKitInputDatepickerDirective implements OnChanges,
     }
 
     if (this.positionTarget && !hostElement) {
-      throw new Error('xmDatepicker could not find element declared in [positionTarget] to position against.');
+      throw new Error('ngkDatepicker could not find element declared in [positionTarget] to position against.');
     }
 
     positionElements(hostElement, this._cRef.location.nativeElement, this.placement, this.container === 'body');

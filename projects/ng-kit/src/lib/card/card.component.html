@@ -1,33 +1,33 @@
-<ng-kit-card-header>
+<ngk-card-header>
   <div class="header-container">
-    <ng-content select="ng-kit-card-badge, [ng-kit-card-badge], [xmCardBadge]"></ng-content>
+    <ng-content select="ngk-card-badge, [ngk-card-badge], [ngkCardBadge]"></ng-content>
     <ng-content select="
-      [ng-kit-card-title],
-      [xmCardTitle],
-      [ng-kit-card-title-area],
-      [xmCardTitleArea]">
+      [ngk-card-title],
+      [ngkCardTitle],
+      [ngk-card-title-area],
+      [ngkCardTitleArea]">
     </ng-content>
     <div *ngIf="!cardTitleArea" class="header-text-container">
       <ng-content select="
         header,
-        [ng-kit-card-header-text],
-        [xmCardHeaderText]">
+        [ngk-card-header-text],
+        [ngkCardHeaderText]">
       </ng-content>
     </div>
   </div>
   <ng-content select="
-    [ng-kit-card-controls-area],
-    [xmCardControlsArea]">
+    [ngk-card-controls-area],
+    [ngkCardControlsArea]">
   </ng-content>
   <div *ngIf="!cardCardControlsArea" class="controls-container">
     <ng-content select="
-      ng-kit-card-controls, 
-      [ng-kit-card-controls], 
-      [xmCardControls]">
+      ngk-card-controls, 
+      [ngk-card-controls], 
+      [ngkCardControls]">
     </ng-content>
   </div>
-</ng-kit-card-header>
-<ng-content select="[ng-kit-card-body], [xmCardBody]"></ng-content>
-<ng-kit-card-body *ngIf="!cardBody">
+</ngk-card-header>
+<ng-content select="[ngk-card-body], [ngkCardBody]"></ng-content>
+<ngk-card-body *ngIf="!cardBody">
   <ng-content></ng-content>
-</ng-kit-card-body>
+</ngk-card-body>

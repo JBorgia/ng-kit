@@ -1,9 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-import { NgKitCarouselComponent, NgKitSlideEvent, NgKitSlideEventSource } from 'ng-kit';
+import { NgkCarouselComponent, NgkSlideEvent, NgkSlideEventSource } from 'ng-kit';
 
 
 @Component({
-  selector: 'ng-kit-carousel-pause',
+  selector: 'ngk-carousel-pause',
   templateUrl: './carousel-pause.html',
   styleUrls: ['./carousel-pause.scss']
 })
@@ -15,7 +15,7 @@ export class CarouselPauseComponent {
   pauseOnIndicator = false;
   pauseOnHover = true;
 
-  @ViewChild('carousel', { static: true }) carousel: NgKitCarouselComponent;
+  @ViewChild('carousel', { static: true }) carousel: NgkCarouselComponent;
 
   togglePaused() {
     if (this.paused) {
@@ -26,12 +26,12 @@ export class CarouselPauseComponent {
     this.paused = !this.paused;
   }
 
-  onSlide(slideEvent: NgKitSlideEvent) {
+  onSlide(slideEvent: NgkSlideEvent) {
     if (this.unpauseOnArrow && slideEvent.paused &&
-      (slideEvent.source === NgKitSlideEventSource.ARROW_LEFT || slideEvent.source === NgKitSlideEventSource.ARROW_RIGHT)) {
+      (slideEvent.source === NgkSlideEventSource.ARROW_LEFT || slideEvent.source === NgkSlideEventSource.ARROW_RIGHT)) {
       this.togglePaused();
     }
-    if (this.pauseOnIndicator && !slideEvent.paused && slideEvent.source === NgKitSlideEventSource.INDICATOR) {
+    if (this.pauseOnIndicator && !slideEvent.paused && slideEvent.source === NgkSlideEventSource.INDICATOR) {
       this.togglePaused();
     }
   }

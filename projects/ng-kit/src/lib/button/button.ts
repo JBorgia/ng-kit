@@ -6,15 +6,15 @@ import { AfterViewInit, Component, HostBinding, Input, OnInit, Renderer2, ViewCh
  * Allows for tracking analytics on clicks
  */
 @Component({
-  selector: 'button[xm]',
+  selector: 'button[ngk]',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss']
 })
-export class NgKitButtonComponent implements OnInit, AfterViewInit {
+export class NgkButtonComponent implements OnInit, AfterViewInit {
   @ViewChild('contentWrapper', { static: true }) contentWrapper;
 
   @HostBinding('attr.role') role: string;
-  @HostBinding('class.ng-kit-icon') xmIcon: boolean;
+  @HostBinding('class.ngk-icon') ngkIcon: boolean;
 
   /**
    * The type of icon to display inside the button.

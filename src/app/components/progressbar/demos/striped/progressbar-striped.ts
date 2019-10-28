@@ -4,10 +4,10 @@ import { Component } from '@angular/core';
   selector: 'app-progressbar-striped',
   templateUrl: './progressbar-striped.html',
   styles: [`
-    ng-kit-progressbar {
+    ngk-progressbar {
       margin-bottom: 1em;
     }
-    ng-kit-progressbar:last-of-type {
+    ngk-progressbar:last-of-type {
       margin-bottom: 0;
     }
   `]

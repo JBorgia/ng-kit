@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 
-import { NgKitTooltipDirective, NgKitTooltipWindowComponent } from './tooltip';
+import { NgkTooltipDirective, NgkTooltipWindowComponent } from './tooltip';
 
-export { NgKitTooltipConfig, NgKitTooltipDirective } from './tooltip';
+export { NgkTooltipConfig, NgkTooltipDirective } from './tooltip';
 export { Placement } from '../util/positioning';
 
 @NgModule({
   declarations: [
-    NgKitTooltipDirective,
-    NgKitTooltipWindowComponent
+    NgkTooltipDirective,
+    NgkTooltipWindowComponent
   ],
   exports: [
-    NgKitTooltipDirective
+    NgkTooltipDirective
   ],
   entryComponents: [
-    NgKitTooltipWindowComponent
+    NgkTooltipWindowComponent
   ],
 })
-export class NgKitTooltipModule { }
+export class NgkTooltipModule { }

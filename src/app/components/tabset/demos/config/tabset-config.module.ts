@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgKitTabsetModule } from 'ng-kit';
+import { NgkTabsetModule } from 'ng-kit';
 
 import { TabsetConfigComponent } from './tabset-config';
 
 @NgModule({
-  imports: [BrowserModule, NgKitTabsetModule],
+  imports: [BrowserModule, NgkTabsetModule],
   declarations: [TabsetConfigComponent],
   exports: [TabsetConfigComponent],
   bootstrap: [TabsetConfigComponent]

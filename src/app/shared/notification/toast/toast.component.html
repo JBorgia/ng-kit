@@ -39,10 +39,10 @@
       *ngIf="toast.body">
       {{toast.body | truncate : toast.config.bodyMaxLength}}
     </div>
-    <ng-kit-notification-prompt
+    <ngk-notification-prompt
       *ngIf="toast.config.type === state.promptType"
       [toast]="toast">
-    </ng-kit-notification-prompt>
+    </ngk-notification-prompt>
     <div
       *ngIf="!toast.config.icon; else elseBlock"
       [ngClass]="['notification-icon', (toast.config.iconClass || 'notification-icon--' + toast.config.type)]"></div>
@@ -57,7 +57,7 @@
       class="notificationToast__inner"
       [innerHTML]="toast.config.html"></div>
   </ng-template>
-  <ng-kit-notification-button
+  <ngk-notification-button
     *ngIf="toast.config.buttons"
-    [toast]="toast"></ng-kit-notification-button>
+    [toast]="toast"></ngk-notification-button>
 </div>

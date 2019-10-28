@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 
-export class NgKitMenuItem {
+export class NgkMenuItem {
   constructor(
     position: number,
     title: string,
@@ -18,7 +18,7 @@ export class NgKitMenuItem {
     },
     tooltip?: string,
     object?: Object,
-    subMenuItems?: NgKitMenuItem[],
+    subMenuItems?: NgkMenuItem[],
   ) {
     this.position = position;
     this.title = title;
@@ -47,17 +47,17 @@ export class NgKitMenuItem {
   };
   tooltip?: string;
   object?: Object;
-  subMenuItems?: NgKitMenuItem[];
+  subMenuItems?: NgkMenuItem[];
 }
 
 @Component({
-  selector: 'ng-kit-sidebar',
+  selector: 'ngk-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class NgKitSidebarComponent implements OnInit {
-  _menuItems: NgKitMenuItem[];
+export class NgkSidebarComponent implements OnInit {
+  _menuItems: NgkMenuItem[];
   @Input() position: 'left' | 'right' = 'left';
   @Input() showMinisidebar: boolean;
   selectedItem = '';
@@ -68,7 +68,7 @@ export class NgKitSidebarComponent implements OnInit {
   @Output() subItemSelected = new EventEmitter<any>();
 
   // menuItems are sorted by postion and set.
-  @Input() set menuItems(value: NgKitMenuItem[]) {
+  @Input() set menuItems(value: NgkMenuItem[]) {
     this._menuItems = value.sort((a, b) => a.position - b.position).map(menuItem =>
       ({
         ...menuItem,
@@ -119,7 +119,7 @@ export class NgKitSidebarComponent implements OnInit {
     }
   }
 
-  appendSidebarItemByTitle(newItem: NgKitMenuItem, parentMenuItemTitle?) {
+  appendSidebarItemByTitle(newItem: NgkMenuItem, parentMenuItemTitle?) {
     if (parentMenuItemTitle) {
       const parentIndex = this._menuItems.findIndex(menuItem => menuItem.title === parentMenuItemTitle);
       this._menuItems[parentIndex].subMenuItems.splice(newItem.position, 0, { ...newItem });

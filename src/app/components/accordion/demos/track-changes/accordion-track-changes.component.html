@@ -1,21 +1,21 @@
-<p class="instructions">The <code>clickChanges</code> output on the NgKitAccordionComponent emits updates on click events.</p>
-<p class="instructions">The typical styling, which follows that of NgKitCardComponent has been applied to the header and body below.</p>
+<p class="instructions">The <code>clickChanges</code> output on the NgkAccordionComponent emits updates on click events.</p>
+<p class="instructions">The typical styling, which follows that of NgkCardComponent has been applied to the header and body below.</p>
 <p>Pannel States:</p>
 <div class="panel-states">{{panelStates}}</div>
 
 <!-- Example Code: Begin -->
-<ng-kit-accordion (clickChanges)="onChanges($event)">
-  <ng-kit-accordion-panel *ngFor="let number of [0, 1, 2, 3]">
+<ngk-accordion (clickChanges)="onChanges($event)">
+  <ngk-accordion-panel *ngFor="let number of [0, 1, 2, 3]">
     <div
       class="header"
-      ng-kit-accordion-header>
+      ngk-accordion-header>
       <p>Header #{{number}}</p>
     </div>
     <div 
       class="body"
-      ng-kit-accordion-body>
+      ngk-accordion-body>
       <p>{{bacon[number]}}</p>
     </div>
-  </ng-kit-accordion-panel>
-</ng-kit-accordion>
+  </ngk-accordion-panel>
+</ngk-accordion>
 <!-- Example Code: End -->

@@ -5,7 +5,7 @@ Popup is positioned according to the toggle button instead of input which is def
   <div>
     <div class="input-group">
       <input class="form-control" autocomplete="off" placeholder="yyyy-mm-dd"
-        name="dp" [(ngModel)]="model" xmDatepicker #d="xmDatepicker" [placement]="placement">
+        name="dp" [(ngModel)]="model" ngkDatepicker #d="ngkDatepicker" [placement]="placement">
       <div class="input-group-append">
         <button class="input-group-append-button" (click)="d.toggle()" type="button">
           <em class="icon-calendar-blank"></em>

@@ -13,7 +13,7 @@
   *ngIf="menuItem.subMenuItems"
   [ngClass]="{'in': selectedItem === menuItem.title}">
   <li
-    ng-kit-sidebar-sub
+    ngk-sidebar-sub
     *ngFor="let submenuItem of menuItem.subMenuItems; let i = index"
     [menuItem]="submenuItem"
     [ngClass]="{'active': selectedItem === submenuItem.title, 'collapsed-item': showMinisidebar}"

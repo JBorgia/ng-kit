@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgKitMenuItem, NgKitSidebarComponent } from 'ng-kit';
+import { NgkMenuItem, NgkSidebarComponent } from 'ng-kit';
 import { Subject, Subscription } from 'rxjs';
 
 import { NavSidebarService } from './nav-sidebar.service';
@@ -12,7 +12,7 @@ import { NavSidebarService } from './nav-sidebar.service';
   styleUrls: ['./nav-sidebar.component.scss']
 })
 export class NavSidebarComponent implements OnInit, OnDestroy {
-  @ViewChild(NgKitSidebarComponent, { static: true }) xmSidebar: NgKitSidebarComponent;
+  @ViewChild(NgkSidebarComponent, { static: true }) ngkSidebar: NgkSidebarComponent;
   showMinisidebar$ = new Subject<boolean>();
   subs: Subscription[] = [];
   mainContainer: HTMLElement;
@@ -33,7 +33,7 @@ export class NavSidebarComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.subs.push(this.navSidebarService.onMenuItemUpdate$.subscribe(itemOldTitleParent => {
-      const item: NgKitMenuItem = itemOldTitleParent.item; // the item data
+      const item: NgkMenuItem = itemOldTitleParent.item; // the item data
       const title: string = itemOldTitleParent.title; // the current reference title to update
       const parentTitle: string = itemOldTitleParent.parentTitle; // the parent title within which the title to update sits.
 

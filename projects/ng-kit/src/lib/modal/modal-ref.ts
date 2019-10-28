@@ -1,8 +1,8 @@
 import { ComponentRef } from '@angular/core';
 
 import { ContentRef } from '../util/popup';
-import { NgKitModalBackdropComponent } from './modal-backdrop.component';
-import { NgKitModalWindowComponent } from './modal-window.component';
+import { NgkModalBackdropComponent } from './modal-backdrop.component';
+import { NgkModalWindowComponent } from './modal-window.component';
 
 /**
  * A reference to the currently opened (active) modal.
@@ -10,26 +10,26 @@ import { NgKitModalWindowComponent } from './modal-window.component';
  * Instances of this class can be injected into your component passed as modal content.
  * So you can `.close()` or `.dismiss()` the modal window from your component.
  */
-export class NgKitActiveModal {
+export class NgkActiveModal {
   /**
    * Closes the modal with an optional `result` value.
    *
-   * The `NgKitMobalRef.result` promise will be resolved with the provided value.
+   * The `NgkMobalRef.result` promise will be resolved with the provided value.
    */
   close(result?: any): void { }
 
   /**
    * Dismisses the modal with an optional `reason` value.
    *
-   * The `NgKitModalRef.result` promise will be rejected with the provided value.
+   * The `NgkModalRef.result` promise will be rejected with the provided value.
    */
   dismiss(reason?: any): void { }
 }
 
 /**
- * A reference to the newly opened modal returned by the `NgKitModal.open()` method.
+ * A reference to the newly opened modal returned by the `NgkModal.open()` method.
  */
-export class NgKitModalRef {
+export class NgkModalRef {
   private _resolve: (result?: any) => void;
   private _reject: (reason?: any) => void;
 
@@ -50,8 +50,8 @@ export class NgKitModalRef {
   result: Promise<any>;
 
   constructor(
-    private _windowCmptRef: ComponentRef<NgKitModalWindowComponent>, private _contentRef: ContentRef,
-    private _backdropCmptRef?: ComponentRef<NgKitModalBackdropComponent>, private _beforeDismiss?: Function) {
+    private _windowCmptRef: ComponentRef<NgkModalWindowComponent>, private _contentRef: ContentRef,
+    private _backdropCmptRef?: ComponentRef<NgkModalBackdropComponent>, private _beforeDismiss?: Function) {
     _windowCmptRef.instance.dismissEvent.subscribe((reason: any) => { this.dismiss(reason); });
 
     this.result = new Promise((resolve, reject) => {
@@ -64,7 +64,7 @@ export class NgKitModalRef {
   /**
    * Closes the modal with an optional `result` value.
    *
-   * The `NgKitMobalRef.result` promise will be resolved with the provided value.
+   * The `NgkMobalRef.result` promise will be resolved with the provided value.
    */
   close(result?: any): void {
     if (this._windowCmptRef) {
@@ -81,7 +81,7 @@ export class NgKitModalRef {
   /**
    * Dismisses the modal with an optional `reason` value.
    *
-   * The `NgKitModalRef.result` promise will be rejected with the provided value.
+   * The `NgkModalRef.result` promise will be rejected with the provided value.
    */
   dismiss(reason?: any): void {
     if (this._windowCmptRef) {

@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NgKitDirectivesModule } from '@directives/directives.module';
-import { NgKitButtonModule } from 'ng-kit';
+import { NgkDirectivesModule } from '@directives/directives.module';
+import { NgkButtonModule } from 'ng-kit';
 
 import { NotFoundComponent } from './not-found.component';
 
@@ -31,8 +31,8 @@ export const ROUTES: Routes = [{
 @NgModule({
   imports: [
     CommonModule,
-    NgKitButtonModule,
-    NgKitDirectivesModule,
+    NgkButtonModule,
+    NgkDirectivesModule,
     RouterModule.forChild(ROUTES),
   ],
   declarations: [NotFoundComponent]

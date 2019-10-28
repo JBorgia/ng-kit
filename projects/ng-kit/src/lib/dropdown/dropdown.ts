@@ -1,25 +1,25 @@
 import { DOCUMENT } from '@angular/common';
 import {
-  AfterContentInit,
-  ChangeDetectorRef,
-  Component,
-  ContentChild,
-  ContentChildren,
-  Directive,
-  ElementRef,
-  EventEmitter,
-  forwardRef,
-  HostBinding,
-  Inject,
-  Injectable,
-  Input,
-  NgZone,
-  OnChanges,
-  OnDestroy,
-  Output,
-  QueryList,
-  Renderer2,
-  SimpleChanges,
+    AfterContentInit,
+    ChangeDetectorRef,
+    Component,
+    ContentChild,
+    ContentChildren,
+    Directive,
+    ElementRef,
+    EventEmitter,
+    forwardRef,
+    HostBinding,
+    Inject,
+    Injectable,
+    Input,
+    NgZone,
+    OnChanges,
+    OnDestroy,
+    Output,
+    QueryList,
+    Renderer2,
+    SimpleChanges,
 } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
@@ -29,12 +29,12 @@ import { Key } from '../util/key';
 import { Placement, PlacementArray, positionElements } from '../util/positioning';
 
 /**
- * Configuration service for the NgKitDropdown directive.
+ * Configuration service for the NgkDropdown directive.
  * You can inject this service, typically in your root component, and customize the values of its properties in
  * order to provide default values for all the dropdowns used in the application.
  */
 @Injectable({ providedIn: 'root' })
-export class NgKitDropdownConfig {
+export class NgkDropdownConfig {
   autoClose: boolean | 'outside' | 'inside' = true;
   placement: PlacementArray = ['bottom-left', 'bottom-right', 'top-left', 'top-right'];
   container: null | 'body';
@@ -47,9 +47,9 @@ export class NgKitDropdownConfig {
  */
 @Directive({
   /* tslint:disable-next-line:directive-selector */
-  selector: '[xmDropdownItem]',
+  selector: '[ngkDropdownItem]',
 })
-export class NgKitDropdownItemDirective {
+export class NgkDropdownItemDirective {
   private _disabled = false;
 
   @HostBinding('class.dropdown-item') dropdownItem = true;
@@ -69,8 +69,8 @@ export class NgKitDropdownItemDirective {
  * A component that wraps dropdown menu content and dropdown items.
  */
 @Component({
-  selector: 'ng-kit-dropdown-menu',
-  exportAs: 'xmDropdownMenu',
+  selector: 'ngk-dropdown-menu',
+  exportAs: 'ngkDropdownMenu',
   templateUrl: './dropdown-menu.component.html',
   styleUrls: ['./dropdown-menu.component.scss'],
   host: {
@@ -85,18 +85,18 @@ export class NgKitDropdownItemDirective {
     '(keydown.Space)': 'dropdown.onKeyDown($event)'
   }
 })
-export class NgKitDropdownMenuComponent {
+export class NgkDropdownMenuComponent {
   placement: Placement = 'bottom';
   isOpen = false;
 
-  @ContentChildren(NgKitDropdownItemDirective) menuItems: QueryList<NgKitDropdownItemDirective>;
+  @ContentChildren(NgkDropdownItemDirective) menuItems: QueryList<NgkDropdownItemDirective>;
 
-  constructor(@Inject(forwardRef(() => NgKitDropdownComponent)) public dropdown) { }
+  constructor(@Inject(forwardRef(() => NgkDropdownComponent)) public dropdown) { }
 }
 
 /**
  * Marks an element to which dropdown menu will be anchored. This is a simple version
- * of the NgKitDropdownToggle directive. It plays the same role as NgKitDropdownToggle but
+ * of the NgkDropdownToggle directive. It plays the same role as NgkDropdownToggle but
  * doesn't listen to click events to toggle dropdown menu thus enabling support for
  * events other than click.
  *
@@ -104,17 +104,17 @@ export class NgKitDropdownMenuComponent {
  */
 @Directive({
   /* tslint:disable-next-line:directive-selector */
-  selector: '[xmDropdownAnchor]',
+  selector: '[ngkDropdownAnchor]',
   host: {
     'class': 'dropdown-toggle',
     'aria-haspopup': 'true',
     '[attr.aria-expanded]': 'dropdown.isOpen()'
   }
 })
-export class NgKitDropdownAnchorDirective {
+export class NgkDropdownAnchorDirective {
   anchorEl;
 
-  constructor(@Inject(forwardRef(() => NgKitDropdownComponent)) public dropdown, private _elementRef: ElementRef<HTMLElement>) {
+  constructor(@Inject(forwardRef(() => NgkDropdownComponent)) public dropdown, private _elementRef: ElementRef<HTMLElement>) {
     this.anchorEl = _elementRef.nativeElement;
   }
 
@@ -122,12 +122,12 @@ export class NgKitDropdownAnchorDirective {
 }
 
 /**
- * Allows the dropdown to be toggled via click. This directive is optional: you can use NgKitDropdownAnchor as an
+ * Allows the dropdown to be toggled via click. This directive is optional: you can use NgkDropdownAnchor as an
  * alternative.
  */
 @Directive({
   /* tslint:disable-next-line:directive-selector */
-  selector: '[xmDropdownToggle]',
+  selector: '[ngkDropdownToggle]',
   host: {
     'class': 'dropdown-toggle',
     'aria-haspopup': 'true',
@@ -138,13 +138,13 @@ export class NgKitDropdownAnchorDirective {
     '(keydown.Home)': 'dropdown.onKeyDown($event)',
     '(keydown.End)': 'dropdown.onKeyDown($event)'
   },
-  providers: [{ provide: NgKitDropdownAnchorDirective, useExisting: forwardRef(() => NgKitDropdownToggleDirective) }]
+  providers: [{ provide: NgkDropdownAnchorDirective, useExisting: forwardRef(() => NgkDropdownToggleDirective) }]
 })
-export class NgKitDropdownToggleDirective extends NgKitDropdownAnchorDirective {
+export class NgkDropdownToggleDirective extends NgkDropdownAnchorDirective {
 
   constructor(
     /* tslint:disable-next-line:no-use-before-declare */
-    @Inject(forwardRef(() => NgKitDropdownComponent)) public dropdown,
+    @Inject(forwardRef(() => NgkDropdownComponent)) public dropdown,
     elementRef: ElementRef<HTMLElement>) {
     super(dropdown, elementRef);
   }
@@ -156,20 +156,20 @@ export class NgKitDropdownToggleDirective extends NgKitDropdownAnchorDirective {
  * Transforms a node into a dropdown.
  */
 @Component({
-  selector: 'ng-kit-dropdown',
-  exportAs: 'xmDropdown',
+  selector: 'ngk-dropdown',
+  exportAs: 'ngkDropdown',
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.scss'],
   host: { '[class.show]': 'isOpen()' }
 })
-export class NgKitDropdownComponent implements OnDestroy, OnChanges, AfterContentInit {
+export class NgkDropdownComponent implements OnDestroy, OnChanges, AfterContentInit {
   private _closed$ = new Subject<void>();
   private _zoneSubscription: Subscription;
   private _bodyContainer: HTMLElement;
 
-  @ContentChild(NgKitDropdownMenuComponent, { static: false }) private _menu: NgKitDropdownMenuComponent;
-  @ContentChild(NgKitDropdownMenuComponent, { read: ElementRef, static: false }) private _menuElement: ElementRef;
-  @ContentChild(NgKitDropdownAnchorDirective, { static: false }) private _anchor: NgKitDropdownAnchorDirective;
+  @ContentChild(NgkDropdownMenuComponent, { static: false }) private _menu: NgkDropdownMenuComponent;
+  @ContentChild(NgkDropdownMenuComponent, { read: ElementRef, static: false }) private _menuElement: ElementRef;
+  @ContentChild(NgkDropdownAnchorDirective, { static: false }) private _anchor: NgkDropdownAnchorDirective;
 
   /**
    * Indicates whether the dropdown should be closed when clicking one of dropdown items or pressing ESC.
@@ -229,7 +229,7 @@ export class NgKitDropdownComponent implements OnDestroy, OnChanges, AfterConten
   @Output() openChange = new EventEmitter<boolean>();
 
   constructor(
-    private _changeDetector: ChangeDetectorRef, config: NgKitDropdownConfig, @Inject(DOCUMENT) private _document: any,
+    private _changeDetector: ChangeDetectorRef, config: NgkDropdownConfig, @Inject(DOCUMENT) private _document: any,
     private _ngZone: NgZone, private _elementRef: ElementRef<HTMLElement>, private _renderer: Renderer2) {
     this.placement = config.placement;
     this.container = config.container;

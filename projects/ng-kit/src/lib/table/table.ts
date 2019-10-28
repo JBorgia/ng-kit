@@ -17,14 +17,14 @@ import {
 import { Subscription } from 'rxjs';
 import { startWith } from 'rxjs/operators';
 
-import { NgKitResizeDirective } from '../directives/resize/resize.directive';
-import { NgKitTableElement } from './table.element';
+import { NgkResizeDirective } from '../directives/resize/resize.directive';
+import { NgkTableElement } from './table.element';
 
 /**
- * A class for setting the widths of columns in NgKitTable. An array of `NgKitColWidth` is passed to the `NgKitTable` 
- * if setting all using the `ColWidths` input and a single `NgKitColWidth` as an input if setting widths on the <i>&#60;th&#62;</i> tags and the `NgKitTableHeaderCellDirective`.
+ * A class for setting the widths of columns in NgkTable. An array of `NgkColWidth` is passed to the `NgkTable` 
+ * if setting all using the `ColWidths` input and a single `NgkColWidth` as an input if setting widths on the <i>&#60;th&#62;</i> tags and the `NgkTableHeaderCellDirective`.
  */
-export class NgKitColWidth {
+export class NgkColWidth {
   grow: number = 0;
   shrink: number = 0;
   basis: 'auto' | string; // must be in px or %
@@ -38,37 +38,37 @@ export class NgKitColWidth {
 
 
 /**
- * NgKitTableHeaderCellDirective can be implemented as a `xm` placed on the <i>&#60;th&#62;</i> tags of a <i>&#60;table&#62;</i>. 
+ * NgkTableHeaderCellDirective can be implemented as a `ngk` placed on the <i>&#60;th&#62;</i> tags of a <i>&#60;table&#62;</i>. 
  * If used on one <i>&#60;th&#62;</i> tag it should be used on all of them.
  */
 @Directive({
-  selector: `th[xm]`,
+  selector: `th[ngk]`,
   host: {
-    class: 'ng-kit-table-header-cell',
+    class: 'ngk-table-header-cell',
   }
 })
-export class NgKitTableHeaderCellDirective {
-  @Input() colWidth: NgKitColWidth;
+export class NgkTableHeaderCellDirective {
+  @Input() colWidth: NgkColWidth;
 }
 
 
 /**
- * `NgKitTableComponent` is a structural directive component on the html <i>&#60;table&#62;</i> tag to handle
+ * `NgkTableComponent` is a structural directive component on the html <i>&#60;table&#62;</i> tag to handle
  * overflow management, horizontal layout, column visibility, and to allow for scrolling on the <i>&#60;tbody&#62;</i> tag.
  * The `addBorder` input can be set to true to add a 1px solid border-theme-colored border to the table. Alternatively, any border values set on the <i>&#60;table&#62;</i> tag
- * itself will be transfered upon instantiation to the wrapper <i>&#60;div&#62;</i> the `NgKitTableComponent` creates around itself.
+ * itself will be transfered upon instantiation to the wrapper <i>&#60;div&#62;</i> the `NgkTableComponent` creates around itself.
  */
 @Component({
-  selector: 'table[xm]',
+  selector: 'table[ngk]',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NgKitTableComponent implements OnInit, AfterViewInit, OnDestroy {
+export class NgkTableComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() overflow: 'auto' | 'scroll' | 'hidden' | 'visible' = 'auto';
   @Input() banded: 'even' | 'odd';
-  @Input() colWidths: NgKitColWidth[];
+  @Input() colWidths: NgkColWidth[];
   @Input() addBorder = false;
   private _colVisibility: boolean[];
   // Controlling visiblity using the colVisiblity[] input only hides the elements. It does not remove them like *ngIf
@@ -81,11 +81,11 @@ export class NgKitTableComponent implements OnInit, AfterViewInit, OnDestroy {
   }
   @Input() horizontal: boolean = false;
 
-  @ContentChildren(NgKitTableHeaderCellDirective) tableHeaderCells: QueryList<NgKitTableHeaderCellDirective>;
+  @ContentChildren(NgkTableHeaderCellDirective) tableHeaderCells: QueryList<NgkTableHeaderCellDirective>;
 
   observer: MutationObserver;
   // programatically implement resize directive on the table's parent element
-  resize: NgKitResizeDirective;
+  resize: NgkResizeDirective;
 
   resizeSub: Subscription;
 
@@ -95,14 +95,14 @@ export class NgKitTableComponent implements OnInit, AfterViewInit, OnDestroy {
   rowCount: number; // number of rows
 
   // ElementRefs to table parts
-  ngTable: NgKitTableElement;
-  ngBody: NgKitTableElement;
-  ngHead: NgKitTableElement;
-  ngHeadRow: NgKitTableElement;
-  ngBodyRows: NgKitTableElement[];
-  ngThs: NgKitTableElement[];
-  ngTds: NgKitTableElement[];
-  ngCells: NgKitTableElement[];
+  ngTable: NgkTableElement;
+  ngBody: NgkTableElement;
+  ngHead: NgkTableElement;
+  ngHeadRow: NgkTableElement;
+  ngBodyRows: NgkTableElement[];
+  ngThs: NgkTableElement[];
+  ngTds: NgkTableElement[];
+  ngCells: NgkTableElement[];
 
   constructor(
     private el: ElementRef,
@@ -131,7 +131,7 @@ export class NgKitTableComponent implements OnInit, AfterViewInit, OnDestroy {
     this.applyFormatting();
 
     // Handle adjusting the padding of the header row in the case of the table being resized. Trigger on init.
-    this.resize = new NgKitResizeDirective(new ElementRef(this.el.nativeElement.parentNode));
+    this.resize = new NgkResizeDirective(new ElementRef(this.el.nativeElement.parentNode));
     this.resize.ngOnInit();
     this.resizeSub = this.resize.resize.pipe(
       startWith(null)
@@ -196,7 +196,7 @@ export class NgKitTableComponent implements OnInit, AfterViewInit, OnDestroy {
     })
   }
 
-  setVisibility(ngCells: NgKitTableElement[]) {
+  setVisibility(ngCells: NgkTableElement[]) {
     if (this._colVisibility) {
       for (let rowNum = 0; rowNum < this.rowCount; rowNum++) {
         let restyled = false;
@@ -229,44 +229,44 @@ export class NgKitTableComponent implements OnInit, AfterViewInit, OnDestroy {
     this.adjustForOverflow(this.ngHeadRow);
   }
 
-  styleTable(table: NgKitTableElement) {
-    table.addClass('ng-kit--table');
+  styleTable(table: NgkTableElement) {
+    table.addClass('ngk--table');
     if (this.horizontal) {
-      table.addClass('ng-kit--table-horizontal');
+      table.addClass('ngk--table-horizontal');
     } else {
-      table.addClass('ng-kit--table-vertical');
+      table.addClass('ngk--table-vertical');
     }
   }
 
-  styleHead(head: NgKitTableElement) {
-    head.addClass('ng-kit--table-head');
+  styleHead(head: NgkTableElement) {
+    head.addClass('ngk--table-head');
   }
 
-  styleBody(body: NgKitTableElement) {
+  styleBody(body: NgkTableElement) {
     if (!this.horizontal) {
       body.setStyle('overflow-y', this.overflow);
     } else {
       body.setStyle('overflow-x', this.overflow);
     }
-    body.addClass('ng-kit--table-body');
+    body.addClass('ngk--table-body');
   }
 
-  styleBodyRows(bodyRows: NgKitTableElement[]) {
+  styleBodyRows(bodyRows: NgkTableElement[]) {
     bodyRows.forEach((bodyRow, idx) => {
-      bodyRow.addClass('ng-kit--table-tr');
+      bodyRow.addClass('ngk--table-tr');
 
       if (
         this.banded &&
         idx % 2 === (this.banded === 'even' ? 1 : 0)
       ) {
-        bodyRow.addClass('ng-kit--table-banded');
+        bodyRow.addClass('ngk--table-banded');
       }
     });
   }
 
-  adjustForOverflow(headRow: NgKitTableElement) {
-    if (!headRow.classList.contains('ng-kit--table-tr')) {
-      headRow.addClass('ng-kit--table-tr');
+  adjustForOverflow(headRow: NgkTableElement) {
+    if (!headRow.classList.contains('ngk--table-tr')) {
+      headRow.addClass('ngk--table-tr');
     }
 
     this.ngTable.removeStyle('min-width');
@@ -286,11 +286,11 @@ export class NgKitTableComponent implements OnInit, AfterViewInit, OnDestroy {
 
   }
 
-  styleCells(cells: NgKitTableElement[]) {
+  styleCells(cells: NgkTableElement[]) {
     if (this.colWidths && this.colWidths.length !== this.colCount) {
       throw new Error(
         `If defining table column widths, a width must be specified for each column.
-      I got ${this.colWidths.length} NgKitColWidths, but have ${this.colCount} columns.`);
+      I got ${this.colWidths.length} NgkColWidths, but have ${this.colCount} columns.`);
     }
 
     for (let rowNum = 0; rowNum < this.rowCount; rowNum++) {
@@ -305,14 +305,14 @@ export class NgKitTableComponent implements OnInit, AfterViewInit, OnDestroy {
         }
 
         if (cells[rowNum * this.colCount + colNum].tagName === 'TH') {
-          cells[rowNum * this.colCount + colNum].addClass('ng-kit--table-th');
+          cells[rowNum * this.colCount + colNum].addClass('ngk--table-th');
         }
 
         if (cells[rowNum * this.colCount + colNum].tagName === 'TD') {
-          cells[rowNum * this.colCount + colNum].addClass('ng-kit--table-td');
+          cells[rowNum * this.colCount + colNum].addClass('ngk--table-td');
         }
 
-        cells[rowNum * this.colCount + colNum].addClass('ng-kit--table-cell');
+        cells[rowNum * this.colCount + colNum].addClass('ngk--table-cell');
       }
     }
   }
@@ -320,25 +320,25 @@ export class NgKitTableComponent implements OnInit, AfterViewInit, OnDestroy {
   captureTable() {
     // capture and excapsulate table parts
     const table = new ElementRef(this.viewContainer.element.nativeElement);
-    this.ngTable = new NgKitTableElement(table, this.renderer, this.cdf);
+    this.ngTable = new NgkTableElement(table, this.renderer, this.cdf);
 
     const tbody = new ElementRef(this.ngTable.el.nativeElement.getElementsByTagName('tbody')[0]);
-    this.ngBody = new NgKitTableElement(tbody, this.renderer, this.cdf);
+    this.ngBody = new NgkTableElement(tbody, this.renderer, this.cdf);
 
     const thead = new ElementRef(this.ngTable.el.nativeElement.getElementsByTagName('thead')[0]);
-    this.ngHead = new NgKitTableElement(thead, this.renderer, this.cdf);
+    this.ngHead = new NgkTableElement(thead, this.renderer, this.cdf);
 
     const headRow = this.ngTable.el.nativeElement.querySelectorAll('thead tr')[0];
-    this.ngHeadRow = new NgKitTableElement(new ElementRef(headRow), this.renderer, this.cdf);
+    this.ngHeadRow = new NgkTableElement(new ElementRef(headRow), this.renderer, this.cdf);
 
     const bodyRows = this.ngTable.el.nativeElement.querySelectorAll('tbody tr');
-    this.ngBodyRows = [...bodyRows].map(bodyRow => new NgKitTableElement(new ElementRef(bodyRow), this.renderer, this.cdf));
+    this.ngBodyRows = [...bodyRows].map(bodyRow => new NgkTableElement(new ElementRef(bodyRow), this.renderer, this.cdf));
 
     const th = this.ngTable.el.nativeElement.querySelectorAll('th');
-    this.ngThs = [...th].map(cell => new NgKitTableElement(new ElementRef(cell), this.renderer, this.cdf));
+    this.ngThs = [...th].map(cell => new NgkTableElement(new ElementRef(cell), this.renderer, this.cdf));
 
     const td = this.ngTable.el.nativeElement.querySelectorAll('td');
-    this.ngTds = [...td].map(cell => new NgKitTableElement(new ElementRef(cell), this.renderer, this.cdf));
+    this.ngTds = [...td].map(cell => new NgkTableElement(new ElementRef(cell), this.renderer, this.cdf));
 
     this.ngCells = [...this.ngThs, ...this.ngTds]
 
@@ -346,7 +346,7 @@ export class NgKitTableComponent implements OnInit, AfterViewInit, OnDestroy {
     this.calcTableProportions();
   }
 
-  captureColumnWidths(tableHeaderCells: QueryList<NgKitTableHeaderCellDirective>) {
+  captureColumnWidths(tableHeaderCells: QueryList<NgkTableHeaderCellDirective>) {
     if (this.tableHeaderCells && this.tableHeaderCells.length) {
       this.colWidths = tableHeaderCells.map(tableHeaderCell => tableHeaderCell.colWidth);
     }

@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgKitButtonModule, NgKitDropdownModule } from 'ng-kit';
+import { NgkButtonModule, NgkDropdownModule } from 'ng-kit';
 
 import { DropdownManualComponent } from './dropdown-manual';
 
 @NgModule({
   imports: [
     BrowserModule,
-    NgKitDropdownModule,
-    NgKitButtonModule
+    NgkDropdownModule,
+    NgkButtonModule
   ],
   declarations: [DropdownManualComponent],
   exports: [DropdownManualComponent],

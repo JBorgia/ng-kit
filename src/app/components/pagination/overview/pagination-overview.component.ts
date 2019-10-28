@@ -25,17 +25,17 @@ export class PaginationOverviewComponent {
   XM_PAGINATION = Snippet({
     lang: 'html',
     code: `
-      <ng-kit-pagination
+      <ngk-pagination
         [(page)]="page"
         [pageSize]="pageSize"
-        [collectionSize]="items.length"></ng-kit-pagination>
+        [collectionSize]="items.length"></ngk-pagination>
     `,
   });
 
   CUSTOM_CSS = Snippet({
     lang: 'css',
     code: `
-      ng-kit-pagination li {
+      ngk-pagination li {
         &:first-child a {
           span {
             display: none;
@@ -51,14 +51,14 @@ export class PaginationOverviewComponent {
   CUSTOM_TPL = Snippet({
     lang: 'html',
     code: `
-      <ng-kit-pagination>
-        <ng-template xmPaginationFirst>First</ng-template>
-        <ng-template xmPaginationLast>Last</ng-template>
-        <ng-template xmPaginationPrevious>Prev</ng-template>
-        <ng-template xmPaginationNext>Next</ng-template>
-        <ng-template xmPaginationEllipsis>...</ng-template>
-        <ng-template xmPaginationNumber let-page>{{ page }}</ng-template>
-      </ng-kit-pagination>
+      <ngk-pagination>
+        <ng-template ngkPaginationFirst>First</ng-template>
+        <ng-template ngkPaginationLast>Last</ng-template>
+        <ng-template ngkPaginationPrevious>Prev</ng-template>
+        <ng-template ngkPaginationNext>Next</ng-template>
+        <ng-template ngkPaginationEllipsis>...</ng-template>
+        <ng-template ngkPaginationNumber let-page>{{ page }}</ng-template>
+      </ngk-pagination>
     `,
   });
 

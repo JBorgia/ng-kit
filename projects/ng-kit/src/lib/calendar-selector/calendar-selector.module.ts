@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { NgKitDatepickerModule } from '../datepicker/datepicker.module';
+import { NgkDatepickerModule } from '../datepicker/datepicker.module';
 import { CalendarSelectorComponent } from './calendar-selector';
 
 @NgModule({
@@ -9,7 +9,7 @@ import { CalendarSelectorComponent } from './calendar-selector';
   exports: [CalendarSelectorComponent],
   imports: [
     CommonModule,
-    NgKitDatepickerModule
+    NgkDatepickerModule
   ]
 })
-export class NgKitCalendarSelectorModule { }
+export class NgkCalendarSelectorModule { }

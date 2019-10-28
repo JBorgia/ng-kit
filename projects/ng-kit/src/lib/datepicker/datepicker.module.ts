@@ -2,40 +2,40 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { NgKitDatepickerComponent } from './datepicker';
-import { NgKitDatepickerDayViewComponent } from './datepicker-day-view';
-import { NgKitInputDatepickerDirective } from './datepicker-input';
-import { NgKitDatepickerMonthViewComponent } from './datepicker-month-view';
-import { NgKitDatepickerNavigationComponent } from './datepicker-navigation';
-import { NgKitDatepickerNavigationSelectComponent } from './datepicker-navigation-select';
+import { NgkDatepickerComponent } from './datepicker';
+import { NgkDatepickerDayViewComponent } from './datepicker-day-view';
+import { NgkInputDatepickerDirective } from './datepicker-input';
+import { NgkDatepickerMonthViewComponent } from './datepicker-month-view';
+import { NgkDatepickerNavigationComponent } from './datepicker-navigation';
+import { NgkDatepickerNavigationSelectComponent } from './datepicker-navigation-select';
 
-export { NgKitDatepickerComponent, NgKitDatepickerNavigateEvent } from './datepicker';
-export { NgKitInputDatepickerDirective } from './datepicker-input';
-export { NgKitCalendar, NgKitPeriod, NgKitCalendarGregorian } from './calendar';
-export { NgKitDatepickerMonthViewComponent } from './datepicker-month-view';
-export { NgKitDatepickerDayViewComponent } from './datepicker-day-view';
-export { NgKitDatepickerNavigationComponent } from './datepicker-navigation';
-export { NgKitDatepickerNavigationSelectComponent } from './datepicker-navigation-select';
-export { NgKitDatepickerConfig } from './datepicker-config';
-export { NgKitDatepickerI18n } from './datepicker-i18n';
-export { NgKitDateStruct } from './date-struct';
-export { NgKitDate } from './date';
-export { NgKitDateAdapter } from './adapters/date-adapter';
-export { NgKitDateNativeAdapter } from './adapters/date-native-adapter';
-export { NgKitDateNativeUTCAdapter } from './adapters/date-native-utc-adapter';
-export { NgKitDateParserFormatter } from './date-parser-formatter';
+export { NgkDatepickerComponent, NgkDatepickerNavigateEvent } from './datepicker';
+export { NgkInputDatepickerDirective } from './datepicker-input';
+export { NgkCalendar, NgkPeriod, NgkCalendarGregorian } from './calendar';
+export { NgkDatepickerMonthViewComponent } from './datepicker-month-view';
+export { NgkDatepickerDayViewComponent } from './datepicker-day-view';
+export { NgkDatepickerNavigationComponent } from './datepicker-navigation';
+export { NgkDatepickerNavigationSelectComponent } from './datepicker-navigation-select';
+export { NgkDatepickerConfig } from './datepicker-config';
+export { NgkDatepickerI18n } from './datepicker-i18n';
+export { NgkDateStruct } from './date-struct';
+export { NgkDate } from './date';
+export { NgkDateAdapter } from './adapters/date-adapter';
+export { NgkDateNativeAdapter } from './adapters/date-native-adapter';
+export { NgkDateNativeUTCAdapter } from './adapters/date-native-utc-adapter';
+export { NgkDateParserFormatter } from './date-parser-formatter';
 
 @NgModule({
   declarations: [
-    NgKitDatepickerComponent,
-    NgKitDatepickerMonthViewComponent,
-    NgKitDatepickerNavigationComponent,
-    NgKitDatepickerNavigationSelectComponent,
-    NgKitDatepickerDayViewComponent,
-    NgKitInputDatepickerDirective
+    NgkDatepickerComponent,
+    NgkDatepickerMonthViewComponent,
+    NgkDatepickerNavigationComponent,
+    NgkDatepickerNavigationSelectComponent,
+    NgkDatepickerDayViewComponent,
+    NgkInputDatepickerDirective
   ],
-  exports: [NgKitDatepickerComponent, NgKitInputDatepickerDirective],
+  exports: [NgkDatepickerComponent, NgkInputDatepickerDirective],
   imports: [CommonModule, FormsModule],
-  entryComponents: [NgKitDatepickerComponent]
+  entryComponents: [NgkDatepickerComponent]
 })
-export class NgKitDatepickerModule { }
+export class NgkDatepickerModule { }

@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgKitButtonModule, NgKitModalModule } from 'ng-kit';
+import { NgkButtonModule, NgkModalModule } from 'ng-kit';
 
 import { ModalBasicComponent } from './modal-basic';
 
 @NgModule({
   imports: [
     BrowserModule,
-    NgKitModalModule,
-    NgKitButtonModule,
+    NgkModalModule,
+    NgkButtonModule,
   ],
   declarations: [ModalBasicComponent],
   exports: [ModalBasicComponent],

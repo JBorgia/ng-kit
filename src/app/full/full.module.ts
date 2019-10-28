@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { NgKitDropdownModule } from 'ng-kit';
 import { NotificationModule } from '@shared/notification/notification.module';
+import { NgkDropdownModule } from 'ng-kit';
 
-import { NgKitDirectivesModule } from '../directives/directives.module';
+import { NgkDirectivesModule } from '../directives/directives.module';
 import { FullComponent } from './full.component';
 import { NavigationComponent } from './header-navigation/navigation.component';
 import { LogoComponent } from './logo/logo.component';
@@ -19,8 +19,8 @@ import { NavSidebarModule } from './nav-sidebar/nav-sidebar.module';
     FormsModule,
     NavSidebarModule,
     RouterModule,
-    NgKitDirectivesModule,
-    NgKitDropdownModule,
+    NgkDirectivesModule,
+    NgkDropdownModule,
     NotificationModule,
   ],
   declarations: [

@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, HostBinding, Injectable, Input } fr
 import { getValueInRange } from '../util/util';
 
 @Injectable({ providedIn: 'root' })
-export class NgKitProgressbarConfig {
+export class NgkProgressbarConfig {
   max = 100;
   animated = false;
   striped = false;
@@ -16,12 +16,12 @@ export class NgKitProgressbarConfig {
  * Directive that can be used to provide feedback on the progress of a workflow or an action.
  */
 @Component({
-  selector: 'ng-kit-progressbar',
+  selector: 'ngk-progressbar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './progressbar.component.html',
   styleUrls: ['./progressbar.component.scss'],
 })
-export class NgKitProgressbarComponent {
+export class NgkProgressbarComponent {
   _deciamPlaces: string = '2';
   /**
    * Maximal value to be displayed in the progressbar.
@@ -77,7 +77,7 @@ export class NgKitProgressbarComponent {
     return this.customClass ? this.customClass : '';
   }
 
-  constructor(config: NgKitProgressbarConfig) {
+  constructor(config: NgkProgressbarConfig) {
     this.max = config.max;
     this.animated = config.animated;
     this.striped = config.striped;

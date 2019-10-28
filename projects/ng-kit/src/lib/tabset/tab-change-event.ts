@@ -2,7 +2,7 @@
 /**
  * The payload of the change event fired right before the tab change
  */
-export interface NgKitTabChangeEvent {
+export interface NgkTabChangeEvent {
     /**
      * Id of the currently active tab
      */

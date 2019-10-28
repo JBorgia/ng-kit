@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NgKitActiveModal, NgKitModal } from 'ng-kit';
+import { NgkActiveModal, NgkModal } from 'ng-kit';
 
 @Component({
   selector: 'app-modal-content',
@@ -25,8 +25,8 @@ eum fugiat quo voluptas nulla pariatur?</p>
     </div>
     <div class="modal-footer">
       <button 
-        xm
-        class="ng-kit-md ng-kit-secondary"
+        ngk
+        class="ngk-md ngk-secondary"
         (click)="activeModal.close('Close click')">
         Close this modal
       </button>
@@ -50,7 +50,7 @@ eum fugiat quo voluptas nulla pariatur?</p>
 export class ModalContentComponent {
   @Input() name;
 
-  constructor(public activeModal: NgKitActiveModal) { }
+  constructor(public activeModal: NgkActiveModal) { }
 }
 
 @Component({
@@ -59,7 +59,7 @@ export class ModalContentComponent {
   styleUrls: ['./modal-component.scss']
 })
 export class ModalComponent {
-  constructor(private modalService: NgKitModal) { }
+  constructor(private modalService: NgkModal) { }
 
   open() {
     const modalRef = this.modalService.open(ModalContentComponent);

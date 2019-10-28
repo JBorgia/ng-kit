@@ -1,8 +1,8 @@
 <p>A pagination with customized links:</p>
-<ng-kit-pagination [collectionSize]="70" [(page)]="page" aria-label="Custom pagination">
-  <ng-template xmPaginationPrevious>Prev</ng-template>
-  <ng-template xmPaginationNext>Next</ng-template>
-  <ng-template xmPaginationNumber let-p>{{ getPageSymbol(p) }}</ng-template>
-</ng-kit-pagination>
+<ngk-pagination [collectionSize]="70" [(page)]="page" aria-label="Custom pagination">
+  <ng-template ngkPaginationPrevious>Prev</ng-template>
+  <ng-template ngkPaginationNext>Next</ng-template>
+  <ng-template ngkPaginationNumber let-p>{{ getPageSymbol(p) }}</ng-template>
+</ngk-pagination>
 
 <pre>Current page: {{page}}</pre>

@@ -1,56 +1,56 @@
 import { Component, ContentChild, Directive, HostBinding, Input } from '@angular/core';
 
 /**
- * The header can host controls (buttons, dropdown, etc). To project control content into the NgKitCardControlsArea you can
- * add the `ng-kit-card-controls-area` or `xmCardControlsArea` directive to the content you'd like projected and place
- * it inside the <i>&#60;ng-kit-card&#62;</i> tags. If both an NgKitCardControls component and an element with the `NgKitCardControlsAreaDirective`
- * exits, the `NgKitCardControlsAreaDirective` will override the `NgKitCardControlsComponent`, replacing it in the dom.
+ * The header can host controls (buttons, dropdown, etc). To project control content into the NgkCardControlsArea you can
+ * add the `ngk-card-controls-area` or `ngkCardControlsArea` directive to the content you'd like projected and place
+ * it inside the <i>&#60;ngk-card&#62;</i> tags. If both an NgkCardControls component and an element with the `NgkCardControlsAreaDirective`
+ * exits, the `NgkCardControlsAreaDirective` will override the `NgkCardControlsComponent`, replacing it in the dom.
  */
 @Directive({
-  selector: `[ng-kit-card-controls-area], [xmCardControlsArea]`,
+  selector: `[ngk-card-controls-area], [ngkCardControlsArea]`,
   host: {
-    class: 'ng-kit-card-controls',
+    class: 'ngk-card-controls',
   }
 })
-export class NgKitCardControlsAreaDirective { }
+export class NgkCardControlsAreaDirective { }
 
 @Directive({
-  selector: `ng-kit-card-title, [ng-kit-card-title], [xmCardTitle], [ng-kit-card-title-area], [xmCardTitleArea]`,
+  selector: `ngk-card-title, [ngk-card-title], [ngkCardTitle], [ngk-card-title-area], [ngkCardTitleArea]`,
   host: {
-    class: 'ng-kit-card-title',
+    class: 'ngk-card-title',
   }
 })
-export class NgKitCardTitleAreaDirective { }
+export class NgkCardTitleAreaDirective { }
 
 /**
- * Using an instance of the `NgKitCardBodyDirective` will override and remove the <i>&#60;ng-content&#62;</i> tag
- * from the `NgKitCardBodyComponent`, removing any content from between the <i>&#60;ng-kit-card&#62;</i> tags that is not tagged
+ * Using an instance of the `NgkCardBodyDirective` will override and remove the <i>&#60;ng-content&#62;</i> tag
+ * from the `NgkCardBodyComponent`, removing any content from between the <i>&#60;ngk-card&#62;</i> tags that is not tagged
  * for placement elsewhere.
  */
 @Directive({
-  selector: `[ng-kit-card-body], [xmCardBody]`,
+  selector: `[ngk-card-body], [ngkCardBody]`,
   host: {
-    class: 'ng-kit-card-body',
+    class: 'ngk-card-body',
   }
 })
-export class NgKitCardBodyDirective { }
+export class NgkCardBodyDirective { }
 
 
 /**
- * The `NgKitCardComponent` consists of a header and body and is the primary component for a card instantiation. 
+ * The `NgkCardComponent` consists of a header and body and is the primary component for a card instantiation. 
  * Within the header are badge, title, and control areas. 
  */
 @Component({
-  selector: 'ng-kit-card',
+  selector: 'ngk-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class NgKitCardComponent {
+export class NgkCardComponent {
   @Input() title: string;
   @Input() removeBorder: boolean = false;
-  @ContentChild(NgKitCardTitleAreaDirective, { static: false }) cardTitleArea: NgKitCardTitleAreaDirective;
-  @ContentChild(NgKitCardControlsAreaDirective, { static: false }) cardCardControlsArea: NgKitCardControlsAreaDirective;
-  @ContentChild(NgKitCardBodyDirective, { static: false }) cardBody: NgKitCardBodyDirective;
+  @ContentChild(NgkCardTitleAreaDirective, { static: false }) cardTitleArea: NgkCardTitleAreaDirective;
+  @ContentChild(NgkCardControlsAreaDirective, { static: false }) cardCardControlsArea: NgkCardControlsAreaDirective;
+  @ContentChild(NgkCardBodyDirective, { static: false }) cardBody: NgkCardBodyDirective;
   @HostBinding('class.remove-border') get borderClass() {
     return this.removeBorder;
   }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgKitButtonModule, NgKitTableModule } from 'ng-kit';
+import { NgkButtonModule, NgkTableModule } from 'ng-kit';
 
 import { TableHorizontalComponent } from './table-horizontal.component';
 
@@ -8,8 +8,8 @@ import { TableHorizontalComponent } from './table-horizontal.component';
 @NgModule({
   imports: [
     BrowserModule,
-    NgKitButtonModule,
-    NgKitTableModule
+    NgkButtonModule,
+    NgkTableModule
   ],
   declarations: [
     TableHorizontalComponent

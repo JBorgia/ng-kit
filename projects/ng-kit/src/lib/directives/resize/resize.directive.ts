@@ -7,7 +7,7 @@ import { ResizedEvent } from './resize-event';
 @Directive({
   selector: '[resize]'
 })
-export class NgKitResizeDirective implements OnInit, OnDestroy {
+export class NgkResizeDirective implements OnInit, OnDestroy {
   // tslint:disable-next-line:no-output-native
   @Output() readonly resize = new EventEmitter<ResizedEvent>();
   private subs: Subscription[] = [];

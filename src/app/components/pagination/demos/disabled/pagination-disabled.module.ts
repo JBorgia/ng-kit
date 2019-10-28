@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgKitButtonModule, NgKitPaginationModule } from 'ng-kit';
+import { NgkButtonModule, NgkPaginationModule } from 'ng-kit';
 
 import { PaginationDisabledComponent } from './pagination-disabled';
 
 @NgModule({
   imports: [
     BrowserModule,
-    NgKitPaginationModule,
-    NgKitButtonModule
+    NgkPaginationModule,
+    NgkButtonModule
   ],
   declarations: [PaginationDisabledComponent],
   exports: [PaginationDisabledComponent],

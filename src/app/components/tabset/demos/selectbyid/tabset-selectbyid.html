@@ -1,16 +1,16 @@
-<ng-kit-tabset #t="xmTabset">
-  <ng-kit-tab id="tab-selectbyid1" title="Tab One">
-    <ng-template xmTabContent>
+<ngk-tabset #t="ngkTabset">
+  <ngk-tab id="tab-selectbyid1" title="Tab One">
+    <ng-template ngkTabContent>
       <div class="panel-padding">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
 nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       </div>
     </ng-template>
-  </ng-kit-tab>
-  <ng-kit-tab id="tab-selectbyid2">
-    <ng-template xmTabTitle>Tab Two</ng-template>
-    <ng-template xmTabContent>
+  </ngk-tab>
+  <ngk-tab id="tab-selectbyid2">
+    <ng-template ngkTabTitle>Tab Two</ng-template>
+    <ng-template ngkTabContent>
       <div class="panel-padding">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -20,13 +20,13 @@ fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
 culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
     </ng-template>
-  </ng-kit-tab>
-</ng-kit-tabset>
+  </ngk-tab>
+</ngk-tabset>
 
 <p>
   <button
-    xm
-    class="ng-kit-md ng-kit-primary"
+    ngk
+    class="ngk-md ngk-primary"
     (click)="t.select('tab-selectbyid2')">
     Selected tab with "tab-selectbyid2" id
   </button>

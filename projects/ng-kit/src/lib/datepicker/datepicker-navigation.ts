@@ -1,50 +1,50 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
 
-import { NgKitDate } from './date';
-import { NgKitDatepickerI18n } from './datepicker-i18n';
+import { NgkDate } from './date';
+import { NgkDatepickerI18n } from './datepicker-i18n';
 import { MonthViewModel, NavigationEvent } from './datepicker-view-model';
 
 @Component({
-  selector: 'ng-kit-datepicker-navigation',
+  selector: 'ngk-datepicker-navigation',
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['./datepicker-navigation.scss'],
   template: `
-    <div class="ng-kit-dp-arrow left">
-      <button type="button" class="ng-kit-dp-arrow-btn" (click)="navigate.emit(navigation.PREV)" [disabled]="prevDisabled"
+    <div class="ngk-dp-arrow left">
+      <button type="button" class="ngk-dp-arrow-btn" (click)="navigate.emit(navigation.PREV)" [disabled]="prevDisabled"
               i18n-aria-label="@@xm.datepicker.previous-month" aria-label="Previous month"
               i18n-title="@@xm.datepicker.previous-month" title="Previous month">
-        <span class="ng-kit-dp-navigation-chevron"></span>
+        <span class="ngk-dp-navigation-chevron"></span>
       </button>
     </div>
-    <ng-kit-datepicker-navigation-select *ngIf="showSelect" class="ng-kit-dp-navigation-select"
+    <ngk-datepicker-navigation-select *ngIf="showSelect" class="ngk-dp-navigation-select"
       [date]="date"
       [disabled] = "disabled"
       [months]="selectBoxes.months"
       [years]="selectBoxes.years"
       (select)="select.emit($event)">
-    </ng-kit-datepicker-navigation-select>
+    </ngk-datepicker-navigation-select>
 
     <ng-template *ngIf="!showSelect" ngFor let-month [ngForOf]="months" let-i="index">
-      <div class="ng-kit-dp-arrow" *ngIf="i > 0"></div>
-      <div class="ng-kit-dp-month-name">
+      <div class="ngk-dp-arrow" *ngIf="i > 0"></div>
+      <div class="ngk-dp-month-name">
         <span>{{ i18n.getMonthFullName(month.number, month.year) }} {{ i18n.getYearNumerals(month.year) }}</span>
       </div>
-      <div class="ng-kit-dp-arrow" *ngIf="i !== months.length - 1"></div>
+      <div class="ngk-dp-arrow" *ngIf="i !== months.length - 1"></div>
     </ng-template>
-    <div class="ng-kit-dp-arrow right">
-      <button type="button" class="ng-kit-dp-arrow-btn" (click)="navigate.emit(navigation.NEXT)" [disabled]="nextDisabled"
+    <div class="ngk-dp-arrow right">
+      <button type="button" class="ngk-dp-arrow-btn" (click)="navigate.emit(navigation.NEXT)" [disabled]="nextDisabled"
               i18n-aria-label="@@xm.datepicker.next-month" aria-label="Next month"
               i18n-title="@@xm.datepicker.next-month" title="Next month">
-        <span class="ng-kit-dp-navigation-chevron"></span>
+        <span class="ngk-dp-navigation-chevron"></span>
       </button>
     </div>
     `
 })
-export class NgKitDatepickerNavigationComponent {
+export class NgkDatepickerNavigationComponent {
   navigation = NavigationEvent;
 
-  @Input() date: NgKitDate;
+  @Input() date: NgkDate;
   @Input() disabled: boolean;
   @Input() months: MonthViewModel[] = [];
   @Input() showSelect: boolean;
@@ -53,7 +53,7 @@ export class NgKitDatepickerNavigationComponent {
   @Input() selectBoxes: { years: number[], months: number[] };
 
   @Output() navigate = new EventEmitter<NavigationEvent>();
-  @Output() select = new EventEmitter<NgKitDate>();
+  @Output() select = new EventEmitter<NgkDate>();
 
-  constructor(public i18n: NgKitDatepickerI18n) { }
+  constructor(public i18n: NgkDatepickerI18n) { }
 }

@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-import { NgKitDate } from '../datepicker/date';
+import { NgkDate } from '../datepicker/date';
 
-export class NgKitDateRange {
+export class NgkDateRange {
   fromDate: Date;
   toDate: Date;
 
@@ -29,19 +29,19 @@ export class NgKitDateRange {
 }
 
 @Component({
-  selector: 'ng-kit-calendar-selector',
+  selector: 'ngk-calendar-selector',
   templateUrl: './calendar-selector.component.html',
   styleUrls: ['./calendar-selector.component.scss']
 })
 export class CalendarSelectorComponent implements OnInit {
   @Input() maxDateSet: Date;
-  @Input() dateRange: NgKitDateRange;
+  @Input() dateRange: NgkDateRange;
   @Input() maxDateRange: number;
   @Input() startWeekOnSunday: boolean;
-  hoveredDate: NgKitDate;
-  fromDate: NgKitDate;
-  toDate: NgKitDate;
-  @Output() dateSelected = new EventEmitter<NgKitDateRange>();
+  hoveredDate: NgkDate;
+  fromDate: NgkDate;
+  toDate: NgkDate;
+  @Output() dateSelected = new EventEmitter<NgkDateRange>();
   @Output() notifyDateOutOfRange = new EventEmitter<string>();
   isDisabled: Function;
 
@@ -55,7 +55,7 @@ export class CalendarSelectorComponent implements OnInit {
       this.toDate = this.convertToXMDate(this.dateRange.toDate);
     }
     // TODO: This needs to be converted to an input parameter
-    this.isDisabled = (data: NgKitDate) => this.isDisabledMarker(data);
+    this.isDisabled = (data: NgkDate) => this.isDisabledMarker(data);
   }
 
   get placeholderString(): string {
@@ -69,27 +69,27 @@ export class CalendarSelectorComponent implements OnInit {
     }
   }
 
-  convertToXMDate(date: Date): NgKitDate {
-    return new NgKitDate(date.getFullYear(),
+  convertToXMDate(date: Date): NgkDate {
+    return new NgkDate(date.getFullYear(),
       date.getMonth() + 1,
       date.getDate());
   }
 
-  convertFromXMDate(date: NgKitDate): Date {
+  convertFromXMDate(date: NgkDate): Date {
     const jsDate = new Date(date.year, date.month - 1, date.day);
     return jsDate;
   }
 
   // Written using if statement to make adding addtional conditions easier
-  isDisabledMarker(xmDate: NgKitDate): Boolean {
-    const date: Date = new Date(xmDate.year, xmDate.month - 1, xmDate.day);
+  isDisabledMarker(xmDate: NgkDate): Boolean {
+    const date: Date = new Date(xmDate.year, ngkDate.month - 1, ngkDate.day);
     if (date > this.maxDateSet) {
       return true;
     }
     return false;
   }
 
-  onDateSelection(date: NgKitDate) {
+  onDateSelection(date: NgkDate) {
     if (!this.fromDate && !this.toDate) {
       this.fromDate = date;
     } else if (this.fromDate && !this.toDate && (date.after(this.fromDate) || date.equals(this.fromDate))) {
@@ -97,7 +97,7 @@ export class CalendarSelectorComponent implements OnInit {
       const fromDateCompare = this.convertFromXMDate(this.fromDate);
       const maxDaysForward = new Date(fromDateCompare);
       maxDaysForward.setDate(fromDateCompare.getDate() + this.maxDateRange);
-      const maxDaysForwardXM: NgKitDate = this.convertToXMDate(maxDaysForward);
+      const maxDaysForwardXM: NgkDate = this.convertToXMDate(maxDaysForward);
       if (date.after(maxDaysForwardXM)) {
         this.notifyDateOutOfRange.emit(`Date range cannot extend more than ${this.maxDateRange} days. Please remake your selection.`);
         this.toDate = null;
@@ -113,22 +113,22 @@ export class CalendarSelectorComponent implements OnInit {
 
     if (this.fromDate && this.toDate) {
       this.dateSelected.emit(
-        new NgKitDateRange(this.convertFromXMDate(this.fromDate),
+        new NgkDateRange(this.convertFromXMDate(this.fromDate),
           this.convertFromXMDate(this.toDate)
         )
       );
     }
   }
 
-  isHovered(date: NgKitDate) {
+  isHovered(date: NgkDate) {
     return this.fromDate && !this.toDate && this.hoveredDate && date.after(this.fromDate) && date.before(this.hoveredDate);
   }
 
-  isInside(date: NgKitDate) {
+  isInside(date: NgkDate) {
     return date.after(this.fromDate) && date.before(this.toDate);
   }
 
-  isRange(date: NgKitDate) {
+  isRange(date: NgkDate) {
     return date.equals(this.fromDate) || date.equals(this.toDate) || this.isInside(date) || this.isHovered(date);
   }
 

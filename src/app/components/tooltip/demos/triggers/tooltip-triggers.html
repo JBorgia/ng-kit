@@ -1,9 +1,9 @@
 <p class="instructions">You can easily override open and close triggers by specifying event names (separated by <code>:</code>) in the <code>triggers</code> property.</p>
 
 <button
-  xm
-  class="ng-kit-lg ng-kit-primary"
-  xmTooltip="You see, I show up on click!"
+  ngk
+  class="ngk-lg ngk-primary"
+  ngkTooltip="You see, I show up on click!"
   triggers="click:blur">
   Click me!
 </button>
@@ -12,18 +12,18 @@
 
 <section>
   <button
-    xm
-    class="ng-kit-lg ng-kit-primary"
-    xmTooltip="What a great tip!"
+    ngk
+    class="ngk-lg ngk-primary"
+    ngkTooltip="What a great tip!"
     [autoClose]="false"
     triggers="manual"
-    #t="xmTooltip"
+    #t="ngkTooltip"
     (click)="t.open()">
     Click me to open a tooltip
   </button>
   <button
-    xm
-    class="ng-kit-lg ng-kit-primary"
+    ngk
+    class="ngk-lg ngk-primary"
     (click)="t.close()">
     Click me to close a tooltip
   </button>

@@ -15,37 +15,37 @@ import { BehaviorSubject, Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
 import { ResizedEvent } from '../directives/resize/resize-event';
-import { NgKitResizeDirective } from '../directives/resize/resize.directive';
-import { NgKitAccordionBodyComponent } from './accordion-body.component';
+import { NgkResizeDirective } from '../directives/resize/resize.directive';
+import { NgkAccordionBodyComponent } from './accordion-body.component';
 
 
 /**
- * Using an instance of the `NgKitAccordionHeaderDirective` will override and remove the <i>&#60;ng-content&#62;</i> tag from the `NgKitAccordionHeaderComponent`.
+ * Using an instance of the `NgkAccordionHeaderDirective` will override and remove the <i>&#60;ng-content&#62;</i> tag from the `NgkAccordionHeaderComponent`.
  */
 @Directive({
-  selector: `[ng-kit-accordion-header], [xmAccordionHeader]`,
+  selector: `[ngk-accordion-header], [ngkAccordionHeader]`,
   host: {
-    class: 'ng-kit-accordion-header',
+    class: 'ngk-accordion-header',
   }
 })
-export class NgKitAccordionHeaderDirective {
+export class NgkAccordionHeaderDirective {
 }
 
 
 /**
- * An HTML element tagged with the `NgKitAccordionBodyDirective` using either `ng-kit-accordion-body` or `xmAccordionBody` will be transcluded into the `NgKitAccordionBodyComponent`.
+ * An HTML element tagged with the `NgkAccordionBodyDirective` using either `ngk-accordion-body` or `ngkAccordionBody` will be transcluded into the `NgkAccordionBodyComponent`.
  */
 @Directive({
-  selector: `[ng-kit-accordion-body], [xmAccordionBody]`,
+  selector: `[ngk-accordion-body], [ngkAccordionBody]`,
   host: {
-    class: 'ng-kit-accordion-body',
+    class: 'ngk-accordion-body',
   }
 })
-export class NgKitAccordionBodyDirective {
+export class NgkAccordionBodyDirective {
 }
 
 /**
- * One or more `NgKitAccordionPanelComponent`s make up the majority of the `NgKitAccordionComponent`. 
+ * One or more `NgkAccordionPanelComponent`s make up the majority of the `NgkAccordionComponent`. 
  * Setting the `isOpenOnInit` input to true will expand that panel on initial dom instantiation.
  * A defined height can be set using the `bodyHeight` input. Transition animation can be disabled on an 
  * individual panel by setting the `transitionDisabled` input to false. The `onClick` output emits when 
@@ -53,14 +53,14 @@ export class NgKitAccordionBodyDirective {
  */
 
 @Component({
-  selector: 'ng-kit-accordion-panel, div[ng-kit-accordion-panel]',
+  selector: 'ngk-accordion-panel, div[ngk-accordion-panel]',
   templateUrl: './accordion-panel.component.html',
   styleUrls: ['./accordion-panel.component.scss']
 })
-export class NgKitAccordionPanelComponent implements AfterViewInit, OnDestroy {
-  @ContentChild(NgKitAccordionHeaderDirective, { static: false }) accordionHeader: NgKitAccordionHeaderDirective;
-  @ContentChild(NgKitAccordionBodyDirective, { static: false }) accordionBody: NgKitAccordionBodyDirective;
-  @ViewChild('xmAccordionBody', { static: true }) xmAccordionBody: NgKitAccordionBodyComponent;
+export class NgkAccordionPanelComponent implements AfterViewInit, OnDestroy {
+  @ContentChild(NgkAccordionHeaderDirective, { static: false }) accordionHeader: NgkAccordionHeaderDirective;
+  @ContentChild(NgkAccordionBodyDirective, { static: false }) accordionBody: NgkAccordionBodyDirective;
+  @ViewChild('ngkAccordionBody', { static: true }) ngkAccordionBody: NgkAccordionBodyComponent;
   @Input() bodyHeight: number;
   private _isCollapsed = true;
   @Input() transitionDisabled = false;
@@ -95,7 +95,7 @@ export class NgKitAccordionPanelComponent implements AfterViewInit, OnDestroy {
     }, 0);
 
     // Handle adjusting the padding of the header row in the case of the table being resized. Trigger on init.
-    this.resize = new NgKitResizeDirective(new ElementRef(this.el.nativeElement.parentNode));
+    this.resize = new NgkResizeDirective(new ElementRef(this.el.nativeElement.parentNode));
     this.resize.ngOnInit();
     this.resizeSub = this.resize.resize.pipe(
       filter((resizeEvent: ResizedEvent) =>

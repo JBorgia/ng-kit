@@ -2,49 +2,49 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import {
-  NgKitPaginationComponent,
-  NgKitPaginationEllipsisDirective,
-  NgKitPaginationFirstDirective,
-  NgKitPaginationLastDirective,
-  NgKitPaginationNextDirective,
-  NgKitPaginationNumberDirective,
-  NgKitPaginationPreviousDirective,
+  NgkPaginationComponent,
+  NgkPaginationEllipsisDirective,
+  NgkPaginationFirstDirective,
+  NgkPaginationLastDirective,
+  NgkPaginationNextDirective,
+  NgkPaginationNumberDirective,
+  NgkPaginationPreviousDirective,
 } from './pagination';
 
 export {
-  NgKitPaginationComponent,
-  NgKitPaginationEllipsisDirective,
-  NgKitPaginationFirstDirective,
-  NgKitPaginationLastDirective,
-  NgKitPaginationNextDirective,
-  NgKitPaginationNumberDirective,
-  NgKitPaginationPreviousDirective,
-  NgKitPaginationConfig,
+  NgkPaginationComponent,
+  NgkPaginationEllipsisDirective,
+  NgkPaginationFirstDirective,
+  NgkPaginationLastDirective,
+  NgkPaginationNextDirective,
+  NgkPaginationNumberDirective,
+  NgkPaginationPreviousDirective,
+  NgkPaginationConfig,
 } from './pagination';
 
 
 @NgModule({
   declarations: [
-    NgKitPaginationComponent,
-    NgKitPaginationEllipsisDirective,
-    NgKitPaginationFirstDirective,
-    NgKitPaginationLastDirective,
-    NgKitPaginationNextDirective,
-    NgKitPaginationNumberDirective,
-    NgKitPaginationPreviousDirective
+    NgkPaginationComponent,
+    NgkPaginationEllipsisDirective,
+    NgkPaginationFirstDirective,
+    NgkPaginationLastDirective,
+    NgkPaginationNextDirective,
+    NgkPaginationNumberDirective,
+    NgkPaginationPreviousDirective
   ],
   exports: [
-    NgKitPaginationComponent,
-    NgKitPaginationEllipsisDirective,
-    NgKitPaginationFirstDirective,
-    NgKitPaginationLastDirective,
-    NgKitPaginationNextDirective,
-    NgKitPaginationNumberDirective,
-    NgKitPaginationPreviousDirective
+    NgkPaginationComponent,
+    NgkPaginationEllipsisDirective,
+    NgkPaginationFirstDirective,
+    NgkPaginationLastDirective,
+    NgkPaginationNextDirective,
+    NgkPaginationNumberDirective,
+    NgkPaginationPreviousDirective
   ],
   imports: [
     CommonModule
   ]
 })
-export class NgKitPaginationModule {
+export class NgkPaginationModule {
 }

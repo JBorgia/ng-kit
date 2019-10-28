@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgKitButtonModule, NgKitPopoverModule } from 'ng-kit';
+import { NgkButtonModule, NgkPopoverModule } from 'ng-kit';
 
 import { PopoverAutocloseComponent } from './popover-auto-close';
 
 @NgModule({
   imports: [
     BrowserModule,
-    NgKitPopoverModule,
-    NgKitButtonModule,
+    NgkPopoverModule,
+    NgkButtonModule,
   ],
   declarations: [PopoverAutocloseComponent],
   exports: [PopoverAutocloseComponent],

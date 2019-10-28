@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 
-import { NgKitModal } from './modal';
-import { NgKitModalBackdropComponent } from './modal-backdrop.component';
-import { NgKitModalWindowComponent } from './modal-window.component';
+import { NgkModal } from './modal';
+import { NgkModalBackdropComponent } from './modal-backdrop.component';
+import { NgkModalWindowComponent } from './modal-window.component';
 
-export { NgKitModal } from './modal';
-export { NgKitModalConfig, NgKitModalOptions } from './modal-config';
-export { NgKitModalRef, NgKitActiveModal } from './modal-ref';
+export { NgkModal } from './modal';
+export { NgkModalConfig, NgkModalOptions } from './modal-config';
+export { NgkModalRef, NgkActiveModal } from './modal-ref';
 export { ModalDismissReasons } from './modal-dismiss-reasons';
 
 @NgModule({
-  declarations: [NgKitModalBackdropComponent, NgKitModalWindowComponent],
-  entryComponents: [NgKitModalBackdropComponent, NgKitModalWindowComponent],
-  providers: [NgKitModal],
+  declarations: [NgkModalBackdropComponent, NgkModalWindowComponent],
+  entryComponents: [NgkModalBackdropComponent, NgkModalWindowComponent],
+  providers: [NgkModal],
 })
-export class NgKitModalModule { }
+export class NgkModalModule { }

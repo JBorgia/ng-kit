@@ -8,7 +8,7 @@ import { RouteReuseStrategy, RouterModule } from '@angular/router';
 import { BreakpointService } from '@services/breakpoint.service';
 import { ThemeService } from '@services/theme.service';
 import { NotificationToastDefaults } from '@shared/notification/toastDefaults';
-import { NgKitButtonModule, NgKitModalModule, NgKitSidebarModule, NgKitTabsetModule } from 'ng-kit';
+import { NgkButtonModule, NgkModalModule, NgkSidebarModule, NgkTabsetModule } from 'ng-kit';
 
 import { Approutes } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -52,7 +52,7 @@ const DEMOS = [
   imports: [
     CommonModule,
     BrowserModule,
-    NgKitSidebarModule,
+    NgkSidebarModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
@@ -63,9 +63,9 @@ const DEMOS = [
       scrollPositionRestoration: 'enabled',
       anchorScrolling: 'enabled',
     }),
-    NgKitTabsetModule,
-    NgKitButtonModule,
-    NgKitModalModule,
+    NgkTabsetModule,
+    NgkButtonModule,
+    NgkModalModule,
     FullModule,
     DemosSharedModule,
     ...DEMOS

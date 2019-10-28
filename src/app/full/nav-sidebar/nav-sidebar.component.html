@@ -4,14 +4,14 @@
   <!-- Sidebar scroll -->
   <div class="scroll-sidebar">
     <div class="sidebar-flip">
-    <ng-kit-sidebar
+    <ngk-sidebar
       data-cy="nav-sidebar"
       [menuItems]="sidebarMenuItems$ | async"
       [showMinisidebar]="showMinisidebar"
       (subItemSelected)="navigate($event)"
       (itemSelected)="navigate($event)">
       <!-- Static HREF links coded here are projected into the sidebar -->
-    </ng-kit-sidebar>
+    </ngk-sidebar>
   </div>
   </div>
   <!-- End Sidebar scroll -->

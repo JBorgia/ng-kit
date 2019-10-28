@@ -22,91 +22,91 @@ export class DatepickerOverviewComponent {
       lang: 'html',
       code: `
         <!-- 1. inline datepicker -->
-        <ng-kit-datepicker #d></ng-kit-datepicker>
+        <ngk-datepicker #d></ngk-datepicker>
 
         <!-- 2. datepicker in the popup -->
-        <input type="text" xmDatepicker #d="xmDatepicker"/>
+        <input type="text" ngkDatepicker #d="ngkDatepicker"/>
       `,
     }),
     popup: Snippet({
       lang: 'html',
       code: `
-        <input type="text" xmDatepicker #d="xmDatepicker"/>
+        <input type="text" ngkDatepicker #d="ngkDatepicker"/>
         <button (click)="d.toggle()">Toggle</button>
       `,
     }),
     form: Snippet({
       lang: 'html',
       code: `
-        <input type="text" xmDatepicker [(ngModel)]="date"/>
+        <input type="text" ngkDatepicker [(ngModel)]="date"/>
       `,
     }),
     selection: Snippet({
       lang: 'html',
       code: `
         <!-- inline -->
-        <ng-kit-datepicker (select)="onDateSelect($event)"></ng-kit-datepicker>
+        <ngk-datepicker (select)="onDateSelect($event)"></ngk-datepicker>
 
         <!-- in the popup -->
-        <input type="text" xmDatepicker (dateSelect)="onDateSelect($event)"/>
+        <input type="text" ngkDatepicker (dateSelect)="onDateSelect($event)"/>
       `,
     }),
     navigation: Snippet({
       lang: 'html',
       code: `
-        <ng-kit-datepicker #d [startDate]="{year: 1789, month: 7}"></ng-kit-datepicker>
+        <ngk-datepicker #d [startDate]="{year: 1789, month: 7}"></ngk-datepicker>
         <button (click)="d.navigateTo({year: 2048, month: 1})">Goto JAN 2048</button>
       `,
     }),
     dateStruct: Snippet({
       lang: 'typescript',
       code: `
-        const date: NgKitDateStruct = { year: 1789, month: 7, day: 14 }; // July, 14 1789
+        const date: NgkDateStruct = { year: 1789, month: 7, day: 14 }; // July, 14 1789
       `,
     }),
     date: Snippet({
       lang: 'typescript',
       code: `
-        const date: NgKitDate = new NgKitDate(1789, 7, 14);                // July, 14 1789
+        const date: NgkDate = new NgkDate(1789, 7, 14);                // July, 14 1789
 
         date.before({ year: 1789, month: 7, day: 14 });                // compare to a structure
-        date.equals(NgKitDate.from({ year: 1789, month: 7, day: 14 }));  // or to another date object
+        date.equals(NgkDate.from({ year: 1789, month: 7, day: 14 }));  // or to another date object
       `,
     }),
     nativeAdapter: Snippet({
       lang: 'typescript',
       code: `
         // native adapter is bundled with library
-        providers: [{provide: NgKitDateAdapter, useClass: NgKitDateNativeAdapter}]
+        providers: [{provide: NgkDateAdapter, useClass: NgkDateNativeAdapter}]
 
         // or another native adapter that works with UTC dates
-        providers: [{provide: NgKitDateAdapter, useClass: NgKitDateNativeUTCAdapter}]
+        providers: [{provide: NgkDateAdapter, useClass: NgkDateNativeUTCAdapter}]
       `,
     }),
     adapter: Snippet({
       lang: 'typescript',
       code: `
         @Injectable()
-        export abstract class NgKitDateAdapter<D> {
-          abstract fromModel(value: D): NgKitDateStruct; // from your model -> internal model
-          abstract toModel(date: NgKitDateStruct): D; // from internal model -> your mode
+        export abstract class NgkDateAdapter<D> {
+          abstract fromModel(value: D): NgkDateStruct; // from your model -> internal model
+          abstract toModel(date: NgkDateStruct): D; // from internal model -> your mode
         }
 
         // create your own if necessary
-        providers: [{provide: NgKitDateAdapter, useClass: YourOwnDateAdapter}]
+        providers: [{provide: NgkDateAdapter, useClass: YourOwnDateAdapter}]
       `,
     }),
     formatter: Snippet({
       lang: 'typescript',
       code: `
         @Injectable()
-        export abstract class NgKitDateParserFormatter {
-          abstract parse(value: string): NgKitDateStruct; // from input -> internal model
-          abstract format(date: NgKitDateStruct): string; // from internal model -> string
+        export abstract class NgkDateParserFormatter {
+          abstract parse(value: string): NgkDateStruct; // from input -> internal model
+          abstract format(date: NgkDateStruct): string; // from internal model -> string
         }
 
         // create your own if necessary
-        providers: [{provide: NgKitDateParserFormatter, useClass: YourOwnParserFormatter}]
+        providers: [{provide: NgkDateParserFormatter, useClass: YourOwnParserFormatter}]
       `,
     }),
     dayTemplate: Snippet({
@@ -122,7 +122,7 @@ export class DatepickerOverviewComponent {
     todayHTML: Snippet({
       lang: 'html',
       code: `
-        <div class="ng-kit-dp-day ng-kit-dp-today">
+        <div class="ngk-dp-day ngk-dp-today">
           <!-- day cell content omitted -->
         </div>
       `,
@@ -151,31 +151,31 @@ export class DatepickerOverviewComponent {
       lang: 'typescript',
       code: `
         // disable the 13th of each month
-        const isDisabled = (date: NgKitDate, current: {month: number}) => date.day === 13;
+        const isDisabled = (date: NgkDate, current: {month: number}) => date.day === 13;
       `,
     }),
     disablingHTML: Snippet({
       lang: 'html',
       code: `
-        <ng-kit-datepicker [minDate]="{year: 2010, month: 1, day: 1}"
+        <ngk-datepicker [minDate]="{year: 2010, month: 1, day: 1}"
                         [maxDate]="{year: 2048, month: 12, day: 31}"
                         [markDisabled]="isDisabled">
-        </ng-kit-datepicker>
+        </ngk-datepicker>
       `,
     }),
     i18n: Snippet({
       lang: 'typescript',
       code: `
         @Injectable()
-        export abstract class NgKitDatepickerI18n {
+        export abstract class NgkDatepickerI18n {
           abstract getWeekdayShortName(weekday: number): string;
           abstract getMonthShortName(month: number): string;
           abstract getMonthFullName(month: number): string;
-          abstract getDayAriaLabel(date: NgKitDateStruct): string;
+          abstract getDayAriaLabel(date: NgkDateStruct): string;
         }
 
         // provide your own if necessary
-        providers: [{provide: NgKitDatepickerI18n, useClass: YourOwnDatepickerI18n}]
+        providers: [{provide: NgkDatepickerI18n, useClass: YourOwnDatepickerI18n}]
       `,
     }),
   };

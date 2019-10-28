@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgKitAccordionModule, NgKitButtonModule } from 'ng-kit';
+import { NgkAccordionModule, NgkButtonModule } from 'ng-kit';
 
 import { AccordionTrackChangesComponent } from './accordion-track-changes.component';
 
@@ -8,8 +8,8 @@ import { AccordionTrackChangesComponent } from './accordion-track-changes.compon
 @NgModule({
   imports: [
     BrowserModule,
-    NgKitButtonModule,
-    NgKitAccordionModule,
+    NgkButtonModule,
+    NgkAccordionModule,
   ],
   declarations: [
     AccordionTrackChangesComponent

@@ -1,17 +1,17 @@
 
-<ng-kit-datepicker
+<ngk-datepicker
   [displayMonths]="displayMonths"
   [navigation]="navigation"
   [showWeekNumbers]="showWeekNumbers"
   [outsideDays]="outsideDays">
-</ng-kit-datepicker>
+</ngk-datepicker>
 
 <form>
   <div>
     <div class="input-group">
       <input class="form-control" autocomplete="off" placeholder="yyyy-mm-dd"
         name="dp" [displayMonths]="displayMonths" [navigation]="navigation" [outsideDays]="outsideDays"
-        [showWeekNumbers]="showWeekNumbers" xmDatepicker #d="xmDatepicker">
+        [showWeekNumbers]="showWeekNumbers" ngkDatepicker #d="ngkDatepicker">
       <div class="input-group-append">
         <button class="input-group-append-button" (click)="d.toggle()" type="button">
           <em class="icon-calendar-blank"></em>

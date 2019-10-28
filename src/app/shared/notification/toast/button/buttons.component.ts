@@ -4,7 +4,7 @@ import { NotificationService } from '../../notification.service';
 import { NotificationToast } from '../notification-toast.model';
 
 @Component({
-  selector: 'ng-kit-notification-button',
+  selector: 'ngk-notification-button',
   templateUrl: './buttons.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

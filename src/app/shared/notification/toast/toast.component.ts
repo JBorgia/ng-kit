@@ -7,7 +7,7 @@ import { NotificationEvent } from '../types/event.type';
 import { NotificationToast } from './notification-toast.model';
 
 @Component({
-  selector: 'ng-kit-notification-toast',
+  selector: 'ngk-notification-toast',
   templateUrl: './toast.component.html',
 })
 export class ToastComponent implements OnInit, OnDestroy, AfterContentInit {

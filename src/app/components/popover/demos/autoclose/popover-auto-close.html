@@ -5,22 +5,22 @@
   <div class="group-1">
     <p>click inside:</p>
     <button
-      xm
-      class="ng-kit-lg ng-kit-primary" 
+      ngk
+      class="ngk-lg ngk-primary" 
       popoverTitle="Pop title"
       [autoClose]="'inside'"
-      xmPopover="Click inside or press Escape to close">
+      ngkPopover="Click inside or press Escape to close">
       Click to toggle
     </button>
   </div>
   <div class="group-2">
     <p>click outside:</p>
     <button
-      xm
-      class="ng-kit-lg ng-kit-primary"
+      ngk
+      class="ngk-lg ngk-primary"
       popoverTitle="Pop title"
       [autoClose]="'outside'" 
-      xmPopover="Click outside or press Escape to close">
+      ngkPopover="Click outside or press Escape to close">
       Click to toggle
     </button>
   </div>
@@ -28,17 +28,17 @@
     <p>all clicks:</p>
     <div>
       <button
-        xm
-        class="ng-kit-lg ng-kit-primary"
+        ngk
+        class="ngk-lg ngk-primary"
         popoverTitle="Pop title"
         [autoClose]="true" 
-        xmPopover="Click anywhere or press Escape to close (try the toggling element too)"
-        #popover3="xmPopover">
+        ngkPopover="Click anywhere or press Escape to close (try the toggling element too)"
+        #popover3="ngkPopover">
         Click to toggle
       </button>      
       <button
-        xm
-        class="ng-kit-lg ng-kit-primary"
+        ngk
+        class="ngk-lg ngk-primary"
         (click)="popover3.toggle()">
         Click to toggle the external popover
       </button>

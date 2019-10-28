@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgKitButtonModule, NgKitDatepickerModule } from 'ng-kit';
+import { NgkButtonModule, NgkDatepickerModule } from 'ng-kit';
 
 import { DatepickerFootertemplateComponent } from './datepicker-footertemplate';
 
@@ -9,8 +9,8 @@ import { DatepickerFootertemplateComponent } from './datepicker-footertemplate';
   imports: [
     BrowserModule,
     FormsModule,
-    NgKitDatepickerModule,
-    NgKitButtonModule
+    NgkDatepickerModule,
+    NgkButtonModule
   ],
   declarations: [DatepickerFootertemplateComponent],
   exports: [DatepickerFootertemplateComponent],

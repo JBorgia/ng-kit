@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgKitCalendar, NgKitDateStruct } from 'ng-kit';
+import { NgkCalendar, NgkDateStruct } from 'ng-kit';
 
 @Component({
   selector: 'app-datepicker-footertemplate',
@@ -7,8 +7,8 @@ import { NgKitCalendar, NgKitDateStruct } from 'ng-kit';
   styleUrls: ['./datepicker-footertemplate.scss']
 })
 export class DatepickerFootertemplateComponent {
-  model: NgKitDateStruct;
+  model: NgkDateStruct;
   today = this.calendar.getToday();
 
-  constructor(private calendar: NgKitCalendar) { }
+  constructor(private calendar: NgkCalendar) { }
 }

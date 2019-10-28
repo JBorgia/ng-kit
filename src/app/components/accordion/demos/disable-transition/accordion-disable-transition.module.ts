@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgKitAccordionModule, NgKitButtonModule } from 'ng-kit';
+import { NgkAccordionModule, NgkButtonModule } from 'ng-kit';
 
 import { AccordionDisableTransitionComponent } from './accordion-disable-transition.component';
 
@@ -8,8 +8,8 @@ import { AccordionDisableTransitionComponent } from './accordion-disable-transit
 @NgModule({
   imports: [
     BrowserModule,
-    NgKitButtonModule,
-    NgKitAccordionModule,
+    NgkButtonModule,
+    NgkAccordionModule,
   ],
   declarations: [
     AccordionDisableTransitionComponent

@@ -1,10 +1,10 @@
 const API_DOCS = {
-  "NgKitAccordionBodyComponent": {
+  "NgkAccordionBodyComponent": {
     "fileName": "projects/ng-kit/src/lib/accordion/accordion-body.component.ts",
-    "className": "NgKitAccordionBodyComponent",
-    "description": "<p>The <code>NgKitAccordionBodyComponent</code> is a wrapper component for content transcluded using the <code>ng-kit-accordion-body</code> or <code>xmAccordionBody</code> directive tags.\nIt is instantiated internally by the <code>NgKitAccordionPanelComponent</code>.<br><br>\n<b>NOTE:</b> <i><code>NgKitAccordionBodyComponent</code> is not exported and should not be instantiated by a user. Use <code>NgKitAccordionBodyDirective</code> tags instead.</i></p>",
+    "className": "NgkAccordionBodyComponent",
+    "description": "<p>The <code>NgkAccordionBodyComponent</code> is a wrapper component for content transcluded using the <code>ngk-accordion-body</code> or <code>ngkAccordionBody</code> directive tags.\nIt is instantiated internally by the <code>NgkAccordionPanelComponent</code>.<br><br>\n<b>NOTE:</b> <i><code>NgkAccordionBodyComponent</code> is not exported and should not be instantiated by a user. Use <code>NgkAccordionBodyDirective</code> tags instead.</i></p>",
     "type": "Component",
-    "selector": "ng-kit-accordion-body",
+    "selector": "ngk-accordion-body",
     "inputs": [],
     "outputs": [],
     "properties": [
@@ -16,45 +16,45 @@ const API_DOCS = {
     ],
     "methods": []
   },
-  "NgKitAccordionHeaderComponent": {
+  "NgkAccordionHeaderComponent": {
     "fileName": "projects/ng-kit/src/lib/accordion/accordion-header.component.ts",
-    "className": "NgKitAccordionHeaderComponent",
-    "description": "<p>The <code>NgKitAccordionHeaderComponent</code> is a wrapper component for content transcluded using the <code>ng-kit-accordion-header</code> or <code>xmAccordionHeader</code> directive tags.\nIt is instantiated internally by the <code>NgKitAccordionPanelComponent</code>.<br><br>\n<b>NOTE:</b> <i><code>NgKitAccordionHeaderComponent</code> is not exported and should not be instantiated by a user. Use <code>NgKitAccordionHeaderDirective</code> tags instead.</i></p>",
+    "className": "NgkAccordionHeaderComponent",
+    "description": "<p>The <code>NgkAccordionHeaderComponent</code> is a wrapper component for content transcluded using the <code>ngk-accordion-header</code> or <code>ngkAccordionHeader</code> directive tags.\nIt is instantiated internally by the <code>NgkAccordionPanelComponent</code>.<br><br>\n<b>NOTE:</b> <i><code>NgkAccordionHeaderComponent</code> is not exported and should not be instantiated by a user. Use <code>NgkAccordionHeaderDirective</code> tags instead.</i></p>",
     "type": "Component",
-    "selector": "ng-kit-accordion-header",
+    "selector": "ngk-accordion-header",
     "inputs": [],
     "outputs": [],
     "properties": [],
     "methods": []
   },
-  "NgKitAccordionHeaderDirective": {
+  "NgkAccordionHeaderDirective": {
     "fileName": "projects/ng-kit/src/lib/accordion/accordion-panel.component.ts",
-    "className": "NgKitAccordionHeaderDirective",
-    "description": "<p>Using an instance of the <code>NgKitAccordionHeaderDirective</code> will override and remove the <i>&#60;ng-content&#62;</i> tag from the <code>NgKitAccordionHeaderComponent</code>.</p>",
+    "className": "NgkAccordionHeaderDirective",
+    "description": "<p>Using an instance of the <code>NgkAccordionHeaderDirective</code> will override and remove the <i>&#60;ng-content&#62;</i> tag from the <code>NgkAccordionHeaderComponent</code>.</p>",
     "type": "Directive",
-    "selector": "[ng-kit-accordion-header], [xmAccordionHeader]",
+    "selector": "[ngk-accordion-header], [ngkAccordionHeader]",
     "inputs": [],
     "outputs": [],
     "properties": [],
     "methods": []
   },
-  "NgKitAccordionBodyDirective": {
+  "NgkAccordionBodyDirective": {
     "fileName": "projects/ng-kit/src/lib/accordion/accordion-panel.component.ts",
-    "className": "NgKitAccordionBodyDirective",
-    "description": "<p>An HTML element tagged with the <code>NgKitAccordionBodyDirective</code> using either <code>ng-kit-accordion-body</code> or <code>xmAccordionBody</code> will be transcluded into the <code>NgKitAccordionBodyComponent</code>.</p>",
+    "className": "NgkAccordionBodyDirective",
+    "description": "<p>An HTML element tagged with the <code>NgkAccordionBodyDirective</code> using either <code>ngk-accordion-body</code> or <code>ngkAccordionBody</code> will be transcluded into the <code>NgkAccordionBodyComponent</code>.</p>",
     "type": "Directive",
-    "selector": "[ng-kit-accordion-body], [xmAccordionBody]",
+    "selector": "[ngk-accordion-body], [ngkAccordionBody]",
     "inputs": [],
     "outputs": [],
     "properties": [],
     "methods": []
   },
-  "NgKitAccordionPanelComponent": {
+  "NgkAccordionPanelComponent": {
     "fileName": "projects/ng-kit/src/lib/accordion/accordion-panel.component.ts",
-    "className": "NgKitAccordionPanelComponent",
-    "description": "<p>One or more <code>NgKitAccordionPanelComponent</code>s make up the majority of the <code>NgKitAccordionComponent</code>. \nSetting the <code>isOpenOnInit</code> input to true will expand that panel on initial dom instantiation.\nA defined height can be set using the <code>bodyHeight</code> input. Transition animation can be disabled on an \nindividual panel by setting the <code>transitionDisabled</code> input to false. The <code>onClick</code> output emits when \nthe panel is clicked.</p>",
+    "className": "NgkAccordionPanelComponent",
+    "description": "<p>One or more <code>NgkAccordionPanelComponent</code>s make up the majority of the <code>NgkAccordionComponent</code>. \nSetting the <code>isOpenOnInit</code> input to true will expand that panel on initial dom instantiation.\nA defined height can be set using the <code>bodyHeight</code> input. Transition animation can be disabled on an \nindividual panel by setting the <code>transitionDisabled</code> input to false. The <code>onClick</code> output emits when \nthe panel is clicked.</p>",
     "type": "Component",
-    "selector": "ng-kit-accordion-panel, div[ng-kit-accordion-panel]",
+    "selector": "ngk-accordion-panel, div[ngk-accordion-panel]",
     "inputs": [
       {
         "name": "bodyHeight",
@@ -88,12 +88,12 @@ const API_DOCS = {
     "properties": [
       {
         "name": "accordionBody",
-        "type": "NgKitAccordionBodyDirective",
+        "type": "NgkAccordionBodyDirective",
         "description": ""
       },
       {
         "name": "accordionHeader",
-        "type": "NgKitAccordionHeaderDirective",
+        "type": "NgkAccordionHeaderDirective",
         "description": ""
       },
       {
@@ -108,16 +108,16 @@ const API_DOCS = {
       },
       {
         "name": "xmAccordionBody",
-        "type": "NgKitAccordionBodyComponent",
+        "type": "NgkAccordionBodyComponent",
         "description": ""
       }
     ],
     "methods": []
   },
-  "NgKitAccordionStatus": {
+  "NgkAccordionStatus": {
     "fileName": "projects/ng-kit/src/lib/accordion/accordion.ts",
-    "className": "NgKitAccordionStatus",
-    "description": "<p>An array of <code>NgKitAccordionStatus</code> class objects are emitted on <code>NgKitAccordionComponent</code> click events. \nEach contains expandedBodyHeight, wasOpenOnInit, panelStatus, and isCollapsed fields.\nThe <code>expandedBodyHeight</code> field is type number and is the height of the <code>NgKitAccordionBody</code> when expanded.\nThe <code>wasOpenOnInit</code> field is type boolean and will be true if the panel is initially set to expanded using the  <code>isOpenOnInit</code> input on the <code>NgKitPanelComponent</code> is set to true.\nThe <code>panelStatus</code> field will either read &#39;collapsed&#39; or &#39;expanded&#39; and is an alternative to the boolean field <code>isCollapsed</code>.\nThe <code>isCollapsed</code> field will read true if the panel is collapsed and false if expanded.</p>",
+    "className": "NgkAccordionStatus",
+    "description": "<p>An array of <code>NgkAccordionStatus</code> class objects are emitted on <code>NgkAccordionComponent</code> click events. \nEach contains expandedBodyHeight, wasOpenOnInit, panelStatus, and isCollapsed fields.\nThe <code>expandedBodyHeight</code> field is type number and is the height of the <code>NgkAccordionBody</code> when expanded.\nThe <code>wasOpenOnInit</code> field is type boolean and will be true if the panel is initially set to expanded using the  <code>isOpenOnInit</code> input on the <code>NgkPanelComponent</code> is set to true.\nThe <code>panelStatus</code> field will either read &#39;collapsed&#39; or &#39;expanded&#39; and is an alternative to the boolean field <code>isCollapsed</code>.\nThe <code>isCollapsed</code> field will read true if the panel is collapsed and false if expanded.</p>",
     "type": "Class",
     "methods": [],
     "properties": [
@@ -143,12 +143,12 @@ const API_DOCS = {
       }
     ]
   },
-  "NgKitAccordionComponent": {
+  "NgkAccordionComponent": {
     "fileName": "projects/ng-kit/src/lib/accordion/accordion.ts",
-    "className": "NgKitAccordionComponent",
-    "description": "<p>The <code>NgKitAccordionComponent</code> provides multi-panel accordion support and contains one or more <code>NgKitAccordionPanel</code>s.\nThe <code>closeOthers</code> input will collapse other panels on the selection of a new one. The <code>disableTransition</code> disables \nCSS transition animation on all panels. The <code>clickChanges</code> output emits an array of <code>NgKitAccordionStatus</code> objects with\nthe status and features for each panel.</p>",
+    "className": "NgkAccordionComponent",
+    "description": "<p>The <code>NgkAccordionComponent</code> provides multi-panel accordion support and contains one or more <code>NgkAccordionPanel</code>s.\nThe <code>closeOthers</code> input will collapse other panels on the selection of a new one. The <code>disableTransition</code> disables \nCSS transition animation on all panels. The <code>clickChanges</code> output emits an array of <code>NgkAccordionStatus</code> objects with\nthe status and features for each panel.</p>",
     "type": "Component",
-    "selector": "ng-kit-accordion",
+    "selector": "ngk-accordion",
     "inputs": [
       {
         "name": "closeOthers",
@@ -172,18 +172,18 @@ const API_DOCS = {
     "properties": [
       {
         "name": "accordionPanels",
-        "type": "QueryList<NgKitAccordionPanelComponent>",
+        "type": "QueryList<NgkAccordionPanelComponent>",
         "description": ""
       }
     ],
     "methods": []
   },
-  "NgKitButtonComponent": {
+  "NgkButtonComponent": {
     "fileName": "projects/ng-kit/src/lib/button/button.ts",
-    "className": "NgKitButtonComponent",
+    "className": "NgkButtonComponent",
     "description": "<p>A default button to used throughout the application</p>\n<p>Allows for tracking analytics on clicks</p>",
     "type": "Component",
-    "selector": "button[xm]",
+    "selector": "button[ngk]",
     "inputs": [
       {
         "name": "icon",
@@ -211,12 +211,12 @@ const API_DOCS = {
     ],
     "methods": []
   },
-  "NgKitCardBadgeComponent": {
+  "NgkCardBadgeComponent": {
     "fileName": "projects/ng-kit/src/lib/card/card-badge.component.ts",
-    "className": "NgKitCardBadgeComponent",
-    "description": "<p>The <code>NgKitCardBadgeComponent</code> is an optional round, bordered element that is inside the <i>&#60;ng-kit-card-header&#62;</i>.\nIt can accept an ng-kit icon string (e.g. &quot;icon-profile&quot;), image, or both (in which case the icon is used as a fallback\nshould the image be undefined or missing).</p>",
+    "className": "NgkCardBadgeComponent",
+    "description": "<p>The <code>NgkCardBadgeComponent</code> is an optional round, bordered element that is inside the <i>&#60;ngk-card-header&#62;</i>.\nIt can accept an ng-kit icon string (e.g. &quot;icon-profile&quot;), image, or both (in which case the icon is used as a fallback\nshould the image be undefined or missing).</p>",
     "type": "Component",
-    "selector": "ng-kit-card-badge, [ng-kit-card-badge], [xmCardBadge]",
+    "selector": "ngk-card-badge, [ngk-card-badge], [ngkCardBadge]",
     "inputs": [
       {
         "name": "icon",
@@ -239,67 +239,67 @@ const API_DOCS = {
     ],
     "methods": []
   },
-  "NgKitCardBodyComponent": {
+  "NgkCardBodyComponent": {
     "fileName": "projects/ng-kit/src/lib/card/card-body.component.ts",
-    "className": "NgKitCardBodyComponent",
-    "description": "<p>The <code>NgKitCardBodyComponent</code> is a wrapper component for the the lower part of the <code>NgKitCardComponent</code> and contains any untagged content. \nIt can be overridden and replaced by tagging an element with the <code>NgKitCardBodyDirective</code>.<br><br>\n<b>NOTE:</b> <i><code>NgKitCardBodyComponent</code> is not exported and should not be instantiated by a user. Untagged content will be automatically\ntranscluded into it. To replace it, use the <code>NgKitCardBodyDirective</code> tag instead.</i></p>",
+    "className": "NgkCardBodyComponent",
+    "description": "<p>The <code>NgkCardBodyComponent</code> is a wrapper component for the the lower part of the <code>NgkCardComponent</code> and contains any untagged content. \nIt can be overridden and replaced by tagging an element with the <code>NgkCardBodyDirective</code>.<br><br>\n<b>NOTE:</b> <i><code>NgkCardBodyComponent</code> is not exported and should not be instantiated by a user. Untagged content will be automatically\ntranscluded into it. To replace it, use the <code>NgkCardBodyDirective</code> tag instead.</i></p>",
     "type": "Component",
-    "selector": "ng-kit-card-body",
+    "selector": "ngk-card-body",
     "inputs": [],
     "outputs": [],
     "properties": [],
     "methods": []
   },
-  "NgKitCardControlsComponent": {
+  "NgkCardControlsComponent": {
     "fileName": "projects/ng-kit/src/lib/card/card-controls.component.ts",
-    "className": "NgKitCardControlsComponent",
-    "description": "<p>The <code>NgKitCardControlsComponent</code> is similar to the <code>NgKitCardControlsAreaDirective</code> in that the content inside it is transcluded\ninto the <i>&#60;ng-kit-card-header&#62;</i>. However, the <code>NgKitCardControlsComponent</code> includes padding to cushion buttons uniformally\naccross the application. If you need to access the entirety of the controls area (the right half of the ng-kit-card-header)\nuse the <code>NgKitCardControlsDirective</code> instead.</p>",
+    "className": "NgkCardControlsComponent",
+    "description": "<p>The <code>NgkCardControlsComponent</code> is similar to the <code>NgkCardControlsAreaDirective</code> in that the content inside it is transcluded\ninto the <i>&#60;ngk-card-header&#62;</i>. However, the <code>NgkCardControlsComponent</code> includes padding to cushion buttons uniformally\naccross the application. If you need to access the entirety of the controls area (the right half of the ngk-card-header)\nuse the <code>NgkCardControlsDirective</code> instead.</p>",
     "type": "Component",
-    "selector": "ng-kit-card-controls",
+    "selector": "ngk-card-controls",
     "inputs": [],
     "outputs": [],
     "properties": [],
     "methods": []
   },
-  "NgKitCardHeaderComponent": {
+  "NgkCardHeaderComponent": {
     "fileName": "projects/ng-kit/src/lib/card/card-header.component.ts",
-    "className": "NgKitCardHeaderComponent",
-    "description": "<p>The <code>NgKitCardHeaderComponent</code> is a wrapper component for content transcluded into the ng-kit-card \nand contains the <code>NgKitCardBadgeComponent</code>, <code>NgKitCardTitleAreaDirective</code> / <i>&#60;header&#62;</i>, and\n<code>NgKitCardControlsComponent</code> / <code>NgKitCardControlsAreaDirective</code>.<br><br>\n<b>NOTE:</b> <i><code>NgKitCardHeaderComponent</code> is not exported and should not be instantiated by a user.\nUse the <code>NgKitCardBadgeComponent</code>, <code>NgKitCardTitleAreaDirective</code> / <i>&#60;header&#62;</i>, and\n<code>NgKitCardControlsComponent</code> / <code>NgKitCardControlsAreaDirective</code> tags instead to access the areas of the <code>NgKitCardHeaderComponent</code>.</i></p>",
+    "className": "NgkCardHeaderComponent",
+    "description": "<p>The <code>NgkCardHeaderComponent</code> is a wrapper component for content transcluded into the ngk-card \nand contains the <code>NgkCardBadgeComponent</code>, <code>NgkCardTitleAreaDirective</code> / <i>&#60;header&#62;</i>, and\n<code>NgkCardControlsComponent</code> / <code>NgkCardControlsAreaDirective</code>.<br><br>\n<b>NOTE:</b> <i><code>NgkCardHeaderComponent</code> is not exported and should not be instantiated by a user.\nUse the <code>NgkCardBadgeComponent</code>, <code>NgkCardTitleAreaDirective</code> / <i>&#60;header&#62;</i>, and\n<code>NgkCardControlsComponent</code> / <code>NgkCardControlsAreaDirective</code> tags instead to access the areas of the <code>NgkCardHeaderComponent</code>.</i></p>",
     "type": "Component",
-    "selector": "ng-kit-card-header",
+    "selector": "ngk-card-header",
     "inputs": [],
     "outputs": [],
     "properties": [],
     "methods": []
   },
-  "NgKitCardControlsAreaDirective": {
+  "NgkCardControlsAreaDirective": {
     "fileName": "projects/ng-kit/src/lib/card/card.ts",
-    "className": "NgKitCardControlsAreaDirective",
-    "description": "<p>The header can host controls (buttons, dropdown, etc). To project control content into the NgKitCardControlsArea you can\nadd the <code>ng-kit-card-controls-area</code> or <code>xmCardControlsArea</code> directive to the content you&#39;d like projected and place\nit inside the <i>&#60;ng-kit-card&#62;</i> tags. If both an NgKitCardControls component and an element with the <code>NgKitCardControlsAreaDirective</code>\nexits, the <code>NgKitCardControlsAreaDirective</code> will override the <code>NgKitCardControlsComponent</code>, replacing it in the dom.</p>",
+    "className": "NgkCardControlsAreaDirective",
+    "description": "<p>The header can host controls (buttons, dropdown, etc). To project control content into the NgkCardControlsArea you can\nadd the <code>ngk-card-controls-area</code> or <code>ngkCardControlsArea</code> directive to the content you&#39;d like projected and place\nit inside the <i>&#60;ngk-card&#62;</i> tags. If both an NgkCardControls component and an element with the <code>NgkCardControlsAreaDirective</code>\nexits, the <code>NgkCardControlsAreaDirective</code> will override the <code>NgkCardControlsComponent</code>, replacing it in the dom.</p>",
     "type": "Directive",
-    "selector": "[ng-kit-card-controls-area], [xmCardControlsArea]",
+    "selector": "[ngk-card-controls-area], [ngkCardControlsArea]",
     "inputs": [],
     "outputs": [],
     "properties": [],
     "methods": []
   },
-  "NgKitCardBodyDirective": {
+  "NgkCardBodyDirective": {
     "fileName": "projects/ng-kit/src/lib/card/card.ts",
-    "className": "NgKitCardBodyDirective",
-    "description": "<p>Using an instance of the <code>NgKitCardBodyDirective</code> will override and remove the <i>&#60;ng-content&#62;</i> tag\nfrom the <code>NgKitCardBodyComponent</code>, removing any content from between the <i>&#60;ng-kit-card&#62;</i> tags that is not tagged\nfor placement elsewhere.</p>",
+    "className": "NgkCardBodyDirective",
+    "description": "<p>Using an instance of the <code>NgkCardBodyDirective</code> will override and remove the <i>&#60;ng-content&#62;</i> tag\nfrom the <code>NgkCardBodyComponent</code>, removing any content from between the <i>&#60;ngk-card&#62;</i> tags that is not tagged\nfor placement elsewhere.</p>",
     "type": "Directive",
-    "selector": "[ng-kit-card-body], [xmCardBody]",
+    "selector": "[ngk-card-body], [ngkCardBody]",
     "inputs": [],
     "outputs": [],
     "properties": [],
     "methods": []
   },
-  "NgKitCardComponent": {
+  "NgkCardComponent": {
     "fileName": "projects/ng-kit/src/lib/card/card.ts",
-    "className": "NgKitCardComponent",
-    "description": "<p>The <code>NgKitCardComponent</code> consists of a header and body and is the primary component for a card instantiation. \nWithin the header are badge, title, and control areas.</p>",
+    "className": "NgkCardComponent",
+    "description": "<p>The <code>NgkCardComponent</code> consists of a header and body and is the primary component for a card instantiation. \nWithin the header are badge, title, and control areas.</p>",
     "type": "Component",
-    "selector": "ng-kit-card",
+    "selector": "ngk-card",
     "inputs": [
       {
         "name": "removeBorder",
@@ -322,26 +322,26 @@ const API_DOCS = {
       },
       {
         "name": "cardBody",
-        "type": "NgKitCardBodyDirective",
+        "type": "NgkCardBodyDirective",
         "description": ""
       },
       {
         "name": "cardCardControlsArea",
-        "type": "NgKitCardControlsAreaDirective",
+        "type": "NgkCardControlsAreaDirective",
         "description": ""
       },
       {
         "name": "cardTitleArea",
-        "type": "NgKitCardTitleAreaDirective",
+        "type": "NgkCardTitleAreaDirective",
         "description": ""
       }
     ],
     "methods": []
   },
-  "NgKitCarouselConfig": {
+  "NgkCarouselConfig": {
     "fileName": "projects/ng-kit/src/lib/carousel/carousel-config.ts",
-    "className": "NgKitCarouselConfig",
-    "description": "<p>A configuration service for the <a href=\"#/components/carousel/api#NgKitCarousel\">NgKitCarousel</a> component.</p>\n<p>You can inject this service, typically in your root component, and customize its properties\nto provide default values for all carousels used in the application.</p>",
+    "className": "NgkCarouselConfig",
+    "description": "<p>A configuration service for the <a href=\"#/components/carousel/api#NgkCarousel\">NgkCarousel</a> component.</p>\n<p>You can inject this service, typically in your root component, and customize its properties\nto provide default values for all carousels used in the application.</p>",
     "type": "Service",
     "methods": [],
     "properties": [
@@ -383,17 +383,17 @@ const API_DOCS = {
       }
     ]
   },
-  "NgKitSlideDirective": {
+  "NgkSlideDirective": {
     "fileName": "projects/ng-kit/src/lib/carousel/carousel.ts",
-    "className": "NgKitSlideDirective",
+    "className": "NgkSlideDirective",
     "description": "<p>A directive that wraps the individual carousel slide.</p>",
     "type": "Directive",
-    "selector": "ng-template[xmSlide]",
+    "selector": "ng-template[ngkSlide]",
     "inputs": [
       {
         "name": "id",
         "type": "string",
-        "description": "<p>Slide id that must be unique for the entire document.</p>\n<p>If not provided, will be generated in the <code>ng-kit-slide-xx</code> format.</p>"
+        "description": "<p>Slide id that must be unique for the entire document.</p>\n<p>If not provided, will be generated in the <code>ngk-slide-xx</code> format.</p>"
       },
       {
         "name": "index",
@@ -405,13 +405,13 @@ const API_DOCS = {
     "properties": [],
     "methods": []
   },
-  "NgKitCarouselComponent": {
+  "NgkCarouselComponent": {
     "fileName": "projects/ng-kit/src/lib/carousel/carousel.ts",
-    "className": "NgKitCarouselComponent",
+    "className": "NgkCarouselComponent",
     "description": "<p>Carousel is a component to easily create and control slideshows.</p>\n<p>Allows to set intervals, change the way user interacts with the slides and provides a programmatic API.</p>",
     "type": "Component",
-    "selector": "ng-kit-carousel",
-    "exportAs": "xmCarousel",
+    "selector": "ngk-carousel",
+    "exportAs": "ngkCarousel",
     "inputs": [
       {
         "name": "activeId",
@@ -464,7 +464,7 @@ const API_DOCS = {
     "outputs": [
       {
         "name": "slide",
-        "description": "<p>An event emitted right after the slide transition is completed.</p>\n<p>See <a href=\"#/components/carousel/api#NgKitSlideEvent\"><code>NgKitSlideEvent</code></a> for payload details.</p>"
+        "description": "<p>An event emitted right after the slide transition is completed.</p>\n<p>See <a href=\"#/components/carousel/api#NgkSlideEvent\"><code>NgkSlideEvent</code></a> for payload details.</p>"
       }
     ],
     "properties": [
@@ -472,6 +472,12 @@ const API_DOCS = {
         "name": "interval",
         "type": "number",
         "description": "<p>Time in milliseconds before the next slide is shown.</p>"
+      },
+      {
+        "name": "NgkSlideEventSource",
+        "defaultValue": "NgkSlideEventSource",
+        "type": "typeof NgkSlideEventSource",
+        "description": ""
       },
       {
         "name": "pauseOnHover",
@@ -484,19 +490,13 @@ const API_DOCS = {
       },
       {
         "name": "slides",
-        "type": "QueryList<NgKitSlideDirective>",
+        "type": "QueryList<NgkSlideDirective>",
         "description": ""
       },
       {
         "name": "wrap",
         "type": "boolean",
         "description": "<p>If <code>true</code>, will &#39;wrap&#39; the carousel by switching from the last slide back to the first.</p>"
-      },
-      {
-        "name": "NgKitSlideEventSource",
-        "defaultValue": "NgKitSlideEventSource",
-        "type": "typeof NgKitSlideEventSource",
-        "description": ""
       }
     ],
     "methods": [
@@ -510,7 +510,7 @@ const API_DOCS = {
           },
           {
             "name": "source",
-            "type": "NgKitSlideEventSource"
+            "type": "NgkSlideEventSource"
           }
         ],
         "returnType": "void"
@@ -521,7 +521,7 @@ const API_DOCS = {
         "args": [
           {
             "name": "source",
-            "type": "NgKitSlideEventSource"
+            "type": "NgkSlideEventSource"
           }
         ],
         "returnType": "void"
@@ -532,7 +532,7 @@ const API_DOCS = {
         "args": [
           {
             "name": "source",
-            "type": "NgKitSlideEventSource"
+            "type": "NgkSlideEventSource"
           }
         ],
         "returnType": "void"
@@ -551,9 +551,9 @@ const API_DOCS = {
       }
     ]
   },
-  "NgKitSlideEvent": {
+  "NgkSlideEvent": {
     "fileName": "projects/ng-kit/src/lib/carousel/carousel.ts",
-    "className": "NgKitSlideEvent",
+    "className": "NgkSlideEvent",
     "description": "<p>A slide change event emitted right after the slide transition is completed.</p>",
     "type": "Interface",
     "methods": [],
@@ -565,7 +565,7 @@ const API_DOCS = {
       },
       {
         "name": "direction",
-        "type": "NgKitSlideEventDirection",
+        "type": "NgkSlideEventDirection",
         "description": "<p>The slide event direction.</p>\n<p>Possible values are <code>&#39;left&#39; | &#39;right&#39;</code>.</p>"
       },
       {
@@ -594,7 +594,7 @@ const API_DOCS = {
       },
       {
         "name": "source",
-        "type": "NgKitSlideEventSource",
+        "type": "NgkSlideEventSource",
         "description": "<p>Source triggering the slide change event.</p>\n<p>Possible values are <code>&#39;timer&#39; | &#39;arrowLeft&#39; | &#39;arrowRight&#39; | &#39;indicator&#39;</code></p>",
         "since": {
           "version": "5.1.0",
@@ -603,13 +603,13 @@ const API_DOCS = {
       }
     ]
   },
-  "NgKitCollapseComponent": {
+  "NgkCollapseComponent": {
     "fileName": "projects/ng-kit/src/lib/collapse/collapse.ts",
-    "className": "NgKitCollapseComponent",
+    "className": "NgkCollapseComponent",
     "description": "<p>A component to provide a simple way of hiding and showing elements on the page.</p>",
     "type": "Component",
-    "selector": "ng-kit-collapse, [xmCollapse]",
-    "exportAs": "xmCollapse",
+    "selector": "ngk-collapse, [ngkCollapse]",
+    "exportAs": "ngkCollapse",
     "inputs": [
       {
         "name": "_open",
@@ -634,31 +634,31 @@ const API_DOCS = {
     ],
     "methods": []
   },
-  "NgKitDateAdapter": {
-    "fileName": "projects/ng-kit/src/lib/datepicker/adapters/ng-kit-date-adapter.ts",
-    "className": "NgKitDateAdapter",
-    "description": "<p>An abstract service that does the conversion between the internal datepicker <code>NgKitDateStruct</code> model and\nany provided user date model <code>D</code>, ex. a string, a native date, etc.</p>\n<p>The adapter is used <strong>only</strong> for conversion when binding datepicker to a form control,\nex. <code>[(ngModel)]=&quot;userDateModel&quot;</code>. Here <code>userDateModel</code> can be of any type.</p>\n<p>The default datepicker implementation assumes we use <code>NgKitDateStruct</code> as a user model.</p>",
+  "NgkDateAdapter": {
+    "fileName": "projects/ng-kit/src/lib/datepicker/adapters/date-adapter.ts",
+    "className": "NgkDateAdapter",
+    "description": "<p>An abstract service that does the conversion between the internal datepicker <code>NgkDateStruct</code> model and\nany provided user date model <code>D</code>, ex. a string, a native date, etc.</p>\n<p>The adapter is used <strong>only</strong> for conversion when binding datepicker to a form control,\nex. <code>[(ngModel)]=&quot;userDateModel&quot;</code>. Here <code>userDateModel</code> can be of any type.</p>\n<p>The default datepicker implementation assumes we use <code>NgkDateStruct</code> as a user model.</p>",
     "typeParameter": "D",
     "type": "Service",
     "methods": [
       {
         "name": "fromModel",
-        "description": "<p>Converts a user-model date of type <code>D</code> to an <code>NgKitDateStruct</code> for internal use.</p>",
+        "description": "<p>Converts a user-model date of type <code>D</code> to an <code>NgkDateStruct</code> for internal use.</p>",
         "args": [
           {
             "name": "value",
             "type": "D"
           }
         ],
-        "returnType": "NgKitDateStruct"
+        "returnType": "NgkDateStruct"
       },
       {
         "name": "toModel",
-        "description": "<p>Converts an internal <code>NgKitDateStruct</code> date to a user-model date of type <code>D</code>.</p>",
+        "description": "<p>Converts an internal <code>NgkDateStruct</code> date to a user-model date of type <code>D</code>.</p>",
         "args": [
           {
             "name": "date",
-            "type": "NgKitDateStruct"
+            "type": "NgkDateStruct"
           }
         ],
         "returnType": "D"
@@ -666,30 +666,30 @@ const API_DOCS = {
     ],
     "properties": []
   },
-  "NgKitDateNativeAdapter": {
-    "fileName": "projects/ng-kit/src/lib/datepicker/adapters/ng-kit-date-native-adapter.ts",
-    "className": "NgKitDateNativeAdapter",
+  "NgkDateNativeAdapter": {
+    "fileName": "projects/ng-kit/src/lib/datepicker/adapters/date-native-adapter.ts",
+    "className": "NgkDateNativeAdapter",
     "description": "<p>native javascript dates as a user date model.</p>",
     "type": "Service",
     "methods": [
       {
         "name": "fromModel",
-        "description": "<p>Converts a native <code>Date</code> to a <code>NgKitDateStruct</code>.</p>",
+        "description": "<p>Converts a native <code>Date</code> to a <code>NgkDateStruct</code>.</p>",
         "args": [
           {
             "name": "date",
             "type": "Date"
           }
         ],
-        "returnType": "NgKitDateStruct"
+        "returnType": "NgkDateStruct"
       },
       {
         "name": "toModel",
-        "description": "<p>Converts a <code>NgKitDateStruct</code> to a native <code>Date</code>.</p>",
+        "description": "<p>Converts a <code>NgkDateStruct</code> to a native <code>Date</code>.</p>",
         "args": [
           {
             "name": "date",
-            "type": "NgKitDateStruct"
+            "type": "NgkDateStruct"
           }
         ],
         "returnType": "Date"
@@ -697,9 +697,250 @@ const API_DOCS = {
     ],
     "properties": []
   },
-  "NgKitDatepickerConfig": {
+  "NgkCalendar": {
+    "fileName": "projects/ng-kit/src/lib/datepicker/calendar.ts",
+    "className": "NgkCalendar",
+    "description": "<p>A service that represents the calendar used by the datepicker.</p>\n<p>The default implementation uses the Gregorian calendar. You can inject it in your own\nimplementations if necessary to simplify <code>NgkDate</code> calculations.</p>",
+    "type": "Service",
+    "methods": [
+      {
+        "name": "getDaysPerWeek",
+        "description": "<p>Returns the number of days per week.</p>",
+        "args": [],
+        "returnType": "number"
+      },
+      {
+        "name": "getMonths",
+        "description": "<p>Returns an array of months per year.</p>\n<p>With default calendar we use ISO 8601 and return [1, 2, ..., 12];</p>",
+        "args": [
+          {
+            "name": "year",
+            "type": "number"
+          }
+        ],
+        "returnType": "number[]"
+      },
+      {
+        "name": "getWeeksPerMonth",
+        "description": "<p>Returns the number of weeks per month.</p>",
+        "args": [],
+        "returnType": "number"
+      },
+      {
+        "name": "getWeekday",
+        "description": "<p>Returns the weekday number for a given day.</p>\n<p>With the default calendar we use ISO 8601: &#39;weekday&#39; is 1=Mon ... 7=Sun</p>",
+        "args": [
+          {
+            "name": "date",
+            "type": "NgkDate"
+          }
+        ],
+        "returnType": "number"
+      },
+      {
+        "name": "getNext",
+        "description": "<p>Adds a number of years, months or days to a given date.</p>\n<ul>\n<li><code>period</code> can be <code>y</code>, <code>m</code> or <code>d</code> and defaults to day.</li>\n<li><code>number</code> defaults to 1.</li>\n</ul>\n<p>Always returns a new date.</p>",
+        "args": [
+          {
+            "name": "date",
+            "type": "NgkDate"
+          },
+          {
+            "name": "period",
+            "type": "NgkPeriod"
+          },
+          {
+            "name": "number",
+            "type": "number"
+          }
+        ],
+        "returnType": "NgkDate"
+      },
+      {
+        "name": "getPrev",
+        "description": "<p>Subtracts a number of years, months or days from a given date.</p>\n<ul>\n<li><code>period</code> can be <code>y</code>, <code>m</code> or <code>d</code> and defaults to day.</li>\n<li><code>number</code> defaults to 1.</li>\n</ul>\n<p>Always returns a new date.</p>",
+        "args": [
+          {
+            "name": "date",
+            "type": "NgkDate"
+          },
+          {
+            "name": "period",
+            "type": "NgkPeriod"
+          },
+          {
+            "name": "number",
+            "type": "number"
+          }
+        ],
+        "returnType": "NgkDate"
+      },
+      {
+        "name": "getWeekNumber",
+        "description": "<p>Returns the week number for a given week.</p>",
+        "args": [
+          {
+            "name": "week",
+            "type": "NgkDate[]"
+          },
+          {
+            "name": "firstDayOfWeek",
+            "type": "number"
+          }
+        ],
+        "returnType": "number"
+      },
+      {
+        "name": "getToday",
+        "description": "<p>Returns the today&#39;s date.</p>",
+        "args": [],
+        "returnType": "NgkDate"
+      },
+      {
+        "name": "isValid",
+        "description": "<p>Checks if a date is valid in the current calendar.</p>",
+        "args": [
+          {
+            "name": "date",
+            "type": "NgkDate"
+          }
+        ],
+        "returnType": "boolean"
+      }
+    ],
+    "properties": []
+  },
+  "NgkDateParserFormatter": {
+    "fileName": "projects/ng-kit/src/lib/datepicker/date-parser-formatter.ts",
+    "className": "NgkDateParserFormatter",
+    "description": "<p>An abstract service for parsing and formatting dates for the\nConverts between the internal <code>NgkDateStruct</code> model presentation and a <code>string</code> that is displayed in the\ninput element.</p>\n<p>When user types something in the input this service attempts to parse it into a <code>NgkDateStruct</code> object.\nAnd vice versa, when users selects a date in the calendar with the mouse, it must be displayed as a <code>string</code>\nin the input.</p>\n<p>Default implementation uses the ISO 8601 format, but you can provide another implementation via DI\nto use an alternative string format or a custom parsing logic.</p>\n<p>See the <a href=\"#/components/datepicker/overview#date-model\">date format overview</a> for more details.</p>",
+    "type": "Service",
+    "methods": [
+      {
+        "name": "parse",
+        "description": "<p>Parses the given <code>string</code> to an <code>NgkDateStruct</code>.</p>\n<p>Implementations should try their best to provide a result, even\npartial. They must return <code>null</code> if the value can&#39;t be parsed.</p>",
+        "args": [
+          {
+            "name": "value",
+            "type": "string"
+          }
+        ],
+        "returnType": "NgkDateStruct"
+      },
+      {
+        "name": "format",
+        "description": "<p>Formats the given <code>NgkDateStruct</code> to a <code>string</code>.</p>\n<p>Implementations should return an empty string if the given date is <code>null</code>,\nand try their best to provide a partial result if the given date is incomplete or invalid.</p>",
+        "args": [
+          {
+            "name": "date",
+            "type": "NgkDateStruct"
+          }
+        ],
+        "returnType": "string"
+      }
+    ],
+    "properties": []
+  },
+  "NgkDateStruct": {
+    "fileName": "projects/ng-kit/src/lib/datepicker/date-struct.ts",
+    "className": "NgkDateStruct",
+    "description": "<p>An interface of the date model used by the datepicker.</p>\n<p>All datepicker APIs consume <code>NgkDateStruct</code>, but return <code>NgkDate</code>.</p>",
+    "type": "Interface",
+    "methods": [],
+    "properties": [
+      {
+        "name": "day",
+        "type": "number",
+        "description": "<p>The day of month, starting at 1</p>"
+      },
+      {
+        "name": "month",
+        "type": "number",
+        "description": "<p>The month, for example 1=Jan ... 12=Dec</p>"
+      },
+      {
+        "name": "year",
+        "type": "number",
+        "description": "<p>The year, for example 2016</p>"
+      }
+    ]
+  },
+  "NgkDate": {
+    "fileName": "projects/ng-kit/src/lib/datepicker/date.ts",
+    "className": "NgkDate",
+    "description": "<p>A simple class that represents a date that datepicker also uses internally.</p>\n<p>It is the implementation of the <code>NgkDateStruct</code> interface that adds some convenience methods,\nlike <code>.equals()</code>, <code>.before()</code>, etc.</p>\n<p>All datepicker APIs consume <code>NgkDateStruct</code>, but return <code>NgkDate</code>.</p>",
+    "since": {
+      "version": "3.0.0",
+      "description": ""
+    },
+    "type": "Class",
+    "methods": [
+      {
+        "name": "from",
+        "description": "<p>A <strong>static method</strong> that creates a new date object from the <code>NgkDateStruct</code>,</p>\n<p>ex. <code>NgkDate.from({year: 2000, month: 5, day: 1})</code>.</p>\n<p>If the <code>date</code> is already of <code>NgkDate</code> type, the method will return the same object.</p>",
+        "args": [
+          {
+            "name": "date",
+            "type": "NgkDateStruct"
+          }
+        ],
+        "returnType": "NgkDate"
+      },
+      {
+        "name": "equals",
+        "description": "<p>Checks if the current date is equal to another date.</p>",
+        "args": [
+          {
+            "name": "other",
+            "type": "NgkDateStruct"
+          }
+        ],
+        "returnType": "boolean"
+      },
+      {
+        "name": "before",
+        "description": "<p>Checks if the current date is before another date.</p>",
+        "args": [
+          {
+            "name": "other",
+            "type": "NgkDateStruct"
+          }
+        ],
+        "returnType": "boolean"
+      },
+      {
+        "name": "after",
+        "description": "<p>Checks if the current date is after another date.</p>",
+        "args": [
+          {
+            "name": "other",
+            "type": "NgkDateStruct"
+          }
+        ],
+        "returnType": "boolean"
+      }
+    ],
+    "properties": [
+      {
+        "name": "day",
+        "type": "number",
+        "description": "<p>The day of month, starting with 1</p>"
+      },
+      {
+        "name": "month",
+        "type": "number",
+        "description": "<p>The month, for example 1=Jan ... 12=Dec as in ISO 8601</p>"
+      },
+      {
+        "name": "year",
+        "type": "number",
+        "description": "<p>The year, for example 2016</p>"
+      }
+    ]
+  },
+  "NgkDatepickerConfig": {
     "fileName": "projects/ng-kit/src/lib/datepicker/datepicker-config.ts",
-    "className": "NgKitDatepickerConfig",
+    "className": "NgkDatepickerConfig",
     "description": "<p>You can inject this service, typically in your root component, and customize the values of its properties in\norder to provide default values for all the datepickers used in the application.</p>",
     "type": "Service",
     "methods": [],
@@ -711,7 +952,7 @@ const API_DOCS = {
       },
       {
         "name": "dayTemplateData",
-        "type": "(date: NgKitDateStruct, current: { year: number; month: number; }) => any",
+        "type": "(date: NgkDateStruct, current: { year: number; month: number; }) => any",
         "description": ""
       },
       {
@@ -733,17 +974,17 @@ const API_DOCS = {
       },
       {
         "name": "markDisabled",
-        "type": "(date: NgKitDateStruct, current: { year: number; month: number; }) => boolean",
+        "type": "(date: NgkDateStruct, current: { year: number; month: number; }) => boolean",
         "description": ""
       },
       {
         "name": "maxDate",
-        "type": "NgKitDateStruct",
+        "type": "NgkDateStruct",
         "description": ""
       },
       {
         "name": "minDate",
-        "type": "NgKitDateStruct",
+        "type": "NgkDateStruct",
         "description": ""
       },
       {
@@ -786,7 +1027,7 @@ const API_DOCS = {
     "properties": [
       {
         "name": "$implicit",
-        "type": "NgKitDate",
+        "type": "NgkDate",
         "description": "<p>The date that corresponds to the template. Same as the <code>date</code> parameter.</p>\n<p>Can be used for convenience as a default template key, ex. <code>let-d</code>.</p>",
         "since": {
           "version": "3.3.0",
@@ -809,7 +1050,7 @@ const API_DOCS = {
       },
       {
         "name": "date",
-        "type": "NgKitDate",
+        "type": "NgkDate",
         "description": "<p>The date that corresponds to the template.</p>"
       },
       {
@@ -830,7 +1071,7 @@ const API_DOCS = {
       {
         "name": "today",
         "type": "boolean",
-        "description": "<p><code>True</code> if the current date is today (equal to <code>NgKitCalendar.getToday()</code>).</p>",
+        "description": "<p><code>True</code> if the current date is today (equal to <code>NgkCalendar.getToday()</code>).</p>",
         "since": {
           "version": "4.1.0",
           "description": ""
@@ -838,9 +1079,9 @@ const API_DOCS = {
       }
     ]
   },
-  "NgKitDatepickerI18n": {
+  "NgkDatepickerI18n": {
     "fileName": "projects/ng-kit/src/lib/datepicker/datepicker-i18n.ts",
-    "className": "NgKitDatepickerI18n",
+    "className": "NgkDatepickerI18n",
     "description": "<p>A service supplying i18n data to the datepicker component.</p>\n<p>The default implementation of this service uses the Angular locale and registered locale data for\nweekdays and month names (as explained in the Angular i18n guide).</p>\n<p>It also provides a way to i18n data that depends on calendar calculations, like aria labels, day, week and year\nnumerals. For other static labels the datepicker uses the default Angular i18n.</p>\n<p>See the <a href=\"#/components/datepicker/examples#i18n\">i18n demo</a> and\n<a href=\"#/components/datepicker/calendars#hebrew\">Hebrew calendar demo</a> on how to extend this class and define\na custom provider for i18n.</p>",
     "type": "Service",
     "methods": [
@@ -891,7 +1132,7 @@ const API_DOCS = {
         "args": [
           {
             "name": "date",
-            "type": "NgKitDateStruct"
+            "type": "NgkDateStruct"
           }
         ],
         "returnType": "string",
@@ -906,7 +1147,7 @@ const API_DOCS = {
         "args": [
           {
             "name": "date",
-            "type": "NgKitDateStruct"
+            "type": "NgkDateStruct"
           }
         ],
         "returnType": "string",
@@ -948,13 +1189,13 @@ const API_DOCS = {
     ],
     "properties": []
   },
-  "NgKitInputDatepickerDirective": {
+  "NgkInputDatepickerDirective": {
     "fileName": "projects/ng-kit/src/lib/datepicker/datepicker-input.ts",
-    "className": "NgKitInputDatepickerDirective",
+    "className": "NgkInputDatepickerDirective",
     "description": "<p>A directive that allows to stick a datepicker popup to an input field.</p>\n<p>Manages interaction with the input field itself, does value formatting and provides forms integration.</p>",
     "type": "Directive",
-    "selector": "input[xmDatepicker]",
-    "exportAs": "xmDatepicker",
+    "selector": "input[ngkDatepicker]",
+    "exportAs": "ngkDatepicker",
     "inputs": [
       {
         "name": "autoClose",
@@ -978,7 +1219,7 @@ const API_DOCS = {
       },
       {
         "name": "dayTemplateData",
-        "type": "(date: NgKitDate, current: { year: number; month: number; }) => any",
+        "type": "(date: NgkDate, current: { year: number; month: number; }) => any",
         "description": "<p>The callback to pass any arbitrary data to the template cell via the\n<a href=\"#/components/datepicker/api#DayTemplateContext\"><code>DayTemplateContext</code></a>&#39;s <code>data</code> parameter.</p>\n<p><code>current</code> is the month that is currently displayed by the datepicker.</p>",
         "since": {
           "version": "3.3.0",
@@ -1011,17 +1252,17 @@ const API_DOCS = {
       },
       {
         "name": "markDisabled",
-        "type": "(date: NgKitDate, current: { year: number; month: number; }) => boolean",
+        "type": "(date: NgkDate, current: { year: number; month: number; }) => boolean",
         "description": "<p>The callback to mark some dates as disabled.</p>\n<p>It is called for each new date when navigating to a different month.</p>\n<p><code>current</code> is the month that is currently displayed by the datepicker.</p>"
       },
       {
         "name": "maxDate",
-        "type": "NgKitDateStruct",
+        "type": "NgkDateStruct",
         "description": "<p>The latest date that can be displayed or selected. Also used for form validation.</p>\n<p>If not provided, &#39;year&#39; select box will display 10 years after the current month.</p>"
       },
       {
         "name": "minDate",
-        "type": "NgKitDateStruct",
+        "type": "NgkDateStruct",
         "description": "<p>The earliest date that can be displayed or selected. Also used for form validation.</p>\n<p>If not provided, &#39;year&#39; select box will display 10 years before the current month.</p>"
       },
       {
@@ -1067,7 +1308,7 @@ const API_DOCS = {
     "outputs": [
       {
         "name": "dateSelect",
-        "description": "<p>An event emitted when user selects a date using keyboard or mouse.</p>\n<p>The payload of the event is currently selected <code>NgKitDate</code>.</p>",
+        "description": "<p>An event emitted when user selects a date using keyboard or mouse.</p>\n<p>The payload of the event is currently selected <code>NgkDate</code>.</p>",
         "since": {
           "version": "1.1.1",
           "description": ""
@@ -1118,9 +1359,9 @@ const API_DOCS = {
       }
     ]
   },
-  "NgKitDatepickerNavigateEvent": {
+  "NgkDatepickerNavigateEvent": {
     "fileName": "projects/ng-kit/src/lib/datepicker/datepicker.ts",
-    "className": "NgKitDatepickerNavigateEvent",
+    "className": "NgkDatepickerNavigateEvent",
     "description": "<p>An event emitted right before the navigation happens and the month displayed by the datepicker changes.</p>",
     "type": "Interface",
     "methods": [],
@@ -1146,13 +1387,13 @@ const API_DOCS = {
       }
     ]
   },
-  "NgKitDatepickerComponent": {
+  "NgkDatepickerComponent": {
     "fileName": "projects/ng-kit/src/lib/datepicker/datepicker.ts",
-    "className": "NgKitDatepickerComponent",
-    "description": "<p>A highly configurable component that helps you with selecting calendar dates.</p>\n<p><code>NgKitDatepicker</code> is meant to be displayed inline on a page or put inside a popup.</p>",
+    "className": "NgkDatepickerComponent",
+    "description": "<p>A highly configurable component that helps you with selecting calendar dates.</p>\n<p><code>NgkDatepicker</code> is meant to be displayed inline on a page or put inside a popup.</p>",
     "type": "Component",
-    "selector": "ng-kit-datepicker",
-    "exportAs": "xmDatepicker",
+    "selector": "ngk-datepicker",
+    "exportAs": "ngkDatepicker",
     "inputs": [
       {
         "name": "dayTemplate",
@@ -1161,7 +1402,7 @@ const API_DOCS = {
       },
       {
         "name": "dayTemplateData",
-        "type": "(date: NgKitDate, current: { year: number; month: number; }) => any",
+        "type": "(date: NgkDate, current: { year: number; month: number; }) => any",
         "description": "<p>The callback to pass any arbitrary data to the template cell via the\n<a href=\"#/components/datepicker/api#DayTemplateContext\"><code>DayTemplateContext</code></a>&#39;s <code>data</code> parameter.</p>\n<p><code>current</code> is the month that is currently displayed by the datepicker.</p>",
         "since": {
           "version": "3.3.0",
@@ -1194,17 +1435,17 @@ const API_DOCS = {
       },
       {
         "name": "markDisabled",
-        "type": "(date: NgKitDate, current: { year: number; month: number; }) => boolean",
+        "type": "(date: NgkDate, current: { year: number; month: number; }) => boolean",
         "description": "<p>The callback to mark some dates as disabled.</p>\n<p>It is called for each new date when navigating to a different month.</p>\n<p><code>current</code> is the month that is currently displayed by the datepicker.</p>"
       },
       {
         "name": "maxDate",
-        "type": "NgKitDateStruct",
+        "type": "NgkDateStruct",
         "description": "<p>The latest date that can be displayed or selected.</p>\n<p>If not provided, &#39;year&#39; select box will display 10 years after the current month.</p>"
       },
       {
         "name": "minDate",
-        "type": "NgKitDateStruct",
+        "type": "NgkDateStruct",
         "description": "<p>The earliest date that can be displayed or selected.</p>\n<p>If not provided, &#39;year&#39; select box will display 10 years before the current month.</p>"
       },
       {
@@ -1240,7 +1481,7 @@ const API_DOCS = {
       },
       {
         "name": "select",
-        "description": "<p>An event emitted when user selects a date using keyboard or mouse.</p>\n<p>The payload of the event is currently selected <code>NgKitDate</code>.</p>"
+        "description": "<p>An event emitted when user selects a date using keyboard or mouse.</p>\n<p>The payload of the event is currently selected <code>NgkDate</code>.</p>"
       }
     ],
     "properties": [
@@ -1289,251 +1530,10 @@ const API_DOCS = {
       }
     ]
   },
-  "NgKitCalendar": {
-    "fileName": "projects/ng-kit/src/lib/datepicker/ng-kit-calendar.ts",
-    "className": "NgKitCalendar",
-    "description": "<p>A service that represents the calendar used by the datepicker.</p>\n<p>The default implementation uses the Gregorian calendar. You can inject it in your own\nimplementations if necessary to simplify <code>NgKitDate</code> calculations.</p>",
-    "type": "Service",
-    "methods": [
-      {
-        "name": "getDaysPerWeek",
-        "description": "<p>Returns the number of days per week.</p>",
-        "args": [],
-        "returnType": "number"
-      },
-      {
-        "name": "getMonths",
-        "description": "<p>Returns an array of months per year.</p>\n<p>With default calendar we use ISO 8601 and return [1, 2, ..., 12];</p>",
-        "args": [
-          {
-            "name": "year",
-            "type": "number"
-          }
-        ],
-        "returnType": "number[]"
-      },
-      {
-        "name": "getWeeksPerMonth",
-        "description": "<p>Returns the number of weeks per month.</p>",
-        "args": [],
-        "returnType": "number"
-      },
-      {
-        "name": "getWeekday",
-        "description": "<p>Returns the weekday number for a given day.</p>\n<p>With the default calendar we use ISO 8601: &#39;weekday&#39; is 1=Mon ... 7=Sun</p>",
-        "args": [
-          {
-            "name": "date",
-            "type": "NgKitDate"
-          }
-        ],
-        "returnType": "number"
-      },
-      {
-        "name": "getNext",
-        "description": "<p>Adds a number of years, months or days to a given date.</p>\n<ul>\n<li><code>period</code> can be <code>y</code>, <code>m</code> or <code>d</code> and defaults to day.</li>\n<li><code>number</code> defaults to 1.</li>\n</ul>\n<p>Always returns a new date.</p>",
-        "args": [
-          {
-            "name": "date",
-            "type": "NgKitDate"
-          },
-          {
-            "name": "period",
-            "type": "NgKitPeriod"
-          },
-          {
-            "name": "number",
-            "type": "number"
-          }
-        ],
-        "returnType": "NgKitDate"
-      },
-      {
-        "name": "getPrev",
-        "description": "<p>Subtracts a number of years, months or days from a given date.</p>\n<ul>\n<li><code>period</code> can be <code>y</code>, <code>m</code> or <code>d</code> and defaults to day.</li>\n<li><code>number</code> defaults to 1.</li>\n</ul>\n<p>Always returns a new date.</p>",
-        "args": [
-          {
-            "name": "date",
-            "type": "NgKitDate"
-          },
-          {
-            "name": "period",
-            "type": "NgKitPeriod"
-          },
-          {
-            "name": "number",
-            "type": "number"
-          }
-        ],
-        "returnType": "NgKitDate"
-      },
-      {
-        "name": "getWeekNumber",
-        "description": "<p>Returns the week number for a given week.</p>",
-        "args": [
-          {
-            "name": "week",
-            "type": "NgKitDate[]"
-          },
-          {
-            "name": "firstDayOfWeek",
-            "type": "number"
-          }
-        ],
-        "returnType": "number"
-      },
-      {
-        "name": "getToday",
-        "description": "<p>Returns the today&#39;s date.</p>",
-        "args": [],
-        "returnType": "NgKitDate"
-      },
-      {
-        "name": "isValid",
-        "description": "<p>Checks if a date is valid in the current calendar.</p>",
-        "args": [
-          {
-            "name": "date",
-            "type": "NgKitDate"
-          }
-        ],
-        "returnType": "boolean"
-      }
-    ],
-    "properties": []
-  },
-  "NgKitDateParserFormatter": {
-    "fileName": "projects/ng-kit/src/lib/datepicker/ng-kit-date-parser-formatter.ts",
-    "className": "NgKitDateParserFormatter",
-    "description": "<p>An abstract service for parsing and formatting dates for the\nConverts between the internal <code>NgKitDateStruct</code> model presentation and a <code>string</code> that is displayed in the\ninput element.</p>\n<p>When user types something in the input this service attempts to parse it into a <code>NgKitDateStruct</code> object.\nAnd vice versa, when users selects a date in the calendar with the mouse, it must be displayed as a <code>string</code>\nin the input.</p>\n<p>Default implementation uses the ISO 8601 format, but you can provide another implementation via DI\nto use an alternative string format or a custom parsing logic.</p>\n<p>See the <a href=\"#/components/datepicker/overview#date-model\">date format overview</a> for more details.</p>",
-    "type": "Service",
-    "methods": [
-      {
-        "name": "parse",
-        "description": "<p>Parses the given <code>string</code> to an <code>NgKitDateStruct</code>.</p>\n<p>Implementations should try their best to provide a result, even\npartial. They must return <code>null</code> if the value can&#39;t be parsed.</p>",
-        "args": [
-          {
-            "name": "value",
-            "type": "string"
-          }
-        ],
-        "returnType": "NgKitDateStruct"
-      },
-      {
-        "name": "format",
-        "description": "<p>Formats the given <code>NgKitDateStruct</code> to a <code>string</code>.</p>\n<p>Implementations should return an empty string if the given date is <code>null</code>,\nand try their best to provide a partial result if the given date is incomplete or invalid.</p>",
-        "args": [
-          {
-            "name": "date",
-            "type": "NgKitDateStruct"
-          }
-        ],
-        "returnType": "string"
-      }
-    ],
-    "properties": []
-  },
-  "NgKitDateStruct": {
-    "fileName": "projects/ng-kit/src/lib/datepicker/ng-kit-date-struct.ts",
-    "className": "NgKitDateStruct",
-    "description": "<p>An interface of the date model used by the datepicker.</p>\n<p>All datepicker APIs consume <code>NgKitDateStruct</code>, but return <code>NgKitDate</code>.</p>",
-    "type": "Interface",
-    "methods": [],
-    "properties": [
-      {
-        "name": "day",
-        "type": "number",
-        "description": "<p>The day of month, starting at 1</p>"
-      },
-      {
-        "name": "month",
-        "type": "number",
-        "description": "<p>The month, for example 1=Jan ... 12=Dec</p>"
-      },
-      {
-        "name": "year",
-        "type": "number",
-        "description": "<p>The year, for example 2016</p>"
-      }
-    ]
-  },
-  "NgKitDate": {
-    "fileName": "projects/ng-kit/src/lib/datepicker/ng-kit-date.ts",
-    "className": "NgKitDate",
-    "description": "<p>A simple class that represents a date that datepicker also uses internally.</p>\n<p>It is the implementation of the <code>NgKitDateStruct</code> interface that adds some convenience methods,\nlike <code>.equals()</code>, <code>.before()</code>, etc.</p>\n<p>All datepicker APIs consume <code>NgKitDateStruct</code>, but return <code>NgKitDate</code>.</p>",
-    "since": {
-      "version": "3.0.0",
-      "description": ""
-    },
-    "type": "Class",
-    "methods": [
-      {
-        "name": "from",
-        "description": "<p>A <strong>static method</strong> that creates a new date object from the <code>NgKitDateStruct</code>,</p>\n<p>ex. <code>NgKitDate.from({year: 2000, month: 5, day: 1})</code>.</p>\n<p>If the <code>date</code> is already of <code>NgKitDate</code> type, the method will return the same object.</p>",
-        "args": [
-          {
-            "name": "date",
-            "type": "NgKitDateStruct"
-          }
-        ],
-        "returnType": "NgKitDate"
-      },
-      {
-        "name": "equals",
-        "description": "<p>Checks if the current date is equal to another date.</p>",
-        "args": [
-          {
-            "name": "other",
-            "type": "NgKitDateStruct"
-          }
-        ],
-        "returnType": "boolean"
-      },
-      {
-        "name": "before",
-        "description": "<p>Checks if the current date is before another date.</p>",
-        "args": [
-          {
-            "name": "other",
-            "type": "NgKitDateStruct"
-          }
-        ],
-        "returnType": "boolean"
-      },
-      {
-        "name": "after",
-        "description": "<p>Checks if the current date is after another date.</p>",
-        "args": [
-          {
-            "name": "other",
-            "type": "NgKitDateStruct"
-          }
-        ],
-        "returnType": "boolean"
-      }
-    ],
-    "properties": [
-      {
-        "name": "day",
-        "type": "number",
-        "description": "<p>The day of month, starting with 1</p>"
-      },
-      {
-        "name": "month",
-        "type": "number",
-        "description": "<p>The month, for example 1=Jan ... 12=Dec as in ISO 8601</p>"
-      },
-      {
-        "name": "year",
-        "type": "number",
-        "description": "<p>The year, for example 2016</p>"
-      }
-    ]
-  },
-  "NgKitDropdownConfig": {
+  "NgkDropdownConfig": {
     "fileName": "projects/ng-kit/src/lib/dropdown/dropdown.ts",
-    "className": "NgKitDropdownConfig",
-    "description": "<p>Configuration service for the NgKitDropdown directive.\nYou can inject this service, typically in your root component, and customize the values of its properties in\norder to provide default values for all the dropdowns used in the application.</p>",
+    "className": "NgkDropdownConfig",
+    "description": "<p>Configuration service for the NgkDropdown directive.\nYou can inject this service, typically in your root component, and customize the values of its properties in\norder to provide default values for all the dropdowns used in the application.</p>",
     "type": "Service",
     "methods": [],
     "properties": [
@@ -1555,16 +1555,16 @@ const API_DOCS = {
       }
     ]
   },
-  "NgKitDropdownItemDirective": {
+  "NgkDropdownItemDirective": {
     "fileName": "projects/ng-kit/src/lib/dropdown/dropdown.ts",
-    "className": "NgKitDropdownItemDirective",
+    "className": "NgkDropdownItemDirective",
     "description": "<p>A directive you should put put on a dropdown item of a menu.</p>",
     "since": {
       "version": "4.1.0",
       "description": ""
     },
     "type": "Directive",
-    "selector": "[xmDropdownItem]",
+    "selector": "[ngkDropdownItem]",
     "inputs": [
       {
         "name": "disabled",
@@ -1593,13 +1593,13 @@ const API_DOCS = {
     ],
     "methods": []
   },
-  "NgKitDropdownMenuComponent": {
+  "NgkDropdownMenuComponent": {
     "fileName": "projects/ng-kit/src/lib/dropdown/dropdown.ts",
-    "className": "NgKitDropdownMenuComponent",
+    "className": "NgkDropdownMenuComponent",
     "description": "<p>A component that wraps dropdown menu content and dropdown items.</p>",
     "type": "Component",
-    "selector": "ng-kit-dropdown-menu",
-    "exportAs": "xmDropdownMenu",
+    "selector": "ngk-dropdown-menu",
+    "exportAs": "ngkDropdownMenu",
     "inputs": [],
     "outputs": [],
     "properties": [
@@ -1611,7 +1611,7 @@ const API_DOCS = {
       },
       {
         "name": "menuItems",
-        "type": "QueryList<NgKitDropdownItemDirective>",
+        "type": "QueryList<NgkDropdownItemDirective>",
         "description": ""
       },
       {
@@ -1623,16 +1623,16 @@ const API_DOCS = {
     ],
     "methods": []
   },
-  "NgKitDropdownAnchorDirective": {
+  "NgkDropdownAnchorDirective": {
     "fileName": "projects/ng-kit/src/lib/dropdown/dropdown.ts",
-    "className": "NgKitDropdownAnchorDirective",
-    "description": "<p>Marks an element to which dropdown menu will be anchored. This is a simple version\nof the NgKitDropdownToggle directive. It plays the same role as NgKitDropdownToggle but\ndoesn&#39;t listen to click events to toggle dropdown menu thus enabling support for\nevents other than click.</p>",
+    "className": "NgkDropdownAnchorDirective",
+    "description": "<p>Marks an element to which dropdown menu will be anchored. This is a simple version\nof the NgkDropdownToggle directive. It plays the same role as NgkDropdownToggle but\ndoesn&#39;t listen to click events to toggle dropdown menu thus enabling support for\nevents other than click.</p>",
     "since": {
       "version": "1.1.0",
       "description": ""
     },
     "type": "Directive",
-    "selector": "[xmDropdownAnchor]",
+    "selector": "[ngkDropdownAnchor]",
     "inputs": [],
     "outputs": [],
     "properties": [
@@ -1644,24 +1644,24 @@ const API_DOCS = {
     ],
     "methods": []
   },
-  "NgKitDropdownToggleDirective": {
+  "NgkDropdownToggleDirective": {
     "fileName": "projects/ng-kit/src/lib/dropdown/dropdown.ts",
-    "className": "NgKitDropdownToggleDirective",
-    "description": "<p>Allows the dropdown to be toggled via click. This directive is optional: you can use NgKitDropdownAnchor as an\nalternative.</p>",
+    "className": "NgkDropdownToggleDirective",
+    "description": "<p>Allows the dropdown to be toggled via click. This directive is optional: you can use NgkDropdownAnchor as an\nalternative.</p>",
     "type": "Directive",
-    "selector": "[xmDropdownToggle]",
+    "selector": "[ngkDropdownToggle]",
     "inputs": [],
     "outputs": [],
     "properties": [],
     "methods": []
   },
-  "NgKitDropdownComponent": {
+  "NgkDropdownComponent": {
     "fileName": "projects/ng-kit/src/lib/dropdown/dropdown.ts",
-    "className": "NgKitDropdownComponent",
+    "className": "NgkDropdownComponent",
     "description": "<p>Transforms a node into a dropdown.</p>",
     "type": "Component",
-    "selector": "ng-kit-dropdown",
-    "exportAs": "xmDropdown",
+    "selector": "ngk-dropdown",
+    "exportAs": "ngkDropdown",
     "inputs": [
       {
         "name": "_open",
@@ -1732,10 +1732,10 @@ const API_DOCS = {
       }
     ]
   },
-  "NgKitModalOptions": {
+  "NgkModalOptions": {
     "fileName": "projects/ng-kit/src/lib/modal/modal-config.ts",
-    "className": "NgKitModalOptions",
-    "description": "<p>Options available when opening new modal windows with <code>NgKitModal.open()</code> method.</p>",
+    "className": "NgkModalOptions",
+    "description": "<p>Options available when opening new modal windows with <code>NgkModal.open()</code> method.</p>",
     "type": "Interface",
     "methods": [],
     "properties": [
@@ -1821,9 +1821,9 @@ const API_DOCS = {
       }
     ]
   },
-  "NgKitModalConfig": {
+  "NgkModalConfig": {
     "fileName": "projects/ng-kit/src/lib/modal/modal-config.ts",
-    "className": "NgKitModalConfig",
+    "className": "NgkModalConfig",
     "description": "<p>You can inject this service, typically in your root component, and customize the values of its properties in\norder to provide default values for all modals used in the application.</p>",
     "since": {
       "version": "3.1.0",
@@ -1846,15 +1846,15 @@ const API_DOCS = {
       }
     ]
   },
-  "NgKitActiveModal": {
+  "NgkActiveModal": {
     "fileName": "projects/ng-kit/src/lib/modal/modal-ref.ts",
-    "className": "NgKitActiveModal",
+    "className": "NgkActiveModal",
     "description": "<p>A reference to the currently opened (active) modal.</p>\n<p>Instances of this class can be injected into your component passed as modal content.\nSo you can <code>.close()</code> or <code>.dismiss()</code> the modal window from your component.</p>",
     "type": "Class",
     "methods": [
       {
         "name": "close",
-        "description": "<p>Closes the modal with an optional <code>result</code> value.</p>\n<p>The <code>NgKitMobalRef.result</code> promise will be resolved with the provided value.</p>",
+        "description": "<p>Closes the modal with an optional <code>result</code> value.</p>\n<p>The <code>NgkMobalRef.result</code> promise will be resolved with the provided value.</p>",
         "args": [
           {
             "name": "result",
@@ -1865,7 +1865,7 @@ const API_DOCS = {
       },
       {
         "name": "dismiss",
-        "description": "<p>Dismisses the modal with an optional <code>reason</code> value.</p>\n<p>The <code>NgKitModalRef.result</code> promise will be rejected with the provided value.</p>",
+        "description": "<p>Dismisses the modal with an optional <code>reason</code> value.</p>\n<p>The <code>NgkModalRef.result</code> promise will be rejected with the provided value.</p>",
         "args": [
           {
             "name": "reason",
@@ -1877,15 +1877,15 @@ const API_DOCS = {
     ],
     "properties": []
   },
-  "NgKitModalRef": {
+  "NgkModalRef": {
     "fileName": "projects/ng-kit/src/lib/modal/modal-ref.ts",
-    "className": "NgKitModalRef",
-    "description": "<p>A reference to the newly opened modal returned by the <code>NgKitModal.open()</code> method.</p>",
+    "className": "NgkModalRef",
+    "description": "<p>A reference to the newly opened modal returned by the <code>NgkModal.open()</code> method.</p>",
     "type": "Class",
     "methods": [
       {
         "name": "close",
-        "description": "<p>Closes the modal with an optional <code>result</code> value.</p>\n<p>The <code>NgKitMobalRef.result</code> promise will be resolved with the provided value.</p>",
+        "description": "<p>Closes the modal with an optional <code>result</code> value.</p>\n<p>The <code>NgkMobalRef.result</code> promise will be resolved with the provided value.</p>",
         "args": [
           {
             "name": "result",
@@ -1896,7 +1896,7 @@ const API_DOCS = {
       },
       {
         "name": "dismiss",
-        "description": "<p>Dismisses the modal with an optional <code>reason</code> value.</p>\n<p>The <code>NgKitModalRef.result</code> promise will be rejected with the provided value.</p>",
+        "description": "<p>Dismisses the modal with an optional <code>reason</code> value.</p>\n<p>The <code>NgkModalRef.result</code> promise will be rejected with the provided value.</p>",
         "args": [
           {
             "name": "reason",
@@ -1919,15 +1919,15 @@ const API_DOCS = {
       }
     ]
   },
-  "NgKitModal": {
+  "NgkModal": {
     "fileName": "projects/ng-kit/src/lib/modal/modal.ts",
-    "className": "NgKitModal",
+    "className": "NgkModal",
     "description": "<p>A service for opening modal windows.</p>\n<p>Creating a modal is straightforward: create a component or a template and pass it as an argument to\nthe <code>.open()</code> method.</p>",
     "type": "Service",
     "methods": [
       {
         "name": "open",
-        "description": "<p>Opens a new modal window with the specified content and supplied options.</p>\n<p>Content can be provided as a <code>TemplateRef</code> or a component type. If you pass a component type as content,\nthen instances of those components can be injected with an instance of the <code>NgKitActiveModal</code> class. You can then\nuse <code>NgKitActiveModal</code> methods to close / dismiss modals from &quot;inside&quot; of your component.</p>",
+        "description": "<p>Opens a new modal window with the specified content and supplied options.</p>\n<p>Content can be provided as a <code>TemplateRef</code> or a component type. If you pass a component type as content,\nthen instances of those components can be injected with an instance of the <code>NgkActiveModal</code> class. You can then\nuse <code>NgkActiveModal</code> methods to close / dismiss modals from &quot;inside&quot; of your component.</p>",
         "args": [
           {
             "name": "content",
@@ -1935,10 +1935,10 @@ const API_DOCS = {
           },
           {
             "name": "options",
-            "type": "NgKitModalOptions"
+            "type": "NgkModalOptions"
           }
         ],
-        "returnType": "NgKitModalRef"
+        "returnType": "NgkModalRef"
       },
       {
         "name": "dismissAll",
@@ -1968,10 +1968,10 @@ const API_DOCS = {
     ],
     "properties": []
   },
-  "NgKitPaginationLinkContext": {
+  "NgkPaginationLinkContext": {
     "fileName": "projects/ng-kit/src/lib/pagination/pagination.ts",
-    "className": "NgKitPaginationLinkContext",
-    "description": "<p>A context for the</p>\n<ul>\n<li><code>NgKitPaginationFirst</code></li>\n<li><code>NgKitPaginationPrevious</code></li>\n<li><code>NgKitPaginationNext</code></li>\n<li><code>NgKitPaginationLast</code></li>\n<li><code>NgKitPaginationEllipsis</code></li>\n</ul>\n<p>link templates in case you want to override one.</p>",
+    "className": "NgkPaginationLinkContext",
+    "description": "<p>A context for the</p>\n<ul>\n<li><code>NgkPaginationFirst</code></li>\n<li><code>NgkPaginationPrevious</code></li>\n<li><code>NgkPaginationNext</code></li>\n<li><code>NgkPaginationLast</code></li>\n<li><code>NgkPaginationEllipsis</code></li>\n</ul>\n<p>link templates in case you want to override one.</p>",
     "since": {
       "version": "4.1.0",
       "description": ""
@@ -1991,10 +1991,10 @@ const API_DOCS = {
       }
     ]
   },
-  "NgKitPaginationNumberContext": {
+  "NgkPaginationNumberContext": {
     "fileName": "projects/ng-kit/src/lib/pagination/pagination.ts",
-    "className": "NgKitPaginationNumberContext",
-    "description": "<p>A context for the <code>NgKitPaginationNumber</code> link template in case you want to override one.</p>\n<p>Extends <code>NgKitPaginationLinkContext</code>.</p>",
+    "className": "NgkPaginationNumberContext",
+    "description": "<p>A context for the <code>NgkPaginationNumber</code> link template in case you want to override one.</p>\n<p>Extends <code>NgkPaginationLinkContext</code>.</p>",
     "since": {
       "version": "4.1.0",
       "description": ""
@@ -2009,102 +2009,102 @@ const API_DOCS = {
       }
     ]
   },
-  "NgKitPaginationEllipsisDirective": {
+  "NgkPaginationEllipsisDirective": {
     "fileName": "projects/ng-kit/src/lib/pagination/pagination.ts",
-    "className": "NgKitPaginationEllipsisDirective",
+    "className": "NgkPaginationEllipsisDirective",
     "description": "<p>A directive to match the &#39;ellipsis&#39; link template</p>",
     "since": {
       "version": "4.1.0",
       "description": ""
     },
     "type": "Directive",
-    "selector": "ng-template[xmPaginationEllipsis]",
+    "selector": "ng-template[ngkPaginationEllipsis]",
     "inputs": [],
     "outputs": [],
     "properties": [],
     "methods": []
   },
-  "NgKitPaginationFirstDirective": {
+  "NgkPaginationFirstDirective": {
     "fileName": "projects/ng-kit/src/lib/pagination/pagination.ts",
-    "className": "NgKitPaginationFirstDirective",
+    "className": "NgkPaginationFirstDirective",
     "description": "<p>A directive to match the &#39;first&#39; link template</p>",
     "since": {
       "version": "4.1.0",
       "description": ""
     },
     "type": "Directive",
-    "selector": "ng-template[xmPaginationFirst]",
+    "selector": "ng-template[ngkPaginationFirst]",
     "inputs": [],
     "outputs": [],
     "properties": [],
     "methods": []
   },
-  "NgKitPaginationLastDirective": {
+  "NgkPaginationLastDirective": {
     "fileName": "projects/ng-kit/src/lib/pagination/pagination.ts",
-    "className": "NgKitPaginationLastDirective",
+    "className": "NgkPaginationLastDirective",
     "description": "<p>A directive to match the &#39;last&#39; link template</p>",
     "since": {
       "version": "4.1.0",
       "description": ""
     },
     "type": "Directive",
-    "selector": "ng-template[xmPaginationLast]",
+    "selector": "ng-template[ngkPaginationLast]",
     "inputs": [],
     "outputs": [],
     "properties": [],
     "methods": []
   },
-  "NgKitPaginationNextDirective": {
+  "NgkPaginationNextDirective": {
     "fileName": "projects/ng-kit/src/lib/pagination/pagination.ts",
-    "className": "NgKitPaginationNextDirective",
+    "className": "NgkPaginationNextDirective",
     "description": "<p>A directive to match the &#39;next&#39; link template</p>",
     "since": {
       "version": "4.1.0",
       "description": ""
     },
     "type": "Directive",
-    "selector": "ng-template[xmPaginationNext]",
+    "selector": "ng-template[ngkPaginationNext]",
     "inputs": [],
     "outputs": [],
     "properties": [],
     "methods": []
   },
-  "NgKitPaginationNumberDirective": {
+  "NgkPaginationNumberDirective": {
     "fileName": "projects/ng-kit/src/lib/pagination/pagination.ts",
-    "className": "NgKitPaginationNumberDirective",
+    "className": "NgkPaginationNumberDirective",
     "description": "<p>A directive to match the page &#39;number&#39; link template</p>",
     "since": {
       "version": "4.1.0",
       "description": ""
     },
     "type": "Directive",
-    "selector": "ng-template[xmPaginationNumber]",
+    "selector": "ng-template[ngkPaginationNumber]",
     "inputs": [],
     "outputs": [],
     "properties": [],
     "methods": []
   },
-  "NgKitPaginationPreviousDirective": {
+  "NgkPaginationPreviousDirective": {
     "fileName": "projects/ng-kit/src/lib/pagination/pagination.ts",
-    "className": "NgKitPaginationPreviousDirective",
+    "className": "NgkPaginationPreviousDirective",
     "description": "<p>A directive to match the &#39;previous&#39; link template</p>",
     "since": {
       "version": "4.1.0",
       "description": ""
     },
     "type": "Directive",
-    "selector": "ng-template[xmPaginationPrevious]",
+    "selector": "ng-template[ngkPaginationPrevious]",
     "inputs": [],
     "outputs": [],
     "properties": [],
     "methods": []
   },
-  "NgKitPaginationComponent": {
+  "NgkPaginationComponent": {
     "fileName": "projects/ng-kit/src/lib/pagination/pagination.ts",
-    "className": "NgKitPaginationComponent",
+    "className": "NgkPaginationComponent",
     "description": "<p>A component that displays page numbers and allows to customize them in several ways.</p>",
     "type": "Component",
-    "selector": "ng-kit-pagination",
+    "selector": "ngk-pagination",
     "inputs": [
       {
         "name": "boundaryLinks",
@@ -2178,41 +2178,41 @@ const API_DOCS = {
       },
       {
         "name": "tplEllipsis",
-        "type": "NgKitPaginationEllipsisDirective",
+        "type": "NgkPaginationEllipsisDirective",
         "description": ""
       },
       {
         "name": "tplFirst",
-        "type": "NgKitPaginationFirstDirective",
+        "type": "NgkPaginationFirstDirective",
         "description": ""
       },
       {
         "name": "tplLast",
-        "type": "NgKitPaginationLastDirective",
+        "type": "NgkPaginationLastDirective",
         "description": ""
       },
       {
         "name": "tplNext",
-        "type": "NgKitPaginationNextDirective",
+        "type": "NgkPaginationNextDirective",
         "description": ""
       },
       {
         "name": "tplNumber",
-        "type": "NgKitPaginationNumberDirective",
+        "type": "NgkPaginationNumberDirective",
         "description": ""
       },
       {
         "name": "tplPrevious",
-        "type": "NgKitPaginationPreviousDirective",
+        "type": "NgkPaginationPreviousDirective",
         "description": ""
       }
     ],
     "methods": []
   },
-  "NgKitPopoverConfig": {
+  "NgkPopoverConfig": {
     "fileName": "projects/ng-kit/src/lib/popover/popover.ts",
-    "className": "NgKitPopoverConfig",
-    "description": "<p>Configuration service for the NgKitPopoverDirective.\nYou can inject this service, typically in your root component, and customize the values of its properties in\norder to provide default values for all the popovers used in the application.</p>",
+    "className": "NgkPopoverConfig",
+    "description": "<p>Configuration service for the NgkPopoverDirective.\nYou can inject this service, typically in your root component, and customize the values of its properties in\norder to provide default values for all the popovers used in the application.</p>",
     "type": "Service",
     "methods": [],
     "properties": [
@@ -2264,13 +2264,13 @@ const API_DOCS = {
       }
     ]
   },
-  "NgKitPopoverDirective": {
+  "NgkPopoverDirective": {
     "fileName": "projects/ng-kit/src/lib/popover/popover.ts",
-    "className": "NgKitPopoverDirective",
+    "className": "NgkPopoverDirective",
     "description": "<p>A lightweight, extensible directive for fancy popover creation.</p>",
     "type": "Directive",
-    "selector": "[xmPopover]",
-    "exportAs": "xmPopover",
+    "selector": "[ngkPopover]",
+    "exportAs": "ngkPopover",
     "inputs": [
       {
         "name": "autoClose",
@@ -2321,7 +2321,7 @@ const API_DOCS = {
       {
         "name": "popoverClass",
         "type": "string",
-        "description": "<p>An optional class applied to ng-kit-popover-window</p>",
+        "description": "<p>An optional class applied to ngk-popover-window</p>",
         "since": {
           "version": "2.2.0",
           "description": ""
@@ -2386,12 +2386,12 @@ const API_DOCS = {
       }
     ]
   },
-  "NgKitProgressbarComponent": {
+  "NgkProgressbarComponent": {
     "fileName": "projects/ng-kit/src/lib/progressbar/progressbar.ts",
-    "className": "NgKitProgressbarComponent",
+    "className": "NgkProgressbarComponent",
     "description": "<p>Directive that can be used to provide feedback on the progress of a workflow or an action.</p>",
     "type": "Component",
-    "selector": "ng-kit-progressbar",
+    "selector": "ngk-progressbar",
     "inputs": [
       {
         "name": "animated",
@@ -2466,10 +2466,10 @@ const API_DOCS = {
     ],
     "methods": []
   },
-  "NgKitColWidth": {
+  "NgkColWidth": {
     "fileName": "projects/ng-kit/src/lib/table/table.ts",
-    "className": "NgKitColWidth",
-    "description": "<p>A class for setting the widths of columns in NgKitTable. An array of <code>NgKitColWidth</code> is passed to the <code>NgKitTable</code> \nif setting all using the <code>ColWidths</code> input and a single <code>NgKitColWidth</code> as an input if setting widths on the <i>&#60;th&#62;</i> tags and the <code>NgKitTableHeaderCellDirective</code>.</p>",
+    "className": "NgkColWidth",
+    "description": "<p>A class for setting the widths of columns in NgkTable. An array of <code>NgkColWidth</code> is passed to the <code>NgkTable</code> \nif setting all using the <code>ColWidths</code> input and a single <code>NgkColWidth</code> as an input if setting widths on the <i>&#60;th&#62;</i> tags and the <code>NgkTableHeaderCellDirective</code>.</p>",
     "type": "Class",
     "methods": [],
     "properties": [
@@ -2492,16 +2492,16 @@ const API_DOCS = {
       }
     ]
   },
-  "NgKitTableHeaderCellDirective": {
+  "NgkTableHeaderCellDirective": {
     "fileName": "projects/ng-kit/src/lib/table/table.ts",
-    "className": "NgKitTableHeaderCellDirective",
-    "description": "<p>NgKitTableHeaderCellDirective can be implemented as a <code>xm</code> placed on the <i>&#60;th&#62;</i> tags of a <i>&#60;table&#62;</i>. \nIf used on one <i>&#60;th&#62;</i> tag it should be used on all of them.</p>",
+    "className": "NgkTableHeaderCellDirective",
+    "description": "<p>NgkTableHeaderCellDirective can be implemented as a <code>ngk</code> placed on the <i>&#60;th&#62;</i> tags of a <i>&#60;table&#62;</i>. \nIf used on one <i>&#60;th&#62;</i> tag it should be used on all of them.</p>",
     "type": "Directive",
-    "selector": "th[xm]",
+    "selector": "th[ngk]",
     "inputs": [
       {
         "name": "colWidth",
-        "type": "NgKitColWidth",
+        "type": "NgkColWidth",
         "description": ""
       }
     ],
@@ -2509,12 +2509,12 @@ const API_DOCS = {
     "properties": [],
     "methods": []
   },
-  "NgKitTableComponent": {
+  "NgkTableComponent": {
     "fileName": "projects/ng-kit/src/lib/table/table.ts",
-    "className": "NgKitTableComponent",
-    "description": "<p><code>NgKitTableComponent</code> is a structural directive component on the html <i>&#60;table&#62;</i> tag to handle\noverflow management, horizontal layout, column visibility, and to allow for scrolling on the <i>&#60;tbody&#62;</i> tag.\nThe <code>addBorder</code> input can be set to true to add a 1px solid border-theme-colored border to the table. Alternatively, any border values set on the <i>&#60;table&#62;</i> tag\nitself will be transfered upon instantiation to the wrapper <i>&#60;div&#62;</i> the <code>NgKitTableComponent</code> creates around itself.</p>",
+    "className": "NgkTableComponent",
+    "description": "<p><code>NgkTableComponent</code> is a structural directive component on the html <i>&#60;table&#62;</i> tag to handle\noverflow management, horizontal layout, column visibility, and to allow for scrolling on the <i>&#60;tbody&#62;</i> tag.\nThe <code>addBorder</code> input can be set to true to add a 1px solid border-theme-colored border to the table. Alternatively, any border values set on the <i>&#60;table&#62;</i> tag\nitself will be transfered upon instantiation to the wrapper <i>&#60;div&#62;</i> the <code>NgkTableComponent</code> creates around itself.</p>",
     "type": "Component",
-    "selector": "table[xm]",
+    "selector": "table[ngk]",
     "inputs": [
       {
         "name": "addBorder",
@@ -2534,7 +2534,7 @@ const API_DOCS = {
       },
       {
         "name": "colWidths",
-        "type": "NgKitColWidth[]",
+        "type": "NgkColWidth[]",
         "description": ""
       },
       {
@@ -2564,42 +2564,42 @@ const API_DOCS = {
       },
       {
         "name": "ngBody",
-        "type": "NgKitTableElement",
+        "type": "NgkTableElement",
         "description": ""
       },
       {
         "name": "ngBodyRows",
-        "type": "NgKitTableElement[]",
+        "type": "NgkTableElement[]",
         "description": ""
       },
       {
         "name": "ngCells",
-        "type": "NgKitTableElement[]",
+        "type": "NgkTableElement[]",
         "description": ""
       },
       {
         "name": "ngHead",
-        "type": "NgKitTableElement",
+        "type": "NgkTableElement",
         "description": ""
       },
       {
         "name": "ngHeadRow",
-        "type": "NgKitTableElement",
+        "type": "NgkTableElement",
         "description": ""
       },
       {
         "name": "ngTable",
-        "type": "NgKitTableElement",
+        "type": "NgkTableElement",
         "description": ""
       },
       {
         "name": "ngTds",
-        "type": "NgKitTableElement[]",
+        "type": "NgkTableElement[]",
         "description": ""
       },
       {
         "name": "ngThs",
-        "type": "NgKitTableElement[]",
+        "type": "NgkTableElement[]",
         "description": ""
       },
       {
@@ -2609,7 +2609,7 @@ const API_DOCS = {
       },
       {
         "name": "resize",
-        "type": "NgKitResizeDirective",
+        "type": "NgkResizeDirective",
         "description": ""
       },
       {
@@ -2624,7 +2624,7 @@ const API_DOCS = {
       },
       {
         "name": "tableHeaderCells",
-        "type": "QueryList<NgKitTableHeaderCellDirective>",
+        "type": "QueryList<NgkTableHeaderCellDirective>",
         "description": ""
       }
     ],
@@ -2637,9 +2637,9 @@ const API_DOCS = {
       }
     ]
   },
-  "NgKitTabChangeEvent": {
+  "NgkTabChangeEvent": {
     "fileName": "projects/ng-kit/src/lib/tabset/tab-change-event.ts",
-    "className": "NgKitTabChangeEvent",
+    "className": "NgkTabChangeEvent",
     "description": "<p>The payload of the change event fired right before the tab change</p>",
     "type": "Interface",
     "methods": [],
@@ -2666,34 +2666,34 @@ const API_DOCS = {
       }
     ]
   },
-  "NgKitTabTitleDirective": {
+  "NgkTabTitleDirective": {
     "fileName": "projects/ng-kit/src/lib/tabset/tabset.ts",
-    "className": "NgKitTabTitleDirective",
+    "className": "NgkTabTitleDirective",
     "description": "<p>This directive should be used to wrap tab titles that need to contain HTML markup or other directives.</p>",
     "type": "Directive",
-    "selector": "ng-template[xmTabTitle]",
+    "selector": "ng-template[ngkTabTitle]",
     "inputs": [],
     "outputs": [],
     "properties": [],
     "methods": []
   },
-  "NgKitTabContentDirective": {
+  "NgkTabContentDirective": {
     "fileName": "projects/ng-kit/src/lib/tabset/tabset.ts",
-    "className": "NgKitTabContentDirective",
+    "className": "NgkTabContentDirective",
     "description": "<p>This directive must be used to wrap content to be displayed in a tab.</p>",
     "type": "Directive",
-    "selector": "ng-template[xmTabContent]",
+    "selector": "ng-template[ngkTabContent]",
     "inputs": [],
     "outputs": [],
     "properties": [],
     "methods": []
   },
-  "NgKitTabDirective": {
+  "NgkTabDirective": {
     "fileName": "projects/ng-kit/src/lib/tabset/tabset.ts",
-    "className": "NgKitTabDirective",
+    "className": "NgkTabDirective",
     "description": "<p>A directive representing an individual tab.</p>",
     "type": "Directive",
-    "selector": "ng-kit-tab",
+    "selector": "ngk-tab",
     "inputs": [
       {
         "name": "disabled",
@@ -2709,19 +2709,19 @@ const API_DOCS = {
       {
         "name": "title",
         "type": "string",
-        "description": "<p>Simple (string only) title. Use the &quot;NgKitTabTitle&quot; directive for more complex use-cases.</p>"
+        "description": "<p>Simple (string only) title. Use the &quot;NgkTabTitle&quot; directive for more complex use-cases.</p>"
       }
     ],
     "outputs": [],
     "properties": [
       {
         "name": "contentTpl",
-        "type": "NgKitTabContentDirective",
+        "type": "NgkTabContentDirective",
         "description": ""
       },
       {
         "name": "contentTpls",
-        "type": "QueryList<NgKitTabContentDirective>",
+        "type": "QueryList<NgkTabContentDirective>",
         "description": ""
       },
       {
@@ -2731,24 +2731,24 @@ const API_DOCS = {
       },
       {
         "name": "titleTpl",
-        "type": "NgKitTabTitleDirective",
+        "type": "NgkTabTitleDirective",
         "description": ""
       },
       {
         "name": "titleTpls",
-        "type": "QueryList<NgKitTabTitleDirective>",
+        "type": "QueryList<NgkTabTitleDirective>",
         "description": ""
       }
     ],
     "methods": []
   },
-  "NgKitTabsetComponent": {
+  "NgkTabsetComponent": {
     "fileName": "projects/ng-kit/src/lib/tabset/tabset.ts",
-    "className": "NgKitTabsetComponent",
+    "className": "NgkTabsetComponent",
     "description": "<p>A component that makes it easy to create tabbed interface.</p>",
     "type": "Component",
-    "selector": "ng-kit-tabset",
-    "exportAs": "xmTabset",
+    "selector": "ngk-tabset",
+    "exportAs": "ngkTabset",
     "inputs": [
       {
         "name": "activeId",
@@ -2775,7 +2775,7 @@ const API_DOCS = {
     "outputs": [
       {
         "name": "tabChange",
-        "description": "<p>A tab change event fired right before the tab selection happens. See NgKitTabChangeEvent for payload details</p>"
+        "description": "<p>A tab change event fired right before the tab selection happens. See NgkTabChangeEvent for payload details</p>"
       }
     ],
     "properties": [
@@ -2786,7 +2786,7 @@ const API_DOCS = {
       },
       {
         "name": "tabs",
-        "type": "QueryList<NgKitTabDirective>",
+        "type": "QueryList<NgkTabDirective>",
         "description": ""
       }
     ],
@@ -2804,10 +2804,10 @@ const API_DOCS = {
       }
     ]
   },
-  "NgKitTooltipConfig": {
+  "NgkTooltipConfig": {
     "fileName": "projects/ng-kit/src/lib/tooltip/tooltip.ts",
-    "className": "NgKitTooltipConfig",
-    "description": "<p>Configuration service for the NgKitTooltip directive.\nYou can inject this service, typically in your root component, and customize the values of its properties in\norder to provide default values for all the tooltips used in the application.</p>",
+    "className": "NgkTooltipConfig",
+    "description": "<p>Configuration service for the NgkTooltip directive.\nYou can inject this service, typically in your root component, and customize the values of its properties in\norder to provide default values for all the tooltips used in the application.</p>",
     "type": "Service",
     "methods": [],
     "properties": [
@@ -2859,13 +2859,13 @@ const API_DOCS = {
       }
     ]
   },
-  "NgKitTooltipDirective": {
+  "NgkTooltipDirective": {
     "fileName": "projects/ng-kit/src/lib/tooltip/tooltip.ts",
-    "className": "NgKitTooltipDirective",
+    "className": "NgkTooltipDirective",
     "description": "<p>A lightweight, extensible directive for fancy tooltip creation.</p>",
     "type": "Directive",
-    "selector": "[xmTooltip]",
-    "exportAs": "xmTooltip",
+    "selector": "[ngkTooltip]",
+    "exportAs": "ngkTooltip",
     "inputs": [
       {
         "name": "autoClose",
@@ -2916,7 +2916,7 @@ const API_DOCS = {
       {
         "name": "tooltipClass",
         "type": "string",
-        "description": "<p>An optional class applied to ng-kit-tooltip-window</p>",
+        "description": "<p>An optional class applied to ngk-tooltip-window</p>",
         "since": {
           "version": "3.2.0",
           "description": ""
@@ -2982,16 +2982,16 @@ const API_DOCS = {
       }
     ]
   },
-  "NgKitHighlightComponent": {
+  "NgkHighlightComponent": {
     "fileName": "projects/ng-kit/src/lib/typeahead/highlight.ts",
-    "className": "NgKitHighlightComponent",
+    "className": "NgkHighlightComponent",
     "description": "<p>A component that can be used inside a custom result template in order to highlight the term inside the text of the\nresult</p>",
     "type": "Component",
-    "selector": "ng-kit-highlight",
+    "selector": "ngk-highlight",
     "inputs": [
       {
         "name": "highlightClass",
-        "defaultValue": "ng-kit-highlight",
+        "defaultValue": "ngk-highlight",
         "type": "string",
         "description": "<p>The CSS class of the span elements wrapping the term inside the result</p>"
       },
@@ -3016,9 +3016,9 @@ const API_DOCS = {
     ],
     "methods": []
   },
-  "NgKitTypeaheadSelectItemEvent": {
+  "NgkTypeaheadSelectItemEvent": {
     "fileName": "projects/ng-kit/src/lib/typeahead/typeahead.ts",
-    "className": "NgKitTypeaheadSelectItemEvent",
+    "className": "NgkTypeaheadSelectItemEvent",
     "description": "<p>Payload of the selectItem event.</p>",
     "type": "Interface",
     "methods": [],
@@ -3035,10 +3035,10 @@ const API_DOCS = {
       }
     ]
   },
-  "NgKitTypeahead": {
+  "NgkTypeahead": {
     "fileName": "projects/ng-kit/src/lib/typeahead/typeahead-declarations.ts",
-    "className": "NgKitTypeahead",
-    "description": "<p>NgKitTypeahead directive provides a simple way of creating powerful typeaheads from any text input</p>",
+    "className": "NgkTypeahead",
+    "description": "<p>NgkTypeahead directive provides a simple way of creating powerful typeaheads from any text input</p>",
     "type": "Class",
     "methods": [
       {
@@ -3090,6 +3090,11 @@ const API_DOCS = {
         "description": "<p>A function to convert a given value into string to display in the input field</p>"
       },
       {
+        "name": "NgkTypeahead",
+        "type": "(text: Observable<string>) => Observable<any[]>",
+        "description": "<p>A function to transform the provided observable text into the array of results.  Note that the &quot;this&quot; argument\nis undefined so you need to explicitly bind it to a desired &quot;this&quot; target.</p>"
+      },
+      {
         "name": "placement",
         "type": "PlacementArray",
         "description": "<p>Placement of a typeahead accepts:\n  &quot;top&quot;, &quot;top-left&quot;, &quot;top-right&quot;, &quot;bottom&quot;, &quot;bottom-left&quot;, &quot;bottom-right&quot;,\n  &quot;left&quot;, &quot;left-top&quot;, &quot;left-bottom&quot;, &quot;right&quot;, &quot;right-top&quot;, &quot;right-bottom&quot;\nand array of above values.</p>"
@@ -3111,18 +3116,13 @@ const API_DOCS = {
       },
       {
         "name": "selectItem",
-        "type": "EventEmitter<NgKitTypeaheadSelectItemEvent>",
-        "description": "<p>An event emitted when a match is selected. Event payload is of type NgKitTypeaheadSelectItemEvent.</p>"
+        "type": "EventEmitter<NgkTypeaheadSelectItemEvent>",
+        "description": "<p>An event emitted when a match is selected. Event payload is of type NgkTypeaheadSelectItemEvent.</p>"
       },
       {
         "name": "showHint",
         "type": "boolean",
         "description": "<p>Show hint when an option in the result list matches.</p>"
-      },
-      {
-        "name": "NgKitTypeahead",
-        "type": "(text: Observable<string>) => Observable<any[]>",
-        "description": "<p>A function to transform the provided observable text into the array of results.  Note that the &quot;this&quot; argument\nis undefined so you need to explicitly bind it to a desired &quot;this&quot; target.</p>"
       }
     ]
   },
@@ -3145,13 +3145,13 @@ const API_DOCS = {
       }
     ]
   },
-  "NgKitTypeaheadDirective": {
+  "NgkTypeaheadDirective": {
     "fileName": "projects/ng-kit/src/lib/typeahead/typeahead.ts",
-    "className": "NgKitTypeaheadDirective",
-    "description": "<p>NgKitTypeahead directive provides a simple way of creating powerful typeaheads from any text input</p>",
+    "className": "NgkTypeaheadDirective",
+    "description": "<p>NgkTypeahead directive provides a simple way of creating powerful typeaheads from any text input</p>",
     "type": "Directive",
-    "selector": "input[xmTypeahead]",
-    "exportAs": "xmTypeahead",
+    "selector": "input[ngkTypeahead]",
+    "exportAs": "ngkTypeahead",
     "inputs": [
       {
         "name": "autocomplete",
@@ -3218,7 +3218,7 @@ const API_DOCS = {
     "outputs": [
       {
         "name": "selectItem",
-        "description": "<p>An event emitted when a match is selected. Event payload is of type xmTypeaheadSelectItemEvent.</p>"
+        "description": "<p>An event emitted when a match is selected. Event payload is of type ngkTypeaheadSelectItemEvent.</p>"
       }
     ],
     "properties": [

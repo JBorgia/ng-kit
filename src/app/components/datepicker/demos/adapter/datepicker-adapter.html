@@ -3,11 +3,11 @@ In this example we are converting from and to a JS native Date object</p>
 
 <div>
   <div>
-    <ng-kit-datepicker #d1 [(ngModel)]="model1" #c1="ngModel"></ng-kit-datepicker>
+    <ngk-datepicker #d1 [(ngModel)]="model1" #c1="ngModel"></ngk-datepicker>
 
     <button
-      xm
-      class="ng-kit-lg ng-kit-primary select-today"
+      ngk
+      class="ngk-lg ngk-primary select-today"
       (click)="model1 = today">
       Select Today
     </button>
@@ -20,7 +20,7 @@ In this example we are converting from and to a JS native Date object</p>
       <div>
         <div class="input-group">
           <input class="form-control" autocomplete="off" placeholder="yyyy-mm-dd"
-            name="d2" #c2="ngModel" [(ngModel)]="model2" xmDatepicker #d2="xmDatepicker">
+            name="d2" #c2="ngModel" [(ngModel)]="model2" ngkDatepicker #d2="ngkDatepicker">
           <div class="input-group-append">
             <button class="input-group-append-button" (click)="d2.toggle()" type="button">
               <em class="icon-calendar-blank"></em>
@@ -31,8 +31,8 @@ In this example we are converting from and to a JS native Date object</p>
     </form>
 
     <button
-      xm
-      class="ng-kit-lg ng-kit-primary select-today"
+      ngk
+      class="ngk-lg ngk-primary select-today"
       (click)="model2 = today">
       Select Today
     </button>

@@ -1,5 +1,5 @@
 # ng-kit
-A shared collection of themes and angular components designed by and for the xm web-application team
+A shared collection of themes and angular components designed by and for the ngk web-application team
 
 **How To build**
 1. To set new version, modify projects/ng-kit/package.json

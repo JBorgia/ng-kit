@@ -1,5 +1,5 @@
-<ng-kit-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
-  <ng-template xmSlide *ngFor="let image of images">
+<ngk-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+  <ng-template ngkSlide *ngFor="let image of images">
     <div class="picsum-img-wrapper">
       <img [src]="image" alt="Random slide">
     </div>
@@ -8,21 +8,21 @@
       <p>This carousel hides navigation arrows and indicators.</p>
     </div>
   </ng-template>
-</ng-kit-carousel>
+</ngk-carousel>
 
 <div class="button-group">
   <div>
     <button 
-      xm
-      class="ng-kit-primary ng-kit-lg"
+      ngk
+      class="ngk-primary ngk-lg"
       (click)="showNavigationArrows = !showNavigationArrows">
       Toggle navigation arrows
     </button>
   </div>
   <div>
     <button
-      xm
-      class="ng-kit-primary ng-kit-lg"
+      ngk
+      class="ngk-primary ngk-lg"
       (click)="showNavigationIndicators = !showNavigationIndicators">
       Toggle navigation indicators
     </button>

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgKitButtonModule, NgKitCarouselModule } from 'ng-kit';
+import { NgkButtonModule, NgkCarouselModule } from 'ng-kit';
 
 import { CarouselPauseComponent } from './carousel-pause';
 
@@ -9,8 +9,8 @@ import { CarouselPauseComponent } from './carousel-pause';
   imports: [
     BrowserModule,
     FormsModule,
-    NgKitCarouselModule,
-    NgKitButtonModule
+    NgkCarouselModule,
+    NgkButtonModule
   ],
   declarations: [CarouselPauseComponent],
   exports: [CarouselPauseComponent],

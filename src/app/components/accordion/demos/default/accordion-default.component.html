@@ -1,15 +1,15 @@
-<p class="instructions">The NgKitAccordionComponent contains 1 or more NgKitAccordionPannelComponents, each consisting of an NgKitAccordionHeaderComponent and an NgKitAccordionBodyComponent</p>
+<p class="instructions">The NgkAccordionComponent contains 1 or more NgkAccordionPannelComponents, each consisting of an NgkAccordionHeaderComponent and an NgkAccordionBodyComponent</p>
 <p class="instructions">
-  The NgKitAccordionHeaderComponent and NgKitAccordionBodyComponent are private and not exported. To transclude content to these areas use NgKitAccordionHeaderDirective and 
-  NgKitAccordionBodyDirective instead. For more information on each, see their respective examples and API.
+  The NgkAccordionHeaderComponent and NgkAccordionBodyComponent are private and not exported. To transclude content to these areas use NgkAccordionHeaderDirective and 
+  NgkAccordionBodyDirective instead. For more information on each, see their respective examples and API.
 </p>
-<p class="instructions">No styling has been applied to this example. As you can see the NgKitAccordionComponent is styled minimally to give the user flexibility and control during in implementation.</p>
+<p class="instructions">No styling has been applied to this example. As you can see the NgkAccordionComponent is styled minimally to give the user flexibility and control during in implementation.</p>
 
 <!-- Example Code: Begin -->
-<ng-kit-accordion>
-  <ng-kit-accordion-panel *ngFor="let number of [0, 1, 2, 3]">
-    <div ng-kit-accordion-header><p>Header #{{number}}</p></div>
-    <div ng-kit-accordion-body><p>Body #{{number}}</p></div>
-  </ng-kit-accordion-panel>
-</ng-kit-accordion>
+<ngk-accordion>
+  <ngk-accordion-panel *ngFor="let number of [0, 1, 2, 3]">
+    <div ngk-accordion-header><p>Header #{{number}}</p></div>
+    <div ngk-accordion-body><p>Body #{{number}}</p></div>
+  </ngk-accordion-panel>
+</ngk-accordion>
 <!-- Example Code: End -->

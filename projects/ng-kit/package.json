@@ -13,5 +13,8 @@
         "./src/theme/scss"
       ]
     }
+  },
+  "publishConfig": {
+    "registry": "https://artifactory.comcast.net/artifactory/api/npm/ngan-npm/"
   }
 }

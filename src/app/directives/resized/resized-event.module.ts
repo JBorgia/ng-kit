@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { NgKitResizeDirective } from './resized.directive';
+import { NgkResizeDirective } from './resized.directive';
 
 @NgModule({
-  declarations: [NgKitResizeDirective],
+  declarations: [NgkResizeDirective],
   imports: [CommonModule],
-  exports: [NgKitResizeDirective]
+  exports: [NgkResizeDirective]
 })
-export class NgKitResizedEventModule { }
+export class NgkResizedEventModule { }

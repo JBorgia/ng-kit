@@ -151,7 +151,7 @@ $notification-body-font-size:auto !default;
 .notification-prompt {
   border-left: $notification-border-width solid var(--theme-color-primary);
 
-  ng-kit-notification-prompt {
+  ngk-notification-prompt {
     width: 100%;
   }
 }

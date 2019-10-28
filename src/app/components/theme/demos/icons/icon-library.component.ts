@@ -100,8 +100,8 @@ export class IconLibraryComponent implements OnInit {
       'Truck': { iconClass: 'icon-truck' },
       'Upload': { iconClass: 'icon-upload' },
       'Wrench': { iconClass: 'icon-wrench' },
-      'NgKitf': { iconClass: 'icon-xmf' },
-      'NgKitfs': { iconClass: 'icon-xmfs' },
+      'Ngkf': { iconClass: 'icon-xmf' },
+      'Ngkfs': { iconClass: 'icon-xmfs' },
     };
   }
 

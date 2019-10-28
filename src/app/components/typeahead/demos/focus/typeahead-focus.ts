@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NgKitTypeaheadDirective } from 'ng-kit';
+import { NgkTypeaheadDirective } from 'ng-kit';
 import { merge, Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
 
@@ -20,7 +20,7 @@ const states = ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'C
 export class TypeaheadFocusComponent {
   model: any;
 
-  @ViewChild('instance', { static: true }) instance: NgKitTypeaheadDirective;
+  @ViewChild('instance', { static: true }) instance: NgkTypeaheadDirective;
   focus$ = new Subject<string>();
   click$ = new Subject<string>();
 

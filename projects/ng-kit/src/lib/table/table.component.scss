@@ -13,42 +13,42 @@
   }
 }
 
-.ng-kit--table-banded {
+.ngk--table-banded {
   background-color: var(--table-row-background-banded);
 }
 
-.ng-kit--table-th {
+.ngk--table-th {
   color: var(--table-header-text-primary);
 }
 
-.ng-kit--table-td {
+.ngk--table-td {
   color: var(--text-color-primary);
 }
 
-.ng-kit--table-cell {
+.ngk--table-cell {
   display: flex;
   overflow: hidden;
   color: var(--text-color-primary);
 }
 
-.ng-kit--table-vertical {
+.ngk--table-vertical {
   display: flex;
   flex-direction: column;
 
-  .ng-kit--table {
+  .ngk--table {
     display: flex;
   }
 
-  .ng-kit--table-tr {
+  .ngk--table-tr {
     border-bottom: 1px solid var(--border-color-primary);
     display: flex;
     width: 100%;
   }
 
-  .ng-kit--table-body {
+  .ngk--table-body {
     display: block;
 
-    .ng-kit--table-tr {
+    .ngk--table-tr {
 
       &:last-of-type {
         border-bottom: 0;
@@ -56,11 +56,11 @@
     }
   }
 
-  .ng-kit--table-th {
+  .ngk--table-th {
     color: var(--table-header-text-primary);
   }
 
-  .ng-kit--table-cell {
+  .ngk--table-cell {
     position: relative;
     border-left: 1px solid var(--border-color-primary);
 
@@ -70,44 +70,44 @@
   }
 }
 
-.ng-kit--table-horizontal {
+.ngk--table-horizontal {
   display: flex;
   flex-direction: row;
 
-  .ng-kit--table {
+  .ngk--table {
     display: flex;
   }
 
-  .ng-kit--table-head {
-    .ng-kit--table-tr {
+  .ngk--table-head {
+    .ngk--table-tr {
       border-right: 1px solid var(--border-color-primary);
     }
   }
 
-  .ng-kit--table-body {
+  .ngk--table-body {
     display: flex;
     flex-direction: row;
   }
 
-  .ng-kit--table-tr {
+  .ngk--table-tr {
     display: flex;
     flex-direction: column;
     width: auto;
     height: 100%;
 
     &:first-of-type {
-      .ng-kit--table-td {
+      .ngk--table-td {
         border-left: 0;
       }
     }
   }
 
-  .ng-kit--table-cell {
+  .ngk--table-cell {
     position: relative;
     font-size: 1.5rem;
   }
 
-  .ng-kit--table-th {
+  .ngk--table-th {
     border-bottom: 1px solid var(--border-color-primary);
     color: var(--table-header-text-primary);
 
@@ -116,7 +116,7 @@
     }
   }
 
-  .ng-kit--table-td {
+  .ngk--table-td {
     border-bottom: 1px solid var(--border-color-primary);
     border-left: 1px solid var(--border-color-primary);
 

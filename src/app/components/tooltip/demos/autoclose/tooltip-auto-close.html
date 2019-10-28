@@ -6,22 +6,22 @@ to close automatically upon some events.</p>
   <div class="group-1">
     <p>click inside:</p>
     <button
-      xm
-      class="ng-kit-lg ng-kit-primary"
+      ngk
+      class="ngk-lg ngk-primary"
       triggers="click"
       [autoClose]="'inside'"
-      xmTooltip="Click inside or press Escape to close">
+      ngkTooltip="Click inside or press Escape to close">
       Click to toggle
     </button>
   </div>
   <div class="group-2">
     <p>click outside:</p>
     <button
-      xm
-      class="ng-kit-lg ng-kit-primary"
+      ngk
+      class="ngk-lg ngk-primary"
       triggers="click"
       [autoClose]="'outside'"
-      xmTooltip="Click outside or press Escape to close">
+      ngkTooltip="Click outside or press Escape to close">
       Click to toggle
     </button>
   </div>
@@ -29,17 +29,17 @@ to close automatically upon some events.</p>
     <p>all clicks:</p>
     <div>
       <button
-        xm
-        class="ng-kit-lg ng-kit-primary"
+        ngk
+        class="ngk-lg ngk-primary"
         triggers="click"
         [autoClose]="true"
-        xmTooltip="Click anywhere or press Escape to close (try the toggling element too)"
-        #tooltip3="xmTooltip">
+        ngkTooltip="Click anywhere or press Escape to close (try the toggling element too)"
+        #tooltip3="ngkTooltip">
         Click to toggle
       </button>
       <button
-        xm
-        class="ng-kit-lg ng-kit-primary"
+        ngk
+        class="ngk-lg ngk-primary"
         (click)="tooltip3.toggle()">
         Click to toggle the external tooltip
       </button>

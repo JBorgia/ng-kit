@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgKitButtonModule, NgKitPopoverModule } from 'ng-kit';
+import { NgkButtonModule, NgkPopoverModule } from 'ng-kit';
 
 import { PopoverTplcontentComponent } from './popover-tpl-content';
 
 @NgModule({
   imports: [
     BrowserModule,
-    NgKitPopoverModule,
-    NgKitButtonModule,
+    NgkPopoverModule,
+    NgkButtonModule,
   ],
   declarations: [PopoverTplcontentComponent],
   exports: [PopoverTplcontentComponent],

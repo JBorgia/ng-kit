@@ -10,13 +10,13 @@
     "directive-selector": [
       false,
       "attribute",
-      ["ng-kit", "app"],
+      ["ngk", "app"],
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      ["ng-kit", "app"],
+      ["ngk", "app"],
       "kebab-case"
     ],
     "import-blacklist": [

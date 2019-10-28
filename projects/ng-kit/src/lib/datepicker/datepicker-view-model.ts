@@ -1,14 +1,14 @@
-import { NgKitDate } from './date';
-import { NgKitDateStruct } from './date-struct';
+import { NgkDate } from './date';
+import { NgkDateStruct } from './date-struct';
 import { DayTemplateContext } from './datepicker-day-template-context';
 
-export type NgKitMarkDisabled = (date: NgKitDateStruct, current: { year: number, month: number }) => boolean;
-export type NgKitDayTemplateData = (date: NgKitDateStruct, current: { year: number, month: number }) => any;
+export type NgkMarkDisabled = (date: NgkDateStruct, current: { year: number, month: number }) => boolean;
+export type NgkDayTemplateData = (date: NgkDateStruct, current: { year: number, month: number }) => any;
 
 /* tslint:disable:interface-over-type-literal */
 
 export type DayViewModel = {
-  date: NgKitDate,
+  date: NgkDate,
   context: DayTemplateContext,
   tabindex: number,
   ariaLabel: string,
@@ -22,8 +22,8 @@ export type WeekViewModel = {
 };
 
 export type MonthViewModel = {
-  firstDate: NgKitDate,
-  lastDate: NgKitDate,
+  firstDate: NgkDate,
+  lastDate: NgkDate,
   number: number,
   year: number,
   weeks: WeekViewModel[],
@@ -32,17 +32,17 @@ export type MonthViewModel = {
 
 // clang-format off
 export type DatepickerViewModel = {
-  dayTemplateData?: NgKitDayTemplateData,
+  dayTemplateData?: NgkDayTemplateData,
   disabled: boolean,
   displayMonths: number,
-  firstDate?: NgKitDate,
+  firstDate?: NgkDate,
   firstDayOfWeek: number,
-  focusDate?: NgKitDate,
+  focusDate?: NgkDate,
   focusVisible: boolean,
-  lastDate?: NgKitDate,
-  markDisabled?: NgKitMarkDisabled,
-  maxDate?: NgKitDate,
-  minDate?: NgKitDate,
+  lastDate?: NgkDate,
+  markDisabled?: NgkMarkDisabled,
+  maxDate?: NgkDate,
+  minDate?: NgkDate,
   months: MonthViewModel[],
   navigation: 'select' | 'arrows' | 'none',
   outsideDays: 'visible' | 'collapsed' | 'hidden',
@@ -52,7 +52,7 @@ export type DatepickerViewModel = {
     years: number[],
     months: number[]
   },
-  selectedDate: NgKitDate
+  selectedDate: NgkDate
 };
 // clang-format on
 

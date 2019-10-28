@@ -1,5 +1,5 @@
-<ng-kit-carousel #carousel interval="1000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
-  <ng-template xmSlide *ngFor="let img of images; index as i">
+<ngk-carousel #carousel interval="1000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
+  <ng-template ngkSlide *ngFor="let img of images; index as i">
     <div class="carousel-caption">
       <h3>My slide {{i + 1}} title</h3>
     </div>
@@ -9,7 +9,7 @@
       </div>
     </a>
   </ng-template>
-</ng-kit-carousel>
+</ngk-carousel>
 
 <div class="checkbox-group">
   <label class="control--label control--checkbox" for="pauseOnHover">
@@ -30,8 +30,8 @@
 </div>
 
 <button
-  xm
-  class="ng-kit-lg ng-kit-primary"
+  ngk
+  class="ngk-lg ngk-primary"
   (click)="togglePaused()">
   {{paused ? 'Cycle' : 'Pause' }}
 </button>

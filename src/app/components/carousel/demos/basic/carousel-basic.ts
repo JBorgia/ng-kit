@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ng-kit-carousel-basic',
+  selector: 'ngk-carousel-basic',
   templateUrl: './carousel-basic.html',
   styleUrls: ['./carousel-basic.scss']
 })

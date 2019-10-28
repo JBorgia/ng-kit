@@ -1,13 +1,13 @@
-<ng-kit-accordion-header (click)="toggle(); clicked()">
+<ngk-accordion-header (click)="toggle(); clicked()">
   <i
     class="icon-chevron-left"
     [ngClass]="{'collapsed': isCollapsed}"></i>
-  <ng-content select="[ng-kit-accordion-header], [xmAccordionHeader]"></ng-content>
+  <ng-content select="[ngk-accordion-header], [ngkAccordionHeader]"></ng-content>
   <ng-content *ngIf="!accordionHeader" select="header"></ng-content>
-</ng-kit-accordion-header>
-<ng-kit-accordion-body
-  #xmAccordionBody
+</ngk-accordion-header>
+<ngk-accordion-body
+  #ngkAccordionBody
   [ngClass]="{'collapsed': isCollapsed, 'transition': !transitionDisabled}">
   <ng-content 
-    select="[ng-kit-accordion-body], [xmAccordionBody]"></ng-content>
-</ng-kit-accordion-body>
+    select="[ngk-accordion-body], [ngkAccordionBody]"></ng-content>
+</ngk-accordion-body>

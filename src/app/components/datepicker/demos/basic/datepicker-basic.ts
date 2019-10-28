@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgKitCalendar, NgKitDateStruct } from 'ng-kit';
+import { NgkCalendar, NgkDateStruct } from 'ng-kit';
 
 @Component({
   selector: 'app-datepicker-basic',
@@ -8,10 +8,10 @@ import { NgKitCalendar, NgKitDateStruct } from 'ng-kit';
 })
 export class DatepickerBasicComponent {
 
-  model: NgKitDateStruct;
+  model: NgkDateStruct;
   date: { year: number, month: number };
 
-  constructor(private calendar: NgKitCalendar) {
+  constructor(private calendar: NgkCalendar) {
   }
 
   selectToday() {

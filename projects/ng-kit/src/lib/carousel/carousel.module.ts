@@ -1,29 +1,29 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { NgKitCarouselComponent, NgKitSlideDirective } from './carousel';
+import { NgkCarouselComponent, NgkSlideDirective } from './carousel';
 
 export {
-    NgKitCarouselComponent,
-    NgKitSlideDirective,
-    NgKitSlideEvent,
-    NgKitSlideEventDirection,
-    NgKitSlideEventSource
+    NgkCarouselComponent,
+    NgkSlideDirective,
+    NgkSlideEvent,
+    NgkSlideEventDirection,
+    NgkSlideEventSource
 } from './carousel';
-export { NgKitCarouselConfig } from './carousel-config';
+export { NgkCarouselConfig } from './carousel-config';
 
 @NgModule({
     declarations: [
-        NgKitCarouselComponent,
-        NgKitSlideDirective
+        NgkCarouselComponent,
+        NgkSlideDirective
     ],
     exports: [
-        NgKitCarouselComponent,
-        NgKitSlideDirective
+        NgkCarouselComponent,
+        NgkSlideDirective
     ],
     imports: [
         CommonModule
     ]
 })
-export class NgKitCarouselModule {
+export class NgkCarouselModule {
 }

@@ -1,10 +1,10 @@
 /**
  * An interface of the date model used by the datepicker.
  *
- * All datepicker APIs consume `NgKitDateStruct`, but return `NgKitDate`.
+ * All datepicker APIs consume `NgkDateStruct`, but return `NgkDate`.
  *
  */
-export interface NgKitDateStruct {
+export interface NgkDateStruct {
   /**
    * The year, for example 2016
    */

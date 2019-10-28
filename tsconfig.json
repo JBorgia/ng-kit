@@ -19,12 +19,6 @@
       "dom"
     ],
     "paths": {
-      "xm": [
-        "dist/xm"
-      ],
-      "xm/*": [
-        "dist/xm/*"
-      ],
       "ng-kit/*": [
         "dist/ng-kit/*"
       ],

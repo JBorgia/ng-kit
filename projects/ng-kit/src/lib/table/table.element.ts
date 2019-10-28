@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, ElementRef, Renderer2 } from '@angular/core';
 
-export class NgKitTableElement {
+export class NgkTableElement {
   constructor(
     private _el: ElementRef,
     private renderer: Renderer2,

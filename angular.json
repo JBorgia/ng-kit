@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-kit-componenet-library": {
+    "nk-componenet-library": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -12,12 +12,12 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "ng-kit",
+      "prefix": "nk",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-kit-componenet-library",
+            "outputPath": "dist/nk-componenet-library",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -65,19 +65,19 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-kit-componenet-library:build",
+            "browserTarget": "nk-componenet-library:build",
             "port": 5100
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng-kit-componenet-library:build:production"
+              "browserTarget": "nk-componenet-library:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-kit-componenet-library:build"
+            "browserTarget": "nk-componenet-library:build"
           }
         },
         "test": {
@@ -114,26 +114,26 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ng-kit-componenet-library:serve"
+            "devServerTarget": "nk-componenet-library:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ng-kit-componenet-library:serve:production"
+              "devServerTarget": "nk-componenet-library:serve:production"
             }
           }
         }
       }
     },
-    "ng-kit": {
+    "nk": {
       "projectType": "library",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "projects/ng-kit",
+      "root": "projects/nk",
       "sourceRoot": "projects/ng-kit/src",
-      "prefix": "ng-kit",
+      "prefix": "nk",
       "architect": {
         "build": {
           "builder": "@linnenschmidt/build-ng-packagr:build",
@@ -173,5 +173,5 @@
       }
     }
   },
-  "defaultProject": "ng-kit-componenet-library"
+  "defaultProject": "nk-componenet-library"
 }

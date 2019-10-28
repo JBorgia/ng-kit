@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgKitCalendar, NgKitDateStruct } from 'ng-kit';
+import { NgkCalendar, NgkDateStruct } from 'ng-kit';
 
 @Component({
   selector: 'app-datepicker-disabled',
@@ -8,17 +8,17 @@ import { NgKitCalendar, NgKitDateStruct } from 'ng-kit';
     .instructions {
       margin-bottom: 1em;
     }
-    ng-kit-datepicker {
+    ngk-datepicker {
       margin-bottom: 1em;
     }
   `]
 })
 export class DatepickerDisabledComponent {
 
-  model: NgKitDateStruct;
+  model: NgkDateStruct;
   disabled = true;
 
-  constructor(calendar: NgKitCalendar) {
+  constructor(calendar: NgkCalendar) {
     this.model = calendar.getToday();
   }
 }

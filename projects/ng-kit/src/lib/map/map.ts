@@ -31,12 +31,12 @@ export class GeoCenterSettings {
 }
 
 @Component({
-  selector: 'ng-kit-map',
+  selector: 'ngk-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class NgKitMapComponent implements OnInit, OnDestroy {
+export class NgkMapComponent implements OnInit, OnDestroy {
   private options = {
     url: 'https://js.arcgis.com/3.27/'
   };

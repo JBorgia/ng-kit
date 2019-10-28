@@ -1,19 +1,19 @@
 import { isInteger } from '../util/util';
-import { NgKitDateStruct } from './date-struct';
+import { NgkDateStruct } from './date-struct';
 
 /**
  * A simple class that represents a date that datepicker also uses internally.
  *
- * It is the implementation of the `NgKitDateStruct` interface that adds some convenience methods,
+ * It is the implementation of the `NgkDateStruct` interface that adds some convenience methods,
  * like `.equals()`, `.before()`, etc.
  *
- * All datepicker APIs consume `NgKitDateStruct`, but return `NgKitDate`.
+ * All datepicker APIs consume `NgkDateStruct`, but return `NgkDate`.
  *
  *
  *
  * @since 3.0.0
  */
-export class NgKitDate implements NgKitDateStruct {
+export class NgkDate implements NgkDateStruct {
   /**
    * The year, for example 2016
    */
@@ -30,17 +30,17 @@ export class NgKitDate implements NgKitDateStruct {
   day: number;
 
   /**
-   * A **static method** that creates a new date object from the `NgKitDateStruct`,
+   * A **static method** that creates a new date object from the `NgkDateStruct`,
    *
-   * ex. `NgKitDate.from({year: 2000, month: 5, day: 1})`.
+   * ex. `NgkDate.from({year: 2000, month: 5, day: 1})`.
    *
-   * If the `date` is already of `NgKitDate` type, the method will return the same object.
+   * If the `date` is already of `NgkDate` type, the method will return the same object.
    */
-  static from(date: NgKitDateStruct): NgKitDate {
-    if (date instanceof NgKitDate) {
+  static from(date: NgkDateStruct): NgkDate {
+    if (date instanceof NgkDate) {
       return date;
     }
-    return date ? new NgKitDate(date.year, date.month, date.day) : null;
+    return date ? new NgkDate(date.year, date.month, date.day) : null;
   }
 
   constructor(year: number, month: number, day: number) {
@@ -52,14 +52,14 @@ export class NgKitDate implements NgKitDateStruct {
   /**
    * Checks if the current date is equal to another date.
    */
-  equals(other: NgKitDateStruct): boolean {
+  equals(other: NgkDateStruct): boolean {
     return other && this.year === other.year && this.month === other.month && this.day === other.day;
   }
 
   /**
    * Checks if the current date is before another date.
    */
-  before(other: NgKitDateStruct): boolean {
+  before(other: NgkDateStruct): boolean {
     if (!other) {
       return false;
     }
@@ -78,7 +78,7 @@ export class NgKitDate implements NgKitDateStruct {
   /**
    * Checks if the current date is after another date.
    */
-  after(other: NgKitDateStruct): boolean {
+  after(other: NgkDateStruct): boolean {
     if (!other) {
       return false;
     }

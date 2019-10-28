@@ -1,29 +1,29 @@
 <p class="instructions">You can easily control dropdowns programmatically using the exported dropdown instance.</p>
 
 <section>
-  <ng-kit-dropdown #myDrop>
+  <ngk-dropdown #myDrop>
     <button
-      xm
-      xmDropdownAnchor
-      class="ng-kit-lg ng-kit-primary"
+      ngk
+      ngkDropdownAnchor
+      class="ngk-lg ngk-primary"
       (focus)="myDrop.open()">
       Toggle dropdown
     </button>
-    <ng-kit-dropdown-menu>
-      <div xmDropdownItem><p>Action - 1</p></div>
-      <div xmDropdownItem><p>Another Action</p></div>
-      <div xmDropdownItem><p>Something else is here</p></div>
-    </ng-kit-dropdown-menu>
-  </ng-kit-dropdown>
+    <ngk-dropdown-menu>
+      <div ngkDropdownItem><p>Action - 1</p></div>
+      <div ngkDropdownItem><p>Another Action</p></div>
+      <div ngkDropdownItem><p>Something else is here</p></div>
+    </ngk-dropdown-menu>
+  </ngk-dropdown>
   <button
-    xm
-    class="ng-kit-lg ng-kit-primary"
+    ngk
+    class="ngk-lg ngk-primary"
     (click)="$event.stopPropagation(); myDrop.open();">
     Open from outside
   </button>
   <button
-    xm
-    class="ng-kit-lg ng-kit-danger"
+    ngk
+    class="ngk-lg ngk-danger"
     (click)="$event.stopPropagation(); myDrop.close();">
     Close from outside
   </button>

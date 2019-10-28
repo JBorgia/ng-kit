@@ -12,12 +12,12 @@
 <ng-content></ng-content>
 
 <div class="profile-toggle-group">
-  <ng-kit-dropdown
+  <ngk-dropdown
     autoClose="outside"
     placement="bottom-right"
     #profileMiniToggle>
     <a
-      xmDropdownToggle
+      ngkDropdownToggle
       class="nav-link dropdown-toggle dropdown-avatar-icon"
       href="javascript:void(0)"
       data-toggle="dropdown"
@@ -27,9 +27,9 @@
         class="icon-account"
         ng-reflect-ng-class="icon-account"></i>
     </a>
-    <ng-kit-dropdown-menu>
+    <ngk-dropdown-menu>
       <div
-        xmDropdownItem
+        ngkDropdownItem
         class="dropdown-user">
         <div class="dropdown-user-detail">
           <div
@@ -65,6 +65,6 @@
         </div>
         
       </div>
-    </ng-kit-dropdown-menu>
-  </ng-kit-dropdown>
+    </ngk-dropdown-menu>
+  </ngk-dropdown>
 </div>

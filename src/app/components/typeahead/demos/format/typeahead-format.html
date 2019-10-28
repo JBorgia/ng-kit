@@ -1,5 +1,5 @@
 <p class="instructions">A typeahead example that uses a formatter function for string results</p>
 
 <label for="typeahead-format">Search for a state:</label>
-<input id="typeahead-format" type="text" class="form-control" [(ngModel)]="model" [xmTypeahead]="search" [resultFormatter]="formatter" />
+<input id="typeahead-format" type="text" class="form-control" [(ngModel)]="model" [ngkTypeahead]="search" [resultFormatter]="formatter" />
 <pre>Model: {{ model | json }}</pre>

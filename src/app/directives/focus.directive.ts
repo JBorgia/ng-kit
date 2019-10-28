@@ -1,9 +1,9 @@
 import { Directive, ElementRef, OnInit, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[xmFocus]'
+  selector: '[ngkFocus]'
 })
-export class NgKitFocusDirective implements OnInit {
+export class NgkFocusDirective implements OnInit {
 
   constructor(
     public renderer: Renderer2,

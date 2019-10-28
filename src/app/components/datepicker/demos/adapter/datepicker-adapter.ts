@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgKitDateAdapter, NgKitDateNativeAdapter } from 'ng-kit';
+import { NgkDateAdapter, NgkDateNativeAdapter } from 'ng-kit';
 
 @Component({
   selector: 'app-datepicker-adapter',
@@ -8,7 +8,7 @@ import { NgKitDateAdapter, NgKitDateNativeAdapter } from 'ng-kit';
 
   // NOTE: For this example we are only providing current component, but probably
   // NOTE: you will want to provide your main App Module
-  providers: [{ provide: NgKitDateAdapter, useClass: NgKitDateNativeAdapter }]
+  providers: [{ provide: NgkDateAdapter, useClass: NgkDateNativeAdapter }]
 })
 export class DatepickerAdapterComponent {
 

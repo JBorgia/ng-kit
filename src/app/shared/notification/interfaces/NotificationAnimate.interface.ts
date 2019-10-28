@@ -1,7 +1,7 @@
 /**
  * Notification animation params
  * If you want more animations, you can include animate.css or write animations yourself in your styles
- * Then you'll need to share this styles with notification component [ng-kit-notification] component.
+ * Then you'll need to share this styles with notification component [ngk-notification] component.
  */
 export interface NotificationAnimate {
   /**

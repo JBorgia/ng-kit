@@ -1,18 +1,18 @@
 import { Component, Directive, forwardRef, HostBinding, HostListener, Inject, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'ng-kit-collapse-content, div[xmCollapseContent]',
+  selector: 'ngk-collapse-content, div[ngkCollapseContent]',
   templateUrl: './collapse-content.component.html',
   styleUrls: ['./collapse-content.component.scss'],
-  exportAs: 'xmCollapseContent',
+  exportAs: 'ngkCollapseContent',
 })
-export class NgKitCollapseContentComponent implements OnInit {
+export class NgkCollapseContentComponent implements OnInit {
 
   @HostBinding('class.open') get show() { return this.content.isOpen(); }
 
   constructor(
     /* tslint:disable-next-line:no-use-before-declare */
-    @Inject(forwardRef(() => NgKitCollapseComponent)) public content,
+    @Inject(forwardRef(() => NgkCollapseComponent)) public content,
   ) { }
 
   ngOnInit(): void { }
@@ -21,9 +21,9 @@ export class NgKitCollapseContentComponent implements OnInit {
 
 @Directive({
   /* tslint:disable-next-line:directive-selector */
-  selector: '[xmCollapseToggle]',
+  selector: '[ngkCollapseToggle]',
 })
-export class NgKitCollapseToggleDirective {
+export class NgkCollapseToggleDirective {
 
   @HostListener('click') onClick() {
     this.toggleOpen();
@@ -31,7 +31,7 @@ export class NgKitCollapseToggleDirective {
 
   constructor(
     /* tslint:disable-next-line:no-use-before-declare */
-    @Inject(forwardRef(() => NgKitCollapseComponent)) public content,
+    @Inject(forwardRef(() => NgkCollapseComponent)) public content,
   ) { }
 
   toggleOpen() {
@@ -43,12 +43,12 @@ export class NgKitCollapseToggleDirective {
  * A component to provide a simple way of hiding and showing elements on the page.
  */
 @Component({
-  selector: 'ng-kit-collapse, [xmCollapse]',
+  selector: 'ngk-collapse, [ngkCollapse]',
   templateUrl: './collapse.component.html',
   styleUrls: ['./collapse.component.scss'],
-  exportAs: 'xmCollapse',
+  exportAs: 'ngkCollapse',
 })
-export class NgKitCollapseComponent implements OnInit {
+export class NgkCollapseComponent implements OnInit {
 
   @Input() collapsedContent;
 

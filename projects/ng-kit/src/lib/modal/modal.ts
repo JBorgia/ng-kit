@@ -1,9 +1,9 @@
 import { ComponentFactoryResolver, Injectable, Injector } from '@angular/core';
 import { Event, NavigationStart, Router } from '@angular/router';
 
-import { NgKitModalConfig, NgKitModalOptions } from './modal-config';
-import { NgKitModalRef } from './modal-ref';
-import { NgKitModalStack } from './modal-stack';
+import { NgkModalConfig, NgkModalOptions } from './modal-config';
+import { NgkModalRef } from './modal-ref';
+import { NgkModalStack } from './modal-stack';
 
 /**
  * A service for opening modal windows.
@@ -12,10 +12,10 @@ import { NgKitModalStack } from './modal-stack';
  * the `.open()` method.
  */
 @Injectable({ providedIn: 'root' })
-export class NgKitModal {
+export class NgkModal {
   constructor(
-    private _moduleCFR: ComponentFactoryResolver, private _injector: Injector, private _modalStack: NgKitModalStack,
-    private _config: NgKitModalConfig, private router: Router) {
+    private _moduleCFR: ComponentFactoryResolver, private _injector: Injector, private _modalStack: NgkModalStack,
+    private _config: NgkModalConfig, private router: Router) {
 
     // Close all open modals on route change
     this.router.events.subscribe((event: Event) => {
@@ -32,11 +32,11 @@ export class NgKitModal {
    * Opens a new modal window with the specified content and supplied options.
    *
    * Content can be provided as a `TemplateRef` or a component type. If you pass a component type as content,
-   * then instances of those components can be injected with an instance of the `NgKitActiveModal` class. You can then
-   * use `NgKitActiveModal` methods to close / dismiss modals from "inside" of your component.
+   * then instances of those components can be injected with an instance of the `NgkActiveModal` class. You can then
+   * use `NgkActiveModal` methods to close / dismiss modals from "inside" of your component.
    *
    */
-  open(content: any, options: NgKitModalOptions = {}): NgKitModalRef {
+  open(content: any, options: NgkModalOptions = {}): NgkModalRef {
     const combinedOptions = Object.assign({}, this._config, options);
     return this._modalStack.open(this._moduleCFR, this._injector, content, combinedOptions);
   }

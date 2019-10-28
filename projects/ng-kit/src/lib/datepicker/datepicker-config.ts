@@ -1,6 +1,6 @@
 import { Injectable, TemplateRef } from '@angular/core';
 
-import { NgKitDateStruct } from './date-struct';
+import { NgkDateStruct } from './date-struct';
 import { DayTemplateContext } from './datepicker-day-template-context';
 
 /**
@@ -9,15 +9,15 @@ import { DayTemplateContext } from './datepicker-day-template-context';
  * order to provide default values for all the datepickers used in the application.
  */
 @Injectable({ providedIn: 'root' })
-export class NgKitDatepickerConfig {
+export class NgkDatepickerConfig {
   dayTemplate: TemplateRef<DayTemplateContext>;
-  dayTemplateData: (date: NgKitDateStruct, current: { year: number, month: number }) => any;
+  dayTemplateData: (date: NgkDateStruct, current: { year: number, month: number }) => any;
   footerTemplate: TemplateRef<any>;
   displayMonths = 1;
   firstDayOfWeek = 1;
-  markDisabled: (date: NgKitDateStruct, current: { year: number, month: number }) => boolean;
-  minDate: NgKitDateStruct;
-  maxDate: NgKitDateStruct;
+  markDisabled: (date: NgkDateStruct, current: { year: number, month: number }) => boolean;
+  minDate: NgkDateStruct;
+  maxDate: NgkDateStruct;
   navigation: 'select' | 'arrows' | 'none' = 'select';
   outsideDays: 'visible' | 'collapsed' | 'hidden' = 'visible';
   showWeekdays = true;

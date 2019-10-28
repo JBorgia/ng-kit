@@ -1,34 +1,34 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { NgKitDirectivesModule } from '../directives/directives.module';
-import { NgKitAccordionComponent } from './accordion';
-import { NgKitAccordionBodyComponent } from './accordion-body.component';
-import { NgKitAccordionHeaderComponent } from './accordion-header.component';
+import { NgkDirectivesModule } from '../directives/directives.module';
+import { NgkAccordionComponent } from './accordion';
+import { NgkAccordionBodyComponent } from './accordion-body.component';
+import { NgkAccordionHeaderComponent } from './accordion-header.component';
 import {
-  NgKitAccordionBodyDirective,
-  NgKitAccordionHeaderDirective,
-  NgKitAccordionPanelComponent,
+  NgkAccordionBodyDirective,
+  NgkAccordionHeaderDirective,
+  NgkAccordionPanelComponent,
 } from './accordion-panel.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    NgKitDirectivesModule
+    NgkDirectivesModule
   ],
   declarations: [
-    NgKitAccordionBodyComponent,
-    NgKitAccordionBodyDirective,
-    NgKitAccordionComponent,
-    NgKitAccordionHeaderComponent,
-    NgKitAccordionHeaderDirective,
-    NgKitAccordionPanelComponent,
+    NgkAccordionBodyComponent,
+    NgkAccordionBodyDirective,
+    NgkAccordionComponent,
+    NgkAccordionHeaderComponent,
+    NgkAccordionHeaderDirective,
+    NgkAccordionPanelComponent,
   ],
   exports: [
-    NgKitAccordionBodyDirective,
-    NgKitAccordionComponent,
-    NgKitAccordionHeaderDirective,
-    NgKitAccordionPanelComponent,
+    NgkAccordionBodyDirective,
+    NgkAccordionComponent,
+    NgkAccordionHeaderDirective,
+    NgkAccordionPanelComponent,
   ]
 })
-export class NgKitAccordionModule { }
+export class NgkAccordionModule { }

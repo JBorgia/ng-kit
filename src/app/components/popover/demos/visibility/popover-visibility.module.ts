@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgKitButtonModule, NgKitPopoverModule } from 'ng-kit';
+import { NgkButtonModule, NgkPopoverModule } from 'ng-kit';
 
 import { PopoverVisibilityComponent } from './popover-visibility';
 
 @NgModule({
   imports: [
     BrowserModule,
-    NgKitPopoverModule,
-    NgKitButtonModule,
+    NgkPopoverModule,
+    NgkButtonModule,
   ],
   declarations: [PopoverVisibilityComponent],
   exports: [PopoverVisibilityComponent],

@@ -3,10 +3,10 @@ import { Observable, Subject } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
 import { isInteger, toInteger } from '../util/util';
-import { NgKitCalendar, NgKitPeriod } from './calendar';
-import { NgKitDate } from './date';
-import { NgKitDateStruct } from './date-struct';
-import { NgKitDatepickerI18n } from './datepicker-i18n';
+import { NgkCalendar, NgkPeriod } from './calendar';
+import { NgkDate } from './date';
+import { NgkDateStruct } from './date-struct';
+import { NgkDatepickerI18n } from './datepicker-i18n';
 import {
   buildMonths,
   checkDateInRange,
@@ -18,13 +18,13 @@ import {
   nextMonthDisabled,
   prevMonthDisabled,
 } from './datepicker-tools';
-import { DatepickerViewModel, NgKitDayTemplateData, NgKitMarkDisabled } from './datepicker-view-model';
+import { DatepickerViewModel, NgkDayTemplateData, NgkMarkDisabled } from './datepicker-view-model';
 
 @Injectable()
-export class NgKitDatepickerService {
+export class NgkDatepickerService {
   private _model$ = new Subject<DatepickerViewModel>();
 
-  private _select$ = new Subject<NgKitDate>();
+  private _select$ = new Subject<NgkDate>();
 
   private _state: DatepickerViewModel = {
     disabled: false,
@@ -42,9 +42,9 @@ export class NgKitDatepickerService {
 
   get model$(): Observable<DatepickerViewModel> { return this._model$.pipe(filter(model => model.months.length > 0)); }
 
-  get select$(): Observable<NgKitDate> { return this._select$.pipe(filter(date => date !== null)); }
+  get select$(): Observable<NgkDate> { return this._select$.pipe(filter(date => date !== null)); }
 
-  set dayTemplateData(dayTemplateData: NgKitDayTemplateData) {
+  set dayTemplateData(dayTemplateData: NgkDayTemplateData) {
     if (this._state.dayTemplateData !== dayTemplateData) {
       this._nextState({ dayTemplateData });
     }
@@ -76,20 +76,20 @@ export class NgKitDatepickerService {
     }
   }
 
-  set maxDate(date: NgKitDate) {
+  set maxDate(date: NgkDate) {
     const maxDate = this.toValidDate(date, null);
     if (isChangedDate(this._state.maxDate, maxDate)) {
       this._nextState({ maxDate });
     }
   }
 
-  set markDisabled(markDisabled: NgKitMarkDisabled) {
+  set markDisabled(markDisabled: NgkMarkDisabled) {
     if (this._state.markDisabled !== markDisabled) {
       this._nextState({ markDisabled });
     }
   }
 
-  set minDate(date: NgKitDate) {
+  set minDate(date: NgkDate) {
     const minDate = this.toValidDate(date, null);
     if (isChangedDate(this._state.minDate, minDate)) {
       this._nextState({ minDate });
@@ -108,15 +108,15 @@ export class NgKitDatepickerService {
     }
   }
 
-  constructor(private _calendar: NgKitCalendar, private _i18n: NgKitDatepickerI18n) { }
+  constructor(private _calendar: NgkCalendar, private _i18n: NgkDatepickerI18n) { }
 
-  focus(date: NgKitDate) {
+  focus(date: NgkDate) {
     if (!this._state.disabled && this._calendar.isValid(date) && isChangedDate(this._state.focusDate, date)) {
       this._nextState({ focusDate: date });
     }
   }
 
-  focusMove(period?: NgKitPeriod, number?: number) {
+  focusMove(period?: NgkPeriod, number?: number) {
     this.focus(this._calendar.getNext(this._state.focusDate, period, number));
   }
 
@@ -126,7 +126,7 @@ export class NgKitDatepickerService {
     }
   }
 
-  open(date: NgKitDate) {
+  open(date: NgkDate) {
     const firstDate = this.toValidDate(date, this._calendar.getToday());
     if (!this._state.disabled) {
       this._nextState({ firstDate });
@@ -135,7 +135,7 @@ export class NgKitDatepickerService {
 
   reset(state: DatepickerViewModel) { this._state = state; }
 
-  select(date: NgKitDate, options: { emitEvent?: boolean } = {}) {
+  select(date: NgkDate, options: { emitEvent?: boolean } = {}) {
     const selectedDate = this.toValidDate(date, null);
     if (!this._state.disabled) {
       if (isChangedDate(this._state.selectedDate, selectedDate)) {
@@ -148,12 +148,12 @@ export class NgKitDatepickerService {
     }
   }
 
-  toValidDate(date: NgKitDateStruct, defaultValue?: NgKitDate): NgKitDate {
-    const xmDate = NgKitDate.from(date);
+  toValidDate(date: NgkDateStruct, defaultValue?: NgkDate): NgkDate {
+    const ngkDate = NgkDate.from(date);
     if (defaultValue === undefined) {
       defaultValue = this._calendar.getToday();
     }
-    return this._calendar.isValid(xmDate) ? xmDate : defaultValue;
+    return this._calendar.isValid(xmDate) ? ngkDate : defaultValue;
   }
 
   private _nextState(patch: Partial<DatepickerViewModel>) {

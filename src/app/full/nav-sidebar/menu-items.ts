@@ -1,6 +1,6 @@
-import { NgKitMenuItem } from 'ng-kit';
+import { NgkMenuItem } from 'ng-kit';
 
-export const ACCORDION: NgKitMenuItem = {
+export const ACCORDION: NgkMenuItem = {
   position: 0,
   title: 'Accordion',
   icon: 'icon-layers',
@@ -10,7 +10,7 @@ export const ACCORDION: NgKitMenuItem = {
   subMenuItems: []
 };
 
-export const BUTTONS: NgKitMenuItem = {
+export const BUTTONS: NgkMenuItem = {
   position: 1,
   title: 'Button',
   icon: 'icon-layers',
@@ -20,7 +20,7 @@ export const BUTTONS: NgKitMenuItem = {
   subMenuItems: []
 };
 
-export const CARD: NgKitMenuItem = {
+export const CARD: NgkMenuItem = {
   position: 2,
   title: 'Card',
   icon: 'icon-layers',
@@ -30,7 +30,7 @@ export const CARD: NgKitMenuItem = {
   subMenuItems: []
 };
 
-export const CAROUSEL: NgKitMenuItem = {
+export const CAROUSEL: NgkMenuItem = {
   position: 3,
   title: 'Carousel',
   icon: 'icon-layers',
@@ -40,7 +40,7 @@ export const CAROUSEL: NgKitMenuItem = {
   subMenuItems: []
 };
 
-export const DATEPICKER: NgKitMenuItem = {
+export const DATEPICKER: NgkMenuItem = {
   position: 4,
   title: 'Datepicker',
   icon: 'icon-layers',
@@ -50,7 +50,7 @@ export const DATEPICKER: NgKitMenuItem = {
   subMenuItems: []
 };
 
-export const DROPDOWN: NgKitMenuItem = {
+export const DROPDOWN: NgkMenuItem = {
   position: 5,
   title: 'Dropdown',
   icon: 'icon-layers',
@@ -60,7 +60,7 @@ export const DROPDOWN: NgKitMenuItem = {
   subMenuItems: []
 };
 
-export const MODAL: NgKitMenuItem = {
+export const MODAL: NgkMenuItem = {
   position: 6,
   title: 'Modal',
   icon: 'icon-layers',
@@ -70,7 +70,7 @@ export const MODAL: NgKitMenuItem = {
   subMenuItems: []
 };
 
-export const PAGINATION: NgKitMenuItem = {
+export const PAGINATION: NgkMenuItem = {
   position: 7,
   title: 'Pagination',
   icon: 'icon-layers',
@@ -80,7 +80,7 @@ export const PAGINATION: NgKitMenuItem = {
   subMenuItems: []
 };
 
-export const POPOVER: NgKitMenuItem = {
+export const POPOVER: NgkMenuItem = {
   position: 8,
   title: 'Popover',
   icon: 'icon-layers',
@@ -90,7 +90,7 @@ export const POPOVER: NgKitMenuItem = {
   subMenuItems: []
 };
 
-export const PROGRESSBAR: NgKitMenuItem = {
+export const PROGRESSBAR: NgkMenuItem = {
   position: 9,
   title: 'Progressbar',
   icon: 'icon-layers',
@@ -100,7 +100,7 @@ export const PROGRESSBAR: NgKitMenuItem = {
   subMenuItems: []
 };
 
-export const TABLE: NgKitMenuItem = {
+export const TABLE: NgkMenuItem = {
   position: 10,
   title: 'Table',
   icon: 'icon-layers',
@@ -110,7 +110,7 @@ export const TABLE: NgKitMenuItem = {
   subMenuItems: []
 };
 
-export const TABSET: NgKitMenuItem = {
+export const TABSET: NgkMenuItem = {
   position: 11,
   title: 'Tabset',
   icon: 'icon-layers',
@@ -120,7 +120,7 @@ export const TABSET: NgKitMenuItem = {
   subMenuItems: []
 };
 
-export const THEME: NgKitMenuItem = {
+export const THEME: NgkMenuItem = {
   position: 12,
   title: 'Theme',
   icon: 'icon-layers',
@@ -130,7 +130,7 @@ export const THEME: NgKitMenuItem = {
   subMenuItems: []
 };
 
-export const TOOLTIP: NgKitMenuItem = {
+export const TOOLTIP: NgkMenuItem = {
   position: 13,
   title: 'Tooltip',
   icon: 'icon-layers',
@@ -140,7 +140,7 @@ export const TOOLTIP: NgKitMenuItem = {
   subMenuItems: []
 };
 
-export const TYPEAHEAD: NgKitMenuItem = {
+export const TYPEAHEAD: NgkMenuItem = {
   position: 14,
   title: 'Typeahead',
   icon: 'icon-layers',
@@ -150,7 +150,7 @@ export const TYPEAHEAD: NgKitMenuItem = {
   subMenuItems: []
 };
 
-export const BASEMENU: NgKitMenuItem[] = [
+export const BASEMENU: NgkMenuItem[] = [
   ACCORDION,
   BUTTONS,
   CARD,

@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 
 import { isNumber, padNumber, toInteger } from '../util/util';
-import { NgKitDateStruct } from './date-struct';
+import { NgkDateStruct } from './date-struct';
 
 export function XM_DATEPICKER_PARSER_FORMATTER_FACTORY() {
-  return new NgKitDateISOParserFormatter();
+  return new NgkDateISOParserFormatter();
 }
 
 /**
  * An abstract service for parsing and formatting dates for the
- * Converts between the internal `NgKitDateStruct` model presentation and a `string` that is displayed in the
+ * Converts between the internal `NgkDateStruct` model presentation and a `string` that is displayed in the
  * input element.
  *
- * When user types something in the input this service attempts to parse it into a `NgKitDateStruct` object.
+ * When user types something in the input this service attempts to parse it into a `NgkDateStruct` object.
  * And vice versa, when users selects a date in the calendar with the mouse, it must be displayed as a `string`
  * in the input.
  *
@@ -22,27 +22,27 @@ export function XM_DATEPICKER_PARSER_FORMATTER_FACTORY() {
  * See the [date format overview](#/components/datepicker/overview#date-model) for more details.
  */
 @Injectable({ providedIn: 'root', useFactory: XM_DATEPICKER_PARSER_FORMATTER_FACTORY })
-export abstract class NgKitDateParserFormatter {
+export abstract class NgkDateParserFormatter {
   /**
-   * Parses the given `string` to an `NgKitDateStruct`.
+   * Parses the given `string` to an `NgkDateStruct`.
    *
    * Implementations should try their best to provide a result, even
    * partial. They must return `null` if the value can't be parsed.
    */
-  abstract parse(value: string): NgKitDateStruct;
+  abstract parse(value: string): NgkDateStruct;
 
   /**
-   * Formats the given `NgKitDateStruct` to a `string`.
+   * Formats the given `NgkDateStruct` to a `string`.
    *
    * Implementations should return an empty string if the given date is `null`,
    * and try their best to provide a partial result if the given date is incomplete or invalid.
    */
-  abstract format(date: NgKitDateStruct): string;
+  abstract format(date: NgkDateStruct): string;
 }
 
 @Injectable()
-export class NgKitDateISOParserFormatter extends NgKitDateParserFormatter {
-  parse(value: string): NgKitDateStruct {
+export class NgkDateISOParserFormatter extends NgkDateParserFormatter {
+  parse(value: string): NgkDateStruct {
     if (value) {
       const dateParts = value.trim().split('-');
       if (dateParts.length === 1 && isNumber(dateParts[0])) {
@@ -56,7 +56,7 @@ export class NgKitDateISOParserFormatter extends NgKitDateParserFormatter {
     return null;
   }
 
-  format(date: NgKitDateStruct): string {
+  format(date: NgkDateStruct): string {
     return date ?
       `${date.year}-${isNumber(date.month) ? padNumber(date.month) : ''}-${isNumber(date.day) ? padNumber(date.day) : ''}` :
       '';

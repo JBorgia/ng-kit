@@ -28,12 +28,12 @@ import { PlacementArray, positionElements } from '../util/positioning';
 import { listenToTriggers } from '../util/triggers';
 
 /**
- * Configuration service for the NgKitTooltip directive.
+ * Configuration service for the NgkTooltip directive.
  * You can inject this service, typically in your root component, and customize the values of its properties in
  * order to provide default values for all the tooltips used in the application.
  */
 @Injectable({ providedIn: 'root' })
-export class NgKitTooltipConfig {
+export class NgkTooltipConfig {
   autoClose: boolean | 'inside' | 'outside' = true;
   placement: PlacementArray = 'auto';
   triggers = 'hover focus';
@@ -47,12 +47,12 @@ export class NgKitTooltipConfig {
 let nextId = 0;
 
 @Component({
-  selector: 'ng-kit-tooltip-window',
+  selector: 'ngk-tooltip-window',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './tooltip.component.html',
   styleUrls: ['./tooltip.component.scss']
 })
-export class NgKitTooltipWindowComponent {
+export class NgkTooltipWindowComponent {
   @Input() tooltipClass: string;
 
   @HostBinding('attr.role') role = 'tooltip';
@@ -68,8 +68,8 @@ export class NgKitTooltipWindowComponent {
 /**
  * A lightweight, extensible directive for fancy tooltip creation.
  */
-@Directive({ selector: '[xmTooltip]', exportAs: 'xmTooltip' })
-export class NgKitTooltipDirective implements OnInit, OnDestroy {
+@Directive({ selector: '[ngkTooltip]', exportAs: 'ngkTooltip' })
+export class NgkTooltipDirective implements OnInit, OnDestroy {
   /**
    * Indicates whether the tooltip should be closed on Escape key and inside/outside clicks.
    *
@@ -105,7 +105,7 @@ export class NgKitTooltipDirective implements OnInit, OnDestroy {
    */
   @Input() disableTooltip: boolean;
   /**
-   * An optional class applied to ng-kit-tooltip-window
+   * An optional class applied to ngk-tooltip-window
    *
    * @since 3.2.0
    */
@@ -132,15 +132,15 @@ export class NgKitTooltipDirective implements OnInit, OnDestroy {
   @Output() hidden = new EventEmitter();
 
   private _xmTooltip: string | TemplateRef<any>;
-  private _xmTooltipWindowId = `ng-kit-tooltip-${nextId++}`;
-  private _popupService: PopupService<NgKitTooltipWindowComponent>;
-  private _windowRef: ComponentRef<NgKitTooltipWindowComponent>;
+  private _xmTooltipWindowId = `ngk-tooltip-${nextId++}`;
+  private _popupService: PopupService<NgkTooltipWindowComponent>;
+  private _windowRef: ComponentRef<NgkTooltipWindowComponent>;
   private _unregisterListenersFn;
   private _zoneSubscription: any;
 
   constructor(
     private _elementRef: ElementRef<HTMLElement>, private _renderer: Renderer2, injector: Injector,
-    componentFactoryResolver: ComponentFactoryResolver, viewContainerRef: ViewContainerRef, config: NgKitTooltipConfig,
+    componentFactoryResolver: ComponentFactoryResolver, viewContainerRef: ViewContainerRef, config: NgkTooltipConfig,
     private _ngZone: NgZone, @Inject(DOCUMENT) private _document: any, private _changeDetector: ChangeDetectorRef) {
     this.autoClose = config.autoClose;
     this.placement = config.placement;
@@ -150,8 +150,8 @@ export class NgKitTooltipDirective implements OnInit, OnDestroy {
     this.tooltipClass = config.tooltipClass;
     this.openDelay = config.openDelay;
     this.closeDelay = config.closeDelay;
-    this._popupService = new PopupService<NgKitTooltipWindowComponent>(
-      NgKitTooltipWindowComponent, injector, viewContainerRef, _renderer, componentFactoryResolver);
+    this._popupService = new PopupService<NgkTooltipWindowComponent>(
+      NgkTooltipWindowComponent, injector, viewContainerRef, _renderer, componentFactoryResolver);
 
     this._zoneSubscription = _ngZone.onStable.subscribe(() => {
       if (this._windowRef) {
@@ -166,14 +166,14 @@ export class NgKitTooltipDirective implements OnInit, OnDestroy {
    * Content to be displayed as tooltip. If falsy, the tooltip won't open.
    */
   @Input()
-  set xmTooltip(value: string | TemplateRef<any>) {
+  set ngkTooltip(value: string | TemplateRef<any>) {
     this._xmTooltip = value;
     if (!value && this._windowRef) {
       this.close();
     }
   }
 
-  get xmTooltip() { return this._xmTooltip; }
+  get ngkTooltip() { return this._xmTooltip; }
 
   /**
    * Opens an element’s tooltip. This is considered a “manual” triggering of the tooltip.

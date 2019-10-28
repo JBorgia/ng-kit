@@ -30,12 +30,12 @@ import { PlacementArray, positionElements } from '../util/positioning';
 import { listenToTriggers } from '../util/triggers';
 
 /**
- * Configuration service for the NgKitPopoverDirective.
+ * Configuration service for the NgkPopoverDirective.
  * You can inject this service, typically in your root component, and customize the values of its properties in
  * order to provide default values for all the popovers used in the application.
  */
 @Injectable({ providedIn: 'root' })
-export class NgKitPopoverConfig {
+export class NgkPopoverConfig {
   autoClose: boolean | 'inside' | 'outside' = true;
   placement: PlacementArray = 'auto';
   triggers = 'click';
@@ -49,12 +49,12 @@ export class NgKitPopoverConfig {
 let nextId = 0;
 
 @Component({
-  selector: 'ng-kit-popover-window',
+  selector: 'ngk-popover-window',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './popover.component.html',
   styleUrls: ['./popover.component.scss']
 })
-export class NgKitPopoverWindowComponent {
+export class NgkPopoverWindowComponent {
   @Input() title: undefined | string | TemplateRef<any>;
   @Input() popoverClass: string;
   @Input() context: any;
@@ -74,8 +74,8 @@ export class NgKitPopoverWindowComponent {
 /**
  * A lightweight, extensible directive for fancy popover creation.
  */
-@Directive({ selector: '[xmPopover]', exportAs: 'xmPopover' })
-export class NgKitPopoverDirective implements OnInit, OnDestroy, OnChanges {
+@Directive({ selector: '[ngkPopover]', exportAs: 'ngkPopover' })
+export class NgkPopoverDirective implements OnInit, OnDestroy, OnChanges {
   /**
    * Indicates whether the popover should be closed on Escape key and inside/outside clicks.
    *
@@ -91,7 +91,7 @@ export class NgKitPopoverDirective implements OnInit, OnDestroy, OnChanges {
   /**
    * Content to be displayed as popover. If title and content are empty, the popover won't open.
    */
-  @Input() xmPopover: string | TemplateRef<any>;
+  @Input() ngkPopover: string | TemplateRef<any>;
   /**
    * Title of a popover. If title and content are empty, the popover won't open.
    */
@@ -119,7 +119,7 @@ export class NgKitPopoverDirective implements OnInit, OnDestroy, OnChanges {
    */
   @Input() disablePopover: boolean;
   /**
-   * An optional class applied to ng-kit-popover-window
+   * An optional class applied to ngk-popover-window
    *
    * @since 2.2.0
    */
@@ -145,9 +145,9 @@ export class NgKitPopoverDirective implements OnInit, OnDestroy, OnChanges {
    */
   @Output() hidden = new EventEmitter();
 
-  private _xmPopoverWindowId = `ng-kit-popover-${nextId++}`;
-  private _popupService: PopupService<NgKitPopoverWindowComponent>;
-  private _windowRef: ComponentRef<NgKitPopoverWindowComponent>;
+  private _xmPopoverWindowId = `ngk-popover-${nextId++}`;
+  private _popupService: PopupService<NgkPopoverWindowComponent>;
+  private _windowRef: ComponentRef<NgkPopoverWindowComponent>;
   private _unregisterListenersFn;
   private _zoneSubscription: any;
   private _isDisabled(): boolean {
@@ -162,7 +162,7 @@ export class NgKitPopoverDirective implements OnInit, OnDestroy, OnChanges {
 
   constructor(
     private _elementRef: ElementRef<HTMLElement>, private _renderer: Renderer2, injector: Injector,
-    componentFactoryResolver: ComponentFactoryResolver, viewContainerRef: ViewContainerRef, config: NgKitPopoverConfig,
+    componentFactoryResolver: ComponentFactoryResolver, viewContainerRef: ViewContainerRef, config: NgkPopoverConfig,
     private _ngZone: NgZone, @Inject(DOCUMENT) private _document: any, private _changeDetector: ChangeDetectorRef) {
     this.autoClose = config.autoClose;
     this.placement = config.placement;
@@ -172,8 +172,8 @@ export class NgKitPopoverDirective implements OnInit, OnDestroy, OnChanges {
     this.popoverClass = config.popoverClass;
     this.openDelay = config.openDelay;
     this.closeDelay = config.closeDelay;
-    this._popupService = new PopupService<NgKitPopoverWindowComponent>(
-      NgKitPopoverWindowComponent, injector, viewContainerRef, _renderer, componentFactoryResolver);
+    this._popupService = new PopupService<NgkPopoverWindowComponent>(
+      NgkPopoverWindowComponent, injector, viewContainerRef, _renderer, componentFactoryResolver);
 
     this._zoneSubscription = _ngZone.onStable.subscribe(() => {
       if (this._windowRef) {
@@ -249,7 +249,7 @@ export class NgKitPopoverDirective implements OnInit, OnDestroy, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     // close popover if title and content become empty, or disablePopover set to true
-    if ((changes['xmPopover'] || changes['popoverTitle'] || changes['disablePopover']) && this._isDisabled()) {
+    if ((changes['ngkPopover'] || changes['popoverTitle'] || changes['disablePopover']) && this._isDisabled()) {
       this.close();
     }
   }

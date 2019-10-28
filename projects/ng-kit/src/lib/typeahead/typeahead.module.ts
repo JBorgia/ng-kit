@@ -1,29 +1,29 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { NgKitHighlightComponent } from './highlight';
-import { NgKitTypeaheadDirective } from './typeahead';
-import { NgKitTypeaheadWindowComponent } from './typeahead-window.component';
+import { NgkHighlightComponent } from './highlight';
+import { NgkTypeaheadDirective } from './typeahead';
+import { NgkTypeaheadWindowComponent } from './typeahead-window.component';
 
-export { NgKitHighlightComponent } from './highlight';
-export { NgKitTypeaheadWindowComponent } from './typeahead-window.component';
-export { NgKitTypeaheadConfig, NgKitTypeaheadDirective, NgKitTypeaheadSelectItemEvent } from './typeahead';
+export { NgkHighlightComponent } from './highlight';
+export { NgkTypeaheadWindowComponent } from './typeahead-window.component';
+export { NgkTypeaheadConfig, NgkTypeaheadDirective, NgkTypeaheadSelectItemEvent } from './typeahead';
 
 @NgModule({
   declarations: [
-    NgKitTypeaheadDirective,
-    NgKitHighlightComponent,
-    NgKitTypeaheadWindowComponent
+    NgkTypeaheadDirective,
+    NgkHighlightComponent,
+    NgkTypeaheadWindowComponent
   ],
   exports: [
-    NgKitTypeaheadDirective,
-    NgKitHighlightComponent
+    NgkTypeaheadDirective,
+    NgkHighlightComponent
   ],
   imports: [
     CommonModule
   ],
   entryComponents: [
-    NgKitTypeaheadWindowComponent
+    NgkTypeaheadWindowComponent
   ]
 })
-export class NgKitTypeaheadModule { }
+export class NgkTypeaheadModule { }

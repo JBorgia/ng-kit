@@ -4,7 +4,7 @@
   <div>
     <div class="input-group">
       <input class="form-control" autocomplete="off" placeholder="yyyy-mm-dd"
-        name="dp" [(ngModel)]="model" xmDatepicker [footerTemplate]="footerTemplate" #d="xmDatepicker">
+        name="dp" [(ngModel)]="model" ngkDatepicker [footerTemplate]="footerTemplate" #d="ngkDatepicker">
       <div class="input-group-append">
         <button class="input-group-append-button" (click)="d.toggle()" type="button">
           <em class="icon-calendar-blank"></em>
@@ -17,14 +17,14 @@
 <ng-template #footerTemplate>
   <section>
     <button
-      xm
-      class="ng-kit-sm ng-kit-secondary"
+      ngk
+      class="ngk-sm ngk-secondary"
       (click)="model = today; d.close()">
       Today
     </button>
     <button
-      xm
-      class="ng-kit-sm ng-kit-secondary"
+      ngk
+      class="ngk-sm ngk-secondary"
       (click)="d.close()">
       Close
     </button>

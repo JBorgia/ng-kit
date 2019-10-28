@@ -1,51 +1,51 @@
 <p class="instructions">
-  The table column visibility can be controlled using *ngIfs placed on the <i>&#60;th&#62;</i> and <i>&#60;td&#62;</i> tags if the column widths are set using <code>colWidth</code> inputs on the <i>&#60;th xm&#62;</i> tags.
+  The table column visibility can be controlled using *ngIfs placed on the <i>&#60;th&#62;</i> and <i>&#60;td&#62;</i> tags if the column widths are set using <code>colWidth</code> inputs on the <i>&#60;th ngk&#62;</i> tags.
 </p>
-<p class="instructions">If setting widths using the <code>colWidth</code> inputs on the <i>&#60;th xm&#62;</i> tags, column visibility can still be controlled using the <code>colVisibility</code> input on the <i>&#60;table xm&#62;</i> tag.
+<p class="instructions">If setting widths using the <code>colWidth</code> inputs on the <i>&#60;th ngk&#62;</i> tags, column visibility can still be controlled using the <code>colVisibility</code> input on the <i>&#60;table ngk&#62;</i> tag.
 Best practice is to use either the <code>colVisibility</code> or *ngIfs, but not both.</p>
 <p class="instructions">
-  <b>WARNING:</b>Using both the <code>colWidths</code> on the <i>&#60;table xm&#62;</i> tag and <code>colWidth</code> inputs on the <i>&#60;th xm&#62;</i> tags is redundant, unnecessary, and will likely result in unintended behavior. Choose one or the other. 
+  <b>WARNING:</b>Using both the <code>colWidths</code> on the <i>&#60;table ngk&#62;</i> tag and <code>colWidth</code> inputs on the <i>&#60;th ngk&#62;</i> tags is redundant, unnecessary, and will likely result in unintended behavior. Choose one or the other. 
 </p>
 <p class="instructions">The <code>colWidths</code> values are the same as the previous example. Some additional styling has been applied to affect the background and padding.</p>
 <p class="instructions">*NOTE: If the 'Username' column is removed, as none of the other columns have a flex grow greater than 0, the table does not fill the whole area.</p>
 
 <div class="button-container">
   <button
-      xm
-      class="ng-kit-sm ng-kit-primary"
+      ngk
+      class="ngk-sm ngk-primary"
       (click)="hideColumn1 = !hideColumn1">{{hideColumn1 ? 'Add Column 1': 'Remove Column 1'}}
   </button>
   <button
-      xm
-      class="ng-kit-sm ng-kit-primary"
+      ngk
+      class="ngk-sm ngk-primary"
       (click)="hideColumn2 = !hideColumn2">{{hideColumn2 ? 'Add Column 2' : 'Remove Column 2'}}
   </button>
   <button
-      xm
-      class="ng-kit-sm ng-kit-primary"
+      ngk
+      class="ngk-sm ngk-primary"
       (click)="hideColumn3 = !hideColumn3">{{hideColumn3 ? 'Add Column 3' : 'Remove Column 3'}}
   </button>
   <button
-      xm
-      class="ng-kit-sm ng-kit-primary"
+      ngk
+      class="ngk-sm ngk-primary"
       (click)="hideColumn4 = !hideColumn4">{{hideColumn4 ? 'Add Column 4' : '*Remove Column 4'}}
   </button>
   <button
-      xm
-      class="ng-kit-sm ng-kit-primary"
+      ngk
+      class="ngk-sm ngk-primary"
       (click)="hideColumn5 = !hideColumn5">{{hideColumn5 ? 'Add Column 5' : 'Remove Column 5'}}
   </button>
 </div>
 
 <!-- Example Code: Begin -->
-<table xm>
+<table ngk>
   <thead>
     <tr>
-      <th xm *ngIf="!hideColumn1" [colWidth]="{ grow: 0, shrink: 0, basis: '110px'}">First</th>
-      <th xm *ngIf="!hideColumn2" [colWidth]="{ grow: 0, shrink: 0, basis: '120px'}">Last</th>
-      <th xm *ngIf="!hideColumn3" [colWidth]="{ grow: 0, shrink: 0, basis: '130px'}" >Title</th>
-      <th xm *ngIf="!hideColumn4" [colWidth]="{ grow: 1, shrink: 0, basis: '140px'}">Username</th>
-      <th xm *ngIf="!hideColumn5" [colWidth]="{ grow: 0, shrink: 0, basis: '150px'}">Action</th>
+      <th ngk *ngIf="!hideColumn1" [colWidth]="{ grow: 0, shrink: 0, basis: '110px'}">First</th>
+      <th ngk *ngIf="!hideColumn2" [colWidth]="{ grow: 0, shrink: 0, basis: '120px'}">Last</th>
+      <th ngk *ngIf="!hideColumn3" [colWidth]="{ grow: 0, shrink: 0, basis: '130px'}" >Title</th>
+      <th ngk *ngIf="!hideColumn4" [colWidth]="{ grow: 1, shrink: 0, basis: '140px'}">Username</th>
+      <th ngk *ngIf="!hideColumn5" [colWidth]="{ grow: 0, shrink: 0, basis: '150px'}">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -56,8 +56,8 @@ Best practice is to use either the <code>colVisibility</code> or *ngIfs, but not
       <td *ngIf="!hideColumn4">{{employee.username}}</td>
       <td *ngIf="!hideColumn5">
         <button
-          xm
-          class="ng-kit-sm ng-kit-primary"
+          ngk
+          class="ngk-sm ngk-primary"
           icon="icon-account">
           Profile
         </button>

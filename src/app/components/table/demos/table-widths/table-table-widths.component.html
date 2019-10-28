@@ -1,11 +1,11 @@
 <p class="instructions">
-  The table column widths can be set using the <code>colWidths</code> input on the <i>&#60;table xm&#62;</i> tag, which accepts an array of type NgKitColWidth objects. 
-  Type NgKitColWidth objects are flex-based and have 'grow', 'shrink', and 'basis' fields.
+  The table column widths can be set using the <code>colWidths</code> input on the <i>&#60;table ngk&#62;</i> tag, which accepts an array of type NgkColWidth objects. 
+  Type NgkColWidth objects are flex-based and have 'grow', 'shrink', and 'basis' fields.
 </p>
 <p class="instructions">If setting widths using the <code>colWidths</code> input, column visibility should be controlled using the <code>colVisibility</code> input. See the next demo for details.</p>
 <p class="instructions">
-  <b>WARNING:</b> If using <code>colWidths</code> on the <i>&#60;table xm&#62;</i> tag, table columns cannot be hidden/removed using *ngIf on the <i>&#60;th&#62;</i> and <i>&#60;td&#62;</i> tags. 
-  For *ngIf dom control of columns, set widths using the <code>colWidth</code> input on the <i>&#60;th xm&#62;</i> tags.
+  <b>WARNING:</b> If using <code>colWidths</code> on the <i>&#60;table ngk&#62;</i> tag, table columns cannot be hidden/removed using *ngIf on the <i>&#60;th&#62;</i> and <i>&#60;td&#62;</i> tags. 
+  For *ngIf dom control of columns, set widths using the <code>colWidth</code> input on the <i>&#60;th ngk&#62;</i> tags.
 </p>
 <p class="instructions">'Username' column set to grow: 1, while the others are set to 0. It is allotted any additional available width.</p>
 <p class="instructions">All the columns are shrink: 0</p>
@@ -14,7 +14,7 @@
 
 <!-- Example Code: Begin -->
 <table
-  xm
+  ngk
   [colVisibility]="[
     true,
     true,
@@ -46,8 +46,8 @@
       <td>motto271</td>
       <td>
         <button
-          xm
-          class="ng-kit-sm ng-kit-primary"
+          ngk
+          class="ngk-sm ngk-primary"
           icon="icon-account">
           Profile
         </button>
@@ -60,8 +60,8 @@
       <td>jthornton110</td>
       <td>
         <button
-          xm
-          class="ng-kit-sm ng-kit-primary"
+          ngk
+          class="ngk-sm ngk-primary"
           icon="icon-account">
           Profile
         </button>
@@ -74,8 +74,8 @@
       <td>lbird33</td>
       <td>
         <button
-          xm
-          class="ng-kit-sm ng-kit-primary"
+          ngk
+          class="ngk-sm ngk-primary"
           icon="icon-account">
           Profile
         </button>
@@ -88,8 +88,8 @@
       <td>rkimble50</td>
       <td>
         <button
-          xm
-          class="ng-kit-sm ng-kit-primary"
+          ngk
+          class="ngk-sm ngk-primary"
           icon="icon-account">
           Profile
         </button>
@@ -102,8 +102,8 @@
       <td>tlogan69</td>
       <td>
         <button
-          xm
-          class="ng-kit-sm ng-kit-primary"
+          ngk
+          class="ngk-sm ngk-primary"
           icon="icon-account">
           Profile
         </button>
@@ -116,8 +116,8 @@
       <td>bpreston69</td>
       <td>
         <button
-          xm
-          class="ng-kit-sm ng-kit-primary"
+          ngk
+          class="ngk-sm ngk-primary"
           icon="icon-account">
           Profile
         </button>
@@ -130,8 +130,8 @@
       <td>lperry06</td>
       <td>
         <button
-          xm
-          class="ng-kit-sm ng-kit-primary"
+          ngk
+          class="ngk-sm ngk-primary"
           icon="icon-account">
           Profile
         </button>
@@ -144,8 +144,8 @@
       <td>dblaine666</td>
       <td>
         <button
-          xm
-          class="ng-kit-sm ng-kit-primary"
+          ngk
+          class="ngk-sm ngk-primary"
           icon="icon-account">
           Profile
         </button>

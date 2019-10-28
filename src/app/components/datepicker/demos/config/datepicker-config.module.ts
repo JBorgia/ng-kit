@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgKitDatepickerModule } from 'ng-kit';
+import { NgkDatepickerModule } from 'ng-kit';
 
 import { DatepickerConfigComponent } from './datepicker-config';
 
@@ -9,7 +9,7 @@ import { DatepickerConfigComponent } from './datepicker-config';
   imports: [
     BrowserModule,
     FormsModule,
-    NgKitDatepickerModule
+    NgkDatepickerModule
   ],
   declarations: [DatepickerConfigComponent],
   exports: [DatepickerConfigComponent],

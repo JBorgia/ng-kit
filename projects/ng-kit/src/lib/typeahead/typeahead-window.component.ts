@@ -1,14 +1,14 @@
 import {
-  Component,
-  ElementRef,
-  EventEmitter,
-  HostBinding,
-  HostListener,
-  Input,
-  OnInit,
-  Output,
-  Renderer2,
-  TemplateRef,
+    Component,
+    ElementRef,
+    EventEmitter,
+    HostBinding,
+    HostListener,
+    Input,
+    OnInit,
+    Output,
+    Renderer2,
+    TemplateRef,
 } from '@angular/core';
 
 import { toString } from '../util/util';
@@ -29,12 +29,12 @@ export interface ResultTemplateContext {
 }
 
 @Component({
-  selector: 'ng-kit-typeahead-window',
-  exportAs: 'xmTypeaheadWindow',
+  selector: 'ngk-typeahead-window',
+  exportAs: 'ngkTypeaheadWindow',
   templateUrl: './typeahead-window.component.html',
   styleUrls: ['./typeahead-window.component.scss']
 })
-export class NgKitTypeaheadWindowComponent implements OnInit {
+export class NgkTypeaheadWindowComponent implements OnInit {
   activeIdx = 0;
   theme: string;
 

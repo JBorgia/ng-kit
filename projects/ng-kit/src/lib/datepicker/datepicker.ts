@@ -23,28 +23,28 @@ import { fromEvent, merge, Subject } from 'rxjs';
 import { filter, take, takeUntil } from 'rxjs/operators';
 
 import { hasClassName } from '../util/util';
-import { NgKitDateAdapter } from './adapters/date-adapter';
-import { NgKitCalendar } from './calendar';
-import { NgKitDate } from './date';
-import { NgKitDateStruct } from './date-struct';
-import { NgKitDatepickerConfig } from './datepicker-config';
+import { NgkDateAdapter } from './adapters/date-adapter';
+import { NgkCalendar } from './calendar';
+import { NgkDate } from './date';
+import { NgkDateStruct } from './date-struct';
+import { NgkDatepickerConfig } from './datepicker-config';
 import { DayTemplateContext } from './datepicker-day-template-context';
-import { NgKitDatepickerI18n } from './datepicker-i18n';
-import { NgKitDatepickerKeyMapService } from './datepicker-keymap-service';
-import { NgKitDatepickerService } from './datepicker-service';
+import { NgkDatepickerI18n } from './datepicker-i18n';
+import { NgkDatepickerKeyMapService } from './datepicker-keymap-service';
+import { NgkDatepickerService } from './datepicker-service';
 import { isChangedDate } from './datepicker-tools';
 import { DatepickerViewModel, NavigationEvent } from './datepicker-view-model';
 
 const XM_DATEPICKER_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => NgKitDatepickerComponent),
+  useExisting: forwardRef(() => NgkDatepickerComponent),
   multi: true
 };
 
 /**
  * An event emitted right before the navigation happens and the month displayed by the datepicker changes.
  */
-export interface NgKitDatepickerNavigateEvent {
+export interface NgkDatepickerNavigateEvent {
   /**
    * The currently displayed month.
    */
@@ -66,27 +66,27 @@ export interface NgKitDatepickerNavigateEvent {
 /**
  * A highly configurable component that helps you with selecting calendar dates.
  *
- * `NgKitDatepicker` is meant to be displayed inline on a page or put inside a popup.
+ * `NgkDatepicker` is meant to be displayed inline on a page or put inside a popup.
  */
 @Component({
-  exportAs: 'xmDatepicker',
-  selector: 'ng-kit-datepicker',
+  exportAs: 'ngkDatepicker',
+  selector: 'ngk-datepicker',
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['./datepicker.scss'],
   template: `
     <ng-template #dt let-date="date" let-currentMonth="currentMonth" let-selected="selected" let-disabled="disabled" let-focused="focused">
-      <ng-kit-datepicker-day-view
+      <ngk-datepicker-day-view
         [date]="date"
         [currentMonth]="currentMonth"
         [selected]="selected"
         [disabled]="disabled"
         [focused]="focused">
-      </ng-kit-datepicker-day-view>
+      </ngk-datepicker-day-view>
     </ng-template>
 
-    <div class="ng-kit-dp-header">
-      <ng-kit-datepicker-navigation *ngIf="navigation !== 'none'"
+    <div class="ngk-dp-header">
+      <ngk-datepicker-navigation *ngIf="navigation !== 'none'"
         [date]="model.firstDate"
         [months]="model.months"
         [disabled]="model.disabled"
@@ -96,39 +96,39 @@ export interface NgKitDatepickerNavigateEvent {
         [selectBoxes]="model.selectBoxes"
         (navigate)="onNavigateEvent($event)"
         (select)="onNavigateDateSelect($event)">
-      </ng-kit-datepicker-navigation>
+      </ngk-datepicker-navigation>
     </div>
 
-    <div #months class="ng-kit-dp-months" (keydown)="onKeyDown($event)">
+    <div #months class="ngk-dp-months" (keydown)="onKeyDown($event)">
       <ng-template ngFor let-month [ngForOf]="model.months" let-i="index">
-        <div class="ng-kit-dp-month">
+        <div class="ngk-dp-month">
           <div *ngIf="navigation === 'none' || (displayMonths > 1 && navigation === 'select')"
-                class="ng-kit-dp-month-name">
+                class="ngk-dp-month-name">
             <span>{{ i18n.getMonthFullName(month.number, month.year) }} {{ i18n.getYearNumerals(month.year) }}</span>
           </div>
-          <ng-kit-datepicker-month-view
+          <ngk-datepicker-month-view
             [month]="month"
             [dayTemplate]="dayTemplate || dt"
             [showWeekdays]="showWeekdays"
             [showWeekNumbers]="showWeekNumbers"
             (select)="onDateSelect($event)">
-          </ng-kit-datepicker-month-view>
+          </ngk-datepicker-month-view>
         </div>
       </ng-template>
     </div>
 
     <ng-template [ngTemplateOutlet]="footerTemplate"></ng-template>
   `,
-  providers: [XM_DATEPICKER_VALUE_ACCESSOR, NgKitDatepickerService, NgKitDatepickerKeyMapService]
+  providers: [XM_DATEPICKER_VALUE_ACCESSOR, NgkDatepickerService, NgkDatepickerKeyMapService]
 })
-export class NgKitDatepickerComponent implements OnDestroy,
+export class NgkDatepickerComponent implements OnDestroy,
   OnChanges, OnInit, ControlValueAccessor, AfterContentInit {
   model: DatepickerViewModel;
 
   @HostBinding('class.datepicker-flex') @Input() flex?: boolean;
 
   @ViewChild('months', { static: true }) private _monthsEl: ElementRef<HTMLElement>;
-  private _controlValue: NgKitDate;
+  private _controlValue: NgkDate;
   private _destroyed$ = new Subject<void>();
 
   /**
@@ -148,7 +148,7 @@ export class NgKitDatepickerComponent implements OnDestroy,
    *
    * @since 3.3.0
    */
-  @Input() dayTemplateData: (date: NgKitDate, current: { year: number, month: number }) => any;
+  @Input() dayTemplateData: (date: NgkDate, current: { year: number, month: number }) => any;
 
   /**
    * The number of months to display.
@@ -176,21 +176,21 @@ export class NgKitDatepickerComponent implements OnDestroy,
    *
    * `current` is the month that is currently displayed by the datepicker.
    */
-  @Input() markDisabled: (date: NgKitDate, current: { year: number, month: number }) => boolean;
+  @Input() markDisabled: (date: NgkDate, current: { year: number, month: number }) => boolean;
 
   /**
    * The latest date that can be displayed or selected.
    *
    * If not provided, 'year' select box will display 10 years after the current month.
    */
-  @Input() maxDate: NgKitDateStruct;
+  @Input() maxDate: NgkDateStruct;
 
   /**
    * The earliest date that can be displayed or selected.
    *
    * If not provided, 'year' select box will display 10 years before the current month.
    */
-  @Input() minDate: NgKitDateStruct;
+  @Input() minDate: NgkDateStruct;
 
   /**
    * Navigation type.
@@ -236,14 +236,14 @@ export class NgKitDatepickerComponent implements OnDestroy,
    * An event emitted right before the navigation happens and displayed month changes.
    *
    */
-  @Output() navigate = new EventEmitter<NgKitDatepickerNavigateEvent>();
+  @Output() navigate = new EventEmitter<NgkDatepickerNavigateEvent>();
 
   /**
    * An event emitted when user selects a date using keyboard or mouse.
    *
-   * The payload of the event is currently selected `NgKitDate`.
+   * The payload of the event is currently selected `NgkDate`.
    */
-  @Output() select = new EventEmitter<NgKitDate>();
+  @Output() select = new EventEmitter<NgkDate>();
 
   onChange = (_: any) => { };
   onTouched = () => { };
@@ -261,10 +261,10 @@ export class NgKitDatepickerComponent implements OnDestroy,
   }
 
   constructor(
-    private _keyMapService: NgKitDatepickerKeyMapService, public _service: NgKitDatepickerService,
-    private _calendar: NgKitCalendar, public i18n: NgKitDatepickerI18n, config: NgKitDatepickerConfig,
+    private _keyMapService: NgkDatepickerKeyMapService, public _service: NgkDatepickerService,
+    private _calendar: NgkCalendar, public i18n: NgkDatepickerI18n, config: NgkDatepickerConfig,
     private _cd: ChangeDetectorRef, private _elementRef: ElementRef<HTMLElement>,
-    private _xmDateAdapter: NgKitDateAdapter<any>, private _ngZone: NgZone) {
+    private _xmDateAdapter: NgkDateAdapter<any>, private _ngZone: NgZone) {
     ['dayTemplate', 'dayTemplateData', 'displayMonths', 'firstDayOfWeek', 'footerTemplate', 'markDisabled', 'minDate',
       'maxDate', 'navigation', 'outsideDays', 'showWeekdays', 'showWeekNumbers', 'startDate']
       .forEach(input => this[input] = config[input]);
@@ -316,7 +316,7 @@ export class NgKitDatepickerComponent implements OnDestroy,
   focus() {
     this._ngZone.onStable.asObservable().pipe(take(1)).subscribe(() => {
       const elementToFocus =
-        this._elementRef.nativeElement.querySelector<HTMLDivElement>('div.ng-kit-dp-day[tabindex="0"]');
+        this._elementRef.nativeElement.querySelector<HTMLDivElement>('div.ngk-dp-day[tabindex="0"]');
       if (elementToFocus) {
         elementToFocus.focus();
       }
@@ -332,7 +332,7 @@ export class NgKitDatepickerComponent implements OnDestroy,
    * Use the `[startDate]` input as an alternative.
    */
   navigateTo(date?: { year: number, month: number, day?: number }) {
-    this._service.open(NgKitDate.from(date ? date.day ? date as NgKitDateStruct : { ...date, day: 1 } : null));
+    this._service.open(NgkDate.from(date ? date.day ? date as NgkDateStruct : { ...date, day: 1 } : null));
   }
 
   ngAfterContentInit() {
@@ -346,7 +346,7 @@ export class NgKitDatepickerComponent implements OnDestroy,
         .pipe(
           filter(
             ({ target, relatedTarget }) =>
-              !(hasClassName(target, 'ng-kit-dp-day') && hasClassName(relatedTarget, 'ng-kit-dp-day'))),
+              !(hasClassName(target, 'ngk-dp-day') && hasClassName(relatedTarget, 'ngk-dp-day'))),
           takeUntil(this._destroyed$))
         .subscribe(({ type }) => this._ngZone.run(() => this._service.focusVisible = type === 'focusin'));
     });
@@ -374,14 +374,14 @@ export class NgKitDatepickerComponent implements OnDestroy,
     }
   }
 
-  onDateSelect(date: NgKitDate) {
+  onDateSelect(date: NgkDate) {
     this._service.focus(date);
     this._service.select(date, { emitEvent: true });
   }
 
   onKeyDown(event: KeyboardEvent) { this._keyMapService.processKey(event); }
 
-  onNavigateDateSelect(date: NgKitDate) { this._service.open(date); }
+  onNavigateDateSelect(date: NgkDate) { this._service.open(date); }
 
   onNavigateEvent(event: NavigationEvent) {
     switch (event) {
@@ -401,7 +401,7 @@ export class NgKitDatepickerComponent implements OnDestroy,
   setDisabledState(isDisabled: boolean) { this._service.disabled = isDisabled; }
 
   writeValue(value) {
-    this._controlValue = NgKitDate.from(this._xmDateAdapter.fromModel(value));
+    this._controlValue = NgkDate.from(this._xmDateAdapter.fromModel(value));
     this._service.select(this._controlValue);
   }
 }

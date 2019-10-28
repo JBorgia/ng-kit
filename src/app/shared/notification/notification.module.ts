@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { NgKitNotificationComponent } from './notification.component';
+import { NgkNotificationComponent } from './notification.component';
 import { NotificationService } from './notification.service';
 import { KeysPipe } from './pipes/keys.pipe';
 import { TruncatePipe } from './pipes/truncate.pipe';
@@ -30,14 +30,14 @@ export * from './toastDefaults';
     CommonModule
   ],
   declarations: [
-    NgKitNotificationComponent, ToastComponent, TruncatePipe,
+    NgkNotificationComponent, ToastComponent, TruncatePipe,
     ButtonsComponent, PromptComponent, KeysPipe
   ],
   providers: [
     NotificationService,
   ],
   exports: [
-    NgKitNotificationComponent, TruncatePipe, KeysPipe
+    NgkNotificationComponent, TruncatePipe, KeysPipe
   ]
 })
 export class NotificationModule { }

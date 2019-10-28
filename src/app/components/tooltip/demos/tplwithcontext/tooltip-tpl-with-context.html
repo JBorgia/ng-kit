@@ -3,29 +3,29 @@
 <ng-template #tipContent let-greeting="greeting">{{greeting}}, <b>{{name}}</b>!</ng-template>
 <section>
   <button
-    xm
-    class="ng-kit-lg ng-kit-primary"
-    [xmTooltip]="tipContent"
+    ngk
+    class="ngk-lg ngk-primary"
+    [ngkTooltip]="tipContent"
     triggers="manual"
-    #t1="xmTooltip"
+    #t1="ngkTooltip"
     (click)="toggleWithGreeting(t1, 'Bonjour')">
     French
   </button>
   <button
-    xm
-    class="ng-kit-lg ng-kit-primary"
-    [xmTooltip]="tipContent"
+    ngk
+    class="ngk-lg ngk-primary"
+    [ngkTooltip]="tipContent"
     triggers="manual"
-    #t2="xmTooltip"
+    #t2="ngkTooltip"
     (click)="toggleWithGreeting(t2, 'Gutentag')">
     German
   </button>
   <button
-    xm
-    class="ng-kit-lg ng-kit-primary"
-    [xmTooltip]="tipContent"
+    ngk
+    class="ngk-lg ngk-primary"
+    [ngkTooltip]="tipContent"
     triggers="manual"
-    #t3="xmTooltip"
+    #t3="ngkTooltip"
     (click)="toggleWithGreeting(t3, 'Hello')">
     English
   </button>

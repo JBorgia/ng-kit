@@ -1,11 +1,11 @@
 <span>
   <nav
-    class="xm sidebar-nav"
+    class="ngk sidebar-nav"
     [class]="position"
     [ngClass]="{'mini-sidebar': showMinisidebar}">
     <ul>
       <li
-        ng-kit-sidebar
+        ngk-sidebar
         *ngFor="let menuItem of menuItems; let i = index"
         [menuItem]="menuItem"
         [class]="position"

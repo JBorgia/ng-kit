@@ -2,28 +2,28 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import {
-  NgKitDropdownAnchorDirective,
-  NgKitDropdownComponent,
-  NgKitDropdownItemDirective,
-  NgKitDropdownMenuComponent,
-  NgKitDropdownToggleDirective,
+  NgkDropdownAnchorDirective,
+  NgkDropdownComponent,
+  NgkDropdownItemDirective,
+  NgkDropdownMenuComponent,
+  NgkDropdownToggleDirective,
 } from './dropdown';
 
 
 export {
-  NgKitDropdownComponent,
-  NgKitDropdownAnchorDirective,
-  NgKitDropdownToggleDirective,
-  NgKitDropdownMenuComponent,
-  NgKitDropdownItemDirective
+  NgkDropdownComponent,
+  NgkDropdownAnchorDirective,
+  NgkDropdownToggleDirective,
+  NgkDropdownMenuComponent,
+  NgkDropdownItemDirective
 } from './dropdown';
 
 const XM_DROPDOWN_DIRECTIVES = [
-  NgKitDropdownComponent,
-  NgKitDropdownAnchorDirective,
-  NgKitDropdownToggleDirective,
-  NgKitDropdownMenuComponent,
-  NgKitDropdownItemDirective
+  NgkDropdownComponent,
+  NgkDropdownAnchorDirective,
+  NgkDropdownToggleDirective,
+  NgkDropdownMenuComponent,
+  NgkDropdownItemDirective
 ];
 
 @NgModule({
@@ -37,4 +37,4 @@ const XM_DROPDOWN_DIRECTIVES = [
     XM_DROPDOWN_DIRECTIVES
   ]
 })
-export class NgKitDropdownModule { }
+export class NgkDropdownModule { }

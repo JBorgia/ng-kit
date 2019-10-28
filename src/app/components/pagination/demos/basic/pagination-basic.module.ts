@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgKitPaginationModule } from 'ng-kit';
+import { NgkPaginationModule } from 'ng-kit';
 
 import { PaginationBasicComponent } from './pagination-basic';
 
 @NgModule({
-  imports: [BrowserModule, NgKitPaginationModule],
+  imports: [BrowserModule, NgkPaginationModule],
   declarations: [PaginationBasicComponent],
   exports: [PaginationBasicComponent],
   bootstrap: [PaginationBasicComponent]

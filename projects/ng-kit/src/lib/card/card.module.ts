@@ -1,33 +1,33 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { NgKitCardBodyDirective, NgKitCardComponent, NgKitCardControlsAreaDirective, NgKitCardTitleAreaDirective } from './card';
-import { NgKitCardBadgeComponent } from './card-badge.component';
-import { NgKitCardBodyComponent } from './card-body.component';
-import { NgKitCardControlsComponent } from './card-controls.component';
-import { NgKitCardHeaderComponent } from './card-header.component';
+import { NgkCardBodyDirective, NgkCardComponent, NgkCardControlsAreaDirective, NgkCardTitleAreaDirective } from './card';
+import { NgkCardBadgeComponent } from './card-badge.component';
+import { NgkCardBodyComponent } from './card-body.component';
+import { NgkCardControlsComponent } from './card-controls.component';
+import { NgkCardHeaderComponent } from './card-header.component';
 
 @NgModule({
   declarations: [
-    NgKitCardBadgeComponent,
-    NgKitCardBodyComponent,
-    NgKitCardComponent,
-    NgKitCardHeaderComponent,
-    NgKitCardBodyDirective,
-    NgKitCardTitleAreaDirective,
-    NgKitCardControlsAreaDirective,
-    NgKitCardControlsComponent,
+    NgkCardBadgeComponent,
+    NgkCardBodyComponent,
+    NgkCardComponent,
+    NgkCardHeaderComponent,
+    NgkCardBodyDirective,
+    NgkCardTitleAreaDirective,
+    NgkCardControlsAreaDirective,
+    NgkCardControlsComponent,
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    NgKitCardBadgeComponent,
-    NgKitCardComponent,
-    NgKitCardBodyDirective,
-    NgKitCardTitleAreaDirective,
-    NgKitCardControlsAreaDirective,
-    NgKitCardControlsComponent,
+    NgkCardBadgeComponent,
+    NgkCardComponent,
+    NgkCardBodyDirective,
+    NgkCardTitleAreaDirective,
+    NgkCardControlsAreaDirective,
+    NgkCardControlsComponent,
   ]
 })
-export class NgKitCardModule { }
+export class NgkCardModule { }

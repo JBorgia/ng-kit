@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { NgKitCalendar, NgKitDate, NgKitDateNativeAdapter } from 'ng-kit';
+import { NgkCalendar, NgkDate, NgkDateNativeAdapter } from 'ng-kit';
 
 @Component({
   selector: 'app-datepicker-demo-overview',
@@ -27,7 +27,7 @@ import { NgKitCalendar, NgKitDate, NgKitDateNativeAdapter } from 'ng-kit';
       </span>
     </ng-template>
 
-    <ng-kit-datepicker
+    <ngk-datepicker
       (select)="onDateSelection($event)"
       [dayTemplate]="dayTemplate"
       [markDisabled]="markDisabled"
@@ -35,20 +35,20 @@ import { NgKitCalendar, NgKitDate, NgKitDateNativeAdapter } from 'ng-kit';
       [minDate]="today"
       outsideDays="hidden"
       [displayMonths]="2">
-    </ng-kit-datepicker>
+    </ngk-datepicker>
   `,
   styleUrls: ['./datepicker-overview-demo.component.scss'],
-  providers: [NgKitDateNativeAdapter]
+  providers: [NgkDateNativeAdapter]
 })
 
 export class DatepickerOverviewDemoComponent {
 
-  today: NgKitDate;
+  today: NgkDate;
 
-  hoveredDate: NgKitDate;
+  hoveredDate: NgkDate;
 
-  fromDate: NgKitDate;
-  toDate: NgKitDate;
+  fromDate: NgkDate;
+  toDate: NgkDate;
 
   holidays: { month, day, text }[] = [
     { month: 1, day: 1, text: 'New Years Day' },
@@ -62,23 +62,23 @@ export class DatepickerOverviewDemoComponent {
     { month: 12, day: 25, text: 'Christmas Day' }
   ];
 
-  constructor(private calendar: NgKitCalendar, public adapter: NgKitDateNativeAdapter) {
+  constructor(private calendar: NgkCalendar, public adapter: NgkDateNativeAdapter) {
     this.markDisabled = this.markDisabled.bind(this);
     this.today = calendar.getToday();
     this.fromDate = this.getFirstAvailableDate(this.today);
     this.toDate = this.getFirstAvailableDate(calendar.getNext(this.today, 'd', 15));
   }
 
-  isHoliday(date: NgKitDate): string {
+  isHoliday(date: NgkDate): string {
     const holiday = this.holidays.find(h => h.day === date.day && h.month === date.month);
     return holiday ? holiday.text : '';
   }
 
-  markDisabled(date: NgKitDate, current: { month: number }) {
+  markDisabled(date: NgkDate, current: { month: number }) {
     return this.isHoliday(date) || (this.isWeekend(date) && date.month === current.month);
   }
 
-  onDateSelection(date: NgKitDate) {
+  onDateSelection(date: NgkDate) {
     if (!this.fromDate && !this.toDate) {
       this.fromDate = date;
     } else if (this.fromDate && !this.toDate && (date.after(this.fromDate) || date.equals(this.fromDate))) {
@@ -89,7 +89,7 @@ export class DatepickerOverviewDemoComponent {
     }
   }
 
-  getTooltip(date: NgKitDate) {
+  getTooltip(date: NgkDate) {
     const holidayTooltip = this.isHoliday(date);
 
     if (holidayTooltip) {
@@ -101,26 +101,26 @@ export class DatepickerOverviewDemoComponent {
     }
   }
 
-  getFirstAvailableDate(date): NgKitDate {
+  getFirstAvailableDate(date): NgkDate {
     while (this.isWeekend(date) || this.isHoliday(date)) {
       date = this.calendar.getNext(date, 'd', 1);
     }
     return date;
   }
 
-  isWeekend(date: NgKitDate) {
+  isWeekend(date: NgkDate) {
     return this.calendar.getWeekday(date) >= 6;
   }
 
-  isRange(date: NgKitDate) {
+  isRange(date: NgkDate) {
     return date.equals(this.fromDate) || date.equals(this.toDate) || this.isInside(date) || this.isHovered(date);
   }
 
-  isHovered(date: NgKitDate) {
+  isHovered(date: NgkDate) {
     return this.fromDate && !this.toDate && this.hoveredDate && date.after(this.fromDate) && date.before(this.hoveredDate);
   }
 
-  isInside(date: NgKitDate) {
+  isInside(date: NgkDate) {
     return date.after(this.fromDate) && date.before(this.toDate);
   }
 }

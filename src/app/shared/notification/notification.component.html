@@ -5,9 +5,9 @@
 <div
   *ngFor="let position of notifications | keys"
   class="notification notification-{{position}}">
-  <ng-kit-notification-toast
+  <ngk-notification-toast
     *ngFor="let notification of notifications[position] | slice:blockSize_a:blockSize_b"
     [toast]="notification"
     (stateChanged)="stateChanged($event)">
-  </ng-kit-notification-toast>
+  </ngk-notification-toast>
 </div>

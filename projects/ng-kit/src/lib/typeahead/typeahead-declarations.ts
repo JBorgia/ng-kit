@@ -15,13 +15,13 @@ import { ControlValueAccessor } from '@angular/forms';
 import { Observable } from 'rxjs';
 
 import { PlacementArray } from '../util/positioning';
-import { NgKitTypeaheadConfig } from './typeahead';
+import { NgkTypeaheadConfig } from './typeahead';
 import { ResultTemplateContext } from './typeahead-window.component';
 
 /**
  * Payload of the selectItem event.
  */
-export interface NgKitTypeaheadSelectItemEvent {
+export interface NgkTypeaheadSelectItemEvent {
   /**
    * An item about to be selected
    */
@@ -32,9 +32,9 @@ export interface NgKitTypeaheadSelectItemEvent {
   preventDefault: () => void;
 }
 /**
- * NgKitTypeahead directive provides a simple way of creating powerful typeaheads from any text input
+ * NgkTypeahead directive provides a simple way of creating powerful typeaheads from any text input
  */
-export declare class NgKitTypeahead implements ControlValueAccessor, OnInit, OnDestroy {
+export declare class NgkTypeahead implements ControlValueAccessor, OnInit, OnDestroy {
   private _elementRef;
   private _viewContainerRef;
   private _renderer;
@@ -80,7 +80,7 @@ export declare class NgKitTypeahead implements ControlValueAccessor, OnInit, OnD
    * A function to transform the provided observable text into the array of results.  Note that the "this" argument
    * is undefined so you need to explicitly bind it to a desired "this" target.
    */
-  NgKitTypeahead: (text: Observable<string>) => Observable<any[]>;
+  NgkTypeahead: (text: Observable<string>) => Observable<any[]>;
   /**
    * A function to format a given result before display. This function should return a formatted string without any
    * HTML markup
@@ -101,9 +101,9 @@ export declare class NgKitTypeahead implements ControlValueAccessor, OnInit, OnD
   */
   placement: PlacementArray;
   /**
-   * An event emitted when a match is selected. Event payload is of type NgKitTypeaheadSelectItemEvent.
+   * An event emitted when a match is selected. Event payload is of type NgkTypeaheadSelectItemEvent.
    */
-  selectItem: EventEmitter<NgKitTypeaheadSelectItemEvent>;
+  selectItem: EventEmitter<NgkTypeaheadSelectItemEvent>;
   activeDescendant: string;
   popupId: string;
   private _onTouched;
@@ -122,7 +122,7 @@ export declare class NgKitTypeahead implements ControlValueAccessor, OnInit, OnD
     _viewContainerRef: ViewContainerRef,
     _renderer: Renderer2, _injector: Injector,
     componentFactoryResolver: ComponentFactoryResolver,
-    config: NgKitTypeaheadConfig,
+    config: NgkTypeaheadConfig,
     ngZone: NgZone,
     _document: any,
     _ngZone: NgZone,

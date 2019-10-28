@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgKitCalendar, NgKitDate } from 'ng-kit';
+import { NgkCalendar, NgkDate } from 'ng-kit';
 
 @Component({
   selector: 'app-datepicker-range',
@@ -8,17 +8,17 @@ import { NgKitCalendar, NgKitDate } from 'ng-kit';
 })
 export class DatepickerRangeComponent {
 
-  hoveredDate: NgKitDate;
+  hoveredDate: NgkDate;
 
-  fromDate: NgKitDate;
-  toDate: NgKitDate;
+  fromDate: NgkDate;
+  toDate: NgkDate;
 
-  constructor(calendar: NgKitCalendar) {
+  constructor(calendar: NgkCalendar) {
     this.fromDate = calendar.getToday();
     this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
   }
 
-  onDateSelection(date: NgKitDate) {
+  onDateSelection(date: NgkDate) {
     if (!this.fromDate && !this.toDate) {
       this.fromDate = date;
     } else if (this.fromDate && !this.toDate && date.after(this.fromDate)) {
@@ -29,15 +29,15 @@ export class DatepickerRangeComponent {
     }
   }
 
-  isHovered(date: NgKitDate) {
+  isHovered(date: NgkDate) {
     return this.fromDate && !this.toDate && this.hoveredDate && date.after(this.fromDate) && date.before(this.hoveredDate);
   }
 
-  isInside(date: NgKitDate) {
+  isInside(date: NgkDate) {
     return date.after(this.fromDate) && date.before(this.toDate);
   }
 
-  isRange(date: NgKitDate) {
+  isRange(date: NgkDate) {
     return date.equals(this.fromDate) || date.equals(this.toDate) || this.isInside(date) || this.isHovered(date);
   }
 }

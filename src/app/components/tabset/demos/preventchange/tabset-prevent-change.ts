@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgKitTabChangeEvent } from 'ng-kit';
+import { NgkTabChangeEvent } from 'ng-kit';
 
 @Component({
   selector: 'app-tabset-preventchange',
@@ -7,7 +7,7 @@ import { NgKitTabChangeEvent } from 'ng-kit';
   styleUrls: ['./tabset-prevent-change.scss']
 })
 export class TabsetPreventchangeComponent {
-  public beforeChange($event: NgKitTabChangeEvent) {
+  public beforeChange($event: NgkTabChangeEvent) {
     if ($event.nextId === 'tab-preventchange2') {
       $event.preventDefault();
     }

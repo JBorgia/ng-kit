@@ -22,21 +22,21 @@ import {
 import { BehaviorSubject, combineLatest, NEVER, Subject, timer } from 'rxjs';
 import { distinctUntilChanged, map, startWith, switchMap, takeUntil } from 'rxjs/operators';
 
-import { NgKitCarouselConfig } from './carousel-config';
+import { NgkCarouselConfig } from './carousel-config';
 
 let nextId = 0;
 
 /**
  * A directive that wraps the individual carousel slide.
  */
-@Directive({ selector: 'ng-template[xmSlide]' })
-export class NgKitSlideDirective {
+@Directive({ selector: 'ng-template[ngkSlide]' })
+export class NgkSlideDirective {
   /**
    * Slide id that must be unique for the entire document.
    *
-   * If not provided, will be generated in the `ng-kit-slide-xx` format.
+   * If not provided, will be generated in the `ngk-slide-xx` format.
    */
-  @Input() id = `ng-kit-slide-${nextId++}`;
+  @Input() id = `ngk-slide-${nextId++}`;
 
   /**
    * Slide index inside carousel.   
@@ -52,24 +52,24 @@ export class NgKitSlideDirective {
  * Allows to set intervals, change the way user interacts with the slides and provides a programmatic API.
  */
 @Component({
-  selector: 'ng-kit-carousel',
-  exportAs: 'xmCarousel',
+  selector: 'ngk-carousel',
+  exportAs: 'ngkCarousel',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     'class': 'carousel slide',
     '[style.display]': '"block"',
     'tabIndex': '0',
-    '(keydown.arrowLeft)': 'keyboard && prev(NgKitSlideEventSource.ARROW_LEFT)',
-    '(keydown.arrowRight)': 'keyboard && next(NgKitSlideEventSource.ARROW_RIGHT)'
+    '(keydown.arrowLeft)': 'keyboard && prev(NgkSlideEventSource.ARROW_LEFT)',
+    '(keydown.arrowRight)': 'keyboard && next(NgkSlideEventSource.ARROW_RIGHT)'
   },
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss']
 })
-export class NgKitCarouselComponent implements AfterContentChecked,
+export class NgkCarouselComponent implements AfterContentChecked,
   AfterContentInit, OnDestroy {
-  @ContentChildren(NgKitSlideDirective) slides: QueryList<NgKitSlideDirective>;
+  @ContentChildren(NgkSlideDirective) slides: QueryList<NgkSlideDirective>;
 
-  public NgKitSlideEventSource = NgKitSlideEventSource;
+  public NgkSlideEventSource = NgkSlideEventSource;
 
   private _destroy$ = new Subject<void>();
   private _interval$ = new BehaviorSubject(0);
@@ -139,12 +139,12 @@ export class NgKitCarouselComponent implements AfterContentChecked,
   /**
    * An event emitted right after the slide transition is completed.
    *
-   * See [`NgKitSlideEvent`](#/components/carousel/api#NgKitSlideEvent) for payload details.
+   * See [`NgkSlideEvent`](#/components/carousel/api#NgkSlideEvent) for payload details.
    */
-  @Output() slide = new EventEmitter<NgKitSlideEvent>();
+  @Output() slide = new EventEmitter<NgkSlideEvent>();
 
   constructor(
-    config: NgKitCarouselConfig, @Inject(PLATFORM_ID) private _platformId, private _ngZone: NgZone,
+    config: NgkCarouselConfig, @Inject(PLATFORM_ID) private _platformId, private _ngZone: NgZone,
     private _cd: ChangeDetectorRef, private element: ElementRef) {
     this.interval = config.interval;
     this.wrap = config.wrap;
@@ -186,7 +186,7 @@ export class NgKitCarouselComponent implements AfterContentChecked,
 
             distinctUntilChanged(), switchMap(interval => interval > 0 ? timer(interval, interval) : NEVER),
             takeUntil(this._destroy$))
-          .subscribe(() => this._ngZone.run(() => this.next(NgKitSlideEventSource.TIMER)));
+          .subscribe(() => this._ngZone.run(() => this.next(NgkSlideEventSource.TIMER)));
       });
     }
 
@@ -203,22 +203,22 @@ export class NgKitCarouselComponent implements AfterContentChecked,
   /**
    * Navigates to a slide with the specified identifier.
    */
-  select(slideId: string, source?: NgKitSlideEventSource) {
+  select(slideId: string, source?: NgkSlideEventSource) {
     this._cycleToSelected(slideId, this._getSlideEventDirection(this.activeId, slideId), source);
   }
 
   /**
    * Navigates to the previous slide.
    */
-  prev(source?: NgKitSlideEventSource) {
-    this._cycleToSelected(this._getPrevSlide(this.activeId), NgKitSlideEventDirection.RIGHT, source);
+  prev(source?: NgkSlideEventSource) {
+    this._cycleToSelected(this._getPrevSlide(this.activeId), NgkSlideEventDirection.RIGHT, source);
   }
 
   /**
    * Navigates to the next slide.
    */
-  next(source?: NgKitSlideEventSource) {
-    this._cycleToSelected(this._getNextSlide(this.activeId), NgKitSlideEventDirection.LEFT, source);
+  next(source?: NgkSlideEventSource) {
+    this._cycleToSelected(this._getNextSlide(this.activeId), NgkSlideEventDirection.LEFT, source);
   }
 
   /**
@@ -231,7 +231,7 @@ export class NgKitCarouselComponent implements AfterContentChecked,
    */
   cycle() { this._pause$.next(false); }
 
-  private _cycleToSelected(slideIdx: string, direction: NgKitSlideEventDirection, source?: NgKitSlideEventSource) {
+  private _cycleToSelected(slideIdx: string, direction: NgkSlideEventDirection, source?: NgkSlideEventSource) {
     const selectedSlide = this._getSlideById(slideIdx);
     if (selectedSlide && selectedSlide.id !== this.activeId) {
       this.slide.emit({
@@ -249,14 +249,14 @@ export class NgKitCarouselComponent implements AfterContentChecked,
     this._cd.markForCheck();
   }
 
-  private _getSlideEventDirection(currentActiveSlideId: string, nextActiveSlideId: string): NgKitSlideEventDirection {
+  private _getSlideEventDirection(currentActiveSlideId: string, nextActiveSlideId: string): NgkSlideEventDirection {
     const currentActiveSlideIdx = this._getSlideIdxById(currentActiveSlideId);
     const nextActiveSlideIdx = this._getSlideIdxById(nextActiveSlideId);
 
-    return currentActiveSlideIdx > nextActiveSlideIdx ? NgKitSlideEventDirection.RIGHT : NgKitSlideEventDirection.LEFT;
+    return currentActiveSlideIdx > nextActiveSlideIdx ? NgkSlideEventDirection.RIGHT : NgkSlideEventDirection.LEFT;
   }
 
-  private _getSlideById(slideId: string): NgKitSlideDirective {
+  private _getSlideById(slideId: string): NgkSlideDirective {
     return this.slides.find(slide => {
       return slide.id === slideId
     });
@@ -288,7 +288,7 @@ export class NgKitCarouselComponent implements AfterContentChecked,
 /**
  * A slide change event emitted right after the slide transition is completed.
  */
-export interface NgKitSlideEvent {
+export interface NgkSlideEvent {
   /**
    * The previous slide id.
    */
@@ -304,7 +304,7 @@ export interface NgKitSlideEvent {
    *
    * Possible values are `'left' | 'right'`.
    */
-  direction: NgKitSlideEventDirection;
+  direction: NgkSlideEventDirection;
 
   /**
    * Whether the pause() method was called (and no cycle() call was done afterwards).
@@ -320,7 +320,7 @@ export interface NgKitSlideEvent {
    *
    * @since 5.1.0
    */
-  source?: NgKitSlideEventSource;
+  source?: NgkSlideEventSource;
 
   /**
   * Source carousel native element.
@@ -337,12 +337,12 @@ export interface NgKitSlideEvent {
 /**
  * Defines the carousel slide transition direction.
  */
-export enum NgKitSlideEventDirection {
+export enum NgkSlideEventDirection {
   LEFT = <any>'left',
   RIGHT = <any>'right'
 }
 
-export enum NgKitSlideEventSource {
+export enum NgkSlideEventSource {
   TIMER = 'timer',
   ARROW_LEFT = 'arrowLeft',
   ARROW_RIGHT = 'arrowRight',

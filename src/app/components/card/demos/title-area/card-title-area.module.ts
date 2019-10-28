@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgKitButtonModule, NgKitCardModule } from 'ng-kit';
+import { NgkButtonModule, NgkCardModule } from 'ng-kit';
 
 import { CardTitleAreaComponent } from './card-title-area.component';
 
 @NgModule({
   imports: [
     BrowserModule,
-    NgKitButtonModule,
-    NgKitCardModule,
+    NgkButtonModule,
+    NgkCardModule,
   ],
   declarations: [
     CardTitleAreaComponent

@@ -1,5 +1,5 @@
 import { Component, Injectable } from '@angular/core';
-import { NgKitDatepickerI18n, NgKitDateStruct } from 'ng-kit';
+import { NgkDatepickerI18n, NgkDateStruct } from 'ng-kit';
 
 const I18N_VALUES = {
   fr: {
@@ -18,7 +18,7 @@ export class I18n {
 
 // Define custom service providing the months and weekdays translations
 @Injectable()
-export class CustomDatepickerI18n extends NgKitDatepickerI18n {
+export class CustomDatepickerI18n extends NgkDatepickerI18n {
 
   constructor(private _i18n: I18n) {
     super();
@@ -34,7 +34,7 @@ export class CustomDatepickerI18n extends NgKitDatepickerI18n {
     return this.getMonthShortName(month);
   }
 
-  getDayAriaLabel(date: NgKitDateStruct): string {
+  getDayAriaLabel(date: NgkDateStruct): string {
     return `${date.day}-${date.month}-${date.year}`;
   }
 }
@@ -47,8 +47,8 @@ export class CustomDatepickerI18n extends NgKitDatepickerI18n {
       margin-bottom: 1em;
     }
   `],
-  providers: [I18n, { provide: NgKitDatepickerI18n, useClass: CustomDatepickerI18n }] // define custom NgKitDatepickerI18n provider
+  providers: [I18n, { provide: NgkDatepickerI18n, useClass: CustomDatepickerI18n }] // define custom NgkDatepickerI18n provider
 })
 export class DatepickerI18nComponent {
-  model: NgKitDateStruct;
+  model: NgkDateStruct;
 }

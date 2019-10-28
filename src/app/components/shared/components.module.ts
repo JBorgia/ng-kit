@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NgKitButtonModule, NgKitTabsetModule } from 'ng-kit';
+import { NgkButtonModule, NgkTabsetModule } from 'ng-kit';
 
 import { DemosSharedModule } from '../../demo-utility/demos-shared.module';
 import { ApiDocsBadgeComponent, ApiDocsClassComponent, ApiDocsComponent, ApiDocsConfigComponent } from './api-docs';
@@ -13,8 +13,8 @@ export * from './demo-list';
 @NgModule({
   imports: [
     DemosSharedModule,
-    NgKitTabsetModule,
-    NgKitButtonModule
+    NgkTabsetModule,
+    NgkButtonModule
   ],
   declarations: [
     ExamplesPageComponent,

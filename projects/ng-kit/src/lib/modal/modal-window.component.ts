@@ -18,7 +18,7 @@ import { getFocusableBoundaryElements } from '../util/focus-trap';
 import { ModalDismissReasons } from './modal-dismiss-reasons';
 
 @Component({
-  selector: 'ng-kit-modal-window',
+  selector: 'ngk-modal-window',
   template: `
     <div [class]="'modal-dialog' + (size ? ' modal-' + size : '') + (centered ? ' modal-dialog-centered' : '') +
      (scrollable ? ' modal-dialog-scrollable' : '')" role="document">
@@ -27,7 +27,7 @@ import { ModalDismissReasons } from './modal-dismiss-reasons';
   styleUrls: ['./modal-window.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class NgKitModalWindowComponent implements OnInit, AfterViewInit, OnDestroy {
+export class NgkModalWindowComponent implements OnInit, AfterViewInit, OnDestroy {
   private _elWithFocus: Element;  // element that is focused prior to modal opening
 
   @HostBinding('attr.role') role = 'dialog';

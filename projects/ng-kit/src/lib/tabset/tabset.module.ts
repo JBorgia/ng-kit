@@ -1,25 +1,25 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { NgKitTabContentDirective, NgKitTabDirective, NgKitTabsetComponent, NgKitTabTitleDirective } from './tabset';
+import { NgkTabContentDirective, NgkTabDirective, NgkTabsetComponent, NgkTabTitleDirective } from './tabset';
 
-export { NgKitTabChangeEvent } from './tab-change-event';
+export { NgkTabChangeEvent } from './tab-change-event';
 
 @NgModule({
   declarations: [
-    NgKitTabsetComponent,
-    NgKitTabDirective,
-    NgKitTabContentDirective,
-    NgKitTabTitleDirective,
+    NgkTabsetComponent,
+    NgkTabDirective,
+    NgkTabContentDirective,
+    NgkTabTitleDirective,
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    NgKitTabsetComponent,
-    NgKitTabDirective,
-    NgKitTabContentDirective,
-    NgKitTabTitleDirective,
+    NgkTabsetComponent,
+    NgkTabDirective,
+    NgkTabContentDirective,
+    NgkTabTitleDirective,
   ]
 })
-export class NgKitTabsetModule { }
+export class NgkTabsetModule { }

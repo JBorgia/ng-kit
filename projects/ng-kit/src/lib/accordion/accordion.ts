@@ -12,18 +12,18 @@ import {
 import { merge, Observable, Subscription } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
-import { NgKitAccordionPanelComponent } from './accordion-panel.component';
+import { NgkAccordionPanelComponent } from './accordion-panel.component';
 
 
 /**
- * An array of `NgKitAccordionStatus` class objects are emitted on `NgKitAccordionComponent` click events. 
+ * An array of `NgkAccordionStatus` class objects are emitted on `NgkAccordionComponent` click events. 
  * Each contains expandedBodyHeight, wasOpenOnInit, panelStatus, and isCollapsed fields.
- * The `expandedBodyHeight` field is type number and is the height of the `NgKitAccordionBody` when expanded.
- * The `wasOpenOnInit` field is type boolean and will be true if the panel is initially set to expanded using the  `isOpenOnInit` input on the `NgKitPanelComponent` is set to true.
+ * The `expandedBodyHeight` field is type number and is the height of the `NgkAccordionBody` when expanded.
+ * The `wasOpenOnInit` field is type boolean and will be true if the panel is initially set to expanded using the  `isOpenOnInit` input on the `NgkPanelComponent` is set to true.
  * The `panelStatus` field will either read 'collapsed' or 'expanded' and is an alternative to the boolean field `isCollapsed`.
  * The `isCollapsed` field will read true if the panel is collapsed and false if expanded.
  */
-class NgKitAccordionStatus {
+class NgkAccordionStatus {
   expandedBodyHeight: number;
   wasOpenOnInit: boolean;
   panelStatus: 'collapsed' | 'expanded';
@@ -43,18 +43,18 @@ class NgKitAccordionStatus {
 }
 
 /**
- * The `NgKitAccordionComponent` provides multi-panel accordion support and contains one or more `NgKitAccordionPanel`s.
+ * The `NgkAccordionComponent` provides multi-panel accordion support and contains one or more `NgkAccordionPanel`s.
  * The `closeOthers` input will collapse other panels on the selection of a new one. The `disableTransition` disables 
- * CSS transition animation on all panels. The `clickChanges` output emits an array of `NgKitAccordionStatus` objects with
+ * CSS transition animation on all panels. The `clickChanges` output emits an array of `NgkAccordionStatus` objects with
  * the status and features for each panel.
  */
 @Component({
-  selector: 'ng-kit-accordion',
+  selector: 'ngk-accordion',
   templateUrl: './accordion.component.html',
   styleUrls: ['./accordion.component.scss']
 })
-export class NgKitAccordionComponent implements OnInit, AfterViewInit, OnDestroy {
-  @ContentChildren(NgKitAccordionPanelComponent) accordionPanels: QueryList<NgKitAccordionPanelComponent>;
+export class NgkAccordionComponent implements OnInit, AfterViewInit, OnDestroy {
+  @ContentChildren(NgkAccordionPanelComponent) accordionPanels: QueryList<NgkAccordionPanelComponent>;
   @Input() closeOthers = false;
   @Input() disableTransition = false;
   @Output() clickChanges = new EventEmitter<any>();
@@ -68,7 +68,7 @@ export class NgKitAccordionComponent implements OnInit, AfterViewInit, OnDestroy
 
   ngAfterViewInit() {
     this.subs.push(this.accordionPanels.changes.pipe(startWith(this.accordionPanels))
-      .subscribe((accordionPanels: QueryList<NgKitAccordionPanelComponent>) => {
+      .subscribe((accordionPanels: QueryList<NgkAccordionPanelComponent>) => {
         this.trackClicks(accordionPanels);
         this.collapsePanelHandling(accordionPanels, this.clickEvents$);
         this.setTransition(accordionPanels);
@@ -81,7 +81,7 @@ export class NgKitAccordionComponent implements OnInit, AfterViewInit, OnDestroy
     });
   }
 
-  private setTransition(accordionPanels: QueryList<NgKitAccordionPanelComponent>) {
+  private setTransition(accordionPanels: QueryList<NgkAccordionPanelComponent>) {
     if (this.disableTransition) {
       accordionPanels.forEach(accordionPanel => {
         accordionPanel.disableTransition();
@@ -91,7 +91,7 @@ export class NgKitAccordionComponent implements OnInit, AfterViewInit, OnDestroy
 
   private trackClicks(accordionPanels) {
     this.clickEvents$ = merge(
-      ...accordionPanels.reduce((clickEvents: Observable<number>[], panelInstance: NgKitAccordionPanelComponent, index) => {
+      ...accordionPanels.reduce((clickEvents: Observable<number>[], panelInstance: NgkAccordionPanelComponent, index) => {
         if (!clickEvents) {
           clickEvents = [];
         }
@@ -100,7 +100,7 @@ export class NgKitAccordionComponent implements OnInit, AfterViewInit, OnDestroy
       }, []));
   }
 
-  private collapsePanelHandling(accordionPanels: QueryList<NgKitAccordionPanelComponent>, clickEvents$: Observable<number>) {
+  private collapsePanelHandling(accordionPanels: QueryList<NgkAccordionPanelComponent>, clickEvents$: Observable<number>) {
     this.subs.push(clickEvents$.subscribe(clickedPanelIndex => {
       if (this.closeOthers) {
         accordionPanels.forEach((accordionPanel, index) => {
@@ -109,8 +109,8 @@ export class NgKitAccordionComponent implements OnInit, AfterViewInit, OnDestroy
           }
         });
       }
-      this.clickChanges.emit(accordionPanels.toArray().map((accordionPanel: NgKitAccordionPanelComponent) =>
-        new NgKitAccordionStatus(
+      this.clickChanges.emit(accordionPanels.toArray().map((accordionPanel: NgkAccordionPanelComponent) =>
+        new NgkAccordionStatus(
           accordionPanel.bodyHeight,
           accordionPanel.isOpenOnInit,
           accordionPanel.panelStatus$.value,

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgKitProgressbarConfig } from 'ng-kit';
+import { NgkProgressbarConfig } from 'ng-kit';
 
 @Component({
   selector: 'app-progressbar-config',
@@ -8,17 +8,17 @@ import { NgKitProgressbarConfig } from 'ng-kit';
     .instructions {
       margin-bottom: 1em;
     }
-    ng-kit-progressbar {
+    ngk-progressbar {
       margin-bottom: 1em;
     }
-    ng-kit-progressbar:last-of-type {
+    ngk-progressbar:last-of-type {
       margin-bottom: 0;
     }
   `],
-  providers: [NgKitProgressbarConfig] // add the NgKitProgressbarConfig to the component providers
+  providers: [NgkProgressbarConfig] // add the NgkProgressbarConfig to the component providers
 })
 export class ProgressbarConfigComponent {
-  constructor(config: NgKitProgressbarConfig) {
+  constructor(config: NgkProgressbarConfig) {
     // customize default values of progress bars used by this component tree
     config.max = 1000;
     config.striped = true;

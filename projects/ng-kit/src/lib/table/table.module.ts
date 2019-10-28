@@ -1,21 +1,21 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { NgKitDirectivesModule } from '../directives/directives.module';
-import { NgKitTableComponent, NgKitTableHeaderCellDirective } from './table';
+import { NgkDirectivesModule } from '../directives/directives.module';
+import { NgkTableComponent, NgkTableHeaderCellDirective } from './table';
 
 @NgModule({
   declarations: [
-    NgKitTableComponent,
-    NgKitTableHeaderCellDirective
+    NgkTableComponent,
+    NgkTableHeaderCellDirective
   ],
   exports: [
-    NgKitTableComponent,
-    NgKitTableHeaderCellDirective
+    NgkTableComponent,
+    NgkTableHeaderCellDirective
   ],
   imports: [
     CommonModule,
-    NgKitDirectivesModule
+    NgkDirectivesModule
   ]
 })
-export class NgKitTableModule { }
+export class NgkTableModule { }

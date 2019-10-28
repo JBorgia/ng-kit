@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgKitPaginationModule } from 'ng-kit';
+import { NgkPaginationModule } from 'ng-kit';
 
 import { PaginationSizeComponent } from './pagination-size';
 
 @NgModule({
-  imports: [BrowserModule, NgKitPaginationModule],
+  imports: [BrowserModule, NgkPaginationModule],
   declarations: [PaginationSizeComponent],
   exports: [PaginationSizeComponent],
   bootstrap: [PaginationSizeComponent]

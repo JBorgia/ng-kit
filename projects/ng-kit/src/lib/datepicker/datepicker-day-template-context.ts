@@ -1,4 +1,4 @@
-import { NgKitDate } from './date';
+import { NgkDate } from './date';
 
 /**
  * The context for the datepicker 'day' template.
@@ -13,7 +13,7 @@ export interface DayTemplateContext {
    *
    * @since 3.3.0
    */
-  $implicit: NgKitDate;
+  $implicit: NgkDate;
 
   /**
    * The month currently displayed by the datepicker.
@@ -30,7 +30,7 @@ export interface DayTemplateContext {
   /**
    * The date that corresponds to the template.
    */
-  date: NgKitDate;
+  date: NgkDate;
 
   /**
    * `True` if the current date is disabled.
@@ -48,7 +48,7 @@ export interface DayTemplateContext {
   selected: boolean;
 
   /**
-   * `True` if the current date is today (equal to `NgKitCalendar.getToday()`).
+   * `True` if the current date is today (equal to `NgkCalendar.getToday()`).
    *
    * @since 4.1.0
    */

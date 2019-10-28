@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { NotificationToast } from '../notification-toast.model';
 
 @Component({
-  selector: 'ng-kit-notification-prompt',
+  selector: 'ngk-notification-prompt',
   templateUrl: './prompt.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

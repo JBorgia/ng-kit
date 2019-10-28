@@ -10,12 +10,12 @@ import { NotificationEvent } from './types/event.type';
 
 
 @Component({
-  selector: 'ng-kit-notification',
+  selector: 'ngk-notification',
   templateUrl: './notification.component.html',
   styleUrls: ['./notification.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class NgKitNotificationComponent implements OnInit, OnDestroy {
+export class NgkNotificationComponent implements OnInit, OnDestroy {
   /**
    * Toasts array
    */

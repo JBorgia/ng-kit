@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgKitActiveModal, NgKitModal } from 'ng-kit';
+import { NgkActiveModal, NgkModal } from 'ng-kit';
 
 @Component({
   template: `
@@ -15,12 +15,12 @@ incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
 nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
     <div class="modal-footer">
-      <button xm class="ng-kit-md ng-kit-secondary" (click)="activeModal.close('Close click')">Close this modal</button>
+      <button ngk class="ngk-md ngk-secondary" (click)="activeModal.close('Close click')">Close this modal</button>
     </div>
   `
 })
 export class Modal2ContentComponent {
-  constructor(public activeModal: NgKitActiveModal) { }
+  constructor(public activeModal: NgkActiveModal) { }
 }
 
 @Component({
@@ -37,8 +37,8 @@ incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
 nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>      
     </div>
     <div class="modal-footer">
-      <button xm class="ng-kit-md ng-kit-primary" (click)="open()">Launch demo modal</button>
-      <button xm class="ng-kit-md ng-kit-secondary" (click)="activeModal.close('Close click')">Close this modal</button>
+      <button ngk class="ngk-md ngk-primary" (click)="open()">Launch demo modal</button>
+      <button ngk class="ngk-md ngk-secondary" (click)="activeModal.close('Close click')">Close this modal</button>
     </div>
   `,
   styles: [`
@@ -51,7 +51,7 @@ nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p
   `]
 })
 export class Modal1ContentComponent {
-  constructor(private modalService: NgKitModal, public activeModal: NgKitActiveModal) { }
+  constructor(private modalService: NgkModal, public activeModal: NgkActiveModal) { }
 
   open() {
     this.modalService.open(Modal2ContentComponent, {
@@ -66,7 +66,7 @@ export class Modal1ContentComponent {
   styleUrls: ['./modal-stacked.scss']
 })
 export class ModalStackedComponent {
-  constructor(private modalService: NgKitModal) { }
+  constructor(private modalService: NgkModal) { }
 
   open() {
     this.modalService.open(Modal1ContentComponent);

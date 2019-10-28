@@ -1,23 +1,23 @@
 <p class="instructions">Simple datepicker</p>
 
-<ng-kit-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ng-kit-datepicker>
+<ngk-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngk-datepicker>
 
 <section>
   <button
-    xm
-    class="ng-kit-lg ng-kit-primary"
+    ngk
+    class="ngk-lg ngk-primary"
     (click)="selectToday()">
     Select Today
   </button>
   <button
-    xm
-    class="ng-kit-lg ng-kit-primary"
+    ngk
+    class="ngk-lg ngk-primary"
     (click)="dp.navigateTo()">
     To current month
   </button>
   <button
-    xm
-    class="ng-kit-lg ng-kit-primary"
+    ngk
+    class="ngk-lg ngk-primary"
     (click)="dp.navigateTo({year: 2013, month: 2})">
     To Feb 2013
   </button>

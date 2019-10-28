@@ -12,12 +12,12 @@ import {
 } from '@angular/core';
 
 import { Key } from '../util/key';
-import { NgKitTabChangeEvent } from './tab-change-event';
+import { NgkTabChangeEvent } from './tab-change-event';
 
 let nextId = 0;
 
 @Injectable({ providedIn: 'root' })
-export class NgKitTabsetConfig {
+export class NgkTabsetConfig {
   justify: 'start' | 'center' | 'end' | 'fill' | 'justified' = 'start';
   type: 'tabs' | 'pills' = 'tabs';
 }
@@ -25,16 +25,16 @@ export class NgKitTabsetConfig {
 /**
  * This directive should be used to wrap tab titles that need to contain HTML markup or other directives.
  */
-@Directive({ selector: 'ng-template[xmTabTitle]' })
-export class NgKitTabTitleDirective {
+@Directive({ selector: 'ng-template[ngkTabTitle]' })
+export class NgkTabTitleDirective {
   constructor(public templateRef: TemplateRef<any>) { }
 }
 
 /**
  * This directive must be used to wrap content to be displayed in a tab.
  */
-@Directive({ selector: 'ng-template[xmTabContent]' })
-export class NgKitTabContentDirective {
+@Directive({ selector: 'ng-template[ngkTabContent]' })
+export class NgkTabContentDirective {
   constructor(public templateRef: TemplateRef<any>) { }
 }
 
@@ -43,15 +43,15 @@ export class NgKitTabContentDirective {
  */
 @Directive({
   /* tslint:disable-next-line:directive-selector */
-  selector: 'ng-kit-tab'
+  selector: 'ngk-tab'
 })
-export class NgKitTabDirective implements AfterContentChecked {
+export class NgkTabDirective implements AfterContentChecked {
   /**
    * Unique tab identifier. Must be unique for the entire document for proper accessibility support.
    */
-  @Input() id = `ng-kit-tab-${nextId++}`;
+  @Input() id = `ngk-tab-${nextId++}`;
   /**
-   * Simple (string only) title. Use the "NgKitTabTitle" directive for more complex use-cases.
+   * Simple (string only) title. Use the "NgkTabTitle" directive for more complex use-cases.
    */
   @Input() title: string;
   /**
@@ -59,12 +59,12 @@ export class NgKitTabDirective implements AfterContentChecked {
    */
   @Input() disabled = false;
 
-  titleTpl: NgKitTabTitleDirective | null;
-  contentTpl: NgKitTabContentDirective | null;
+  titleTpl: NgkTabTitleDirective | null;
+  contentTpl: NgkTabContentDirective | null;
   titleRootNode: HTMLElement;
 
-  @ContentChildren(NgKitTabTitleDirective, { descendants: false }) titleTpls: QueryList<NgKitTabTitleDirective>;
-  @ContentChildren(NgKitTabContentDirective, { descendants: false }) contentTpls: QueryList<NgKitTabContentDirective>;
+  @ContentChildren(NgkTabTitleDirective, { descendants: false }) titleTpls: QueryList<NgkTabTitleDirective>;
+  @ContentChildren(NgkTabContentDirective, { descendants: false }) contentTpls: QueryList<NgkTabContentDirective>;
 
   ngAfterContentChecked() {
     // We are using @ContentChildren instead of @ContentChild as in the Angular version being used
@@ -84,15 +84,15 @@ export class NgKitTabDirective implements AfterContentChecked {
  * A component that makes it easy to create tabbed interface.
  */
 @Component({
-  selector: 'ng-kit-tabset',
-  exportAs: 'xmTabset',
+  selector: 'ngk-tabset',
+  exportAs: 'ngkTabset',
   templateUrl: './tabset.component.html',
   styleUrls: ['./tabset.component.scss']
 })
-export class NgKitTabsetComponent implements AfterContentChecked {
+export class NgkTabsetComponent implements AfterContentChecked {
   justifyClass: string;
 
-  @ContentChildren(NgKitTabDirective) tabs: QueryList<NgKitTabDirective>;
+  @ContentChildren(NgkTabDirective) tabs: QueryList<NgkTabDirective>;
 
   /**
    * An identifier of an initially selected (active) tab. Use the "select" method to switch a tab programmatically.
@@ -124,11 +124,11 @@ export class NgKitTabsetComponent implements AfterContentChecked {
   @Input() type: 'tabs' | 'pills' | string;
 
   /**
-   * A tab change event fired right before the tab selection happens. See NgKitTabChangeEvent for payload details
+   * A tab change event fired right before the tab selection happens. See NgkTabChangeEvent for payload details
    */
-  @Output() tabChange = new EventEmitter<NgKitTabChangeEvent>();
+  @Output() tabChange = new EventEmitter<NgkTabChangeEvent>();
 
-  constructor(config: NgKitTabsetConfig) {
+  constructor(config: NgkTabsetConfig) {
     this.type = config.type;
     this.justify = config.justify;
   }
@@ -161,7 +161,7 @@ export class NgKitTabsetComponent implements AfterContentChecked {
   }
 
   onKeydown(keyEvent: KeyboardEvent) {
-    const allTabs: NgKitTabDirective[] = [];
+    const allTabs: NgkTabDirective[] = [];
     this.tabs.map(element => { allTabs.push(element); });
     if (keyEvent.keyCode === Key.ArrowLeft) {
       this._previousTab(allTabs);
@@ -199,8 +199,8 @@ export class NgKitTabsetComponent implements AfterContentChecked {
     }
   }
 
-  private _getTabById(id: string): NgKitTabDirective {
-    const tabsWithId: NgKitTabDirective[] = this.tabs.filter(tab => tab.id === id);
+  private _getTabById(id: string): NgkTabDirective {
+    const tabsWithId: NgkTabDirective[] = this.tabs.filter(tab => tab.id === id);
     return tabsWithId.length ? tabsWithId[0] : null;
   }
 }
