@@ -102,13 +102,13 @@ const API_DOCS = {
         "description": ""
       },
       {
-        "name": "panelStatus$",
-        "type": "BehaviorSubject<\"collapsed\" | \"expanded\">",
+        "name": "ngkAccordionBody",
+        "type": "NgkAccordionBodyComponent",
         "description": ""
       },
       {
-        "name": "xmAccordionBody",
-        "type": "NgkAccordionBodyComponent",
+        "name": "panelStatus$",
+        "type": "BehaviorSubject<\"collapsed\" | \"expanded\">",
         "description": ""
       }
     ],
@@ -199,13 +199,13 @@ const API_DOCS = {
         "description": ""
       },
       {
-        "name": "role",
-        "type": "string",
+        "name": "ngkIcon",
+        "type": "boolean",
         "description": ""
       },
       {
-        "name": "xmIcon",
-        "type": "boolean",
+        "name": "role",
+        "type": "string",
         "description": ""
       }
     ],
@@ -2305,6 +2305,11 @@ const API_DOCS = {
         }
       },
       {
+        "name": "ngkPopover",
+        "type": "string | TemplateRef<any>",
+        "description": "<p>Content to be displayed as popover. If title and content are empty, the popover won&#39;t open.</p>"
+      },
+      {
         "name": "openDelay",
         "type": "number",
         "description": "<p>Opening delay in ms. Works only for non-manual opening triggers.</p>",
@@ -2336,11 +2341,6 @@ const API_DOCS = {
         "name": "triggers",
         "type": "string",
         "description": "<p>Specifies events that should trigger. Supports a space separated list of event names.</p>"
-      },
-      {
-        "name": "xmPopover",
-        "type": "string | TemplateRef<any>",
-        "description": "<p>Content to be displayed as popover. If title and content are empty, the popover won&#39;t open.</p>"
       }
     ],
     "outputs": [
@@ -2900,6 +2900,11 @@ const API_DOCS = {
         }
       },
       {
+        "name": "ngkTooltip",
+        "type": "string | TemplateRef<any>",
+        "description": "<p>Content to be displayed as tooltip. If falsy, the tooltip won&#39;t open.</p>"
+      },
+      {
         "name": "openDelay",
         "type": "number",
         "description": "<p>Opening delay in ms. Works only for non-manual opening triggers.</p>",
@@ -2926,11 +2931,6 @@ const API_DOCS = {
         "name": "triggers",
         "type": "string",
         "description": "<p>Specifies events that should trigger. Supports a space separated list of event names.</p>"
-      },
-      {
-        "name": "xmTooltip",
-        "type": "string | TemplateRef<any>",
-        "description": "<p>Content to be displayed as tooltip. If falsy, the tooltip won&#39;t open.</p>"
       }
     ],
     "outputs": [
@@ -2945,7 +2945,7 @@ const API_DOCS = {
     ],
     "properties": [
       {
-        "name": "xmTooltip",
+        "name": "ngkTooltip",
         "type": "string | TemplateRef<any>",
         "description": "<p>Content to be displayed as tooltip. If falsy, the tooltip won&#39;t open.</p>"
       }
@@ -3189,6 +3189,11 @@ const API_DOCS = {
         "description": "<p>Set the height of the window.</p>"
       },
       {
+        "name": "ngkTypeahead",
+        "type": "(text: Observable<string>) => Observable<any[]>",
+        "description": "<p>A function to transform the provided observable text into the array of results.  Note that the &quot;this&quot; argument\nis undefined so you need to explicitly bind it to a desired &quot;this&quot; target.</p>"
+      },
+      {
         "name": "placement",
         "defaultValue": "bottom-left",
         "type": "PlacementArray",
@@ -3208,11 +3213,6 @@ const API_DOCS = {
         "name": "showHint",
         "type": "boolean",
         "description": "<p>Show hint when an option in the result list matches.</p>"
-      },
-      {
-        "name": "xmTypeahead",
-        "type": "(text: Observable<string>) => Observable<any[]>",
-        "description": "<p>A function to transform the provided observable text into the array of results.  Note that the &quot;this&quot; argument\nis undefined so you need to explicitly bind it to a desired &quot;this&quot; target.</p>"
       }
     ],
     "outputs": [

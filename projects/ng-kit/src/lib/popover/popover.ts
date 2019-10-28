@@ -145,7 +145,7 @@ export class NgkPopoverDirective implements OnInit, OnDestroy, OnChanges {
    */
   @Output() hidden = new EventEmitter();
 
-  private _xmPopoverWindowId = `ngk-popover-${nextId++}`;
+  private _ngkPopoverWindowId = `ngk-popover-${nextId++}`;
   private _popupService: PopupService<NgkPopoverWindowComponent>;
   private _windowRef: ComponentRef<NgkPopoverWindowComponent>;
   private _unregisterListenersFn;
@@ -154,7 +154,7 @@ export class NgkPopoverDirective implements OnInit, OnDestroy, OnChanges {
     if (this.disablePopover) {
       return true;
     }
-    if (!this.xmPopover && !this.popoverTitle) {
+    if (!this.ngkPopover && !this.popoverTitle) {
       return true;
     }
     return false;
@@ -190,13 +190,13 @@ export class NgkPopoverDirective implements OnInit, OnDestroy, OnChanges {
    */
   open(context?: any) {
     if (!this._windowRef && !this._isDisabled()) {
-      this._windowRef = this._popupService.open(this.xmPopover, context);
+      this._windowRef = this._popupService.open(this.ngkPopover, context);
       this._windowRef.instance.title = this.popoverTitle;
       this._windowRef.instance.context = context;
       this._windowRef.instance.popoverClass = this.popoverClass;
-      this._windowRef.instance.id = this._xmPopoverWindowId;
+      this._windowRef.instance.id = this._ngkPopoverWindowId;
 
-      this._renderer.setAttribute(this._elementRef.nativeElement, 'aria-describedby', this._xmPopoverWindowId);
+      this._renderer.setAttribute(this._elementRef.nativeElement, 'aria-describedby', this._ngkPopoverWindowId);
 
       if (this.container === 'body') {
         this._document.querySelector(this.container).appendChild(this._windowRef.location.nativeElement);

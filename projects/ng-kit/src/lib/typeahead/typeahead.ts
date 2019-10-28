@@ -222,7 +222,7 @@ export class NgkTypeaheadDirective implements ControlValueAccessor,
         this._onChange(value);
       }
     }));
-    const results$ = inputValues$.pipe(this.xmTypeahead);
+    const results$ = inputValues$.pipe(this.ngkTypeahead);
     const processedResults$ = results$.pipe(tap(() => {
       if (!this.editable) {
         this._onChange(undefined);

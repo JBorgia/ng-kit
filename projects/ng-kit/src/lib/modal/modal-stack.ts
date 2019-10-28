@@ -69,7 +69,7 @@ export class NgkModalStack {
     const windowCmptRef: ComponentRef<NgkModalWindowComponent> = this._attachWindowComponent(moduleCFR, containerEl, contentRef);
     const ngkModalRef: NgkModalRef = new NgkModalRef(windowCmptRef, contentRef, backdropCmptRef, options.beforeDismiss);
 
-    this._registerModalRef(xmModalRef);
+    this._registerModalRef(ngkModalRef);
     this._registerWindowCmpt(windowCmptRef);
     // ngkModalRef.result.then(revertPaddingForScrollBar, revertPaddingForScrollBar);
     ngkModalRef.result.then(removeBodyClass, removeBodyClass);
@@ -88,7 +88,7 @@ export class NgkModalStack {
     return ngkModalRef;
   }
 
-  dismissAll(reason?: any) { this._modalRefs.forEach(xmModalRef => ngkModalRef.dismiss(reason)); }
+  dismissAll(reason?: any) { this._modalRefs.forEach(ngkModalRef => ngkModalRef.dismiss(reason)); }
 
   hasOpenModals(): boolean { return this._modalRefs.length > 0; }
 
@@ -191,23 +191,23 @@ export class NgkModalStack {
     this._ariaHiddenValues.clear();
   }
 
-  private _registerModalRef(xmModalRef: NgkModalRef) {
+  private _registerModalRef(ngkModalRef: NgkModalRef) {
     const unregisterModalRef = () => {
-      const index = this._modalRefs.indexOf(xmModalRef);
+      const index = this._modalRefs.indexOf(ngkModalRef);
       if (index > -1) {
         this._modalRefs.splice(index, 1);
       }
     };
-    this._modalRefs.push(xmModalRef);
+    this._modalRefs.push(ngkModalRef);
     ngkModalRef.result.then(unregisterModalRef, unregisterModalRef);
   }
 
-  private _registerWindowCmpt(xmWindowCmpt: ComponentRef<NgkModalWindowComponent>) {
-    this._windowCmpts.push(xmWindowCmpt);
+  private _registerWindowCmpt(ngkWindowCmpt: ComponentRef<NgkModalWindowComponent>) {
+    this._windowCmpts.push(ngkWindowCmpt);
     this._activeWindowCmptHasChanged.next();
 
     ngkWindowCmpt.onDestroy(() => {
-      const index = this._windowCmpts.indexOf(xmWindowCmpt);
+      const index = this._windowCmpts.indexOf(ngkWindowCmpt);
       if (index > -1) {
         this._windowCmpts.splice(index, 1);
         this._activeWindowCmptHasChanged.next();

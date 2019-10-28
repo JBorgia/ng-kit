@@ -119,8 +119,8 @@ export class NgkAccordionPanelComponent implements AfterViewInit, OnDestroy {
       /**
        * a change cycle is necessary to get the heights
        */
-      this.bodyHeight = this.xmAccordionBody.nativeElement.children[0].children[0].offsetHeight;
-      this.xmAccordionBody.nativeElement.style.maxHeight = `${this.bodyHeight + 1}px`;
+      this.bodyHeight = this.ngkAccordionBody.nativeElement.children[0].children[0].offsetHeight;
+      this.ngkAccordionBody.nativeElement.style.maxHeight = `${this.bodyHeight + 1}px`;
     }, 0);
   }
 

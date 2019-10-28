@@ -12,8 +12,8 @@ import { MonthViewModel, NavigationEvent } from './datepicker-view-model';
   template: `
     <div class="ngk-dp-arrow left">
       <button type="button" class="ngk-dp-arrow-btn" (click)="navigate.emit(navigation.PREV)" [disabled]="prevDisabled"
-              i18n-aria-label="@@xm.datepicker.previous-month" aria-label="Previous month"
-              i18n-title="@@xm.datepicker.previous-month" title="Previous month">
+              i18n-aria-label="@@ngk.datepicker.previous-month" aria-label="Previous month"
+              i18n-title="@@ngk.datepicker.previous-month" title="Previous month">
         <span class="ngk-dp-navigation-chevron"></span>
       </button>
     </div>
@@ -34,8 +34,8 @@ import { MonthViewModel, NavigationEvent } from './datepicker-view-model';
     </ng-template>
     <div class="ngk-dp-arrow right">
       <button type="button" class="ngk-dp-arrow-btn" (click)="navigate.emit(navigation.NEXT)" [disabled]="nextDisabled"
-              i18n-aria-label="@@xm.datepicker.next-month" aria-label="Next month"
-              i18n-title="@@xm.datepicker.next-month" title="Next month">
+              i18n-aria-label="@@ngk.datepicker.next-month" aria-label="Next month"
+              i18n-title="@@ngk.datepicker.next-month" title="Next month">
         <span class="ngk-dp-navigation-chevron"></span>
       </button>
     </div>

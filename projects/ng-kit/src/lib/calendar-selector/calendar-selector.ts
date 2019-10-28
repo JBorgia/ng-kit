@@ -81,8 +81,8 @@ export class CalendarSelectorComponent implements OnInit {
   }
 
   // Written using if statement to make adding addtional conditions easier
-  isDisabledMarker(xmDate: NgkDate): Boolean {
-    const date: Date = new Date(xmDate.year, ngkDate.month - 1, ngkDate.day);
+  isDisabledMarker(ngkDate: NgkDate): Boolean {
+    const date: Date = new Date(ngkDate.year, ngkDate.month - 1, ngkDate.day);
     if (date > this.maxDateSet) {
       return true;
     }

@@ -14,8 +14,8 @@ import { NgkDatepickerI18n } from './datepicker-i18n';
       [disabled]="disabled"
       class="datepicker-select"
       [value]="date?.month"
-      i18n-aria-label="@@xm.datepicker.select-month" aria-label="Select month"
-      i18n-title="@@xm.datepicker.select-month" title="Select month"
+      i18n-aria-label="@@ngk.datepicker.select-month" aria-label="Select month"
+      i18n-title="@@ngk.datepicker.select-month" title="Select month"
       (change)="changeMonth($event.target.value)">
         <option *ngFor="let m of months" [attr.aria-label]="i18n.getMonthFullName(m, date?.year)"
                 [value]="m">{{ i18n.getMonthShortName(m, date?.year) }}</option>
@@ -23,8 +23,8 @@ import { NgkDatepickerI18n } from './datepicker-i18n';
       [disabled]="disabled"
       class="datepicker-select"
       [value]="date?.year"
-      i18n-aria-label="@@xm.datepicker.select-year" aria-label="Select year"
-      i18n-title="@@xm.datepicker.select-year" title="Select year"
+      i18n-aria-label="@@ngk.datepicker.select-year" aria-label="Select year"
+      i18n-title="@@ngk.datepicker.select-year" title="Select year"
       (change)="changeYear($event.target.value)">
         <option *ngFor="let y of years" [value]="y">{{ i18n.getYearNumerals(y) }}</option>
     </select>

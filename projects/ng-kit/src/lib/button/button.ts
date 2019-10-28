@@ -26,7 +26,7 @@ export class NgkButtonComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.icon ? this.xmIcon = true : this.xmIcon = false;
+    this.icon ? this.ngkIcon = true : this.ngkIcon = false;
   }
 
   ngAfterViewInit(): void {

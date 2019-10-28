@@ -116,7 +116,7 @@ export class DatepickerOverviewComponent {
         	{{ date.day }}
         </ng-template>
 
-        <xmDatepicker [dayTemplate]=“t”/>
+        <ngkDatepicker [dayTemplate]=“t”/>
       `,
     }),
     todayHTML: Snippet({
@@ -134,7 +134,7 @@ export class DatepickerOverviewComponent {
           <span *ngIf="today">...</span>
         </ng-template>
 
-        <xmDatepicker [dayTemplate]=“t”/>
+        <ngkDatepicker [dayTemplate]=“t”/>
       `,
     }),
     footerTemplate: Snippet({
@@ -144,7 +144,7 @@ export class DatepickerOverviewComponent {
           <button (click)="model = today">Today</button>
         </ng-template>
 
-        <xmDatepicker [footerTemplate]=“t”/>
+        <ngkDatepicker [footerTemplate]=“t”/>
       `,
     }),
     disablingTS: Snippet({

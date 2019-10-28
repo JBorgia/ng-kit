@@ -38,11 +38,11 @@ export class NavSidebarComponent implements OnInit, OnDestroy {
       const parentTitle: string = itemOldTitleParent.parentTitle; // the parent title within which the title to update sits.
 
       if (!item) {
-        this.xmSidebar.deleteSidebarItemByTitle(title, parentTitle);
+        this.ngkSidebar.deleteSidebarItemByTitle(title, parentTitle);
       } else if (!title) {
-        this.xmSidebar.appendSidebarItemByTitle(item, parentTitle);
+        this.ngkSidebar.appendSidebarItemByTitle(item, parentTitle);
       } else {
-        this.xmSidebar.updateSidebarItemByTitle(item, title, parentTitle);
+        this.ngkSidebar.updateSidebarItemByTitle(item, title, parentTitle);
       }
     }));
     this.mainContainer = document.getElementById('main-container');

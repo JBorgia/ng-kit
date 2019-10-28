@@ -153,7 +153,7 @@ export class NgkDatepickerService {
     if (defaultValue === undefined) {
       defaultValue = this._calendar.getToday();
     }
-    return this._calendar.isValid(xmDate) ? ngkDate : defaultValue;
+    return this._calendar.isValid(ngkDate) ? ngkDate : defaultValue;
   }
 
   private _nextState(patch: Partial<DatepickerViewModel>) {

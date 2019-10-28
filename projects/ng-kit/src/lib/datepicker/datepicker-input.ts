@@ -272,7 +272,7 @@ export class NgkInputDatepickerDirective implements OnChanges,
 
     const ngkDate = this._fromDateStruct(this._dateAdapter.fromModel(value));
 
-    if (!this._calendar.isValid(xmDate)) {
+    if (!this._calendar.isValid(ngkDate)) {
       return { ngkDate: { invalid: c.value } };
     }
 
@@ -436,7 +436,7 @@ export class NgkInputDatepickerDirective implements OnChanges,
 
   private _fromDateStruct(date: NgkDateStruct): NgkDate {
     const ngkDate = date ? new NgkDate(date.year, date.month, date.day) : null;
-    return this._calendar.isValid(xmDate) ? ngkDate : null;
+    return this._calendar.isValid(ngkDate) ? ngkDate : null;
   }
 
   private _updatePopupPosition() {

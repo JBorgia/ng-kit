@@ -131,8 +131,8 @@ export class NgkTooltipDirective implements OnInit, OnDestroy {
    */
   @Output() hidden = new EventEmitter();
 
-  private _xmTooltip: string | TemplateRef<any>;
-  private _xmTooltipWindowId = `ngk-tooltip-${nextId++}`;
+  private _ngkTooltip: string | TemplateRef<any>;
+  private _ngkTooltipWindowId = `ngk-tooltip-${nextId++}`;
   private _popupService: PopupService<NgkTooltipWindowComponent>;
   private _windowRef: ComponentRef<NgkTooltipWindowComponent>;
   private _unregisterListenersFn;
@@ -167,25 +167,25 @@ export class NgkTooltipDirective implements OnInit, OnDestroy {
    */
   @Input()
   set ngkTooltip(value: string | TemplateRef<any>) {
-    this._xmTooltip = value;
+    this._ngkTooltip = value;
     if (!value && this._windowRef) {
       this.close();
     }
   }
 
-  get ngkTooltip() { return this._xmTooltip; }
+  get ngkTooltip() { return this._ngkTooltip; }
 
   /**
    * Opens an element’s tooltip. This is considered a “manual” triggering of the tooltip.
    * The context is an optional value to be injected into the tooltip template when it is created.
    */
   open(context?: any) {
-    if (!this._windowRef && this._xmTooltip && !this.disableTooltip) {
-      this._windowRef = this._popupService.open(this._xmTooltip, context);
+    if (!this._windowRef && this._ngkTooltip && !this.disableTooltip) {
+      this._windowRef = this._popupService.open(this._ngkTooltip, context);
       this._windowRef.instance.tooltipClass = this.tooltipClass;
-      this._windowRef.instance.id = this._xmTooltipWindowId;
+      this._windowRef.instance.id = this._ngkTooltipWindowId;
 
-      this._renderer.setAttribute(this._elementRef.nativeElement, 'aria-describedby', this._xmTooltipWindowId);
+      this._renderer.setAttribute(this._elementRef.nativeElement, 'aria-describedby', this._ngkTooltipWindowId);
 
       if (this.container === 'body') {
         this._document.querySelector(this.container).appendChild(this._windowRef.location.nativeElement);

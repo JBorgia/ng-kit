@@ -264,7 +264,7 @@ export class NgkDatepickerComponent implements OnDestroy,
     private _keyMapService: NgkDatepickerKeyMapService, public _service: NgkDatepickerService,
     private _calendar: NgkCalendar, public i18n: NgkDatepickerI18n, config: NgkDatepickerConfig,
     private _cd: ChangeDetectorRef, private _elementRef: ElementRef<HTMLElement>,
-    private _xmDateAdapter: NgkDateAdapter<any>, private _ngZone: NgZone) {
+    private _ngkDateAdapter: NgkDateAdapter<any>, private _ngZone: NgZone) {
     ['dayTemplate', 'dayTemplateData', 'displayMonths', 'firstDayOfWeek', 'footerTemplate', 'markDisabled', 'minDate',
       'maxDate', 'navigation', 'outsideDays', 'showWeekdays', 'showWeekNumbers', 'startDate']
       .forEach(input => this[input] = config[input]);
@@ -301,7 +301,7 @@ export class NgkDatepickerComponent implements OnDestroy,
       if (isChangedDate(newSelectedDate, this._controlValue)) {
         this._controlValue = newSelectedDate;
         this.onTouched();
-        this.onChange(this._xmDateAdapter.toModel(newSelectedDate));
+        this.onChange(this._ngkDateAdapter.toModel(newSelectedDate));
       }
 
       // handling focus change
@@ -401,7 +401,7 @@ export class NgkDatepickerComponent implements OnDestroy,
   setDisabledState(isDisabled: boolean) { this._service.disabled = isDisabled; }
 
   writeValue(value) {
-    this._controlValue = NgkDate.from(this._xmDateAdapter.fromModel(value));
+    this._controlValue = NgkDate.from(this._ngkDateAdapter.fromModel(value));
     this._service.select(this._controlValue);
   }
 }
