@@ -15,20 +15,20 @@ import { focusTrap } from '../util/focus-trap';
 import { ContentRef } from '../util/popup';
 import { ScrollBar } from '../util/scrollbar';
 import { isDefined, isString } from '../util/util';
-import { XmModalBackdropComponent } from './modal-backdrop.component';
-import { XmActiveModal, XmModalRef } from './modal-ref';
-import { XmModalWindowComponent } from './modal-window.component';
+import { NgKitModalBackdropComponent } from './modal-backdrop.component';
+import { NgKitActiveModal, NgKitModalRef } from './modal-ref';
+import { NgKitModalWindowComponent } from './modal-window.component';
 
 @Injectable({ providedIn: 'root' })
-export class XmModalStack {
+export class NgKitModalStack {
   private _activeWindowCmptHasChanged = new Subject();
   private _ariaHiddenValues: Map<Element, string> = new Map();
   private _backdropAttributes = ['backdropClass', 'lightboxMode'];
-  private _modalRefs: XmModalRef[] = [];
+  private _modalRefs: NgKitModalRef[] = [];
   private _windowAttributes = [
     'ariaLabelledBy', 'backdrop', 'centered', 'keyboard', 'size', 'scrollable', 'windowClass', 'lightboxMode'
   ];
-  private _windowCmpts: ComponentRef<XmModalWindowComponent>[] = [];
+  private _windowCmpts: ComponentRef<NgKitModalWindowComponent>[] = [];
 
   constructor(
     private _applicationRef: ApplicationRef, private _injector: Injector, @Inject(DOCUMENT) private _document: any,
@@ -44,7 +44,7 @@ export class XmModalStack {
     });
   }
 
-  open(moduleCFR: ComponentFactoryResolver, contentInjector: Injector, content: any, options): XmModalRef {
+  open(moduleCFR: ComponentFactoryResolver, contentInjector: Injector, content: any, options): NgKitModalRef {
     const containerEl =
       isDefined(options.container) ? this._document.querySelector(options.container) : this._document.body;
     const renderer = this._rendererFactory.createRenderer(null, null);
@@ -61,13 +61,13 @@ export class XmModalStack {
       throw new Error(`The specified modal container "${options.container || 'body'}" was not found in the DOM.`);
     }
 
-    const activeModal = new XmActiveModal();
+    const activeModal = new NgKitActiveModal();
     const contentRef = this._getContentRef(moduleCFR, options.injector || contentInjector, content, activeModal);
 
-    const backdropCmptRef: ComponentRef<XmModalBackdropComponent> =
+    const backdropCmptRef: ComponentRef<NgKitModalBackdropComponent> =
       options.backdrop !== false ? this._attachBackdrop(moduleCFR, containerEl) : null;
-    const windowCmptRef: ComponentRef<XmModalWindowComponent> = this._attachWindowComponent(moduleCFR, containerEl, contentRef);
-    const xmModalRef: XmModalRef = new XmModalRef(windowCmptRef, contentRef, backdropCmptRef, options.beforeDismiss);
+    const windowCmptRef: ComponentRef<NgKitModalWindowComponent> = this._attachWindowComponent(moduleCFR, containerEl, contentRef);
+    const xmModalRef: NgKitModalRef = new NgKitModalRef(windowCmptRef, contentRef, backdropCmptRef, options.beforeDismiss);
 
     this._registerModalRef(xmModalRef);
     this._registerWindowCmpt(windowCmptRef);
@@ -92,8 +92,8 @@ export class XmModalStack {
 
   hasOpenModals(): boolean { return this._modalRefs.length > 0; }
 
-  private _attachBackdrop(moduleCFR: ComponentFactoryResolver, containerEl: any): ComponentRef<XmModalBackdropComponent> {
-    const backdropFactory = moduleCFR.resolveComponentFactory(XmModalBackdropComponent);
+  private _attachBackdrop(moduleCFR: ComponentFactoryResolver, containerEl: any): ComponentRef<NgKitModalBackdropComponent> {
+    const backdropFactory = moduleCFR.resolveComponentFactory(NgKitModalBackdropComponent);
     const backdropCmptRef = backdropFactory.create(this._injector);
     this._applicationRef.attachView(backdropCmptRef.hostView);
     containerEl.appendChild(backdropCmptRef.location.nativeElement);
@@ -101,15 +101,15 @@ export class XmModalStack {
   }
 
   private _attachWindowComponent(moduleCFR: ComponentFactoryResolver, containerEl: any, contentRef: any):
-    ComponentRef<XmModalWindowComponent> {
-    const windowFactory = moduleCFR.resolveComponentFactory(XmModalWindowComponent);
+    ComponentRef<NgKitModalWindowComponent> {
+    const windowFactory = moduleCFR.resolveComponentFactory(NgKitModalWindowComponent);
     const windowCmptRef = windowFactory.create(this._injector, contentRef.nodes);
     this._applicationRef.attachView(windowCmptRef.hostView);
     containerEl.appendChild(windowCmptRef.location.nativeElement);
     return windowCmptRef;
   }
 
-  private _applyWindowOptions(windowInstance: XmModalWindowComponent, options: Object): void {
+  private _applyWindowOptions(windowInstance: NgKitModalWindowComponent, options: Object): void {
     this._windowAttributes.forEach((optionName: string) => {
       if (isDefined(options[optionName])) {
         windowInstance[optionName] = options[optionName];
@@ -117,7 +117,7 @@ export class XmModalStack {
     });
   }
 
-  private _applyBackdropOptions(backdropInstance: XmModalBackdropComponent, options: Object): void {
+  private _applyBackdropOptions(backdropInstance: NgKitModalBackdropComponent, options: Object): void {
     this._backdropAttributes.forEach((optionName: string) => {
       if (isDefined(options[optionName])) {
         backdropInstance[optionName] = options[optionName];
@@ -127,7 +127,7 @@ export class XmModalStack {
 
   private _getContentRef(
     moduleCFR: ComponentFactoryResolver, contentInjector: Injector, content: any,
-    activeModal: XmActiveModal): ContentRef {
+    activeModal: NgKitActiveModal): ContentRef {
     if (!content) {
       return new ContentRef([]);
     } else if (content instanceof TemplateRef) {
@@ -139,7 +139,7 @@ export class XmModalStack {
     }
   }
 
-  private _createFromTemplateRef(content: TemplateRef<any>, activeModal: XmActiveModal): ContentRef {
+  private _createFromTemplateRef(content: TemplateRef<any>, activeModal: NgKitActiveModal): ContentRef {
     const context = {
       $implicit: activeModal,
       close(result) { activeModal.close(result); },
@@ -157,10 +157,10 @@ export class XmModalStack {
 
   private _createFromComponent(
     moduleCFR: ComponentFactoryResolver, contentInjector: Injector, content: any,
-    context: XmActiveModal): ContentRef {
+    context: NgKitActiveModal): ContentRef {
     const contentCmptFactory = moduleCFR.resolveComponentFactory(content);
     const modalContentInjector =
-      Injector.create({ providers: [{ provide: XmActiveModal, useValue: context }], parent: contentInjector });
+      Injector.create({ providers: [{ provide: NgKitActiveModal, useValue: context }], parent: contentInjector });
     const componentRef = contentCmptFactory.create(modalContentInjector);
     this._applicationRef.attachView(componentRef.hostView);
     return new ContentRef([[componentRef.location.nativeElement]], componentRef.hostView, componentRef);
@@ -191,7 +191,7 @@ export class XmModalStack {
     this._ariaHiddenValues.clear();
   }
 
-  private _registerModalRef(xmModalRef: XmModalRef) {
+  private _registerModalRef(xmModalRef: NgKitModalRef) {
     const unregisterModalRef = () => {
       const index = this._modalRefs.indexOf(xmModalRef);
       if (index > -1) {
@@ -202,7 +202,7 @@ export class XmModalStack {
     xmModalRef.result.then(unregisterModalRef, unregisterModalRef);
   }
 
-  private _registerWindowCmpt(xmWindowCmpt: ComponentRef<XmModalWindowComponent>) {
+  private _registerWindowCmpt(xmWindowCmpt: ComponentRef<NgKitModalWindowComponent>) {
     this._windowCmpts.push(xmWindowCmpt);
     this._activeWindowCmptHasChanged.next();
 

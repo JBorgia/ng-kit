@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { XmProgressbarComponent } from './progressbar';
+import { NgKitProgressbarComponent } from './progressbar';
 
-export { XmProgressbarComponent, XmProgressbarConfig } from './progressbar';
+export { NgKitProgressbarComponent, NgKitProgressbarConfig } from './progressbar';
 
 @NgModule({
-  declarations: [XmProgressbarComponent],
-  exports: [XmProgressbarComponent],
+  declarations: [NgKitProgressbarComponent],
+  exports: [NgKitProgressbarComponent],
   imports: [CommonModule]
 })
-export class XmProgressbarModule { }
+export class NgKitProgressbarModule { }

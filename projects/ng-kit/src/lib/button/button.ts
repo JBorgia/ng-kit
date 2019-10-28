@@ -10,7 +10,7 @@ import { AfterViewInit, Component, HostBinding, Input, OnInit, Renderer2, ViewCh
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss']
 })
-export class XmButtonComponent implements OnInit, AfterViewInit {
+export class NgKitButtonComponent implements OnInit, AfterViewInit {
   @ViewChild('contentWrapper', { static: true }) contentWrapper;
 
   @HostBinding('attr.role') role: string;

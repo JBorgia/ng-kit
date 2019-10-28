@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { XmPopoverConfig } from 'ng-kit';
+import { NgKitPopoverConfig } from 'ng-kit';
 
 @Component({
   selector: 'app-popover-config',
   templateUrl: './popover-config.html',
-  providers: [XmPopoverConfig] // add XmPopoverConfig to the component providers
+  providers: [NgKitPopoverConfig] // add NgKitPopoverConfig to the component providers
 })
 export class PopoverConfigComponent {
-  constructor(config: XmPopoverConfig) {
+  constructor(config: NgKitPopoverConfig) {
     // customize default values of popovers used by this component tree
     config.placement = 'right';
     config.triggers = 'hover';

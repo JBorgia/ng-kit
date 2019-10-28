@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { XmDirectivesModule } from '@directives/directives.module';
-import { XmSidebarModule } from 'ng-kit';
+import { NgKitDirectivesModule } from '@directives/directives.module';
+import { NgKitSidebarModule } from 'ng-kit';
 
 import { NavSidebarComponent } from './nav-sidebar.component';
 import { NavSidebarService } from './nav-sidebar.service';
@@ -9,8 +9,8 @@ import { NavSidebarService } from './nav-sidebar.service';
 @NgModule({
   imports: [
     CommonModule,
-    XmSidebarModule,
-    XmDirectivesModule,
+    NgKitSidebarModule,
+    NgKitDirectivesModule,
   ],
   declarations: [
     NavSidebarComponent,

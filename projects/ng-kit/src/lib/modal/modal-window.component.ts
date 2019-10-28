@@ -27,7 +27,7 @@ import { ModalDismissReasons } from './modal-dismiss-reasons';
   styleUrls: ['./modal-window.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class XmModalWindowComponent implements OnInit, AfterViewInit, OnDestroy {
+export class NgKitModalWindowComponent implements OnInit, AfterViewInit, OnDestroy {
   private _elWithFocus: Element;  // element that is focused prior to modal opening
 
   @HostBinding('attr.role') role = 'dialog';

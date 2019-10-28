@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { XmButtonModule, XmCardModule } from 'ng-kit';
+import { NgKitButtonModule, NgKitCardModule } from 'ng-kit';
 
 import { CardBadgeComponent } from './card-badge.component';
 
 @NgModule({
   imports: [
     BrowserModule,
-    XmButtonModule,
-    XmCardModule,
+    NgKitButtonModule,
+    NgKitCardModule,
   ],
   declarations: [
     CardBadgeComponent

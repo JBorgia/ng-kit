@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
 
 import { toInteger } from '../util/util';
-import { XmDatepickerI18n } from './datepicker-i18n';
-import { XmDate } from './ng-kit-date';
+import { NgKitDate } from './date';
+import { NgKitDatepickerI18n } from './datepicker-i18n';
 
 @Component({
   selector: 'ng-kit-datepicker-navigation-select',
@@ -30,17 +30,17 @@ import { XmDate } from './ng-kit-date';
     </select>
   `
 })
-export class XmDatepickerNavigationSelectComponent {
-  @Input() date: XmDate;
+export class NgKitDatepickerNavigationSelectComponent {
+  @Input() date: NgKitDate;
   @Input() disabled: boolean;
   @Input() months: number[];
   @Input() years: number[];
 
-  @Output() select = new EventEmitter<XmDate>();
+  @Output() select = new EventEmitter<NgKitDate>();
 
-  constructor(public i18n: XmDatepickerI18n) { }
+  constructor(public i18n: NgKitDatepickerI18n) { }
 
-  changeMonth(month: string) { this.select.emit(new XmDate(this.date.year, toInteger(month), 1)); }
+  changeMonth(month: string) { this.select.emit(new NgKitDate(this.date.year, toInteger(month), 1)); }
 
-  changeYear(year: string) { this.select.emit(new XmDate(toInteger(year), this.date.month, 1)); }
+  changeYear(year: string) { this.select.emit(new NgKitDate(toInteger(year), this.date.month, 1)); }
 }

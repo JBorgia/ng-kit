@@ -5,10 +5,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
-import { NgKitButtonModule, NgKitModalModule, NgKitSidebarModule, NgKitTabsetModule } from 'ng-kit';
 import { BreakpointService } from '@services/breakpoint.service';
 import { ThemeService } from '@services/theme.service';
 import { NotificationToastDefaults } from '@shared/notification/toastDefaults';
+import { NgKitButtonModule, NgKitModalModule, NgKitSidebarModule, NgKitTabsetModule } from 'ng-kit';
 
 import { Approutes } from './app-routing.module';
 import { AppComponent } from './app.component';

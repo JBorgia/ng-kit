@@ -26,25 +26,25 @@ import { Subject } from 'rxjs';
 import { autoClose } from '../util/autoclose';
 import { focusTrap } from '../util/focus-trap';
 import { PlacementArray, positionElements } from '../util/positioning';
-import { XmDateAdapter } from './adapters/ng-kit-date-adapter';
-import { XmDatepickerComponent, XmDatepickerNavigateEvent } from './datepicker';
+import { NgKitDateAdapter } from './adapters/date-adapter';
+import { NgKitCalendar } from './calendar';
+import { NgKitDate } from './date';
+import { NgKitDateParserFormatter } from './date-parser-formatter';
+import { NgKitDateStruct } from './date-struct';
+import { NgKitDatepickerComponent, NgKitDatepickerNavigateEvent } from './datepicker';
 import { DayTemplateContext } from './datepicker-day-template-context';
-import { XmDatepickerService } from './datepicker-service';
-import { XmCalendar } from './ng-kit-calendar';
-import { XmDate } from './ng-kit-date';
-import { XmDateParserFormatter } from './ng-kit-date-parser-formatter';
-import { XmDateStruct } from './ng-kit-date-struct';
+import { NgKitDatepickerService } from './datepicker-service';
 
 
 const XM_DATEPICKER_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => XmInputDatepickerDirective),
+  useExisting: forwardRef(() => NgKitInputDatepickerDirective),
   multi: true
 };
 
 const XM_DATEPICKER_VALIDATOR = {
   provide: NG_VALIDATORS,
-  useExisting: forwardRef(() => XmInputDatepickerDirective),
+  useExisting: forwardRef(() => NgKitInputDatepickerDirective),
   multi: true
 };
 
@@ -57,13 +57,13 @@ const XM_DATEPICKER_VALIDATOR = {
 @Directive({
   selector: 'input[xmDatepicker]',
   exportAs: 'xmDatepicker',
-  providers: [XM_DATEPICKER_VALUE_ACCESSOR, XM_DATEPICKER_VALIDATOR, XmDatepickerService]
+  providers: [XM_DATEPICKER_VALUE_ACCESSOR, XM_DATEPICKER_VALIDATOR, NgKitDatepickerService]
 })
-export class XmInputDatepickerDirective implements OnChanges,
+export class NgKitInputDatepickerDirective implements OnChanges,
   OnDestroy, ControlValueAccessor, Validator {
   private _closed$ = new Subject();
-  private _cRef: ComponentRef<XmDatepickerComponent> = null;
-  private _model: XmDate;
+  private _cRef: ComponentRef<NgKitDatepickerComponent> = null;
+  private _model: NgKitDate;
   private _inputValue: string;
   private _zoneSubscription: any;
 
@@ -98,7 +98,7 @@ export class XmInputDatepickerDirective implements OnChanges,
    *
    * @since 3.3.0
    */
-  @Input() dayTemplateData: (date: XmDate, current: { year: number, month: number }) => any;
+  @Input() dayTemplateData: (date: NgKitDate, current: { year: number, month: number }) => any;
 
   /**
    * The number of months to display.
@@ -126,21 +126,21 @@ export class XmInputDatepickerDirective implements OnChanges,
    *
    * `current` is the month that is currently displayed by the datepicker.
    */
-  @Input() markDisabled: (date: XmDate, current: { year: number, month: number }) => boolean;
+  @Input() markDisabled: (date: NgKitDate, current: { year: number, month: number }) => boolean;
 
   /**
    * The earliest date that can be displayed or selected. Also used for form validation.
    *
    * If not provided, 'year' select box will display 10 years before the current month.
    */
-  @Input() minDate: XmDateStruct;
+  @Input() minDate: NgKitDateStruct;
 
   /**
    * The latest date that can be displayed or selected. Also used for form validation.
    *
    * If not provided, 'year' select box will display 10 years after the current month.
    */
-  @Input() maxDate: XmDateStruct;
+  @Input() maxDate: NgKitDateStruct;
 
   /**
    * Navigation type.
@@ -214,17 +214,17 @@ export class XmInputDatepickerDirective implements OnChanges,
   /**
    * An event emitted when user selects a date using keyboard or mouse.
    *
-   * The payload of the event is currently selected `XmDate`.
+   * The payload of the event is currently selected `NgKitDate`.
    *
    * @since 1.1.1
    */
-  @Output() dateSelect = new EventEmitter<XmDate>();
+  @Output() dateSelect = new EventEmitter<NgKitDate>();
 
   /**
    * Event emitted right after the navigation happens and displayed month changes.
    *
    */
-  @Output() navigate = new EventEmitter<XmDatepickerNavigateEvent>();
+  @Output() navigate = new EventEmitter<NgKitDatepickerNavigateEvent>();
 
   @Input()
   get disabled() {
@@ -247,10 +247,10 @@ export class XmInputDatepickerDirective implements OnChanges,
   @HostListener('blur', ['$event']) blur(event) { this.onBlur(); }
 
   constructor(
-    private _parserFormatter: XmDateParserFormatter, private _elRef: ElementRef<HTMLInputElement>,
+    private _parserFormatter: NgKitDateParserFormatter, private _elRef: ElementRef<HTMLInputElement>,
     private _vcRef: ViewContainerRef, private _renderer: Renderer2, private _cfr: ComponentFactoryResolver,
-    private _ngZone: NgZone, private _service: XmDatepickerService, private _calendar: XmCalendar,
-    private _dateAdapter: XmDateAdapter<any>, @Inject(DOCUMENT) private _document: any,
+    private _ngZone: NgZone, private _service: NgKitDatepickerService, private _calendar: NgKitCalendar,
+    private _dateAdapter: NgKitDateAdapter<any>, @Inject(DOCUMENT) private _document: any,
     private _changeDetector: ChangeDetectorRef) {
     this._zoneSubscription = _ngZone.onStable.subscribe(() => this._updatePopupPosition());
   }
@@ -276,11 +276,11 @@ export class XmInputDatepickerDirective implements OnChanges,
       return { xmDate: { invalid: c.value } };
     }
 
-    if (this.minDate && xmDate.before(XmDate.from(this.minDate))) {
+    if (this.minDate && xmDate.before(NgKitDate.from(this.minDate))) {
       return { xmDate: { requiredBefore: this.minDate } };
     }
 
-    if (this.maxDate && xmDate.after(XmDate.from(this.maxDate))) {
+    if (this.maxDate && xmDate.after(NgKitDate.from(this.maxDate))) {
       return { xmDate: { requiredAfter: this.maxDate } };
     }
   }
@@ -313,7 +313,7 @@ export class XmInputDatepickerDirective implements OnChanges,
    */
   open() {
     if (!this.isOpen()) {
-      const cf = this._cfr.resolveComponentFactory(XmDatepickerComponent);
+      const cf = this._cfr.resolveComponentFactory(NgKitDatepickerComponent);
       this._cRef = this._vcRef.createComponent(cf);
 
       this._applyPopupStyling(this._cRef.location.nativeElement);
@@ -397,7 +397,7 @@ export class XmInputDatepickerDirective implements OnChanges,
     this._zoneSubscription.unsubscribe();
   }
 
-  private _applyDatepickerInputs(datepickerInstance: XmDatepickerComponent): void {
+  private _applyDatepickerInputs(datepickerInstance: NgKitDatepickerComponent): void {
     ['dayTemplate', 'dayTemplateData', 'displayMonths', 'firstDayOfWeek', 'footerTemplate', 'markDisabled', 'minDate',
       'maxDate', 'navigation', 'outsideDays', 'showNavigation', 'showWeekdays', 'showWeekNumbers']
       .forEach((optionName: string) => {
@@ -414,7 +414,7 @@ export class XmInputDatepickerDirective implements OnChanges,
     this._renderer.addClass(nativeElement, 'show');
   }
 
-  private _subscribeForDatepickerOutputs(datepickerInstance: XmDatepickerComponent) {
+  private _subscribeForDatepickerOutputs(datepickerInstance: NgKitDatepickerComponent) {
     datepickerInstance.navigate.subscribe(navigateEvent => this.navigate.emit(navigateEvent));
     datepickerInstance.select.subscribe(date => {
       this.dateSelect.emit(date);
@@ -424,7 +424,7 @@ export class XmInputDatepickerDirective implements OnChanges,
     });
   }
 
-  private _writeModelValue(model: XmDate) {
+  private _writeModelValue(model: NgKitDate) {
     const value = this._parserFormatter.format(model);
     this._inputValue = value;
     this._renderer.setProperty(this._elRef.nativeElement, 'value', value);
@@ -434,8 +434,8 @@ export class XmInputDatepickerDirective implements OnChanges,
     }
   }
 
-  private _fromDateStruct(date: XmDateStruct): XmDate {
-    const xmDate = date ? new XmDate(date.year, date.month, date.day) : null;
+  private _fromDateStruct(date: NgKitDateStruct): NgKitDate {
+    const xmDate = date ? new NgKitDate(date.year, date.month, date.day) : null;
     return this._calendar.isValid(xmDate) ? xmDate : null;
   }
 

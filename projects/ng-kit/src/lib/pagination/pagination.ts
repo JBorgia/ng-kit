@@ -15,7 +15,7 @@ import {
 import { getValueInRange, isNumber } from '../util/util';
 
 @Injectable({ providedIn: 'root' })
-export class XmPaginationConfig {
+export class NgKitPaginationConfig {
   disabled = false;
   boundaryLinks = false;
   directionLinks = true;
@@ -28,17 +28,17 @@ export class XmPaginationConfig {
 
 /**
  * A context for the
- * * `XmPaginationFirst`
- * * `XmPaginationPrevious`
- * * `XmPaginationNext`
- * * `XmPaginationLast`
- * * `XmPaginationEllipsis`
+ * * `NgKitPaginationFirst`
+ * * `NgKitPaginationPrevious`
+ * * `NgKitPaginationNext`
+ * * `NgKitPaginationLast`
+ * * `NgKitPaginationEllipsis`
  *
  * link templates in case you want to override one.
  *
  * @since 4.1.0
  */
-export interface XmPaginationLinkContext {
+export interface NgKitPaginationLinkContext {
   /**
    * The currently selected page number
    */
@@ -51,13 +51,13 @@ export interface XmPaginationLinkContext {
 }
 
 /**
- * A context for the `XmPaginationNumber` link template in case you want to override one.
+ * A context for the `NgKitPaginationNumber` link template in case you want to override one.
  *
- * Extends `XmPaginationLinkContext`.
+ * Extends `NgKitPaginationLinkContext`.
  *
  * @since 4.1.0
  */
-export interface XmPaginationNumberContext extends XmPaginationLinkContext {
+export interface NgKitPaginationNumberContext extends NgKitPaginationLinkContext {
   /**
    * The page number, displayed by the current page link.
    */
@@ -70,8 +70,8 @@ export interface XmPaginationNumberContext extends XmPaginationLinkContext {
  * @since 4.1.0
  */
 @Directive({ selector: 'ng-template[xmPaginationEllipsis]' })
-export class XmPaginationEllipsisDirective {
-  constructor(public templateRef: TemplateRef<XmPaginationLinkContext>) { }
+export class NgKitPaginationEllipsisDirective {
+  constructor(public templateRef: TemplateRef<NgKitPaginationLinkContext>) { }
 }
 
 /**
@@ -80,8 +80,8 @@ export class XmPaginationEllipsisDirective {
  * @since 4.1.0
  */
 @Directive({ selector: 'ng-template[xmPaginationFirst]' })
-export class XmPaginationFirstDirective {
-  constructor(public templateRef: TemplateRef<XmPaginationLinkContext>) { }
+export class NgKitPaginationFirstDirective {
+  constructor(public templateRef: TemplateRef<NgKitPaginationLinkContext>) { }
 }
 
 /**
@@ -90,8 +90,8 @@ export class XmPaginationFirstDirective {
  * @since 4.1.0
  */
 @Directive({ selector: 'ng-template[xmPaginationLast]' })
-export class XmPaginationLastDirective {
-  constructor(public templateRef: TemplateRef<XmPaginationLinkContext>) { }
+export class NgKitPaginationLastDirective {
+  constructor(public templateRef: TemplateRef<NgKitPaginationLinkContext>) { }
 }
 
 /**
@@ -100,8 +100,8 @@ export class XmPaginationLastDirective {
  * @since 4.1.0
  */
 @Directive({ selector: 'ng-template[xmPaginationNext]' })
-export class XmPaginationNextDirective {
-  constructor(public templateRef: TemplateRef<XmPaginationLinkContext>) { }
+export class NgKitPaginationNextDirective {
+  constructor(public templateRef: TemplateRef<NgKitPaginationLinkContext>) { }
 }
 
 /**
@@ -110,8 +110,8 @@ export class XmPaginationNextDirective {
  * @since 4.1.0
  */
 @Directive({ selector: 'ng-template[xmPaginationNumber]' })
-export class XmPaginationNumberDirective {
-  constructor(public templateRef: TemplateRef<XmPaginationNumberContext>) { }
+export class NgKitPaginationNumberDirective {
+  constructor(public templateRef: TemplateRef<NgKitPaginationNumberContext>) { }
 }
 
 /**
@@ -120,8 +120,8 @@ export class XmPaginationNumberDirective {
  * @since 4.1.0
  */
 @Directive({ selector: 'ng-template[xmPaginationPrevious]' })
-export class XmPaginationPreviousDirective {
-  constructor(public templateRef: TemplateRef<XmPaginationLinkContext>) { }
+export class NgKitPaginationPreviousDirective {
+  constructor(public templateRef: TemplateRef<NgKitPaginationLinkContext>) { }
 }
 
 /**
@@ -135,16 +135,16 @@ export class XmPaginationPreviousDirective {
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.scss'],
 })
-export class XmPaginationComponent implements OnChanges {
+export class NgKitPaginationComponent implements OnChanges {
   pageCount = 0;
   pages: number[] = [];
 
-  @ContentChild(XmPaginationEllipsisDirective, { static: false }) tplEllipsis: XmPaginationEllipsisDirective;
-  @ContentChild(XmPaginationFirstDirective, { static: false }) tplFirst: XmPaginationFirstDirective;
-  @ContentChild(XmPaginationLastDirective, { static: false }) tplLast: XmPaginationLastDirective;
-  @ContentChild(XmPaginationNextDirective, { static: false }) tplNext: XmPaginationNextDirective;
-  @ContentChild(XmPaginationNumberDirective, { static: false }) tplNumber: XmPaginationNumberDirective;
-  @ContentChild(XmPaginationPreviousDirective, { static: false }) tplPrevious: XmPaginationPreviousDirective;
+  @ContentChild(NgKitPaginationEllipsisDirective, { static: false }) tplEllipsis: NgKitPaginationEllipsisDirective;
+  @ContentChild(NgKitPaginationFirstDirective, { static: false }) tplFirst: NgKitPaginationFirstDirective;
+  @ContentChild(NgKitPaginationLastDirective, { static: false }) tplLast: NgKitPaginationLastDirective;
+  @ContentChild(NgKitPaginationNextDirective, { static: false }) tplNext: NgKitPaginationNextDirective;
+  @ContentChild(NgKitPaginationNumberDirective, { static: false }) tplNumber: NgKitPaginationNumberDirective;
+  @ContentChild(NgKitPaginationPreviousDirective, { static: false }) tplPrevious: NgKitPaginationPreviousDirective;
 
   /**
    * If `true`, pagination links will be disabled.
@@ -215,7 +215,7 @@ export class XmPaginationComponent implements OnChanges {
    */
   @Input() size: 'sm' | 'lg';
 
-  constructor(config: XmPaginationConfig) {
+  constructor(config: NgKitPaginationConfig) {
     this.disabled = config.disabled;
     this.boundaryLinks = config.boundaryLinks;
     this.directionLinks = config.directionLinks;

@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 /**
-  * The `XmCardBadgeComponent` is an optional round, bordered element that is inside the <i>&#60;ng-kit-card-header&#62;</i>.
+  * The `NgKitCardBadgeComponent` is an optional round, bordered element that is inside the <i>&#60;ng-kit-card-header&#62;</i>.
   * It can accept an ng-kit icon string (e.g. "icon-profile"), image, or both (in which case the icon is used as a fallback
   * should the image be undefined or missing).
   */
@@ -11,7 +11,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   templateUrl: './card-badge.component.html',
   styleUrls: ['./card-badge.component.scss'],
 })
-export class XmCardBadgeComponent implements OnInit {
+export class NgKitCardBadgeComponent implements OnInit {
   @Input() icon: string;
   @Input() image;
   badgeImage;

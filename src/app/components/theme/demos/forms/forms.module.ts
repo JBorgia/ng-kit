@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { XmButtonModule } from 'ng-kit';
+import { NgKitButtonModule } from 'ng-kit';
 
 import { FormsComponent } from './forms.component';
 
@@ -10,7 +10,7 @@ import { FormsComponent } from './forms.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    XmButtonModule,
+    NgKitButtonModule,
   ],
   declarations: [
     FormsComponent

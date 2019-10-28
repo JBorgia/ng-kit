@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { XmCalendar, XmDateStruct } from 'ng-kit';
+import { NgKitCalendar, NgKitDateStruct } from 'ng-kit';
 
 @Component({
   selector: 'app-datepicker-footertemplate',
@@ -7,8 +7,8 @@ import { XmCalendar, XmDateStruct } from 'ng-kit';
   styleUrls: ['./datepicker-footertemplate.scss']
 })
 export class DatepickerFootertemplateComponent {
-  model: XmDateStruct;
+  model: NgKitDateStruct;
   today = this.calendar.getToday();
 
-  constructor(private calendar: XmCalendar) { }
+  constructor(private calendar: NgKitCalendar) { }
 }

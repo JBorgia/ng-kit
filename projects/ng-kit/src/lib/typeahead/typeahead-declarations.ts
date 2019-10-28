@@ -15,13 +15,13 @@ import { ControlValueAccessor } from '@angular/forms';
 import { Observable } from 'rxjs';
 
 import { PlacementArray } from '../util/positioning';
-import { XmTypeaheadConfig } from './typeahead';
+import { NgKitTypeaheadConfig } from './typeahead';
 import { ResultTemplateContext } from './typeahead-window.component';
 
 /**
  * Payload of the selectItem event.
  */
-export interface XmTypeaheadSelectItemEvent {
+export interface NgKitTypeaheadSelectItemEvent {
   /**
    * An item about to be selected
    */
@@ -32,9 +32,9 @@ export interface XmTypeaheadSelectItemEvent {
   preventDefault: () => void;
 }
 /**
- * XmTypeahead directive provides a simple way of creating powerful typeaheads from any text input
+ * NgKitTypeahead directive provides a simple way of creating powerful typeaheads from any text input
  */
-export declare class XmTypeahead implements ControlValueAccessor, OnInit, OnDestroy {
+export declare class NgKitTypeahead implements ControlValueAccessor, OnInit, OnDestroy {
   private _elementRef;
   private _viewContainerRef;
   private _renderer;
@@ -80,7 +80,7 @@ export declare class XmTypeahead implements ControlValueAccessor, OnInit, OnDest
    * A function to transform the provided observable text into the array of results.  Note that the "this" argument
    * is undefined so you need to explicitly bind it to a desired "this" target.
    */
-  XmTypeahead: (text: Observable<string>) => Observable<any[]>;
+  NgKitTypeahead: (text: Observable<string>) => Observable<any[]>;
   /**
    * A function to format a given result before display. This function should return a formatted string without any
    * HTML markup
@@ -101,9 +101,9 @@ export declare class XmTypeahead implements ControlValueAccessor, OnInit, OnDest
   */
   placement: PlacementArray;
   /**
-   * An event emitted when a match is selected. Event payload is of type XmTypeaheadSelectItemEvent.
+   * An event emitted when a match is selected. Event payload is of type NgKitTypeaheadSelectItemEvent.
    */
-  selectItem: EventEmitter<XmTypeaheadSelectItemEvent>;
+  selectItem: EventEmitter<NgKitTypeaheadSelectItemEvent>;
   activeDescendant: string;
   popupId: string;
   private _onTouched;
@@ -122,7 +122,7 @@ export declare class XmTypeahead implements ControlValueAccessor, OnInit, OnDest
     _viewContainerRef: ViewContainerRef,
     _renderer: Renderer2, _injector: Injector,
     componentFactoryResolver: ComponentFactoryResolver,
-    config: XmTypeaheadConfig,
+    config: NgKitTypeaheadConfig,
     ngZone: NgZone,
     _document: any,
     _ngZone: NgZone,

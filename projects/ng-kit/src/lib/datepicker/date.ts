@@ -1,19 +1,19 @@
 import { isInteger } from '../util/util';
-import { XmDateStruct } from './ng-kit-date-struct';
+import { NgKitDateStruct } from './date-struct';
 
 /**
  * A simple class that represents a date that datepicker also uses internally.
  *
- * It is the implementation of the `XmDateStruct` interface that adds some convenience methods,
+ * It is the implementation of the `NgKitDateStruct` interface that adds some convenience methods,
  * like `.equals()`, `.before()`, etc.
  *
- * All datepicker APIs consume `XmDateStruct`, but return `XmDate`.
+ * All datepicker APIs consume `NgKitDateStruct`, but return `NgKitDate`.
  *
  *
  *
  * @since 3.0.0
  */
-export class XmDate implements XmDateStruct {
+export class NgKitDate implements NgKitDateStruct {
   /**
    * The year, for example 2016
    */
@@ -30,17 +30,17 @@ export class XmDate implements XmDateStruct {
   day: number;
 
   /**
-   * A **static method** that creates a new date object from the `XmDateStruct`,
+   * A **static method** that creates a new date object from the `NgKitDateStruct`,
    *
-   * ex. `XmDate.from({year: 2000, month: 5, day: 1})`.
+   * ex. `NgKitDate.from({year: 2000, month: 5, day: 1})`.
    *
-   * If the `date` is already of `XmDate` type, the method will return the same object.
+   * If the `date` is already of `NgKitDate` type, the method will return the same object.
    */
-  static from(date: XmDateStruct): XmDate {
-    if (date instanceof XmDate) {
+  static from(date: NgKitDateStruct): NgKitDate {
+    if (date instanceof NgKitDate) {
       return date;
     }
-    return date ? new XmDate(date.year, date.month, date.day) : null;
+    return date ? new NgKitDate(date.year, date.month, date.day) : null;
   }
 
   constructor(year: number, month: number, day: number) {
@@ -52,14 +52,14 @@ export class XmDate implements XmDateStruct {
   /**
    * Checks if the current date is equal to another date.
    */
-  equals(other: XmDateStruct): boolean {
+  equals(other: NgKitDateStruct): boolean {
     return other && this.year === other.year && this.month === other.month && this.day === other.day;
   }
 
   /**
    * Checks if the current date is before another date.
    */
-  before(other: XmDateStruct): boolean {
+  before(other: NgKitDateStruct): boolean {
     if (!other) {
       return false;
     }
@@ -78,7 +78,7 @@ export class XmDate implements XmDateStruct {
   /**
    * Checks if the current date is after another date.
    */
-  after(other: XmDateStruct): boolean {
+  after(other: NgKitDateStruct): boolean {
     if (!other) {
       return false;
     }

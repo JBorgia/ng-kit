@@ -1,9 +1,9 @@
 import { Injectable, Injector } from '@angular/core';
 
 /**
- * Options available when opening new modal windows with `XmModal.open()` method.
+ * Options available when opening new modal windows with `NgKitModal.open()` method.
  */
-export interface XmModalOptions {
+export interface NgKitModalOptions {
   /**
    * `aria-labelledby` attribute value to set on the modal window.
    *
@@ -100,7 +100,7 @@ export interface XmModalOptions {
 * @since 3.1.0
 */
 @Injectable({ providedIn: 'root' })
-export class XmModalConfig implements XmModalOptions {
+export class NgKitModalConfig implements NgKitModalOptions {
   backdrop: boolean | 'static' = true;
   keyboard = true;
 }

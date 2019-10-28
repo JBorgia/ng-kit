@@ -31,10 +31,10 @@ import { Key } from '../util/key';
 import { PopupService } from '../util/popup';
 import { PlacementArray, positionElements } from '../util/positioning';
 import { isDefined, toString } from '../util/util';
-import { ResultTemplateContext, XmTypeaheadWindowComponent } from './typeahead-window.component';
+import { ResultTemplateContext, NgKitTypeaheadWindowComponent } from './typeahead-window.component';
 
 @Injectable({ providedIn: 'root' })
-export class XmTypeaheadConfig {
+export class NgKitTypeaheadConfig {
   container;
   editable = true;
   focusFirst = true;
@@ -44,14 +44,14 @@ export class XmTypeaheadConfig {
 
 const TYPEAHEAD_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => XmTypeaheadDirective),
+  useExisting: forwardRef(() => NgKitTypeaheadDirective),
   multi: true
 };
 
 /**
  * Payload of the selectItem event.
  */
-export interface XmTypeaheadSelectItemEvent {
+export interface NgKitTypeaheadSelectItemEvent {
   /**
    * An item about to be selected
    */
@@ -66,22 +66,22 @@ export interface XmTypeaheadSelectItemEvent {
 let nextWindowId = 0;
 
 /**
- * XmTypeahead directive provides a simple way of creating powerful typeaheads from any text input
+ * NgKitTypeahead directive provides a simple way of creating powerful typeaheads from any text input
  */
 @Directive({
   selector: 'input[xmTypeahead]',
   exportAs: 'xmTypeahead',
   providers: [TYPEAHEAD_VALUE_ACCESSOR]
 })
-export class XmTypeaheadDirective implements ControlValueAccessor,
+export class NgKitTypeaheadDirective implements ControlValueAccessor,
   OnInit, OnDestroy {
-  private _popupService: PopupService<XmTypeaheadWindowComponent>;
+  private _popupService: PopupService<NgKitTypeaheadWindowComponent>;
   private _subscription: Subscription;
   private _closed$ = new Subject();
   private _inputValueBackup: string;
   private _valueChanges: Observable<string>;
   private _resubscribeTypeahead: BehaviorSubject<any>;
-  private _windowRef: ComponentRef<XmTypeaheadWindowComponent>;
+  private _windowRef: ComponentRef<NgKitTypeaheadWindowComponent>;
   private _zoneSubscription: any;
 
   @HostBinding('attr.role') role = 'combobox';
@@ -172,7 +172,7 @@ export class XmTypeaheadDirective implements ControlValueAccessor,
   /**
    * An event emitted when a match is selected. Event payload is of type xmTypeaheadSelectItemEvent.
    */
-  @Output() selectItem = new EventEmitter<XmTypeaheadSelectItemEvent>();
+  @Output() selectItem = new EventEmitter<NgKitTypeaheadSelectItemEvent>();
 
   activeDescendant: string;
   popupId = `ng-kit-typeahead-${nextWindowId++}`;
@@ -190,7 +190,7 @@ export class XmTypeaheadDirective implements ControlValueAccessor,
   constructor(
     private _elementRef: ElementRef<HTMLInputElement>, private _viewContainerRef: ViewContainerRef,
     private _renderer: Renderer2, private _injector: Injector, componentFactoryResolver: ComponentFactoryResolver,
-    config: XmTypeaheadConfig, ngZone: NgZone, @Inject(DOCUMENT) private _document: any,
+    config: NgKitTypeaheadConfig, ngZone: NgZone, @Inject(DOCUMENT) private _document: any,
     private _ngZone: NgZone, private _changeDetector: ChangeDetectorRef) {
     this.container = config.container;
     this.editable = config.editable;
@@ -203,8 +203,8 @@ export class XmTypeaheadDirective implements ControlValueAccessor,
 
     this._resubscribeTypeahead = new BehaviorSubject(null);
 
-    this._popupService = new PopupService<XmTypeaheadWindowComponent>(
-      XmTypeaheadWindowComponent, _injector, _viewContainerRef, _renderer, componentFactoryResolver);
+    this._popupService = new PopupService<NgKitTypeaheadWindowComponent>(
+      NgKitTypeaheadWindowComponent, _injector, _viewContainerRef, _renderer, componentFactoryResolver);
 
     this._zoneSubscription = ngZone.onStable.subscribe(() => {
       if (this.isPopupOpen()) {

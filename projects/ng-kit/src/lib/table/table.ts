@@ -17,14 +17,14 @@ import {
 import { Subscription } from 'rxjs';
 import { startWith } from 'rxjs/operators';
 
-import { XmResizeDirective } from '../directives/resize/resize.directive';
-import { XmTableElement } from './table.element';
+import { NgKitResizeDirective } from '../directives/resize/resize.directive';
+import { NgKitTableElement } from './table.element';
 
 /**
- * A class for setting the widths of columns in XmTable. An array of `XmColWidth` is passed to the `XmTable` 
- * if setting all using the `ColWidths` input and a single `XmColWidth` as an input if setting widths on the <i>&#60;th&#62;</i> tags and the `XmTableHeaderCellDirective`.
+ * A class for setting the widths of columns in NgKitTable. An array of `NgKitColWidth` is passed to the `NgKitTable` 
+ * if setting all using the `ColWidths` input and a single `NgKitColWidth` as an input if setting widths on the <i>&#60;th&#62;</i> tags and the `NgKitTableHeaderCellDirective`.
  */
-export class XmColWidth {
+export class NgKitColWidth {
   grow: number = 0;
   shrink: number = 0;
   basis: 'auto' | string; // must be in px or %
@@ -38,7 +38,7 @@ export class XmColWidth {
 
 
 /**
- * XmTableHeaderCellDirective can be implemented as a `xm` placed on the <i>&#60;th&#62;</i> tags of a <i>&#60;table&#62;</i>. 
+ * NgKitTableHeaderCellDirective can be implemented as a `xm` placed on the <i>&#60;th&#62;</i> tags of a <i>&#60;table&#62;</i>. 
  * If used on one <i>&#60;th&#62;</i> tag it should be used on all of them.
  */
 @Directive({
@@ -47,16 +47,16 @@ export class XmColWidth {
     class: 'ng-kit-table-header-cell',
   }
 })
-export class XmTableHeaderCellDirective {
-  @Input() colWidth: XmColWidth;
+export class NgKitTableHeaderCellDirective {
+  @Input() colWidth: NgKitColWidth;
 }
 
 
 /**
- * `XmTableComponent` is a structural directive component on the html <i>&#60;table&#62;</i> tag to handle
+ * `NgKitTableComponent` is a structural directive component on the html <i>&#60;table&#62;</i> tag to handle
  * overflow management, horizontal layout, column visibility, and to allow for scrolling on the <i>&#60;tbody&#62;</i> tag.
  * The `addBorder` input can be set to true to add a 1px solid border-theme-colored border to the table. Alternatively, any border values set on the <i>&#60;table&#62;</i> tag
- * itself will be transfered upon instantiation to the wrapper <i>&#60;div&#62;</i> the `XmTableComponent` creates around itself.
+ * itself will be transfered upon instantiation to the wrapper <i>&#60;div&#62;</i> the `NgKitTableComponent` creates around itself.
  */
 @Component({
   selector: 'table[xm]',
@@ -65,10 +65,10 @@ export class XmTableHeaderCellDirective {
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class XmTableComponent implements OnInit, AfterViewInit, OnDestroy {
+export class NgKitTableComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() overflow: 'auto' | 'scroll' | 'hidden' | 'visible' = 'auto';
   @Input() banded: 'even' | 'odd';
-  @Input() colWidths: XmColWidth[];
+  @Input() colWidths: NgKitColWidth[];
   @Input() addBorder = false;
   private _colVisibility: boolean[];
   // Controlling visiblity using the colVisiblity[] input only hides the elements. It does not remove them like *ngIf
@@ -81,11 +81,11 @@ export class XmTableComponent implements OnInit, AfterViewInit, OnDestroy {
   }
   @Input() horizontal: boolean = false;
 
-  @ContentChildren(XmTableHeaderCellDirective) tableHeaderCells: QueryList<XmTableHeaderCellDirective>;
+  @ContentChildren(NgKitTableHeaderCellDirective) tableHeaderCells: QueryList<NgKitTableHeaderCellDirective>;
 
   observer: MutationObserver;
   // programatically implement resize directive on the table's parent element
-  resize: XmResizeDirective;
+  resize: NgKitResizeDirective;
 
   resizeSub: Subscription;
 
@@ -95,14 +95,14 @@ export class XmTableComponent implements OnInit, AfterViewInit, OnDestroy {
   rowCount: number; // number of rows
 
   // ElementRefs to table parts
-  ngTable: XmTableElement;
-  ngBody: XmTableElement;
-  ngHead: XmTableElement;
-  ngHeadRow: XmTableElement;
-  ngBodyRows: XmTableElement[];
-  ngThs: XmTableElement[];
-  ngTds: XmTableElement[];
-  ngCells: XmTableElement[];
+  ngTable: NgKitTableElement;
+  ngBody: NgKitTableElement;
+  ngHead: NgKitTableElement;
+  ngHeadRow: NgKitTableElement;
+  ngBodyRows: NgKitTableElement[];
+  ngThs: NgKitTableElement[];
+  ngTds: NgKitTableElement[];
+  ngCells: NgKitTableElement[];
 
   constructor(
     private el: ElementRef,
@@ -131,7 +131,7 @@ export class XmTableComponent implements OnInit, AfterViewInit, OnDestroy {
     this.applyFormatting();
 
     // Handle adjusting the padding of the header row in the case of the table being resized. Trigger on init.
-    this.resize = new XmResizeDirective(new ElementRef(this.el.nativeElement.parentNode));
+    this.resize = new NgKitResizeDirective(new ElementRef(this.el.nativeElement.parentNode));
     this.resize.ngOnInit();
     this.resizeSub = this.resize.resize.pipe(
       startWith(null)
@@ -196,7 +196,7 @@ export class XmTableComponent implements OnInit, AfterViewInit, OnDestroy {
     })
   }
 
-  setVisibility(ngCells: XmTableElement[]) {
+  setVisibility(ngCells: NgKitTableElement[]) {
     if (this._colVisibility) {
       for (let rowNum = 0; rowNum < this.rowCount; rowNum++) {
         let restyled = false;
@@ -229,7 +229,7 @@ export class XmTableComponent implements OnInit, AfterViewInit, OnDestroy {
     this.adjustForOverflow(this.ngHeadRow);
   }
 
-  styleTable(table: XmTableElement) {
+  styleTable(table: NgKitTableElement) {
     table.addClass('ng-kit--table');
     if (this.horizontal) {
       table.addClass('ng-kit--table-horizontal');
@@ -238,11 +238,11 @@ export class XmTableComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  styleHead(head: XmTableElement) {
+  styleHead(head: NgKitTableElement) {
     head.addClass('ng-kit--table-head');
   }
 
-  styleBody(body: XmTableElement) {
+  styleBody(body: NgKitTableElement) {
     if (!this.horizontal) {
       body.setStyle('overflow-y', this.overflow);
     } else {
@@ -251,7 +251,7 @@ export class XmTableComponent implements OnInit, AfterViewInit, OnDestroy {
     body.addClass('ng-kit--table-body');
   }
 
-  styleBodyRows(bodyRows: XmTableElement[]) {
+  styleBodyRows(bodyRows: NgKitTableElement[]) {
     bodyRows.forEach((bodyRow, idx) => {
       bodyRow.addClass('ng-kit--table-tr');
 
@@ -264,7 +264,7 @@ export class XmTableComponent implements OnInit, AfterViewInit, OnDestroy {
     });
   }
 
-  adjustForOverflow(headRow: XmTableElement) {
+  adjustForOverflow(headRow: NgKitTableElement) {
     if (!headRow.classList.contains('ng-kit--table-tr')) {
       headRow.addClass('ng-kit--table-tr');
     }
@@ -286,11 +286,11 @@ export class XmTableComponent implements OnInit, AfterViewInit, OnDestroy {
 
   }
 
-  styleCells(cells: XmTableElement[]) {
+  styleCells(cells: NgKitTableElement[]) {
     if (this.colWidths && this.colWidths.length !== this.colCount) {
       throw new Error(
         `If defining table column widths, a width must be specified for each column.
-      I got ${this.colWidths.length} XmColWidths, but have ${this.colCount} columns.`);
+      I got ${this.colWidths.length} NgKitColWidths, but have ${this.colCount} columns.`);
     }
 
     for (let rowNum = 0; rowNum < this.rowCount; rowNum++) {
@@ -320,25 +320,25 @@ export class XmTableComponent implements OnInit, AfterViewInit, OnDestroy {
   captureTable() {
     // capture and excapsulate table parts
     const table = new ElementRef(this.viewContainer.element.nativeElement);
-    this.ngTable = new XmTableElement(table, this.renderer, this.cdf);
+    this.ngTable = new NgKitTableElement(table, this.renderer, this.cdf);
 
     const tbody = new ElementRef(this.ngTable.el.nativeElement.getElementsByTagName('tbody')[0]);
-    this.ngBody = new XmTableElement(tbody, this.renderer, this.cdf);
+    this.ngBody = new NgKitTableElement(tbody, this.renderer, this.cdf);
 
     const thead = new ElementRef(this.ngTable.el.nativeElement.getElementsByTagName('thead')[0]);
-    this.ngHead = new XmTableElement(thead, this.renderer, this.cdf);
+    this.ngHead = new NgKitTableElement(thead, this.renderer, this.cdf);
 
     const headRow = this.ngTable.el.nativeElement.querySelectorAll('thead tr')[0];
-    this.ngHeadRow = new XmTableElement(new ElementRef(headRow), this.renderer, this.cdf);
+    this.ngHeadRow = new NgKitTableElement(new ElementRef(headRow), this.renderer, this.cdf);
 
     const bodyRows = this.ngTable.el.nativeElement.querySelectorAll('tbody tr');
-    this.ngBodyRows = [...bodyRows].map(bodyRow => new XmTableElement(new ElementRef(bodyRow), this.renderer, this.cdf));
+    this.ngBodyRows = [...bodyRows].map(bodyRow => new NgKitTableElement(new ElementRef(bodyRow), this.renderer, this.cdf));
 
     const th = this.ngTable.el.nativeElement.querySelectorAll('th');
-    this.ngThs = [...th].map(cell => new XmTableElement(new ElementRef(cell), this.renderer, this.cdf));
+    this.ngThs = [...th].map(cell => new NgKitTableElement(new ElementRef(cell), this.renderer, this.cdf));
 
     const td = this.ngTable.el.nativeElement.querySelectorAll('td');
-    this.ngTds = [...td].map(cell => new XmTableElement(new ElementRef(cell), this.renderer, this.cdf));
+    this.ngTds = [...td].map(cell => new NgKitTableElement(new ElementRef(cell), this.renderer, this.cdf));
 
     this.ngCells = [...this.ngThs, ...this.ngTds]
 
@@ -346,7 +346,7 @@ export class XmTableComponent implements OnInit, AfterViewInit, OnDestroy {
     this.calcTableProportions();
   }
 
-  captureColumnWidths(tableHeaderCells: QueryList<XmTableHeaderCellDirective>) {
+  captureColumnWidths(tableHeaderCells: QueryList<NgKitTableHeaderCellDirective>) {
     if (this.tableHeaderCells && this.tableHeaderCells.length) {
       this.colWidths = tableHeaderCells.map(tableHeaderCell => tableHeaderCell.colWidth);
     }

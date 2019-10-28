@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { XmPaginationModule } from 'ng-kit';
+import { NgKitPaginationModule } from 'ng-kit';
 
 import { PaginationAdvancedComponent } from './pagination-advanced';
 
 @NgModule({
-  imports: [BrowserModule, XmPaginationModule],
+  imports: [BrowserModule, NgKitPaginationModule],
   declarations: [PaginationAdvancedComponent],
   exports: [PaginationAdvancedComponent],
   bootstrap: [PaginationAdvancedComponent]

@@ -1,33 +1,33 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { XmCardBodyDirective, XmCardComponent, XmCardControlsAreaDirective, XmCardTitleAreaDirective } from './card';
-import { XmCardBadgeComponent } from './card-badge.component';
-import { XmCardBodyComponent } from './card-body.component';
-import { XmCardControlsComponent } from './card-controls.component';
-import { XmCardHeaderComponent } from './card-header.component';
+import { NgKitCardBodyDirective, NgKitCardComponent, NgKitCardControlsAreaDirective, NgKitCardTitleAreaDirective } from './card';
+import { NgKitCardBadgeComponent } from './card-badge.component';
+import { NgKitCardBodyComponent } from './card-body.component';
+import { NgKitCardControlsComponent } from './card-controls.component';
+import { NgKitCardHeaderComponent } from './card-header.component';
 
 @NgModule({
   declarations: [
-    XmCardBadgeComponent,
-    XmCardBodyComponent,
-    XmCardComponent,
-    XmCardHeaderComponent,
-    XmCardBodyDirective,
-    XmCardTitleAreaDirective,
-    XmCardControlsAreaDirective,
-    XmCardControlsComponent,
+    NgKitCardBadgeComponent,
+    NgKitCardBodyComponent,
+    NgKitCardComponent,
+    NgKitCardHeaderComponent,
+    NgKitCardBodyDirective,
+    NgKitCardTitleAreaDirective,
+    NgKitCardControlsAreaDirective,
+    NgKitCardControlsComponent,
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    XmCardBadgeComponent,
-    XmCardComponent,
-    XmCardBodyDirective,
-    XmCardTitleAreaDirective,
-    XmCardControlsAreaDirective,
-    XmCardControlsComponent,
+    NgKitCardBadgeComponent,
+    NgKitCardComponent,
+    NgKitCardBodyDirective,
+    NgKitCardTitleAreaDirective,
+    NgKitCardControlsAreaDirective,
+    NgKitCardControlsComponent,
   ]
 })
-export class XmCardModule { }
+export class NgKitCardModule { }

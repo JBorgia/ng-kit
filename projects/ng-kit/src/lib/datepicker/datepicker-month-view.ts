@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, Output, TemplateRef, ViewEncapsulation } from '@angular/core';
 
+import { NgKitDate } from './date';
 import { DayTemplateContext } from './datepicker-day-template-context';
-import { XmDatepickerI18n } from './datepicker-i18n';
+import { NgKitDatepickerI18n } from './datepicker-i18n';
 import { DayViewModel, MonthViewModel } from './datepicker-view-model';
-import { XmDate } from './ng-kit-date';
 
 @Component({
   selector: 'ng-kit-datepicker-month-view',
@@ -35,15 +35,15 @@ import { XmDate } from './ng-kit-date';
     </ng-template>
   `
 })
-export class XmDatepickerMonthViewComponent {
+export class NgKitDatepickerMonthViewComponent {
   @Input() dayTemplate: TemplateRef<DayTemplateContext>;
   @Input() month: MonthViewModel;
   @Input() showWeekdays;
   @Input() showWeekNumbers;
 
-  @Output() select = new EventEmitter<XmDate>();
+  @Output() select = new EventEmitter<NgKitDate>();
 
-  constructor(public i18n: XmDatepickerI18n) { }
+  constructor(public i18n: NgKitDatepickerI18n) { }
 
   doSelect(day: DayViewModel) {
     if (!day.context.disabled && !day.hidden) {

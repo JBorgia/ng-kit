@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { XmMenuItem } from 'ng-kit';
+import { NgKitMenuItem } from 'ng-kit';
 import { BehaviorSubject, Subject } from 'rxjs';
 
 import { BASEMENU } from './menu-items';
@@ -10,7 +10,7 @@ import { BASEMENU } from './menu-items';
 export class NavSidebarService {
   private user: any;
   sidebarMenuItems$;
-  onMenuItemUpdate$ = new Subject<{ item: XmMenuItem, title: string, parentTitle: string }>();
+  onMenuItemUpdate$ = new Subject<{ item: NgKitMenuItem, title: string, parentTitle: string }>();
   showMinisidebar: boolean = false;
 
   constructor() {
@@ -19,7 +19,7 @@ export class NavSidebarService {
 
   loadMenuData() {
     // a user's teams can come from one of two endpoints
-    this.sidebarMenuItems$ = new BehaviorSubject<XmMenuItem[]>([
+    this.sidebarMenuItems$ = new BehaviorSubject<NgKitMenuItem[]>([
       // new MenuItem(
       //   0,
       //   `${this.user.employee.firstName} ${this.user.employee.lastName}`,

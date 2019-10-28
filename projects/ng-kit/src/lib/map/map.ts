@@ -36,7 +36,7 @@ export class GeoCenterSettings {
   styleUrls: ['./map.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class XmMapComponent implements OnInit, OnDestroy {
+export class NgKitMapComponent implements OnInit, OnDestroy {
   private options = {
     url: 'https://js.arcgis.com/3.27/'
   };

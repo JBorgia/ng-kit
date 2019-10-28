@@ -23,28 +23,28 @@ import { fromEvent, merge, Subject } from 'rxjs';
 import { filter, take, takeUntil } from 'rxjs/operators';
 
 import { hasClassName } from '../util/util';
-import { XmDateAdapter } from './adapters/ng-kit-date-adapter';
-import { XmDatepickerConfig } from './datepicker-config';
+import { NgKitDateAdapter } from './adapters/date-adapter';
+import { NgKitCalendar } from './calendar';
+import { NgKitDate } from './date';
+import { NgKitDateStruct } from './date-struct';
+import { NgKitDatepickerConfig } from './datepicker-config';
 import { DayTemplateContext } from './datepicker-day-template-context';
-import { XmDatepickerI18n } from './datepicker-i18n';
-import { XmDatepickerKeyMapService } from './datepicker-keymap-service';
-import { XmDatepickerService } from './datepicker-service';
+import { NgKitDatepickerI18n } from './datepicker-i18n';
+import { NgKitDatepickerKeyMapService } from './datepicker-keymap-service';
+import { NgKitDatepickerService } from './datepicker-service';
 import { isChangedDate } from './datepicker-tools';
 import { DatepickerViewModel, NavigationEvent } from './datepicker-view-model';
-import { XmCalendar } from './ng-kit-calendar';
-import { XmDate } from './ng-kit-date';
-import { XmDateStruct } from './ng-kit-date-struct';
 
 const XM_DATEPICKER_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => XmDatepickerComponent),
+  useExisting: forwardRef(() => NgKitDatepickerComponent),
   multi: true
 };
 
 /**
  * An event emitted right before the navigation happens and the month displayed by the datepicker changes.
  */
-export interface XmDatepickerNavigateEvent {
+export interface NgKitDatepickerNavigateEvent {
   /**
    * The currently displayed month.
    */
@@ -66,7 +66,7 @@ export interface XmDatepickerNavigateEvent {
 /**
  * A highly configurable component that helps you with selecting calendar dates.
  *
- * `XmDatepicker` is meant to be displayed inline on a page or put inside a popup.
+ * `NgKitDatepicker` is meant to be displayed inline on a page or put inside a popup.
  */
 @Component({
   exportAs: 'xmDatepicker',
@@ -119,16 +119,16 @@ export interface XmDatepickerNavigateEvent {
 
     <ng-template [ngTemplateOutlet]="footerTemplate"></ng-template>
   `,
-  providers: [XM_DATEPICKER_VALUE_ACCESSOR, XmDatepickerService, XmDatepickerKeyMapService]
+  providers: [XM_DATEPICKER_VALUE_ACCESSOR, NgKitDatepickerService, NgKitDatepickerKeyMapService]
 })
-export class XmDatepickerComponent implements OnDestroy,
+export class NgKitDatepickerComponent implements OnDestroy,
   OnChanges, OnInit, ControlValueAccessor, AfterContentInit {
   model: DatepickerViewModel;
 
   @HostBinding('class.datepicker-flex') @Input() flex?: boolean;
 
   @ViewChild('months', { static: true }) private _monthsEl: ElementRef<HTMLElement>;
-  private _controlValue: XmDate;
+  private _controlValue: NgKitDate;
   private _destroyed$ = new Subject<void>();
 
   /**
@@ -148,7 +148,7 @@ export class XmDatepickerComponent implements OnDestroy,
    *
    * @since 3.3.0
    */
-  @Input() dayTemplateData: (date: XmDate, current: { year: number, month: number }) => any;
+  @Input() dayTemplateData: (date: NgKitDate, current: { year: number, month: number }) => any;
 
   /**
    * The number of months to display.
@@ -176,21 +176,21 @@ export class XmDatepickerComponent implements OnDestroy,
    *
    * `current` is the month that is currently displayed by the datepicker.
    */
-  @Input() markDisabled: (date: XmDate, current: { year: number, month: number }) => boolean;
+  @Input() markDisabled: (date: NgKitDate, current: { year: number, month: number }) => boolean;
 
   /**
    * The latest date that can be displayed or selected.
    *
    * If not provided, 'year' select box will display 10 years after the current month.
    */
-  @Input() maxDate: XmDateStruct;
+  @Input() maxDate: NgKitDateStruct;
 
   /**
    * The earliest date that can be displayed or selected.
    *
    * If not provided, 'year' select box will display 10 years before the current month.
    */
-  @Input() minDate: XmDateStruct;
+  @Input() minDate: NgKitDateStruct;
 
   /**
    * Navigation type.
@@ -236,14 +236,14 @@ export class XmDatepickerComponent implements OnDestroy,
    * An event emitted right before the navigation happens and displayed month changes.
    *
    */
-  @Output() navigate = new EventEmitter<XmDatepickerNavigateEvent>();
+  @Output() navigate = new EventEmitter<NgKitDatepickerNavigateEvent>();
 
   /**
    * An event emitted when user selects a date using keyboard or mouse.
    *
-   * The payload of the event is currently selected `XmDate`.
+   * The payload of the event is currently selected `NgKitDate`.
    */
-  @Output() select = new EventEmitter<XmDate>();
+  @Output() select = new EventEmitter<NgKitDate>();
 
   onChange = (_: any) => { };
   onTouched = () => { };
@@ -261,10 +261,10 @@ export class XmDatepickerComponent implements OnDestroy,
   }
 
   constructor(
-    private _keyMapService: XmDatepickerKeyMapService, public _service: XmDatepickerService,
-    private _calendar: XmCalendar, public i18n: XmDatepickerI18n, config: XmDatepickerConfig,
+    private _keyMapService: NgKitDatepickerKeyMapService, public _service: NgKitDatepickerService,
+    private _calendar: NgKitCalendar, public i18n: NgKitDatepickerI18n, config: NgKitDatepickerConfig,
     private _cd: ChangeDetectorRef, private _elementRef: ElementRef<HTMLElement>,
-    private _xmDateAdapter: XmDateAdapter<any>, private _ngZone: NgZone) {
+    private _xmDateAdapter: NgKitDateAdapter<any>, private _ngZone: NgZone) {
     ['dayTemplate', 'dayTemplateData', 'displayMonths', 'firstDayOfWeek', 'footerTemplate', 'markDisabled', 'minDate',
       'maxDate', 'navigation', 'outsideDays', 'showWeekdays', 'showWeekNumbers', 'startDate']
       .forEach(input => this[input] = config[input]);
@@ -332,7 +332,7 @@ export class XmDatepickerComponent implements OnDestroy,
    * Use the `[startDate]` input as an alternative.
    */
   navigateTo(date?: { year: number, month: number, day?: number }) {
-    this._service.open(XmDate.from(date ? date.day ? date as XmDateStruct : { ...date, day: 1 } : null));
+    this._service.open(NgKitDate.from(date ? date.day ? date as NgKitDateStruct : { ...date, day: 1 } : null));
   }
 
   ngAfterContentInit() {
@@ -374,14 +374,14 @@ export class XmDatepickerComponent implements OnDestroy,
     }
   }
 
-  onDateSelect(date: XmDate) {
+  onDateSelect(date: NgKitDate) {
     this._service.focus(date);
     this._service.select(date, { emitEvent: true });
   }
 
   onKeyDown(event: KeyboardEvent) { this._keyMapService.processKey(event); }
 
-  onNavigateDateSelect(date: XmDate) { this._service.open(date); }
+  onNavigateDateSelect(date: NgKitDate) { this._service.open(date); }
 
   onNavigateEvent(event: NavigationEvent) {
     switch (event) {
@@ -401,7 +401,7 @@ export class XmDatepickerComponent implements OnDestroy,
   setDisabledState(isDisabled: boolean) { this._service.disabled = isDisabled; }
 
   writeValue(value) {
-    this._controlValue = XmDate.from(this._xmDateAdapter.fromModel(value));
+    this._controlValue = NgKitDate.from(this._xmDateAdapter.fromModel(value));
     this._service.select(this._controlValue);
   }
 }

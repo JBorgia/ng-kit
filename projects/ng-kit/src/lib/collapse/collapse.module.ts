@@ -1,15 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { XmCollapseComponent, XmCollapseContentComponent, XmCollapseToggleDirective } from './collapse';
+import { NgKitCollapseComponent, NgKitCollapseContentComponent, NgKitCollapseToggleDirective } from './collapse';
 
-export { XmCollapseComponent, XmCollapseToggleDirective, XmCollapseContentComponent } from './collapse';
+export { NgKitCollapseComponent, NgKitCollapseToggleDirective, NgKitCollapseContentComponent } from './collapse';
 
 @NgModule({
-  declarations: [XmCollapseComponent, XmCollapseToggleDirective, XmCollapseContentComponent],
+  declarations: [NgKitCollapseComponent, NgKitCollapseToggleDirective, NgKitCollapseContentComponent],
   imports: [
     CommonModule,
   ],
-  exports: [XmCollapseComponent, XmCollapseToggleDirective, XmCollapseContentComponent]
+  exports: [NgKitCollapseComponent, NgKitCollapseToggleDirective, NgKitCollapseContentComponent]
 })
-export class XmCollapseModule { }
+export class NgKitCollapseModule { }

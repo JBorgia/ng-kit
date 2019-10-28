@@ -1,34 +1,34 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { XmDirectivesModule } from '../directives/directives.module';
-import { XmAccordionComponent } from './accordion';
-import { XmAccordionBodyComponent } from './accordion-body.component';
-import { XmAccordionHeaderComponent } from './accordion-header.component';
+import { NgKitDirectivesModule } from '../directives/directives.module';
+import { NgKitAccordionComponent } from './accordion';
+import { NgKitAccordionBodyComponent } from './accordion-body.component';
+import { NgKitAccordionHeaderComponent } from './accordion-header.component';
 import {
-  XmAccordionBodyDirective,
-  XmAccordionHeaderDirective,
-  XmAccordionPanelComponent,
+  NgKitAccordionBodyDirective,
+  NgKitAccordionHeaderDirective,
+  NgKitAccordionPanelComponent,
 } from './accordion-panel.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    XmDirectivesModule
+    NgKitDirectivesModule
   ],
   declarations: [
-    XmAccordionBodyComponent,
-    XmAccordionBodyDirective,
-    XmAccordionComponent,
-    XmAccordionHeaderComponent,
-    XmAccordionHeaderDirective,
-    XmAccordionPanelComponent,
+    NgKitAccordionBodyComponent,
+    NgKitAccordionBodyDirective,
+    NgKitAccordionComponent,
+    NgKitAccordionHeaderComponent,
+    NgKitAccordionHeaderDirective,
+    NgKitAccordionPanelComponent,
   ],
   exports: [
-    XmAccordionBodyDirective,
-    XmAccordionComponent,
-    XmAccordionHeaderDirective,
-    XmAccordionPanelComponent,
+    NgKitAccordionBodyDirective,
+    NgKitAccordionComponent,
+    NgKitAccordionHeaderDirective,
+    NgKitAccordionPanelComponent,
   ]
 })
-export class XmAccordionModule { }
+export class NgKitAccordionModule { }

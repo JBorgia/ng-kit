@@ -12,7 +12,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "xm",
+      "prefix": "ng-kit",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -133,7 +133,7 @@
       },
       "root": "projects/ng-kit",
       "sourceRoot": "projects/ng-kit/src",
-      "prefix": "xm",
+      "prefix": "ng-kit",
       "architect": {
         "build": {
           "builder": "@linnenschmidt/build-ng-packagr:build",

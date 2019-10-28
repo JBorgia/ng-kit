@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { XmProgressbarConfig } from 'ng-kit';
+import { NgKitProgressbarConfig } from 'ng-kit';
 
 @Component({
   selector: 'app-progressbar-config',
@@ -15,10 +15,10 @@ import { XmProgressbarConfig } from 'ng-kit';
       margin-bottom: 0;
     }
   `],
-  providers: [XmProgressbarConfig] // add the XmProgressbarConfig to the component providers
+  providers: [NgKitProgressbarConfig] // add the NgKitProgressbarConfig to the component providers
 })
 export class ProgressbarConfigComponent {
-  constructor(config: XmProgressbarConfig) {
+  constructor(config: NgKitProgressbarConfig) {
     // customize default values of progress bars used by this component tree
     config.max = 1000;
     config.striped = true;

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { XmTypeaheadModule } from 'ng-kit';
+import { NgKitTypeaheadModule } from 'ng-kit';
 
 import { TypeaheadConfigComponent } from './typeahead-config';
 
@@ -9,7 +9,7 @@ import { TypeaheadConfigComponent } from './typeahead-config';
   imports: [
     BrowserModule,
     FormsModule,
-    XmTypeaheadModule
+    NgKitTypeaheadModule
   ],
   declarations: [TypeaheadConfigComponent],
   exports: [TypeaheadConfigComponent],

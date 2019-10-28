@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { XmCalendar, XmDateStruct } from 'ng-kit';
+import { NgKitCalendar, NgKitDateStruct } from 'ng-kit';
 
 @Component({
   selector: 'app-datepicker-disabled',
@@ -15,10 +15,10 @@ import { XmCalendar, XmDateStruct } from 'ng-kit';
 })
 export class DatepickerDisabledComponent {
 
-  model: XmDateStruct;
+  model: NgKitDateStruct;
   disabled = true;
 
-  constructor(calendar: XmCalendar) {
+  constructor(calendar: NgKitCalendar) {
     this.model = calendar.getToday();
   }
 }

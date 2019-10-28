@@ -15,12 +15,12 @@ import { BehaviorSubject, Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
 import { ResizedEvent } from '../directives/resize/resize-event';
-import { XmResizeDirective } from '../directives/resize/resize.directive';
-import { XmAccordionBodyComponent } from './accordion-body.component';
+import { NgKitResizeDirective } from '../directives/resize/resize.directive';
+import { NgKitAccordionBodyComponent } from './accordion-body.component';
 
 
 /**
- * Using an instance of the `XmAccordionHeaderDirective` will override and remove the <i>&#60;ng-content&#62;</i> tag from the `XmAccordionHeaderComponent`.
+ * Using an instance of the `NgKitAccordionHeaderDirective` will override and remove the <i>&#60;ng-content&#62;</i> tag from the `NgKitAccordionHeaderComponent`.
  */
 @Directive({
   selector: `[ng-kit-accordion-header], [xmAccordionHeader]`,
@@ -28,12 +28,12 @@ import { XmAccordionBodyComponent } from './accordion-body.component';
     class: 'ng-kit-accordion-header',
   }
 })
-export class XmAccordionHeaderDirective {
+export class NgKitAccordionHeaderDirective {
 }
 
 
 /**
- * An HTML element tagged with the `XmAccordionBodyDirective` using either `ng-kit-accordion-body` or `xmAccordionBody` will be transcluded into the `XmAccordionBodyComponent`.
+ * An HTML element tagged with the `NgKitAccordionBodyDirective` using either `ng-kit-accordion-body` or `xmAccordionBody` will be transcluded into the `NgKitAccordionBodyComponent`.
  */
 @Directive({
   selector: `[ng-kit-accordion-body], [xmAccordionBody]`,
@@ -41,11 +41,11 @@ export class XmAccordionHeaderDirective {
     class: 'ng-kit-accordion-body',
   }
 })
-export class XmAccordionBodyDirective {
+export class NgKitAccordionBodyDirective {
 }
 
 /**
- * One or more `XmAccordionPanelComponent`s make up the majority of the `XmAccordionComponent`. 
+ * One or more `NgKitAccordionPanelComponent`s make up the majority of the `NgKitAccordionComponent`. 
  * Setting the `isOpenOnInit` input to true will expand that panel on initial dom instantiation.
  * A defined height can be set using the `bodyHeight` input. Transition animation can be disabled on an 
  * individual panel by setting the `transitionDisabled` input to false. The `onClick` output emits when 
@@ -57,10 +57,10 @@ export class XmAccordionBodyDirective {
   templateUrl: './accordion-panel.component.html',
   styleUrls: ['./accordion-panel.component.scss']
 })
-export class XmAccordionPanelComponent implements AfterViewInit, OnDestroy {
-  @ContentChild(XmAccordionHeaderDirective, { static: false }) accordionHeader: XmAccordionHeaderDirective;
-  @ContentChild(XmAccordionBodyDirective, { static: false }) accordionBody: XmAccordionBodyDirective;
-  @ViewChild('xmAccordionBody', { static: true }) xmAccordionBody: XmAccordionBodyComponent;
+export class NgKitAccordionPanelComponent implements AfterViewInit, OnDestroy {
+  @ContentChild(NgKitAccordionHeaderDirective, { static: false }) accordionHeader: NgKitAccordionHeaderDirective;
+  @ContentChild(NgKitAccordionBodyDirective, { static: false }) accordionBody: NgKitAccordionBodyDirective;
+  @ViewChild('xmAccordionBody', { static: true }) xmAccordionBody: NgKitAccordionBodyComponent;
   @Input() bodyHeight: number;
   private _isCollapsed = true;
   @Input() transitionDisabled = false;
@@ -95,7 +95,7 @@ export class XmAccordionPanelComponent implements AfterViewInit, OnDestroy {
     }, 0);
 
     // Handle adjusting the padding of the header row in the case of the table being resized. Trigger on init.
-    this.resize = new XmResizeDirective(new ElementRef(this.el.nativeElement.parentNode));
+    this.resize = new NgKitResizeDirective(new ElementRef(this.el.nativeElement.parentNode));
     this.resize.ngOnInit();
     this.resizeSub = this.resize.resize.pipe(
       filter((resizeEvent: ResizedEvent) =>

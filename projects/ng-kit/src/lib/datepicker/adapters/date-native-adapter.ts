@@ -1,34 +1,34 @@
 import { Injectable } from '@angular/core';
 
 import { isInteger } from '../../util/util';
-import { XmDateStruct } from '../ng-kit-date-struct';
-import { XmDateAdapter } from './ng-kit-date-adapter';
+import { NgKitDateStruct } from '../date-struct';
+import { NgKitDateAdapter } from './date-adapter';
 
 /**
  * native javascript dates as a user date model.
  */
 @Injectable()
-export class XmDateNativeAdapter extends XmDateAdapter<Date> {
+export class NgKitDateNativeAdapter extends NgKitDateAdapter<Date> {
   /**
-   * Converts a native `Date` to a `XmDateStruct`.
+   * Converts a native `Date` to a `NgKitDateStruct`.
    */
-  fromModel(date: Date): XmDateStruct {
+  fromModel(date: Date): NgKitDateStruct {
     return (date instanceof Date && !isNaN(date.getTime())) ? this._fromNativeDate(date) : null;
   }
 
   /**
-   * Converts a `XmDateStruct` to a native `Date`.
+   * Converts a `NgKitDateStruct` to a native `Date`.
    */
-  toModel(date: XmDateStruct): Date {
+  toModel(date: NgKitDateStruct): Date {
     return date && isInteger(date.year) && isInteger(date.month) && isInteger(date.day) ? this._toNativeDate(date) :
       null;
   }
 
-  protected _fromNativeDate(date: Date): XmDateStruct {
+  protected _fromNativeDate(date: Date): NgKitDateStruct {
     return { year: date.getFullYear(), month: date.getMonth() + 1, day: date.getDate() };
   }
 
-  protected _toNativeDate(date: XmDateStruct): Date {
+  protected _toNativeDate(date: NgKitDateStruct): Date {
     const jsDate = new Date(date.year, date.month - 1, date.day, 12);
     // avoid 30 -> 1930 conversion
     jsDate.setFullYear(date.year);

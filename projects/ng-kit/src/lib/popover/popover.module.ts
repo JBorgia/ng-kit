@@ -1,15 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { XmDirectivesModule } from '../directives/directives.module';
-import { XmPopoverDirective, XmPopoverWindowComponent } from './popover';
+import { NgKitDirectivesModule } from '../directives/directives.module';
+import { NgKitPopoverDirective, NgKitPopoverWindowComponent } from './popover';
 
-export { XmPopoverDirective, XmPopoverConfig } from './popover';
+export { NgKitPopoverDirective, NgKitPopoverConfig } from './popover';
 export { Placement } from '../util/positioning';
 @NgModule({
-  declarations: [XmPopoverDirective, XmPopoverWindowComponent],
-  exports: [XmPopoverDirective],
-  imports: [CommonModule, XmDirectivesModule],
-  entryComponents: [XmPopoverWindowComponent]
+  declarations: [NgKitPopoverDirective, NgKitPopoverWindowComponent],
+  exports: [NgKitPopoverDirective],
+  imports: [CommonModule, NgKitDirectivesModule],
+  entryComponents: [NgKitPopoverWindowComponent]
 })
-export class XmPopoverModule { }
+export class NgKitPopoverModule { }

@@ -5,7 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './preloader.component.html',
   styleUrls: ['./preloader.component.scss']
 })
-export class XmPreloaderComponent implements OnInit {
+export class NgKitPreloaderComponent implements OnInit {
   @Input() isError: boolean;
   @Input() timeoutMillis: number | null = 115000;
   @Input() errorMessage: string = 'Something Went Wrong';

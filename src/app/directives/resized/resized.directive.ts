@@ -7,7 +7,7 @@ import { ResizedEvent } from './resized-event';
 @Directive({
   selector: '[resize]'
 })
-export class XmResizeDirective implements OnInit, OnDestroy {
+export class NgKitResizeDirective implements OnInit, OnDestroy {
 
   @Output()
   readonly resize = new EventEmitter<ResizedEvent>();

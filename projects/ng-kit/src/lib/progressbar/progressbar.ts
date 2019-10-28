@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, HostBinding, Injectable, Input } fr
 import { getValueInRange } from '../util/util';
 
 @Injectable({ providedIn: 'root' })
-export class XmProgressbarConfig {
+export class NgKitProgressbarConfig {
   max = 100;
   animated = false;
   striped = false;
@@ -21,7 +21,7 @@ export class XmProgressbarConfig {
   templateUrl: './progressbar.component.html',
   styleUrls: ['./progressbar.component.scss'],
 })
-export class XmProgressbarComponent {
+export class NgKitProgressbarComponent {
   _deciamPlaces: string = '2';
   /**
    * Maximal value to be displayed in the progressbar.
@@ -77,7 +77,7 @@ export class XmProgressbarComponent {
     return this.customClass ? this.customClass : '';
   }
 
-  constructor(config: XmProgressbarConfig) {
+  constructor(config: NgKitProgressbarConfig) {
     this.max = config.max;
     this.animated = config.animated;
     this.striped = config.striped;

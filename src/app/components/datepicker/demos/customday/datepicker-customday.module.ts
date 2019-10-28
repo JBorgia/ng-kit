@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { XmDatepickerModule } from 'ng-kit';
+import { NgKitDatepickerModule } from 'ng-kit';
 
 import { DatepickerCustomdayComponent } from './datepicker-customday';
 
@@ -9,7 +9,7 @@ import { DatepickerCustomdayComponent } from './datepicker-customday';
   imports: [
     BrowserModule,
     FormsModule,
-    XmDatepickerModule
+    NgKitDatepickerModule
   ],
   declarations: [DatepickerCustomdayComponent],
   exports: [DatepickerCustomdayComponent],

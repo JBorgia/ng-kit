@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { XmButtonModule } from 'ng-kit';
+import { NgKitButtonModule } from 'ng-kit';
 
 import { IconTextComponent } from './buttons-icon-text.component';
 
@@ -8,7 +8,7 @@ import { IconTextComponent } from './buttons-icon-text.component';
 @NgModule({
   imports: [
     CommonModule,
-    XmButtonModule,
+    NgKitButtonModule,
   ],
   declarations: [
     IconTextComponent

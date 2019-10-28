@@ -12,12 +12,12 @@ import {
 } from '@angular/core';
 
 import { Key } from '../util/key';
-import { XmTabChangeEvent } from './tab-change-event';
+import { NgKitTabChangeEvent } from './tab-change-event';
 
 let nextId = 0;
 
 @Injectable({ providedIn: 'root' })
-export class XmTabsetConfig {
+export class NgKitTabsetConfig {
   justify: 'start' | 'center' | 'end' | 'fill' | 'justified' = 'start';
   type: 'tabs' | 'pills' = 'tabs';
 }
@@ -26,7 +26,7 @@ export class XmTabsetConfig {
  * This directive should be used to wrap tab titles that need to contain HTML markup or other directives.
  */
 @Directive({ selector: 'ng-template[xmTabTitle]' })
-export class XmTabTitleDirective {
+export class NgKitTabTitleDirective {
   constructor(public templateRef: TemplateRef<any>) { }
 }
 
@@ -34,7 +34,7 @@ export class XmTabTitleDirective {
  * This directive must be used to wrap content to be displayed in a tab.
  */
 @Directive({ selector: 'ng-template[xmTabContent]' })
-export class XmTabContentDirective {
+export class NgKitTabContentDirective {
   constructor(public templateRef: TemplateRef<any>) { }
 }
 
@@ -45,13 +45,13 @@ export class XmTabContentDirective {
   /* tslint:disable-next-line:directive-selector */
   selector: 'ng-kit-tab'
 })
-export class XmTabDirective implements AfterContentChecked {
+export class NgKitTabDirective implements AfterContentChecked {
   /**
    * Unique tab identifier. Must be unique for the entire document for proper accessibility support.
    */
   @Input() id = `ng-kit-tab-${nextId++}`;
   /**
-   * Simple (string only) title. Use the "XmTabTitle" directive for more complex use-cases.
+   * Simple (string only) title. Use the "NgKitTabTitle" directive for more complex use-cases.
    */
   @Input() title: string;
   /**
@@ -59,12 +59,12 @@ export class XmTabDirective implements AfterContentChecked {
    */
   @Input() disabled = false;
 
-  titleTpl: XmTabTitleDirective | null;
-  contentTpl: XmTabContentDirective | null;
+  titleTpl: NgKitTabTitleDirective | null;
+  contentTpl: NgKitTabContentDirective | null;
   titleRootNode: HTMLElement;
 
-  @ContentChildren(XmTabTitleDirective, { descendants: false }) titleTpls: QueryList<XmTabTitleDirective>;
-  @ContentChildren(XmTabContentDirective, { descendants: false }) contentTpls: QueryList<XmTabContentDirective>;
+  @ContentChildren(NgKitTabTitleDirective, { descendants: false }) titleTpls: QueryList<NgKitTabTitleDirective>;
+  @ContentChildren(NgKitTabContentDirective, { descendants: false }) contentTpls: QueryList<NgKitTabContentDirective>;
 
   ngAfterContentChecked() {
     // We are using @ContentChildren instead of @ContentChild as in the Angular version being used
@@ -89,10 +89,10 @@ export class XmTabDirective implements AfterContentChecked {
   templateUrl: './tabset.component.html',
   styleUrls: ['./tabset.component.scss']
 })
-export class XmTabsetComponent implements AfterContentChecked {
+export class NgKitTabsetComponent implements AfterContentChecked {
   justifyClass: string;
 
-  @ContentChildren(XmTabDirective) tabs: QueryList<XmTabDirective>;
+  @ContentChildren(NgKitTabDirective) tabs: QueryList<NgKitTabDirective>;
 
   /**
    * An identifier of an initially selected (active) tab. Use the "select" method to switch a tab programmatically.
@@ -124,11 +124,11 @@ export class XmTabsetComponent implements AfterContentChecked {
   @Input() type: 'tabs' | 'pills' | string;
 
   /**
-   * A tab change event fired right before the tab selection happens. See XmTabChangeEvent for payload details
+   * A tab change event fired right before the tab selection happens. See NgKitTabChangeEvent for payload details
    */
-  @Output() tabChange = new EventEmitter<XmTabChangeEvent>();
+  @Output() tabChange = new EventEmitter<NgKitTabChangeEvent>();
 
-  constructor(config: XmTabsetConfig) {
+  constructor(config: NgKitTabsetConfig) {
     this.type = config.type;
     this.justify = config.justify;
   }
@@ -161,7 +161,7 @@ export class XmTabsetComponent implements AfterContentChecked {
   }
 
   onKeydown(keyEvent: KeyboardEvent) {
-    const allTabs: XmTabDirective[] = [];
+    const allTabs: NgKitTabDirective[] = [];
     this.tabs.map(element => { allTabs.push(element); });
     if (keyEvent.keyCode === Key.ArrowLeft) {
       this._previousTab(allTabs);
@@ -199,8 +199,8 @@ export class XmTabsetComponent implements AfterContentChecked {
     }
   }
 
-  private _getTabById(id: string): XmTabDirective {
-    const tabsWithId: XmTabDirective[] = this.tabs.filter(tab => tab.id === id);
+  private _getTabById(id: string): NgKitTabDirective {
+    const tabsWithId: NgKitTabDirective[] = this.tabs.filter(tab => tab.id === id);
     return tabsWithId.length ? tabsWithId[0] : null;
   }
 }

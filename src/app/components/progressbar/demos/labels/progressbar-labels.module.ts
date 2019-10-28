@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { XmProgressbarModule } from 'ng-kit';
+import { NgKitProgressbarModule } from 'ng-kit';
 
 import { ProgressbarLabelsComponent } from './progressbar-labels';
 
 @NgModule({
-  imports: [BrowserModule, XmProgressbarModule],
+  imports: [BrowserModule, NgKitProgressbarModule],
   declarations: [ProgressbarLabelsComponent],
   exports: [ProgressbarLabelsComponent],
   bootstrap: [ProgressbarLabelsComponent]

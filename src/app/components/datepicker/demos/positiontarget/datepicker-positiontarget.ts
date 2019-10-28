@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { XmDateStruct } from 'ng-kit';
+import { NgKitDateStruct } from 'ng-kit';
 
 @Component({
   selector: 'app-datepicker-positiontarget',
@@ -7,6 +7,6 @@ import { XmDateStruct } from 'ng-kit';
   styleUrls: ['./datepicker-positiontarget.scss']
 })
 export class DatepickerPositiontargetComponent {
-  model: XmDateStruct;
+  model: NgKitDateStruct;
   placement = 'bottom';
 }

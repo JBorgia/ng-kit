@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { XmDatepickerModule } from 'ng-kit';
+import { NgKitDatepickerModule } from 'ng-kit';
 
 import { ComponentWrapperComponent } from '../../demo-utility/component-wrapper/component-wrapper.component';
 import { DemosSharedModule } from '../../demo-utility/demos-shared.module';
@@ -136,7 +136,7 @@ export const ROUTES = [
 
 @NgModule({
   imports: [
-    XmDatepickerModule,
+    NgKitDatepickerModule,
     DemosSharedModule,
     ComponentsSharedModule,
     DatepickerBasicModule,

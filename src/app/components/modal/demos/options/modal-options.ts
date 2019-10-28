@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { XmModal } from 'ng-kit';
+import { NgKitModal } from 'ng-kit';
 
 @Component({
   selector: 'app-modal-options',
@@ -11,7 +11,7 @@ export class ModalOptionsComponent {
   closeResult: string;
   modalTitle: string = 'Default title';
 
-  constructor(private modalService: XmModal) { }
+  constructor(private modalService: NgKitModal) { }
 
   openBackDropCustomClass(content) {
     this.modalService.open(content, { backdropClass: 'orange-backdrop' });

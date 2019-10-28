@@ -25,9 +25,6 @@
       "xm/*": [
         "dist/xm/*"
       ],
-      "ng-kit": [
-        "dist/ng-kit"
-      ],
       "ng-kit/*": [
         "dist/ng-kit/*"
       ],

@@ -1,10 +1,10 @@
 /**
  * An interface of the date model used by the datepicker.
  *
- * All datepicker APIs consume `XmDateStruct`, but return `XmDate`.
+ * All datepicker APIs consume `NgKitDateStruct`, but return `NgKitDate`.
  *
  */
-export interface XmDateStruct {
+export interface NgKitDateStruct {
   /**
    * The year, for example 2016
    */

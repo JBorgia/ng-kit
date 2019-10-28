@@ -1,29 +1,29 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { XmCarouselComponent, XmSlideDirective } from './carousel';
+import { NgKitCarouselComponent, NgKitSlideDirective } from './carousel';
 
 export {
-    XmCarouselComponent,
-    XmSlideDirective,
-    XmSlideEvent,
-    XmSlideEventDirection,
-    XmSlideEventSource
+    NgKitCarouselComponent,
+    NgKitSlideDirective,
+    NgKitSlideEvent,
+    NgKitSlideEventDirection,
+    NgKitSlideEventSource
 } from './carousel';
-export { XmCarouselConfig } from './carousel-config';
+export { NgKitCarouselConfig } from './carousel-config';
 
 @NgModule({
     declarations: [
-        XmCarouselComponent,
-        XmSlideDirective
+        NgKitCarouselComponent,
+        NgKitSlideDirective
     ],
     exports: [
-        XmCarouselComponent,
-        XmSlideDirective
+        NgKitCarouselComponent,
+        NgKitSlideDirective
     ],
     imports: [
         CommonModule
     ]
 })
-export class XmCarouselModule {
+export class NgKitCarouselModule {
 }

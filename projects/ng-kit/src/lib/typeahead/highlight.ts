@@ -15,7 +15,7 @@ import { regExpEscape, toString } from '../util/util';
     `</ng-template>`,  // template needs to be formatted in a certain way so we don't add empty text nodes
   styleUrls: ['./highlight.scss']
 })
-export class XmHighlightComponent implements OnChanges {
+export class NgKitHighlightComponent implements OnChanges {
   parts: string[];
 
   /**

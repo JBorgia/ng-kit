@@ -1,14 +1,14 @@
+import { NgKitDate } from './date';
+import { NgKitDateStruct } from './date-struct';
 import { DayTemplateContext } from './datepicker-day-template-context';
-import { XmDate } from './ng-kit-date';
-import { XmDateStruct } from './ng-kit-date-struct';
 
-export type XmMarkDisabled = (date: XmDateStruct, current: { year: number, month: number }) => boolean;
-export type XmDayTemplateData = (date: XmDateStruct, current: { year: number, month: number }) => any;
+export type NgKitMarkDisabled = (date: NgKitDateStruct, current: { year: number, month: number }) => boolean;
+export type NgKitDayTemplateData = (date: NgKitDateStruct, current: { year: number, month: number }) => any;
 
 /* tslint:disable:interface-over-type-literal */
 
 export type DayViewModel = {
-  date: XmDate,
+  date: NgKitDate,
   context: DayTemplateContext,
   tabindex: number,
   ariaLabel: string,
@@ -22,8 +22,8 @@ export type WeekViewModel = {
 };
 
 export type MonthViewModel = {
-  firstDate: XmDate,
-  lastDate: XmDate,
+  firstDate: NgKitDate,
+  lastDate: NgKitDate,
   number: number,
   year: number,
   weeks: WeekViewModel[],
@@ -32,17 +32,17 @@ export type MonthViewModel = {
 
 // clang-format off
 export type DatepickerViewModel = {
-  dayTemplateData?: XmDayTemplateData,
+  dayTemplateData?: NgKitDayTemplateData,
   disabled: boolean,
   displayMonths: number,
-  firstDate?: XmDate,
+  firstDate?: NgKitDate,
   firstDayOfWeek: number,
-  focusDate?: XmDate,
+  focusDate?: NgKitDate,
   focusVisible: boolean,
-  lastDate?: XmDate,
-  markDisabled?: XmMarkDisabled,
-  maxDate?: XmDate,
-  minDate?: XmDate,
+  lastDate?: NgKitDate,
+  markDisabled?: NgKitMarkDisabled,
+  maxDate?: NgKitDate,
+  minDate?: NgKitDate,
   months: MonthViewModel[],
   navigation: 'select' | 'arrows' | 'none',
   outsideDays: 'visible' | 'collapsed' | 'hidden',
@@ -52,7 +52,7 @@ export type DatepickerViewModel = {
     years: number[],
     months: number[]
   },
-  selectedDate: XmDate
+  selectedDate: NgKitDate
 };
 // clang-format on
 

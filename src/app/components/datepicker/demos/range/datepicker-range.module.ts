@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { XmDatepickerModule } from 'ng-kit';
+import { NgKitDatepickerModule } from 'ng-kit';
 
 import { DatepickerRangeComponent } from './datepicker-range';
 
 @NgModule({
   imports: [
     BrowserModule,
-    XmDatepickerModule
+    NgKitDatepickerModule
   ],
   declarations: [DatepickerRangeComponent],
   exports: [DatepickerRangeComponent],

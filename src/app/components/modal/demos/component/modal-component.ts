@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { XmActiveModal, XmModal } from 'ng-kit';
+import { NgKitActiveModal, NgKitModal } from 'ng-kit';
 
 @Component({
   selector: 'app-modal-content',
@@ -50,7 +50,7 @@ eum fugiat quo voluptas nulla pariatur?</p>
 export class ModalContentComponent {
   @Input() name;
 
-  constructor(public activeModal: XmActiveModal) { }
+  constructor(public activeModal: NgKitActiveModal) { }
 }
 
 @Component({
@@ -59,7 +59,7 @@ export class ModalContentComponent {
   styleUrls: ['./modal-component.scss']
 })
 export class ModalComponent {
-  constructor(private modalService: XmModal) { }
+  constructor(private modalService: NgKitModal) { }
 
   open() {
     const modalRef = this.modalService.open(ModalContentComponent);

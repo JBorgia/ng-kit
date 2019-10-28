@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { XmButtonModule, XmTableModule } from 'ng-kit';
+import { NgKitButtonModule, NgKitTableModule } from 'ng-kit';
 
 import { TableBandedComponent } from './table-banded.component';
 
 @NgModule({
   imports: [
     BrowserModule,
-    XmButtonModule,
-    XmTableModule
+    NgKitButtonModule,
+    NgKitTableModule
   ],
   declarations: [
     TableBandedComponent

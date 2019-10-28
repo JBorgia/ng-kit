@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, HostBinding, Input, ViewEncapsulation } from '@angular/core';
 
-import { XmDatepickerI18n } from './datepicker-i18n';
-import { XmDate } from './ng-kit-date';
+import { NgKitDate } from './date';
+import { NgKitDatepickerI18n } from './datepicker-i18n';
 
 @Component({
   selector: 'ng-kit-datepicker-day-view, [xmDatepickerDayView]',
@@ -10,9 +10,9 @@ import { XmDate } from './ng-kit-date';
   styleUrls: ['./datepicker-day-view.scss'],
   template: `{{ i18n.getDayNumerals(date) }}`
 })
-export class XmDatepickerDayViewComponent {
+export class NgKitDatepickerDayViewComponent {
   @Input() currentMonth: number;
-  @Input() date: XmDate;
+  @Input() date: NgKitDate;
   @Input() disabled: boolean;
   @Input() selected: boolean;
 
@@ -22,7 +22,7 @@ export class XmDatepickerDayViewComponent {
   @HostBinding('class.active') @Input() focused: boolean;
   @HostBinding('class.active-date') get bgPrimary() { return this.selected; }
 
-  constructor(public i18n: XmDatepickerI18n) { }
+  constructor(public i18n: NgKitDatepickerI18n) { }
 
   isMuted() { return !this.selected && (this.date.month !== this.currentMonth || this.disabled); }
 }

@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
-import { XmModal, XmModalConfig } from 'ng-kit';
+import { NgKitModal, NgKitModalConfig } from 'ng-kit';
 
 @Component({
   selector: 'app-modal-config',
   templateUrl: './modal-config.html',
-  // add XmModalConfig and XmModal to the component providers
+  // add NgKitModalConfig and NgKitModal to the component providers
   providers: [
-    XmModalConfig,
-    XmModal
+    NgKitModalConfig,
+    NgKitModal
   ]
 })
 export class ModalConfigComponent {
-  constructor(config: XmModalConfig, private modalService: XmModal) {
+  constructor(config: NgKitModalConfig, private modalService: NgKitModal) {
     // customize default values of modals used by this component tree
     config.backdrop = 'static';
     config.keyboard = false;

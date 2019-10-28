@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { XmCalendar, XmDateStruct } from 'ng-kit';
+import { NgKitCalendar, NgKitDateStruct } from 'ng-kit';
 
 @Component({
   selector: 'app-datepicker-basic',
@@ -8,10 +8,10 @@ import { XmCalendar, XmDateStruct } from 'ng-kit';
 })
 export class DatepickerBasicComponent {
 
-  model: XmDateStruct;
+  model: NgKitDateStruct;
   date: { year: number, month: number };
 
-  constructor(private calendar: XmCalendar) {
+  constructor(private calendar: NgKitCalendar) {
   }
 
   selectToday() {

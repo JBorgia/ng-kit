@@ -28,12 +28,12 @@ import { PlacementArray, positionElements } from '../util/positioning';
 import { listenToTriggers } from '../util/triggers';
 
 /**
- * Configuration service for the XmTooltip directive.
+ * Configuration service for the NgKitTooltip directive.
  * You can inject this service, typically in your root component, and customize the values of its properties in
  * order to provide default values for all the tooltips used in the application.
  */
 @Injectable({ providedIn: 'root' })
-export class XmTooltipConfig {
+export class NgKitTooltipConfig {
   autoClose: boolean | 'inside' | 'outside' = true;
   placement: PlacementArray = 'auto';
   triggers = 'hover focus';
@@ -52,7 +52,7 @@ let nextId = 0;
   templateUrl: './tooltip.component.html',
   styleUrls: ['./tooltip.component.scss']
 })
-export class XmTooltipWindowComponent {
+export class NgKitTooltipWindowComponent {
   @Input() tooltipClass: string;
 
   @HostBinding('attr.role') role = 'tooltip';
@@ -69,7 +69,7 @@ export class XmTooltipWindowComponent {
  * A lightweight, extensible directive for fancy tooltip creation.
  */
 @Directive({ selector: '[xmTooltip]', exportAs: 'xmTooltip' })
-export class XmTooltipDirective implements OnInit, OnDestroy {
+export class NgKitTooltipDirective implements OnInit, OnDestroy {
   /**
    * Indicates whether the tooltip should be closed on Escape key and inside/outside clicks.
    *
@@ -133,14 +133,14 @@ export class XmTooltipDirective implements OnInit, OnDestroy {
 
   private _xmTooltip: string | TemplateRef<any>;
   private _xmTooltipWindowId = `ng-kit-tooltip-${nextId++}`;
-  private _popupService: PopupService<XmTooltipWindowComponent>;
-  private _windowRef: ComponentRef<XmTooltipWindowComponent>;
+  private _popupService: PopupService<NgKitTooltipWindowComponent>;
+  private _windowRef: ComponentRef<NgKitTooltipWindowComponent>;
   private _unregisterListenersFn;
   private _zoneSubscription: any;
 
   constructor(
     private _elementRef: ElementRef<HTMLElement>, private _renderer: Renderer2, injector: Injector,
-    componentFactoryResolver: ComponentFactoryResolver, viewContainerRef: ViewContainerRef, config: XmTooltipConfig,
+    componentFactoryResolver: ComponentFactoryResolver, viewContainerRef: ViewContainerRef, config: NgKitTooltipConfig,
     private _ngZone: NgZone, @Inject(DOCUMENT) private _document: any, private _changeDetector: ChangeDetectorRef) {
     this.autoClose = config.autoClose;
     this.placement = config.placement;
@@ -150,8 +150,8 @@ export class XmTooltipDirective implements OnInit, OnDestroy {
     this.tooltipClass = config.tooltipClass;
     this.openDelay = config.openDelay;
     this.closeDelay = config.closeDelay;
-    this._popupService = new PopupService<XmTooltipWindowComponent>(
-      XmTooltipWindowComponent, injector, viewContainerRef, _renderer, componentFactoryResolver);
+    this._popupService = new PopupService<NgKitTooltipWindowComponent>(
+      NgKitTooltipWindowComponent, injector, viewContainerRef, _renderer, componentFactoryResolver);
 
     this._zoneSubscription = _ngZone.onStable.subscribe(() => {
       if (this._windowRef) {

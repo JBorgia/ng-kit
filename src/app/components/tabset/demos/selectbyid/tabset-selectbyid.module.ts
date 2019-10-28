@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { XmButtonModule, XmTabsetModule } from 'ng-kit';
+import { NgKitButtonModule, NgKitTabsetModule } from 'ng-kit';
 
 import { TabsetSelectbyidComponent } from './tabset-selectbyid';
 
 @NgModule({
-  imports: [BrowserModule, XmTabsetModule, XmButtonModule],
+  imports: [BrowserModule, NgKitTabsetModule, NgKitButtonModule],
   declarations: [TabsetSelectbyidComponent],
   exports: [TabsetSelectbyidComponent],
   bootstrap: [TabsetSelectbyidComponent]

@@ -1,14 +1,14 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-import { XmMenuItem } from './sidebar';
+import { NgKitMenuItem } from './sidebar';
 
 @Component({
   selector: 'li[ng-kit-sidebar]',
   templateUrl: './sidebar-li.component.html',
   styleUrls: ['./sidebar-li.component.scss'],
 })
-export class XmLiComponent implements OnInit {
-  @Input() menuItem: XmMenuItem;
+export class NgKitLiComponent implements OnInit {
+  @Input() menuItem: NgKitMenuItem;
   @Input() selectedItem: string;
   @Input() itemIndex;
   @Output() itemSelected = new EventEmitter<any>();
@@ -23,11 +23,11 @@ export class XmLiComponent implements OnInit {
     this.setColor(this.menuItem.color);
   }
 
-  emitItemClicked(menuItem: XmMenuItem) {
+  emitItemClicked(menuItem: NgKitMenuItem) {
     this.itemSelected.emit(menuItem);
   }
 
-  emitSubItemClicked(index, subMenuItem: XmMenuItem) {
+  emitSubItemClicked(index, subMenuItem: NgKitMenuItem) {
     this.subItemSelected.emit({
       index,
       ...subMenuItem

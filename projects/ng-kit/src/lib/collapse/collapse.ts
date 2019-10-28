@@ -6,13 +6,13 @@ import { Component, Directive, forwardRef, HostBinding, HostListener, Inject, In
   styleUrls: ['./collapse-content.component.scss'],
   exportAs: 'xmCollapseContent',
 })
-export class XmCollapseContentComponent implements OnInit {
+export class NgKitCollapseContentComponent implements OnInit {
 
   @HostBinding('class.open') get show() { return this.content.isOpen(); }
 
   constructor(
     /* tslint:disable-next-line:no-use-before-declare */
-    @Inject(forwardRef(() => XmCollapseComponent)) public content,
+    @Inject(forwardRef(() => NgKitCollapseComponent)) public content,
   ) { }
 
   ngOnInit(): void { }
@@ -23,7 +23,7 @@ export class XmCollapseContentComponent implements OnInit {
   /* tslint:disable-next-line:directive-selector */
   selector: '[xmCollapseToggle]',
 })
-export class XmCollapseToggleDirective {
+export class NgKitCollapseToggleDirective {
 
   @HostListener('click') onClick() {
     this.toggleOpen();
@@ -31,7 +31,7 @@ export class XmCollapseToggleDirective {
 
   constructor(
     /* tslint:disable-next-line:no-use-before-declare */
-    @Inject(forwardRef(() => XmCollapseComponent)) public content,
+    @Inject(forwardRef(() => NgKitCollapseComponent)) public content,
   ) { }
 
   toggleOpen() {
@@ -48,7 +48,7 @@ export class XmCollapseToggleDirective {
   styleUrls: ['./collapse.component.scss'],
   exportAs: 'xmCollapse',
 })
-export class XmCollapseComponent implements OnInit {
+export class NgKitCollapseComponent implements OnInit {
 
   @Input() collapsedContent;
 

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { XmButtonModule } from 'ng-kit';
+import { NgKitButtonModule } from 'ng-kit';
 
 import { ButtonsIconComponent } from './buttons-icon.component';
 
@@ -9,7 +9,7 @@ import { ButtonsIconComponent } from './buttons-icon.component';
   imports: [
     BrowserModule,
     FormsModule,
-    XmButtonModule
+    NgKitButtonModule
   ],
   declarations: [
     ButtonsIconComponent

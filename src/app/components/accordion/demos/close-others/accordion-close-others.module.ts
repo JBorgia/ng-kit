@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { XmAccordionModule, XmButtonModule } from 'ng-kit';
+import { NgKitAccordionModule, NgKitButtonModule } from 'ng-kit';
 
 import { AccordionCloseOthersComponent } from './accordion-close-others.component';
 
@@ -8,8 +8,8 @@ import { AccordionCloseOthersComponent } from './accordion-close-others.componen
 @NgModule({
   imports: [
     BrowserModule,
-    XmButtonModule,
-    XmAccordionModule,
+    NgKitButtonModule,
+    NgKitAccordionModule,
   ],
   declarations: [
     AccordionCloseOthersComponent

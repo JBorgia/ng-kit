@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ModalDismissReasons, XmModal } from 'ng-kit';
+import { ModalDismissReasons, NgKitModal } from 'ng-kit';
 
 @Component({
   selector: 'app-modal-basic',
@@ -9,7 +9,7 @@ import { ModalDismissReasons, XmModal } from 'ng-kit';
 export class ModalBasicComponent {
   closeResult: string;
 
-  constructor(private modalService: XmModal) { }
+  constructor(private modalService: NgKitModal) { }
 
   open(content) {
     this.modalService.open(content, {

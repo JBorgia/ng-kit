@@ -1,20 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { XmFocusDirective } from './focus.directive';
-import { XmResizedEventModule } from './resize/resize-event.module';
+import { NgKitFocusDirective } from './focus.directive';
+import { NgKitResizedEventModule } from './resize/resize-event.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    XmResizedEventModule,
+    NgKitResizedEventModule,
   ],
   declarations: [
-    XmFocusDirective,
+    NgKitFocusDirective,
   ],
   exports: [
-    XmFocusDirective,
-    XmResizedEventModule,
+    NgKitFocusDirective,
+    NgKitResizedEventModule,
   ],
 })
-export class XmDirectivesModule { }
+export class NgKitDirectivesModule { }

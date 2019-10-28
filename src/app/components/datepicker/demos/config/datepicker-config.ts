@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { XmCalendar, XmDate, XmDatepickerConfig, XmDateStruct } from 'ng-kit';
+import { NgKitCalendar, NgKitDate, NgKitDatepickerConfig, NgKitDateStruct } from 'ng-kit';
 
 @Component({
   selector: 'app-datepicker-config',
@@ -9,13 +9,13 @@ import { XmCalendar, XmDate, XmDatepickerConfig, XmDateStruct } from 'ng-kit';
       margin-bottom: 1em;
     }
   `],
-  providers: [XmDatepickerConfig] // add XmDatepickerConfig to the component providers
+  providers: [NgKitDatepickerConfig] // add NgKitDatepickerConfig to the component providers
 })
 export class DatepickerConfigComponent {
 
-  model: XmDateStruct;
+  model: NgKitDateStruct;
 
-  constructor(config: XmDatepickerConfig, calendar: XmCalendar) {
+  constructor(config: NgKitDatepickerConfig, calendar: NgKitCalendar) {
     // customize default values of datepickers used by this component tree
     config.minDate = { year: 1900, month: 1, day: 1 };
     config.maxDate = { year: 2099, month: 12, day: 31 };
@@ -24,6 +24,6 @@ export class DatepickerConfigComponent {
     config.outsideDays = 'hidden';
 
     // weekends are disabled
-    config.markDisabled = (date: XmDate) => calendar.getWeekday(date) >= 6;
+    config.markDisabled = (date: NgKitDate) => calendar.getWeekday(date) >= 6;
   }
 }

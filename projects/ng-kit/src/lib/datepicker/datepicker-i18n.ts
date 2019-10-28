@@ -1,7 +1,7 @@
 import { formatDate, FormStyle, getLocaleDayNames, getLocaleMonthNames, TranslationWidth } from '@angular/common';
 import { Inject, Injectable, LOCALE_ID } from '@angular/core';
 
-import { XmDateStruct } from './ng-kit-date-struct';
+import { NgKitDateStruct } from './date-struct';
 
 /**
  * A service supplying i18n data to the datepicker component.
@@ -17,7 +17,7 @@ import { XmDateStruct } from './ng-kit-date-struct';
  * a custom provider for i18n.
  */
 @Injectable({ providedIn: 'root', useFactory: XM_DATEPICKER_18N_FACTORY, deps: [LOCALE_ID] })
-export abstract class XmDatepickerI18n {
+export abstract class NgKitDatepickerI18n {
   /**
    * Returns the short weekday name to display in the heading of the month view.
    *
@@ -44,14 +44,14 @@ export abstract class XmDatepickerI18n {
    *
    * @since 2.0.0
    */
-  abstract getDayAriaLabel(date: XmDateStruct): string;
+  abstract getDayAriaLabel(date: NgKitDateStruct): string;
 
   /**
    * Returns the textual representation of a day that is rendered in a day cell.
    *
    * @since 3.0.0
    */
-  getDayNumerals(date: XmDateStruct): string { return `${date.day}`; }
+  getDayNumerals(date: NgKitDateStruct): string { return `${date.day}`; }
 
   /**
    * Returns the textual representation of a week number rendered by datepicker.
@@ -70,7 +70,7 @@ export abstract class XmDatepickerI18n {
 
 
 @Injectable()
-export class XmDatepickerI18nDefault extends XmDatepickerI18n {
+export class NgKitDatepickerI18nDefault extends NgKitDatepickerI18n {
   private _weekdaysShort: Array<string>;
   private _monthsShort: Array<string>;
   private _monthsFull: Array<string>;
@@ -91,12 +91,12 @@ export class XmDatepickerI18nDefault extends XmDatepickerI18n {
 
   getMonthFullName(month: number): string { return this._monthsFull[month - 1]; }
 
-  getDayAriaLabel(date: XmDateStruct): string {
+  getDayAriaLabel(date: NgKitDateStruct): string {
     const jsDate = new Date(date.year, date.month - 1, date.day);
     return formatDate(jsDate, 'fullDate', this._locale);
   }
 }
 
 export function XM_DATEPICKER_18N_FACTORY(locale) {
-  return new XmDatepickerI18nDefault(locale);
+  return new NgKitDatepickerI18nDefault(locale);
 }

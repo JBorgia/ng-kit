@@ -3,7 +3,10 @@ import { Observable, Subject } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
 import { isInteger, toInteger } from '../util/util';
-import { XmDatepickerI18n } from './datepicker-i18n';
+import { NgKitCalendar, NgKitPeriod } from './calendar';
+import { NgKitDate } from './date';
+import { NgKitDateStruct } from './date-struct';
+import { NgKitDatepickerI18n } from './datepicker-i18n';
 import {
   buildMonths,
   checkDateInRange,
@@ -15,16 +18,13 @@ import {
   nextMonthDisabled,
   prevMonthDisabled,
 } from './datepicker-tools';
-import { DatepickerViewModel, XmDayTemplateData, XmMarkDisabled } from './datepicker-view-model';
-import { XmCalendar, XmPeriod } from './ng-kit-calendar';
-import { XmDate } from './ng-kit-date';
-import { XmDateStruct } from './ng-kit-date-struct';
+import { DatepickerViewModel, NgKitDayTemplateData, NgKitMarkDisabled } from './datepicker-view-model';
 
 @Injectable()
-export class XmDatepickerService {
+export class NgKitDatepickerService {
   private _model$ = new Subject<DatepickerViewModel>();
 
-  private _select$ = new Subject<XmDate>();
+  private _select$ = new Subject<NgKitDate>();
 
   private _state: DatepickerViewModel = {
     disabled: false,
@@ -42,9 +42,9 @@ export class XmDatepickerService {
 
   get model$(): Observable<DatepickerViewModel> { return this._model$.pipe(filter(model => model.months.length > 0)); }
 
-  get select$(): Observable<XmDate> { return this._select$.pipe(filter(date => date !== null)); }
+  get select$(): Observable<NgKitDate> { return this._select$.pipe(filter(date => date !== null)); }
 
-  set dayTemplateData(dayTemplateData: XmDayTemplateData) {
+  set dayTemplateData(dayTemplateData: NgKitDayTemplateData) {
     if (this._state.dayTemplateData !== dayTemplateData) {
       this._nextState({ dayTemplateData });
     }
@@ -76,20 +76,20 @@ export class XmDatepickerService {
     }
   }
 
-  set maxDate(date: XmDate) {
+  set maxDate(date: NgKitDate) {
     const maxDate = this.toValidDate(date, null);
     if (isChangedDate(this._state.maxDate, maxDate)) {
       this._nextState({ maxDate });
     }
   }
 
-  set markDisabled(markDisabled: XmMarkDisabled) {
+  set markDisabled(markDisabled: NgKitMarkDisabled) {
     if (this._state.markDisabled !== markDisabled) {
       this._nextState({ markDisabled });
     }
   }
 
-  set minDate(date: XmDate) {
+  set minDate(date: NgKitDate) {
     const minDate = this.toValidDate(date, null);
     if (isChangedDate(this._state.minDate, minDate)) {
       this._nextState({ minDate });
@@ -108,15 +108,15 @@ export class XmDatepickerService {
     }
   }
 
-  constructor(private _calendar: XmCalendar, private _i18n: XmDatepickerI18n) { }
+  constructor(private _calendar: NgKitCalendar, private _i18n: NgKitDatepickerI18n) { }
 
-  focus(date: XmDate) {
+  focus(date: NgKitDate) {
     if (!this._state.disabled && this._calendar.isValid(date) && isChangedDate(this._state.focusDate, date)) {
       this._nextState({ focusDate: date });
     }
   }
 
-  focusMove(period?: XmPeriod, number?: number) {
+  focusMove(period?: NgKitPeriod, number?: number) {
     this.focus(this._calendar.getNext(this._state.focusDate, period, number));
   }
 
@@ -126,7 +126,7 @@ export class XmDatepickerService {
     }
   }
 
-  open(date: XmDate) {
+  open(date: NgKitDate) {
     const firstDate = this.toValidDate(date, this._calendar.getToday());
     if (!this._state.disabled) {
       this._nextState({ firstDate });
@@ -135,7 +135,7 @@ export class XmDatepickerService {
 
   reset(state: DatepickerViewModel) { this._state = state; }
 
-  select(date: XmDate, options: { emitEvent?: boolean } = {}) {
+  select(date: NgKitDate, options: { emitEvent?: boolean } = {}) {
     const selectedDate = this.toValidDate(date, null);
     if (!this._state.disabled) {
       if (isChangedDate(this._state.selectedDate, selectedDate)) {
@@ -148,8 +148,8 @@ export class XmDatepickerService {
     }
   }
 
-  toValidDate(date: XmDateStruct, defaultValue?: XmDate): XmDate {
-    const xmDate = XmDate.from(date);
+  toValidDate(date: NgKitDateStruct, defaultValue?: NgKitDate): NgKitDate {
+    const xmDate = NgKitDate.from(date);
     if (defaultValue === undefined) {
       defaultValue = this._calendar.getToday();
     }

@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { XmAccordionModule, XmButtonModule } from 'ng-kit';
+import { NgKitAccordionModule, NgKitButtonModule } from 'ng-kit';
 
 import { AccordionDefaultComponent } from './accordion-default.component';
 
 @NgModule({
   imports: [
     BrowserModule,
-    XmButtonModule,
-    XmAccordionModule,
+    NgKitButtonModule,
+    NgKitAccordionModule,
   ],
   declarations: [
     AccordionDefaultComponent

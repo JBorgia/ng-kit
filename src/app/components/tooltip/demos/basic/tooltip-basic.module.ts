@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { XmButtonModule, XmTooltipModule } from 'ng-kit';
+import { NgKitButtonModule, NgKitTooltipModule } from 'ng-kit';
 
 import { TooltipBasicComponent } from './tooltip-basic';
 
@@ -9,8 +9,8 @@ import { TooltipBasicComponent } from './tooltip-basic';
   imports: [
     BrowserModule,
     FormsModule,
-    XmTooltipModule,
-    XmButtonModule,
+    NgKitTooltipModule,
+    NgKitButtonModule,
   ],
   declarations: [TooltipBasicComponent],
   exports: [TooltipBasicComponent],

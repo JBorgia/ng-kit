@@ -1,15 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { XmDirectivesModule } from '../directives/directives.module';
-import { XmPreloaderComponent } from './preloader';
+import { NgKitDirectivesModule } from '../directives/directives.module';
+import { NgKitPreloaderComponent } from './preloader';
 
 @NgModule({
   imports: [
     CommonModule,
-    XmDirectivesModule
+    NgKitDirectivesModule
   ],
-  declarations: [XmPreloaderComponent],
-  exports: [XmPreloaderComponent]
+  declarations: [NgKitPreloaderComponent],
+  exports: [NgKitPreloaderComponent]
 })
-export class XmPreloaderModule { }
+export class NgKitPreloaderModule { }

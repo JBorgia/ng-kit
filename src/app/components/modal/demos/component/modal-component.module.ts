@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { XmButtonModule, XmModalModule } from 'ng-kit';
+import { NgKitButtonModule, NgKitModalModule } from 'ng-kit';
 
 import { ModalComponent, ModalContentComponent } from './modal-component';
 
 @NgModule({
   imports: [
     BrowserModule,
-    XmModalModule,
-    XmButtonModule,
+    NgKitModalModule,
+    NgKitButtonModule,
   ],
   declarations: [
     ModalComponent,

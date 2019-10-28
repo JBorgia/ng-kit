@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-import { XmMenuItem } from './sidebar';
+import { NgKitMenuItem } from './sidebar';
 
 
 
@@ -9,8 +9,8 @@ import { XmMenuItem } from './sidebar';
   templateUrl: './sidebar-sub-li.component.html',
   styleUrls: ['./sidebar-sub-li.component.scss'],
 })
-export class XmSubLiComponent implements OnInit {
-  @Input() menuItem: XmMenuItem;
+export class NgKitSubLiComponent implements OnInit {
+  @Input() menuItem: NgKitMenuItem;
   @Input() selectedItem: string;
   @Input() showMinisidebar: boolean;
   @Output() subItemSelected = new EventEmitter<any>();

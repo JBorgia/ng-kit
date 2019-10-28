@@ -1,26 +1,26 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { XmDirectivesModule } from '../directives/directives.module';
-import { XmSidebarComponent } from './sidebar';
-import { XmLiComponent } from './sidebar-li.component';
-import { XmSubLiComponent } from './sidebar-sub-li.component';
+import { NgKitDirectivesModule } from '../directives/directives.module';
+import { NgKitSidebarComponent } from './sidebar';
+import { NgKitLiComponent } from './sidebar-li.component';
+import { NgKitSubLiComponent } from './sidebar-sub-li.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    XmDirectivesModule,
+    NgKitDirectivesModule,
   ],
   declarations: [
-    XmSidebarComponent,
-    XmLiComponent,
-    XmSubLiComponent
+    NgKitSidebarComponent,
+    NgKitLiComponent,
+    NgKitSubLiComponent
   ],
   exports: [
-    XmSidebarComponent,
-    XmLiComponent,
-    XmSubLiComponent,
+    NgKitSidebarComponent,
+    NgKitLiComponent,
+    NgKitSubLiComponent,
   ],
   providers: []
 })
-export class XmSidebarModule { }
+export class NgKitSidebarModule { }

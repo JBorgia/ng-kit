@@ -22,7 +22,7 @@ import {
 import { BehaviorSubject, combineLatest, NEVER, Subject, timer } from 'rxjs';
 import { distinctUntilChanged, map, startWith, switchMap, takeUntil } from 'rxjs/operators';
 
-import { XmCarouselConfig } from './carousel-config';
+import { NgKitCarouselConfig } from './carousel-config';
 
 let nextId = 0;
 
@@ -30,7 +30,7 @@ let nextId = 0;
  * A directive that wraps the individual carousel slide.
  */
 @Directive({ selector: 'ng-template[xmSlide]' })
-export class XmSlideDirective {
+export class NgKitSlideDirective {
   /**
    * Slide id that must be unique for the entire document.
    *
@@ -59,17 +59,17 @@ export class XmSlideDirective {
     'class': 'carousel slide',
     '[style.display]': '"block"',
     'tabIndex': '0',
-    '(keydown.arrowLeft)': 'keyboard && prev(XmSlideEventSource.ARROW_LEFT)',
-    '(keydown.arrowRight)': 'keyboard && next(XmSlideEventSource.ARROW_RIGHT)'
+    '(keydown.arrowLeft)': 'keyboard && prev(NgKitSlideEventSource.ARROW_LEFT)',
+    '(keydown.arrowRight)': 'keyboard && next(NgKitSlideEventSource.ARROW_RIGHT)'
   },
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss']
 })
-export class XmCarouselComponent implements AfterContentChecked,
+export class NgKitCarouselComponent implements AfterContentChecked,
   AfterContentInit, OnDestroy {
-  @ContentChildren(XmSlideDirective) slides: QueryList<XmSlideDirective>;
+  @ContentChildren(NgKitSlideDirective) slides: QueryList<NgKitSlideDirective>;
 
-  public XmSlideEventSource = XmSlideEventSource;
+  public NgKitSlideEventSource = NgKitSlideEventSource;
 
   private _destroy$ = new Subject<void>();
   private _interval$ = new BehaviorSubject(0);
@@ -139,12 +139,12 @@ export class XmCarouselComponent implements AfterContentChecked,
   /**
    * An event emitted right after the slide transition is completed.
    *
-   * See [`XmSlideEvent`](#/components/carousel/api#XmSlideEvent) for payload details.
+   * See [`NgKitSlideEvent`](#/components/carousel/api#NgKitSlideEvent) for payload details.
    */
-  @Output() slide = new EventEmitter<XmSlideEvent>();
+  @Output() slide = new EventEmitter<NgKitSlideEvent>();
 
   constructor(
-    config: XmCarouselConfig, @Inject(PLATFORM_ID) private _platformId, private _ngZone: NgZone,
+    config: NgKitCarouselConfig, @Inject(PLATFORM_ID) private _platformId, private _ngZone: NgZone,
     private _cd: ChangeDetectorRef, private element: ElementRef) {
     this.interval = config.interval;
     this.wrap = config.wrap;
@@ -186,7 +186,7 @@ export class XmCarouselComponent implements AfterContentChecked,
 
             distinctUntilChanged(), switchMap(interval => interval > 0 ? timer(interval, interval) : NEVER),
             takeUntil(this._destroy$))
-          .subscribe(() => this._ngZone.run(() => this.next(XmSlideEventSource.TIMER)));
+          .subscribe(() => this._ngZone.run(() => this.next(NgKitSlideEventSource.TIMER)));
       });
     }
 
@@ -203,22 +203,22 @@ export class XmCarouselComponent implements AfterContentChecked,
   /**
    * Navigates to a slide with the specified identifier.
    */
-  select(slideId: string, source?: XmSlideEventSource) {
+  select(slideId: string, source?: NgKitSlideEventSource) {
     this._cycleToSelected(slideId, this._getSlideEventDirection(this.activeId, slideId), source);
   }
 
   /**
    * Navigates to the previous slide.
    */
-  prev(source?: XmSlideEventSource) {
-    this._cycleToSelected(this._getPrevSlide(this.activeId), XmSlideEventDirection.RIGHT, source);
+  prev(source?: NgKitSlideEventSource) {
+    this._cycleToSelected(this._getPrevSlide(this.activeId), NgKitSlideEventDirection.RIGHT, source);
   }
 
   /**
    * Navigates to the next slide.
    */
-  next(source?: XmSlideEventSource) {
-    this._cycleToSelected(this._getNextSlide(this.activeId), XmSlideEventDirection.LEFT, source);
+  next(source?: NgKitSlideEventSource) {
+    this._cycleToSelected(this._getNextSlide(this.activeId), NgKitSlideEventDirection.LEFT, source);
   }
 
   /**
@@ -231,7 +231,7 @@ export class XmCarouselComponent implements AfterContentChecked,
    */
   cycle() { this._pause$.next(false); }
 
-  private _cycleToSelected(slideIdx: string, direction: XmSlideEventDirection, source?: XmSlideEventSource) {
+  private _cycleToSelected(slideIdx: string, direction: NgKitSlideEventDirection, source?: NgKitSlideEventSource) {
     const selectedSlide = this._getSlideById(slideIdx);
     if (selectedSlide && selectedSlide.id !== this.activeId) {
       this.slide.emit({
@@ -249,14 +249,14 @@ export class XmCarouselComponent implements AfterContentChecked,
     this._cd.markForCheck();
   }
 
-  private _getSlideEventDirection(currentActiveSlideId: string, nextActiveSlideId: string): XmSlideEventDirection {
+  private _getSlideEventDirection(currentActiveSlideId: string, nextActiveSlideId: string): NgKitSlideEventDirection {
     const currentActiveSlideIdx = this._getSlideIdxById(currentActiveSlideId);
     const nextActiveSlideIdx = this._getSlideIdxById(nextActiveSlideId);
 
-    return currentActiveSlideIdx > nextActiveSlideIdx ? XmSlideEventDirection.RIGHT : XmSlideEventDirection.LEFT;
+    return currentActiveSlideIdx > nextActiveSlideIdx ? NgKitSlideEventDirection.RIGHT : NgKitSlideEventDirection.LEFT;
   }
 
-  private _getSlideById(slideId: string): XmSlideDirective {
+  private _getSlideById(slideId: string): NgKitSlideDirective {
     return this.slides.find(slide => {
       return slide.id === slideId
     });
@@ -288,7 +288,7 @@ export class XmCarouselComponent implements AfterContentChecked,
 /**
  * A slide change event emitted right after the slide transition is completed.
  */
-export interface XmSlideEvent {
+export interface NgKitSlideEvent {
   /**
    * The previous slide id.
    */
@@ -304,7 +304,7 @@ export interface XmSlideEvent {
    *
    * Possible values are `'left' | 'right'`.
    */
-  direction: XmSlideEventDirection;
+  direction: NgKitSlideEventDirection;
 
   /**
    * Whether the pause() method was called (and no cycle() call was done afterwards).
@@ -320,7 +320,7 @@ export interface XmSlideEvent {
    *
    * @since 5.1.0
    */
-  source?: XmSlideEventSource;
+  source?: NgKitSlideEventSource;
 
   /**
   * Source carousel native element.
@@ -337,12 +337,12 @@ export interface XmSlideEvent {
 /**
  * Defines the carousel slide transition direction.
  */
-export enum XmSlideEventDirection {
+export enum NgKitSlideEventDirection {
   LEFT = <any>'left',
   RIGHT = <any>'right'
 }
 
-export enum XmSlideEventSource {
+export enum NgKitSlideEventSource {
   TIMER = 'timer',
   ARROW_LEFT = 'arrowLeft',
   ARROW_RIGHT = 'arrowRight',

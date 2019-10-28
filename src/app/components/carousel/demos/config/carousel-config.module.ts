@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { XmCarouselModule } from 'ng-kit';
+import { NgKitCarouselModule } from 'ng-kit';
 
 import { CarouselConfigComponent } from './carousel-config';
 
 @NgModule({
-  imports: [BrowserModule, XmCarouselModule],
+  imports: [BrowserModule, NgKitCarouselModule],
   declarations: [CarouselConfigComponent],
   exports: [CarouselConfigComponent],
   bootstrap: [CarouselConfigComponent]

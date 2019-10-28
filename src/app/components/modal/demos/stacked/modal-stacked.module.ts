@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { XmButtonModule, XmModalModule } from 'ng-kit';
+import { NgKitButtonModule, NgKitModalModule } from 'ng-kit';
 
 import { Modal1ContentComponent, Modal2ContentComponent, ModalStackedComponent } from './modal-stacked';
 
 @NgModule({
   imports: [
     BrowserModule,
-    XmModalModule,
-    XmButtonModule,
+    NgKitModalModule,
+    NgKitButtonModule,
   ],
   declarations: [
     ModalStackedComponent,

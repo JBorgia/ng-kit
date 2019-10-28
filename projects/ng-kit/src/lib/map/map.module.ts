@@ -1,18 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { XmMapComponent } from './map';
+import { NgKitMapComponent } from './map';
 
 @NgModule({
   imports: [
     CommonModule,
   ],
   declarations: [
-    XmMapComponent
+    NgKitMapComponent
   ],
   exports: [
-    XmMapComponent
+    NgKitMapComponent
   ],
   providers: []
 })
-export class XmMapModule { }
+export class NgKitMapModule { }

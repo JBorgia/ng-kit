@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
 
-import { XmDatepickerI18n } from './datepicker-i18n';
+import { NgKitDate } from './date';
+import { NgKitDatepickerI18n } from './datepicker-i18n';
 import { MonthViewModel, NavigationEvent } from './datepicker-view-model';
-import { XmDate } from './ng-kit-date';
 
 @Component({
   selector: 'ng-kit-datepicker-navigation',
@@ -41,10 +41,10 @@ import { XmDate } from './ng-kit-date';
     </div>
     `
 })
-export class XmDatepickerNavigationComponent {
+export class NgKitDatepickerNavigationComponent {
   navigation = NavigationEvent;
 
-  @Input() date: XmDate;
+  @Input() date: NgKitDate;
   @Input() disabled: boolean;
   @Input() months: MonthViewModel[] = [];
   @Input() showSelect: boolean;
@@ -53,7 +53,7 @@ export class XmDatepickerNavigationComponent {
   @Input() selectBoxes: { years: number[], months: number[] };
 
   @Output() navigate = new EventEmitter<NavigationEvent>();
-  @Output() select = new EventEmitter<XmDate>();
+  @Output() select = new EventEmitter<NgKitDate>();
 
-  constructor(public i18n: XmDatepickerI18n) { }
+  constructor(public i18n: NgKitDatepickerI18n) { }
 }

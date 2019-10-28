@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { XmButtonModule, XmTooltipModule } from 'ng-kit';
+import { NgKitButtonModule, NgKitTooltipModule } from 'ng-kit';
 
 import { TooltipCustomclassComponent } from './tooltip-custom-class';
 
@@ -9,8 +9,8 @@ import { TooltipCustomclassComponent } from './tooltip-custom-class';
   imports: [
     BrowserModule,
     FormsModule,
-    XmTooltipModule,
-    XmButtonModule,
+    NgKitTooltipModule,
+    NgKitButtonModule,
   ],
   declarations: [TooltipCustomclassComponent],
   exports: [TooltipCustomclassComponent],

@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 
 import { Key } from '../util/key';
-import { XmDatepickerService } from './datepicker-service';
-import { XmCalendar } from './ng-kit-calendar';
-import { XmDate } from './ng-kit-date';
+import { NgKitCalendar } from './calendar';
+import { NgKitDate } from './date';
+import { NgKitDatepickerService } from './datepicker-service';
 
 @Injectable()
-export class XmDatepickerKeyMapService {
-  private _minDate: XmDate;
-  private _maxDate: XmDate;
-  private _firstViewDate: XmDate;
-  private _lastViewDate: XmDate;
+export class NgKitDatepickerKeyMapService {
+  private _minDate: NgKitDate;
+  private _maxDate: NgKitDate;
+  private _firstViewDate: NgKitDate;
+  private _lastViewDate: NgKitDate;
 
-  constructor(private _service: XmDatepickerService, private _calendar: XmCalendar) {
+  constructor(private _service: NgKitDatepickerService, private _calendar: NgKitCalendar) {
     _service.model$.subscribe(model => {
       this._minDate = model.minDate;
       this._maxDate = model.maxDate;

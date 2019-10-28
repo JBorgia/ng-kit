@@ -5,7 +5,7 @@ import { Component, HostBinding, Input } from '@angular/core';
   template: '',
   styleUrls: ['./modal-backdrop.component.scss']
 })
-export class XmModalBackdropComponent {
+export class NgKitModalBackdropComponent {
 
   @HostBinding('style.z-index') zIndex = '1050';
 

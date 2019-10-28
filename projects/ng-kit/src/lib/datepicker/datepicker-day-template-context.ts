@@ -1,4 +1,4 @@
-import { XmDate } from './ng-kit-date';
+import { NgKitDate } from './date';
 
 /**
  * The context for the datepicker 'day' template.
@@ -13,7 +13,7 @@ export interface DayTemplateContext {
    *
    * @since 3.3.0
    */
-  $implicit: XmDate;
+  $implicit: NgKitDate;
 
   /**
    * The month currently displayed by the datepicker.
@@ -30,7 +30,7 @@ export interface DayTemplateContext {
   /**
    * The date that corresponds to the template.
    */
-  date: XmDate;
+  date: NgKitDate;
 
   /**
    * `True` if the current date is disabled.
@@ -48,7 +48,7 @@ export interface DayTemplateContext {
   selected: boolean;
 
   /**
-   * `True` if the current date is today (equal to `XmCalendar.getToday()`).
+   * `True` if the current date is today (equal to `NgKitCalendar.getToday()`).
    *
    * @since 4.1.0
    */

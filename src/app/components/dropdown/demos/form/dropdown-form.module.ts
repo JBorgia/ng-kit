@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { XmButtonModule, XmDropdownModule } from 'ng-kit';
+import { NgKitButtonModule, NgKitDropdownModule } from 'ng-kit';
 
 import { DropdownFormComponent } from './dropdown-form';
 
 @NgModule({
   imports: [
     BrowserModule,
-    XmDropdownModule,
-    XmButtonModule
+    NgKitDropdownModule,
+    NgKitButtonModule
   ],
   declarations: [DropdownFormComponent],
   exports: [DropdownFormComponent],

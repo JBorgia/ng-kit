@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { XmActiveModal, XmModal } from 'ng-kit';
+import { NgKitActiveModal, NgKitModal } from 'ng-kit';
 
 @Component({
   template: `
@@ -20,7 +20,7 @@ nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p
   `
 })
 export class Modal2ContentComponent {
-  constructor(public activeModal: XmActiveModal) { }
+  constructor(public activeModal: NgKitActiveModal) { }
 }
 
 @Component({
@@ -51,7 +51,7 @@ nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p
   `]
 })
 export class Modal1ContentComponent {
-  constructor(private modalService: XmModal, public activeModal: XmActiveModal) { }
+  constructor(private modalService: NgKitModal, public activeModal: NgKitActiveModal) { }
 
   open() {
     this.modalService.open(Modal2ContentComponent, {
@@ -66,7 +66,7 @@ export class Modal1ContentComponent {
   styleUrls: ['./modal-stacked.scss']
 })
 export class ModalStackedComponent {
-  constructor(private modalService: XmModal) { }
+  constructor(private modalService: NgKitModal) { }
 
   open() {
     this.modalService.open(Modal1ContentComponent);

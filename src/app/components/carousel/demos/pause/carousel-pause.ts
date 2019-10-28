@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { XmCarouselComponent, XmSlideEvent, XmSlideEventSource } from 'ng-kit';
+import { NgKitCarouselComponent, NgKitSlideEvent, NgKitSlideEventSource } from 'ng-kit';
 
 
 @Component({
@@ -15,7 +15,7 @@ export class CarouselPauseComponent {
   pauseOnIndicator = false;
   pauseOnHover = true;
 
-  @ViewChild('carousel', { static: true }) carousel: XmCarouselComponent;
+  @ViewChild('carousel', { static: true }) carousel: NgKitCarouselComponent;
 
   togglePaused() {
     if (this.paused) {
@@ -26,12 +26,12 @@ export class CarouselPauseComponent {
     this.paused = !this.paused;
   }
 
-  onSlide(slideEvent: XmSlideEvent) {
+  onSlide(slideEvent: NgKitSlideEvent) {
     if (this.unpauseOnArrow && slideEvent.paused &&
-      (slideEvent.source === XmSlideEventSource.ARROW_LEFT || slideEvent.source === XmSlideEventSource.ARROW_RIGHT)) {
+      (slideEvent.source === NgKitSlideEventSource.ARROW_LEFT || slideEvent.source === NgKitSlideEventSource.ARROW_RIGHT)) {
       this.togglePaused();
     }
-    if (this.pauseOnIndicator && !slideEvent.paused && slideEvent.source === XmSlideEventSource.INDICATOR) {
+    if (this.pauseOnIndicator && !slideEvent.paused && slideEvent.source === NgKitSlideEventSource.INDICATOR) {
       this.togglePaused();
     }
   }

@@ -61,52 +61,52 @@ export class DatepickerOverviewComponent {
     dateStruct: Snippet({
       lang: 'typescript',
       code: `
-        const date: XmDateStruct = { year: 1789, month: 7, day: 14 }; // July, 14 1789
+        const date: NgKitDateStruct = { year: 1789, month: 7, day: 14 }; // July, 14 1789
       `,
     }),
     date: Snippet({
       lang: 'typescript',
       code: `
-        const date: XmDate = new XmDate(1789, 7, 14);                // July, 14 1789
+        const date: NgKitDate = new NgKitDate(1789, 7, 14);                // July, 14 1789
 
         date.before({ year: 1789, month: 7, day: 14 });                // compare to a structure
-        date.equals(XmDate.from({ year: 1789, month: 7, day: 14 }));  // or to another date object
+        date.equals(NgKitDate.from({ year: 1789, month: 7, day: 14 }));  // or to another date object
       `,
     }),
     nativeAdapter: Snippet({
       lang: 'typescript',
       code: `
         // native adapter is bundled with library
-        providers: [{provide: XmDateAdapter, useClass: XmDateNativeAdapter}]
+        providers: [{provide: NgKitDateAdapter, useClass: NgKitDateNativeAdapter}]
 
         // or another native adapter that works with UTC dates
-        providers: [{provide: XmDateAdapter, useClass: XmDateNativeUTCAdapter}]
+        providers: [{provide: NgKitDateAdapter, useClass: NgKitDateNativeUTCAdapter}]
       `,
     }),
     adapter: Snippet({
       lang: 'typescript',
       code: `
         @Injectable()
-        export abstract class XmDateAdapter<D> {
-          abstract fromModel(value: D): XmDateStruct; // from your model -> internal model
-          abstract toModel(date: XmDateStruct): D; // from internal model -> your mode
+        export abstract class NgKitDateAdapter<D> {
+          abstract fromModel(value: D): NgKitDateStruct; // from your model -> internal model
+          abstract toModel(date: NgKitDateStruct): D; // from internal model -> your mode
         }
 
         // create your own if necessary
-        providers: [{provide: XmDateAdapter, useClass: YourOwnDateAdapter}]
+        providers: [{provide: NgKitDateAdapter, useClass: YourOwnDateAdapter}]
       `,
     }),
     formatter: Snippet({
       lang: 'typescript',
       code: `
         @Injectable()
-        export abstract class XmDateParserFormatter {
-          abstract parse(value: string): XmDateStruct; // from input -> internal model
-          abstract format(date: XmDateStruct): string; // from internal model -> string
+        export abstract class NgKitDateParserFormatter {
+          abstract parse(value: string): NgKitDateStruct; // from input -> internal model
+          abstract format(date: NgKitDateStruct): string; // from internal model -> string
         }
 
         // create your own if necessary
-        providers: [{provide: XmDateParserFormatter, useClass: YourOwnParserFormatter}]
+        providers: [{provide: NgKitDateParserFormatter, useClass: YourOwnParserFormatter}]
       `,
     }),
     dayTemplate: Snippet({
@@ -151,7 +151,7 @@ export class DatepickerOverviewComponent {
       lang: 'typescript',
       code: `
         // disable the 13th of each month
-        const isDisabled = (date: XmDate, current: {month: number}) => date.day === 13;
+        const isDisabled = (date: NgKitDate, current: {month: number}) => date.day === 13;
       `,
     }),
     disablingHTML: Snippet({
@@ -167,15 +167,15 @@ export class DatepickerOverviewComponent {
       lang: 'typescript',
       code: `
         @Injectable()
-        export abstract class XmDatepickerI18n {
+        export abstract class NgKitDatepickerI18n {
           abstract getWeekdayShortName(weekday: number): string;
           abstract getMonthShortName(month: number): string;
           abstract getMonthFullName(month: number): string;
-          abstract getDayAriaLabel(date: XmDateStruct): string;
+          abstract getDayAriaLabel(date: NgKitDateStruct): string;
         }
 
         // provide your own if necessary
-        providers: [{provide: XmDatepickerI18n, useClass: YourOwnDatepickerI18n}]
+        providers: [{provide: NgKitDatepickerI18n, useClass: YourOwnDatepickerI18n}]
       `,
     }),
   };

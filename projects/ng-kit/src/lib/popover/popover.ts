@@ -30,12 +30,12 @@ import { PlacementArray, positionElements } from '../util/positioning';
 import { listenToTriggers } from '../util/triggers';
 
 /**
- * Configuration service for the XmPopoverDirective.
+ * Configuration service for the NgKitPopoverDirective.
  * You can inject this service, typically in your root component, and customize the values of its properties in
  * order to provide default values for all the popovers used in the application.
  */
 @Injectable({ providedIn: 'root' })
-export class XmPopoverConfig {
+export class NgKitPopoverConfig {
   autoClose: boolean | 'inside' | 'outside' = true;
   placement: PlacementArray = 'auto';
   triggers = 'click';
@@ -54,7 +54,7 @@ let nextId = 0;
   templateUrl: './popover.component.html',
   styleUrls: ['./popover.component.scss']
 })
-export class XmPopoverWindowComponent {
+export class NgKitPopoverWindowComponent {
   @Input() title: undefined | string | TemplateRef<any>;
   @Input() popoverClass: string;
   @Input() context: any;
@@ -75,7 +75,7 @@ export class XmPopoverWindowComponent {
  * A lightweight, extensible directive for fancy popover creation.
  */
 @Directive({ selector: '[xmPopover]', exportAs: 'xmPopover' })
-export class XmPopoverDirective implements OnInit, OnDestroy, OnChanges {
+export class NgKitPopoverDirective implements OnInit, OnDestroy, OnChanges {
   /**
    * Indicates whether the popover should be closed on Escape key and inside/outside clicks.
    *
@@ -146,8 +146,8 @@ export class XmPopoverDirective implements OnInit, OnDestroy, OnChanges {
   @Output() hidden = new EventEmitter();
 
   private _xmPopoverWindowId = `ng-kit-popover-${nextId++}`;
-  private _popupService: PopupService<XmPopoverWindowComponent>;
-  private _windowRef: ComponentRef<XmPopoverWindowComponent>;
+  private _popupService: PopupService<NgKitPopoverWindowComponent>;
+  private _windowRef: ComponentRef<NgKitPopoverWindowComponent>;
   private _unregisterListenersFn;
   private _zoneSubscription: any;
   private _isDisabled(): boolean {
@@ -162,7 +162,7 @@ export class XmPopoverDirective implements OnInit, OnDestroy, OnChanges {
 
   constructor(
     private _elementRef: ElementRef<HTMLElement>, private _renderer: Renderer2, injector: Injector,
-    componentFactoryResolver: ComponentFactoryResolver, viewContainerRef: ViewContainerRef, config: XmPopoverConfig,
+    componentFactoryResolver: ComponentFactoryResolver, viewContainerRef: ViewContainerRef, config: NgKitPopoverConfig,
     private _ngZone: NgZone, @Inject(DOCUMENT) private _document: any, private _changeDetector: ChangeDetectorRef) {
     this.autoClose = config.autoClose;
     this.placement = config.placement;
@@ -172,8 +172,8 @@ export class XmPopoverDirective implements OnInit, OnDestroy, OnChanges {
     this.popoverClass = config.popoverClass;
     this.openDelay = config.openDelay;
     this.closeDelay = config.closeDelay;
-    this._popupService = new PopupService<XmPopoverWindowComponent>(
-      XmPopoverWindowComponent, injector, viewContainerRef, _renderer, componentFactoryResolver);
+    this._popupService = new PopupService<NgKitPopoverWindowComponent>(
+      NgKitPopoverWindowComponent, injector, viewContainerRef, _renderer, componentFactoryResolver);
 
     this._zoneSubscription = _ngZone.onStable.subscribe(() => {
       if (this._windowRef) {

@@ -34,7 +34,7 @@ export interface ResultTemplateContext {
   templateUrl: './typeahead-window.component.html',
   styleUrls: ['./typeahead-window.component.scss']
 })
-export class XmTypeaheadWindowComponent implements OnInit {
+export class NgKitTypeaheadWindowComponent implements OnInit {
   activeIdx = 0;
   theme: string;
 

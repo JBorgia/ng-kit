@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 
 import { isInteger } from '../util/util';
-import { XmDate } from './ng-kit-date';
+import { NgKitDate } from './date';
 
 export function fromJSDate(jsDate: Date) {
-  return new XmDate(jsDate.getFullYear(), jsDate.getMonth() + 1, jsDate.getDate());
+  return new NgKitDate(jsDate.getFullYear(), jsDate.getMonth() + 1, jsDate.getDate());
 }
-export function toJSDate(date: XmDate) {
+export function toJSDate(date: NgKitDate) {
   const jsDate = new Date(date.year, date.month - 1, date.day, 12);
   // this is done avoid 30 -> 1930 conversion
   if (!isNaN(jsDate.getTime())) {
@@ -15,20 +15,20 @@ export function toJSDate(date: XmDate) {
   return jsDate;
 }
 
-export type XmPeriod = 'y' | 'm' | 'd';
+export type NgKitPeriod = 'y' | 'm' | 'd';
 
 export function XM_DATEPICKER_CALENDAR_FACTORY() {
-  return new XmCalendarGregorian();
+  return new NgKitCalendarGregorian();
 }
 
 /**
  * A service that represents the calendar used by the datepicker.
  *
  * The default implementation uses the Gregorian calendar. You can inject it in your own
- * implementations if necessary to simplify `XmDate` calculations.
+ * implementations if necessary to simplify `NgKitDate` calculations.
  */
 @Injectable({ providedIn: 'root', useFactory: XM_DATEPICKER_CALENDAR_FACTORY })
-export abstract class XmCalendar {
+export abstract class NgKitCalendar {
   /**
    * Returns the number of days per week.
    */
@@ -51,7 +51,7 @@ export abstract class XmCalendar {
    *
    * With the default calendar we use ISO 8601: 'weekday' is 1=Mon ... 7=Sun
    */
-  abstract getWeekday(date: XmDate): number;
+  abstract getWeekday(date: NgKitDate): number;
 
   /**
    * Adds a number of years, months or days to a given date.
@@ -61,7 +61,7 @@ export abstract class XmCalendar {
    *
    * Always returns a new date.
    */
-  abstract getNext(date: XmDate, period?: XmPeriod, number?: number): XmDate;
+  abstract getNext(date: NgKitDate, period?: NgKitPeriod, number?: number): NgKitDate;
 
   /**
    * Subtracts a number of years, months or days from a given date.
@@ -71,38 +71,38 @@ export abstract class XmCalendar {
    *
    * Always returns a new date.
    */
-  abstract getPrev(date: XmDate, period?: XmPeriod, number?: number): XmDate;
+  abstract getPrev(date: NgKitDate, period?: NgKitPeriod, number?: number): NgKitDate;
 
   /**
    * Returns the week number for a given week.
    */
-  abstract getWeekNumber(week: XmDate[], firstDayOfWeek: number): number;
+  abstract getWeekNumber(week: NgKitDate[], firstDayOfWeek: number): number;
 
   /**
    * Returns the today's date.
    */
-  abstract getToday(): XmDate;
+  abstract getToday(): NgKitDate;
 
   /**
    * Checks if a date is valid in the current calendar.
    */
-  abstract isValid(date: XmDate): boolean;
+  abstract isValid(date: NgKitDate): boolean;
 }
 
 @Injectable()
-export class XmCalendarGregorian extends XmCalendar {
+export class NgKitCalendarGregorian extends NgKitCalendar {
   getDaysPerWeek() { return 7; }
 
   getMonths() { return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]; }
 
   getWeeksPerMonth() { return 6; }
 
-  getNext(date: XmDate, period: XmPeriod = 'd', number = 1) {
+  getNext(date: NgKitDate, period: NgKitPeriod = 'd', number = 1) {
     let jsDate = toJSDate(date);
 
     switch (period) {
       case 'y':
-        return new XmDate(date.year + number, 1, 1);
+        return new NgKitDate(date.year + number, 1, 1);
       case 'm':
         jsDate = new Date(date.year, date.month + number - 1, 1, 12);
         break;
@@ -116,16 +116,16 @@ export class XmCalendarGregorian extends XmCalendar {
     return fromJSDate(jsDate);
   }
 
-  getPrev(date: XmDate, period: XmPeriod = 'd', number = 1) { return this.getNext(date, period, -number); }
+  getPrev(date: NgKitDate, period: NgKitPeriod = 'd', number = 1) { return this.getNext(date, period, -number); }
 
-  getWeekday(date: XmDate) {
+  getWeekday(date: NgKitDate) {
     const jsDate = toJSDate(date);
     const day = jsDate.getDay();
     // in JS Date Sun=0, in ISO 8601 Sun=7
     return day === 0 ? 7 : day;
   }
 
-  getWeekNumber(week: XmDate[], firstDayOfWeek: number) {
+  getWeekNumber(week: NgKitDate[], firstDayOfWeek: number) {
     // in JS Date Sun=0, in ISO 8601 Sun=7
     if (firstDayOfWeek === 7) {
       firstDayOfWeek = 0;
@@ -142,9 +142,9 @@ export class XmCalendarGregorian extends XmCalendar {
     return Math.floor(Math.round((time - jsDate.getTime()) / 86400000) / 7) + 1;
   }
 
-  getToday(): XmDate { return fromJSDate(new Date()); }
+  getToday(): NgKitDate { return fromJSDate(new Date()); }
 
-  isValid(date: XmDate): boolean {
+  isValid(date: NgKitDate): boolean {
     if (!date || !isInteger(date.year) || !isInteger(date.month) || !isInteger(date.day)) {
       return false;
     }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { XmDatepickerModule } from 'ng-kit';
+import { NgKitDatepickerModule } from 'ng-kit';
 
 import { DatepickerPositiontargetComponent } from './datepicker-positiontarget';
 
@@ -9,7 +9,7 @@ import { DatepickerPositiontargetComponent } from './datepicker-positiontarget';
   imports: [
     BrowserModule,
     FormsModule,
-    XmDatepickerModule
+    NgKitDatepickerModule
   ],
   declarations: [DatepickerPositiontargetComponent],
   exports: [DatepickerPositiontargetComponent],

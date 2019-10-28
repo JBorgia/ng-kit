@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-import { XmDate } from '../datepicker/ng-kit-date';
+import { NgKitDate } from '../datepicker/date';
 
-export class XmDateRange {
+export class NgKitDateRange {
   fromDate: Date;
   toDate: Date;
 
@@ -35,13 +35,13 @@ export class XmDateRange {
 })
 export class CalendarSelectorComponent implements OnInit {
   @Input() maxDateSet: Date;
-  @Input() dateRange: XmDateRange;
+  @Input() dateRange: NgKitDateRange;
   @Input() maxDateRange: number;
   @Input() startWeekOnSunday: boolean;
-  hoveredDate: XmDate;
-  fromDate: XmDate;
-  toDate: XmDate;
-  @Output() dateSelected = new EventEmitter<XmDateRange>();
+  hoveredDate: NgKitDate;
+  fromDate: NgKitDate;
+  toDate: NgKitDate;
+  @Output() dateSelected = new EventEmitter<NgKitDateRange>();
   @Output() notifyDateOutOfRange = new EventEmitter<string>();
   isDisabled: Function;
 
@@ -55,7 +55,7 @@ export class CalendarSelectorComponent implements OnInit {
       this.toDate = this.convertToXMDate(this.dateRange.toDate);
     }
     // TODO: This needs to be converted to an input parameter
-    this.isDisabled = (data: XmDate) => this.isDisabledMarker(data);
+    this.isDisabled = (data: NgKitDate) => this.isDisabledMarker(data);
   }
 
   get placeholderString(): string {
@@ -69,19 +69,19 @@ export class CalendarSelectorComponent implements OnInit {
     }
   }
 
-  convertToXMDate(date: Date): XmDate {
-    return new XmDate(date.getFullYear(),
+  convertToXMDate(date: Date): NgKitDate {
+    return new NgKitDate(date.getFullYear(),
       date.getMonth() + 1,
       date.getDate());
   }
 
-  convertFromXMDate(date: XmDate): Date {
+  convertFromXMDate(date: NgKitDate): Date {
     const jsDate = new Date(date.year, date.month - 1, date.day);
     return jsDate;
   }
 
   // Written using if statement to make adding addtional conditions easier
-  isDisabledMarker(xmDate: XmDate): Boolean {
+  isDisabledMarker(xmDate: NgKitDate): Boolean {
     const date: Date = new Date(xmDate.year, xmDate.month - 1, xmDate.day);
     if (date > this.maxDateSet) {
       return true;
@@ -89,7 +89,7 @@ export class CalendarSelectorComponent implements OnInit {
     return false;
   }
 
-  onDateSelection(date: XmDate) {
+  onDateSelection(date: NgKitDate) {
     if (!this.fromDate && !this.toDate) {
       this.fromDate = date;
     } else if (this.fromDate && !this.toDate && (date.after(this.fromDate) || date.equals(this.fromDate))) {
@@ -97,7 +97,7 @@ export class CalendarSelectorComponent implements OnInit {
       const fromDateCompare = this.convertFromXMDate(this.fromDate);
       const maxDaysForward = new Date(fromDateCompare);
       maxDaysForward.setDate(fromDateCompare.getDate() + this.maxDateRange);
-      const maxDaysForwardXM: XmDate = this.convertToXMDate(maxDaysForward);
+      const maxDaysForwardXM: NgKitDate = this.convertToXMDate(maxDaysForward);
       if (date.after(maxDaysForwardXM)) {
         this.notifyDateOutOfRange.emit(`Date range cannot extend more than ${this.maxDateRange} days. Please remake your selection.`);
         this.toDate = null;
@@ -113,22 +113,22 @@ export class CalendarSelectorComponent implements OnInit {
 
     if (this.fromDate && this.toDate) {
       this.dateSelected.emit(
-        new XmDateRange(this.convertFromXMDate(this.fromDate),
+        new NgKitDateRange(this.convertFromXMDate(this.fromDate),
           this.convertFromXMDate(this.toDate)
         )
       );
     }
   }
 
-  isHovered(date: XmDate) {
+  isHovered(date: NgKitDate) {
     return this.fromDate && !this.toDate && this.hoveredDate && date.after(this.fromDate) && date.before(this.hoveredDate);
   }
 
-  isInside(date: XmDate) {
+  isInside(date: NgKitDate) {
     return date.after(this.fromDate) && date.before(this.toDate);
   }
 
-  isRange(date: XmDate) {
+  isRange(date: NgKitDate) {
     return date.equals(this.fromDate) || date.equals(this.toDate) || this.isInside(date) || this.isHovered(date);
   }
 

@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { XmTabsetModule } from 'ng-kit';
+import { NgKitTabsetModule } from 'ng-kit';
 
 import { TabsetPreventchangeComponent } from './tabset-prevent-change';
 
 
 @NgModule({
-  imports: [BrowserModule, XmTabsetModule],
+  imports: [BrowserModule, NgKitTabsetModule],
   declarations: [TabsetPreventchangeComponent],
   exports: [TabsetPreventchangeComponent],
   bootstrap: [TabsetPreventchangeComponent]

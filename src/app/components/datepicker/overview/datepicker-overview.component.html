@@ -1,7 +1,7 @@
 <p class="instructions">
   Datepicker will help you with date selection.
-  It can be used either inline with <code>XmDatepicker</code> component or as a
-  popup on any input element with <code>XmInputDatepicker</code> directive.
+  It can be used either inline with <code>NgKitDatepicker</code> component or as a
+  popup on any input element with <code>NgKitInputDatepicker</code> directive.
   It also comes with the list of services to do date formatting, i18n and
   <a routerLink="../calendars">alternative calendars support</a>.
 </p>
@@ -27,14 +27,14 @@
 
   <p>
     In the example above the template variable <code>#d</code> will point
-    to the instance of the <code>XmDatepicker</code> component in the first case.
-    In the second it will point to the instance of the <code>XmInputDatepicker</code>
+    to the instance of the <code>NgKitDatepicker</code> component in the first case.
+    In the second it will point to the instance of the <code>NgKitInputDatepicker</code>
     directive that handles the popup with inline datepicker component.
   </p>
 
   <p>
-    See the <a routerLink="../api" fragment="XmDatepicker">XmDatepicker API</a>
-    and the <a routerLink="../api" fragment="XmInputDatepicker">XmInputDatepicker API</a>
+    See the <a routerLink="../api" fragment="NgKitDatepicker">NgKitDatepicker API</a>
+    and the <a routerLink="../api" fragment="NgKitInputDatepicker">NgKitInputDatepicker API</a>
     for details on available inputs, outputs and methods.
 
     You can customize the number of displayed months, the way navigation
@@ -107,7 +107,7 @@
 <!-- DATE MODEL-->
 <app-overview-section [section]="sections['date-model']">
   <p>
-    Datepicker uses <a routerLink="../api" fragment="XmDateStruct"><code>XmDateStruct</code></a>
+    Datepicker uses <a routerLink="../api" fragment="NgKitDateStruct"><code>NgKitDateStruct</code></a>
     interface as a model and not the native <code>Date</code> object.
     It's a simple data structure with 3 fields, but note that months start with 1 (as in ISO 8601).
   </p>
@@ -115,10 +115,10 @@
   <app-code [snippet]="snippets.dateStruct"></app-code>
 
   <p>
-    All datepicker APIs will consume <code>XmDateStruct</code>, but will produce it's implementation
-    class <a routerLink="../api" fragment="XmDate"><code>XmDate</code></a> when returning dates to you.
+    All datepicker APIs will consume <code>NgKitDateStruct</code>, but will produce it's implementation
+    class <a routerLink="../api" fragment="NgKitDate"><code>NgKitDate</code></a> when returning dates to you.
     It offers additional methods for easy date comparison, and using it together with
-    <a routerLink="../api" fragment="XmCalendar"><code>XmCalendar</code></a> will cover most
+    <a routerLink="../api" fragment="NgKitCalendar"><code>NgKitCalendar</code></a> will cover most
     of the date-related calculations.
   </p>
 
@@ -130,14 +130,14 @@
     You can also tell datepicker to use the native javascript date adapter (bundled with ng-bootstrap) as in the
     <a routerLink="../examples" fragment="adapter">custom date adapter example</a>. For now
     the adapter works only for the form integration, so for instance <code>(ngModelChange)</code>
-    will return a native date object. All other APIs continue to use <code>XmDateStruct</code>.
+    will return a native date object. All other APIs continue to use <code>NgKitDateStruct</code>.
   </p>
 
   <app-code [snippet]="snippets.nativeAdapter"></app-code>
 
   <p>
     You can also create your own adapters if necessary by extending and implementing the
-    <code>XmDateAdapter</code> methods.
+    <code>NgKitDateAdapter</code> methods.
   </p>
 
   <app-code [snippet]="snippets.adapter"></app-code>
@@ -145,7 +145,7 @@
   <h4>Input date parsing and formatting</h4>
 
   <p>
-    In the case of the <code>XmInputDatepicker</code> you should be able to parse
+    In the case of the <code>NgKitInputDatepicker</code> you should be able to parse
     and format the text entered in the input. This is not as easy task as it seems,
     because you have to account for various formats and locales.
     For now internally there is a service that does default formatting using ISO 8601 format.
@@ -230,7 +230,7 @@
 <app-overview-section [section]="sections['today']">
   <p>
     It is often useful to highlight a today's date in the calendar view or add a certain logic to it. Today's date
-    is the date returned by the <a routerLink="../api" fragment="XmCalendar">XmCalendar</a>'s <code>getToday()</code>
+    is the date returned by the <a routerLink="../api" fragment="NgKitCalendar">NgKitCalendar</a>'s <code>getToday()</code>
     method.
   </p>
 
@@ -270,15 +270,15 @@
     functionality. With <code>(select)</code> and <code>(dateSelect)</code> outputs you'll know
     which dates are being selected and with the <code>[dayTemplate]</code> input
     you can customize the way any particular date looks.
-    If you want to use the <code>XmDatepickerInput</code>, you can also tell the popup
+    If you want to use the <code>NgKitDatepickerInput</code>, you can also tell the popup
     to stay open by tuning the <code>[autoClose]</code> input.
     Check the <a routerLink="../examples" fragment="range">range selection example</a>
     and the initial demo on this page for more details.
   </p>
 
   <p>
-    If you can't use the <code>XmDatepickerInput</code> directive, you should
-    create your own popup and use <code>XmDatepicker</code> inside of it. In this case
+    If you can't use the <code>NgKitDatepickerInput</code> directive, you should
+    create your own popup and use <code>NgKitDatepicker</code> inside of it. In this case
     we'll handle everything related to date selection and navigation for you and you can create
     a completely customized popup with any data model you want.
   </p>
@@ -292,7 +292,7 @@
     Since the 2.0.0 release datepicker will use the
     <a href="https://angular.io/guide/i18n#setting-up-the-locale-of-your-app">application locale</a>
     if it is present to get translations of weekdays and month names. The internal service that does
-    translation is called <code>XmDatepickerI18n</code> and you could provide your own implementation
+    translation is called <code>NgKitDatepickerI18n</code> and you could provide your own implementation
     if necessary.
   </p>
 

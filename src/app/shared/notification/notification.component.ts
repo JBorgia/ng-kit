@@ -15,7 +15,7 @@ import { NotificationEvent } from './types/event.type';
   styleUrls: ['./notification.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class XmNotificationComponent implements OnInit, OnDestroy {
+export class NgKitNotificationComponent implements OnInit, OnDestroy {
   /**
    * Toasts array
    */

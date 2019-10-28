@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { XmCalendar, XmDate, XmDateStruct } from 'ng-kit';
+import { NgKitCalendar, NgKitDate, NgKitDateStruct } from 'ng-kit';
 
 @Component({
   selector: 'app-datepicker-customday',
@@ -7,11 +7,11 @@ import { XmCalendar, XmDate, XmDateStruct } from 'ng-kit';
   styleUrls: ['./datepicker-customday.scss']
 })
 export class DatepickerCustomdayComponent {
-  model: XmDateStruct;
+  model: NgKitDateStruct;
 
-  constructor(private calendar: XmCalendar) {
+  constructor(private calendar: NgKitCalendar) {
   }
 
-  isDisabled = (date: XmDate, current: { month: number }) => date.month !== current.month;
-  isWeekend = (date: XmDate) => this.calendar.getWeekday(date) >= 6;
+  isDisabled = (date: NgKitDate, current: { month: number }) => date.month !== current.month;
+  isWeekend = (date: NgKitDate) => this.calendar.getWeekday(date) >= 6;
 }

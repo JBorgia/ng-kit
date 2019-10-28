@@ -1,17 +1,17 @@
 <ol class="carousel-indicators" *ngIf="showNavigationIndicators">
   <li *ngFor="let slide of slides;" [id]="slide.id" [class.active]="slide.id === activeId"
-      (click)="select(slide.id, XmSlideEventSource.INDICATOR)"></li>
+      (click)="select(slide.id, NgKitSlideEventSource.INDICATOR)"></li>
 </ol>
 <div class="carousel-inner">
   <div *ngFor="let slide of slides; let i = index" [attr.data-index]="i" [ngClass]="['carousel-item', slide.id]" [class.active]="slide.id === activeId">
     <ng-template [ngTemplateOutlet]="slide.templateRef"></ng-template>
   </div>
 </div>
-<a class="carousel-control-prev" role="button" (click)="prev(XmSlideEventSource.ARROW_LEFT)" *ngIf="showNavigationArrows">
+<a class="carousel-control-prev" role="button" (click)="prev(NgKitSlideEventSource.ARROW_LEFT)" *ngIf="showNavigationArrows">
   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
   <span class="sr-only">Previous</span>
 </a>
-<a class="carousel-control-next" role="button" (click)="next(XmSlideEventSource.ARROW_RIGHT)" *ngIf="showNavigationArrows">
+<a class="carousel-control-next" role="button" (click)="next(NgKitSlideEventSource.ARROW_RIGHT)" *ngIf="showNavigationArrows">
   <span class="carousel-control-next-icon" aria-hidden="true"></span>
   <span class="sr-only" >Next</span>
 </a>

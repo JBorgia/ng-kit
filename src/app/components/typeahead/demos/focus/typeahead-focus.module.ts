@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { XmTypeaheadModule } from 'ng-kit';
+import { NgKitTypeaheadModule } from 'ng-kit';
 
 import { TypeaheadFocusComponent } from './typeahead-focus';
 
@@ -9,7 +9,7 @@ import { TypeaheadFocusComponent } from './typeahead-focus';
   imports: [
     BrowserModule,
     FormsModule,
-    XmTypeaheadModule
+    NgKitTypeaheadModule
   ],
   declarations: [TypeaheadFocusComponent],
   exports: [TypeaheadFocusComponent],
