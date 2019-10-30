@@ -1,10 +1,9 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { BreakpointService } from '@services/breakpoint.service';
-import { HostListenerScrollService } from '@services/host-listener-scroll.service';
-import { ThemeService } from '@services/theme.service';
 
-import { NavSidebarService } from './nav-sidebar/nav-sidebar.service';
+import { NavSidebarService } from './nav-bar/nav-bar.service';
+
 
 @Component({
   selector: 'app-full-layout',
@@ -19,8 +18,6 @@ export class FullComponent implements OnInit {
     private router: Router,
     private breakpointService: BreakpointService,
     private navSidebarService: NavSidebarService,
-    private hostListenerScrollService: HostListenerScrollService,
-    private themeService: ThemeService,
   ) {
   }
 
@@ -54,12 +51,6 @@ export class FullComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.handleLayout();
-  }
-
-  @HostListener('window:scroll', ['$event'])
-  onWindowScroll($event) {
-    const number = $event.target.scrollTop || window.pageYOffset;
-    this.hostListenerScrollService.scrollPositionYSubject.next(number);
   }
 
   handleLayout() {

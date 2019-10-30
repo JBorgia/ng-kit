@@ -3,30 +3,32 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { NotificationModule } from '@shared/notification/notification.module';
-import { NgkDropdownModule } from 'ng-kit';
+import { NgkDirectivesModule, NgkDropdownModule, NgkSidebarModule } from 'ng-kit';
 
-import { NgkDirectivesModule } from '../directives/directives.module';
 import { FullComponent } from './full.component';
-import { NavigationComponent } from './header-navigation/navigation.component';
-import { LogoComponent } from './logo/logo.component';
-import { NavSidebarModule } from './nav-sidebar/nav-sidebar.module';
+import { BreadcrumbModule } from './header/breadcrumb/breadcrumb.module';
+import { HeaderModule } from './header/header.module';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { NavSidebarService } from './nav-bar/nav-bar.service';
 
 @NgModule({
   imports: [
     BrowserModule,
     CommonModule,
     FormsModule,
-    NavSidebarModule,
     RouterModule,
     NgkDirectivesModule,
     NgkDropdownModule,
-    NotificationModule,
+    NgkSidebarModule,
+    HeaderModule,
+    BreadcrumbModule,
   ],
   declarations: [
     FullComponent,
-    LogoComponent,
-    NavigationComponent,
+    NavBarComponent,
   ],
+  providers: [
+    NavSidebarService
+  ]
 })
 export class FullModule { }

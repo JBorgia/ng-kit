@@ -75,6 +75,17 @@
     @include respond-above(sm) {
       background: transparent;
     }
+
+    >ul {
+      >li {
+        &:hover:not(.active) {
+
+          +li a {
+            min-height: 47px;
+          }
+        }
+      }
+    }
   }
 
   >ul {
