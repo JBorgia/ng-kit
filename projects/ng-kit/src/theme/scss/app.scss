@@ -319,7 +319,7 @@ h6 {
 }
 
 .m-l-15 {
-  margin-left: 15px;
+  margin-left: 16px;
 }
 
 .m-l-20 {
@@ -343,7 +343,7 @@ h6 {
 }
 
 .m-r-15 {
-  margin-right: 15px;
+  margin-right: 16px;
 }
 
 .m-r-20 {
@@ -371,7 +371,7 @@ h6 {
 }
 
 .m-t-15 {
-  margin-top: 15px;
+  margin-top: 16px;
 }
 
 .m-t-20 {
@@ -399,7 +399,7 @@ h6 {
 }
 
 .m-b-15 {
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 .m-b-20 {
@@ -419,11 +419,11 @@ h6 {
 ******************/
 
 .form-control {
-  min-height: 34px;
+  min-height: 36px;
   height: auto;
   font-size: 1.6rem;
   transition: background-color 0.4s ease, 0.4s border ease;
-  padding: 1.175rem 1.25rem;
+  padding: 0.5rem 1rem;
   margin: 0;
   line-height: 1.6;
   font-family: var(--typeface-primary), sans-serif;
@@ -501,7 +501,7 @@ h6 {
 
 .form-group {
   position: relative;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 .input-group {
@@ -584,14 +584,14 @@ select:-webkit-autofill:focus {
 .control-group {
   vertical-align: top;
   text-align: left;
-  padding: 0 15px;
+  padding: 0 16px;
 }
 
 .control--label {
   display: block;
   position: relative;
   padding-left: 30px;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
   cursor: pointer;
 
   &:last-of-type {
@@ -679,7 +679,7 @@ select:-webkit-autofill:focus {
 .select__arrow {
   position: absolute;
   top: 16px;
-  right: 15px;
+  right: 16px;
   width: 0;
   height: 0;
   pointer-events: none;
@@ -727,7 +727,7 @@ select:-webkit-autofill:focus {
   font-size: 1.6rem;
   font-family: var(--typeface-primary), sans-serif;
   background-size: 17px;
-  background-position: right 15px center;
+  background-position: right 16px center;
   background-repeat: no-repeat;
   transition: 0.4s background-color ease;
   background-color: var(--input-background-primary);
@@ -735,9 +735,9 @@ select:-webkit-autofill:focus {
   border: 1px solid;
   border-color: var(--border-color-primary);
   color: var(--text-color-primary);
-  padding: 1.175rem 1.25rem;
+  padding: 0.5rem 1rem;
   line-height: 1.6;
-  min-height: 50px;
+  min-height: 36px;
   border-radius: 0.25rem;
   box-shadow: none;
   appearance: none;
@@ -761,8 +761,8 @@ select:-webkit-autofill:focus {
 
 .custom-select-sm {
   font-size: 1.4rem;
-  padding: 0.75rem 1.25rem;
-  min-height: 38px;
+  padding: 0.75rem 1rem;
+  min-height: 36px;
   background-size: 12px !important;
 }
 
