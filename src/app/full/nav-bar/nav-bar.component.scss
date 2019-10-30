@@ -1,0 +1,56 @@
+@import "mixins";
+
+.left-sidebar {
+  position: fixed;
+  height: calc(100% - 49px);
+  width: 240px;
+  top: 49px;
+  bottom: 0px;
+  z-index: 20;
+  box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
+  border-right: 1px solid var(--border-color-primary);
+  background-color: var(--sidebar-background-color);
+}
+
+.fix-sidebar .left-sidebar {
+  position: fixed;
+}
+
+.scroll-sidebar {
+  height: calc(100vh - 48px);
+  position: relative;
+  overflow-y: overlay;
+  transform: scaleX(-1); // to flip horizontally so the scroll is on the left
+
+  >.sidebar-flip {
+    transform: scaleX(-1); // to flip horizontally so the content is displayed correctly
+  }
+
+  &.ps .ps__rail-y {
+    left: 2px;
+    right: auto;
+    background: none;
+    width: 6px;
+    /* If using `left`, there shouldn't be a `right`. */
+  }
+
+}
+
+.left-sidebar {
+  &.mini-sidebar {
+    @include respond-above(sm) {
+      width: 52px;
+    }
+
+    @include respond-below(sm) {
+      left: -240px;
+    }
+
+    .scroll-sidebar {
+      @include respond-above(sm) {
+        padding-bottom: 0px;
+        position: absolute;
+      }
+    }
+  }
+}
