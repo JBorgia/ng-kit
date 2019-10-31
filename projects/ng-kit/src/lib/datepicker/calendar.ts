@@ -61,7 +61,7 @@ export abstract class NgkCalendar {
    *
    * Always returns a new date.
    */
-  abstract getNext(date: NgkDate, period?: NgkPeriod, number?: number): NgkDate;
+  abstract getNext(date: NgkDate, period?: NgkPeriod, num?: number): NgkDate;
 
   /**
    * Subtracts a number of years, months or days from a given date.
@@ -71,7 +71,7 @@ export abstract class NgkCalendar {
    *
    * Always returns a new date.
    */
-  abstract getPrev(date: NgkDate, period?: NgkPeriod, number?: number): NgkDate;
+  abstract getPrev(date: NgkDate, period?: NgkPeriod, num?: number): NgkDate;
 
   /**
    * Returns the week number for a given week.
@@ -97,17 +97,17 @@ export class NgkCalendarGregorian extends NgkCalendar {
 
   getWeeksPerMonth() { return 6; }
 
-  getNext(date: NgkDate, period: NgkPeriod = 'd', number = 1) {
+  getNext(date: NgkDate, period: NgkPeriod = 'd', num = 1) {
     let jsDate = toJSDate(date);
 
     switch (period) {
       case 'y':
-        return new NgkDate(date.year + number, 1, 1);
+        return new NgkDate(date.year + num, 1, 1);
       case 'm':
-        jsDate = new Date(date.year, date.month + number - 1, 1, 12);
+        jsDate = new Date(date.year, date.month + num - 1, 1, 12);
         break;
       case 'd':
-        jsDate.setDate(jsDate.getDate() + number);
+        jsDate.setDate(jsDate.getDate() + num);
         break;
       default:
         return date;
@@ -116,7 +116,7 @@ export class NgkCalendarGregorian extends NgkCalendar {
     return fromJSDate(jsDate);
   }
 
-  getPrev(date: NgkDate, period: NgkPeriod = 'd', number = 1) { return this.getNext(date, period, -number); }
+  getPrev(date: NgkDate, period: NgkPeriod = 'd', num = 1) { return this.getNext(date, period, -num); }
 
   getWeekday(date: NgkDate) {
     const jsDate = toJSDate(date);
