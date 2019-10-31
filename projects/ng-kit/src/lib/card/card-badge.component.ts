@@ -3,7 +3,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 /**
   * The `NgkCardBadgeComponent` is an optional round, bordered element that is inside the <i>&#60;ngk-card-header&#62;</i>.
-  * It can accept an ng-kit icon string (e.g. "icon-profile"), image, or both (in which case the icon is used as a fallback
+  * It can accept an ngk-bootstrap icon string (e.g. "icon-profile"), image, or both (in which case the icon is used as a fallback
   * should the image be undefined or missing).
   */
 @Component({
